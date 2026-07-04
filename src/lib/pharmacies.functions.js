@@ -1,23 +1,10 @@
 import { createServerFn } from "@tanstack/react-start";
 
-export type Pharmacy = {
-  id: string;
-  name: string;
-  address: string;
-  location: { lat: number; lng: number };
-  rating?: number;
-  userRatingCount?: number;
-  openNow?: boolean;
-  phone?: string;
-  websiteUri?: string;
-  distanceMeters?: number;
-};
-
 const GATEWAY_URL = "https://connector-gateway.lovable.dev/google_maps";
 
-function haversine(a: { lat: number; lng: number }, b: { lat: number; lng: number }) {
+function haversine(a, b) {
   const R = 6371000;
-  const toRad = (d: number) => (d * Math.PI) / 180;
+  const toRad = (d) => (d * Math.PI) / 180;
   const dLat = toRad(b.lat - a.lat);
   const dLng = toRad(b.lng - a.lng);
   const s =
@@ -27,15 +14,13 @@ function haversine(a: { lat: number; lng: number }, b: { lat: number; lng: numbe
 }
 
 export const searchPharmacies = createServerFn({ method: "POST" })
-  .inputValidator(
-    (input: { lat: number; lng: number; radius?: number; keyword?: string }) => {
-      if (typeof input?.lat !== "number" || typeof input?.lng !== "number") {
-        throw new Error("lat and lng are required");
-      }
-      const radius = Math.min(Math.max(input.radius ?? 5000, 500), 50000);
-      return { lat: input.lat, lng: input.lng, radius, keyword: input.keyword?.trim() || "" };
-    },
-  )
+  .inputValidator((input) => {
+    if (typeof input?.lat !== "number" || typeof input?.lng !== "number") {
+      throw new Error("lat and lng are required");
+    }
+    const radius = Math.min(Math.max(input.radius ?? 5000, 500), 50000);
+    return { lat: input.lat, lng: input.lng, radius, keyword: input.keyword?.trim() || "" };
+  })
   .handler(async ({ data }) => {
     const lovableKey = process.env.LOVABLE_API_KEY;
     const gmKey = process.env.GOOGLE_MAPS_API_KEY;
@@ -67,22 +52,10 @@ export const searchPharmacies = createServerFn({ method: "POST" })
       const text = await res.text();
       throw new Error(`Places API error ${res.status}: ${text.slice(0, 200)}`);
     }
-    const json = (await res.json()) as {
-      places?: Array<{
-        id: string;
-        displayName?: { text: string };
-        formattedAddress?: string;
-        location: { latitude: number; longitude: number };
-        rating?: number;
-        userRatingCount?: number;
-        currentOpeningHours?: { openNow?: boolean };
-        nationalPhoneNumber?: string;
-        websiteUri?: string;
-      }>;
-    };
+    const json = await res.json();
 
     const center = { lat: data.lat, lng: data.lng };
-    const pharmacies: Pharmacy[] = (json.places ?? []).map((p) => {
+    const pharmacies = (json.places ?? []).map((p) => {
       const loc = { lat: p.location.latitude, lng: p.location.longitude };
       return {
         id: p.id,

@@ -1,30 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { searchPharmacies, type Pharmacy } from "@/lib/pharmacies.functions";
+import { searchPharmacies } from "@/lib/pharmacies.functions";
 
 export const Route = createFileRoute("/")({
   component: Home,
 });
 
-type MedSuggestion = { name: string; rxcui?: string };
+const BROWSER_KEY = import.meta.env.VITE_LOVABLE_CONNECTOR_GOOGLE_MAPS_BROWSER_KEY;
+const TRACKING_ID = import.meta.env.VITE_LOVABLE_CONNECTOR_GOOGLE_MAPS_TRACKING_ID;
 
-const BROWSER_KEY = import.meta.env.VITE_LOVABLE_CONNECTOR_GOOGLE_MAPS_BROWSER_KEY as
-  | string
-  | undefined;
-const TRACKING_ID = import.meta.env.VITE_LOVABLE_CONNECTOR_GOOGLE_MAPS_TRACKING_ID as
-  | string
-  | undefined;
-
-declare global {
-  interface Window {
-    google?: any;
-    __initMedNearMap?: () => void;
-  }
-}
-
-let mapsLoader: Promise<void> | null = null;
-function loadGoogleMaps(): Promise<void> {
+let mapsLoader = null;
+function loadGoogleMaps() {
   if (typeof window === "undefined") return Promise.resolve();
   if (window.google?.maps) return Promise.resolve();
   if (mapsLoader) return mapsLoader;
@@ -49,7 +36,7 @@ function loadGoogleMaps(): Promise<void> {
   return mapsLoader;
 }
 
-function formatDistance(m?: number) {
+function formatDistance(m) {
   if (m == null) return "";
   if (m < 1000) return `${m} m`;
   return `${(m / 1000).toFixed(1)} km`;
@@ -57,21 +44,21 @@ function formatDistance(m?: number) {
 
 function Home() {
   const [query, setQuery] = useState("");
-  const [suggestions, setSuggestions] = useState<MedSuggestion[]>([]);
+  const [suggestions, setSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
-  const [selectedMed, setSelectedMed] = useState<string | null>(null);
-  const [coords, setCoords] = useState<{ lat: number; lng: number } | null>(null);
-  const [locError, setLocError] = useState<string | null>(null);
-  const [pharmacies, setPharmacies] = useState<Pharmacy[]>([]);
+  const [selectedMed, setSelectedMed] = useState(null);
+  const [coords, setCoords] = useState(null);
+  const [locError, setLocError] = useState(null);
+  const [pharmacies, setPharmacies] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [activeId, setActiveId] = useState<string | null>(null);
+  const [activeId, setActiveId] = useState(null);
   const [radius, setRadius] = useState(5000);
 
-  const mapRef = useRef<HTMLDivElement | null>(null);
-  const mapInstance = useRef<any>(null);
-  const markersRef = useRef<any[]>([]);
-  const userMarkerRef = useRef<any>(null);
-  const infoRef = useRef<any>(null);
+  const mapRef = useRef(null);
+  const mapInstance = useRef(null);
+  const markersRef = useRef([]);
+  const userMarkerRef = useRef(null);
+  const infoRef = useRef(null);
 
   const findSearchFn = useServerFn(searchPharmacies);
 
@@ -90,10 +77,9 @@ function Home() {
           { signal: ctrl.signal },
         );
         const json = await res.json();
-        const cands: Array<{ rxcui?: string; name?: string }> =
-          json?.approximateGroup?.candidate ?? [];
-        const seen = new Set<string>();
-        const items: MedSuggestion[] = [];
+        const cands = json?.approximateGroup?.candidate ?? [];
+        const seen = new Set();
+        const items = [];
         for (const c of cands) {
           if (!c.name) continue;
           const key = c.name.toLowerCase();
@@ -207,7 +193,7 @@ function Home() {
     mapInstance.current.fitBounds(bounds, 60);
   }, [pharmacies, coords]);
 
-  async function runSearch(med: string) {
+  async function runSearch(med) {
     if (!coords) {
       setLocError("We need your location to find pharmacies. Please allow location access.");
       return;
@@ -225,7 +211,7 @@ function Home() {
       } else {
         setLocError(null);
       }
-    } catch (e: any) {
+    } catch (e) {
       setLocError(e?.message ?? "Search failed");
     } finally {
       setLoading(false);
@@ -455,7 +441,7 @@ function Home() {
   );
 }
 
-function escapeHtml(s: string) {
+function escapeHtml(s) {
   return s
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
