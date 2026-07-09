@@ -1,6 +1,7 @@
 import { createServerFn } from "@tanstack/react-start";
 
 const GATEWAY_URL = "https://connector-gateway.lovable.dev/google_maps";
+const DAWAA_API_BASE_URL = process.env.DAWAA_API_BASE_URL;
 
 function haversine(a, b) {
   const R = 6371000;
@@ -22,6 +23,10 @@ export const searchPharmacies = createServerFn({ method: "POST" })
     return { lat: input.lat, lng: input.lng, radius, keyword: input.keyword?.trim() || "" };
   })
   .handler(async ({ data }) => {
+    if (DAWAA_API_BASE_URL) {
+      return searchViaJavaBackend(data);
+    }
+
     const lovableKey = process.env.LOVABLE_API_KEY;
     const gmKey = process.env.GOOGLE_MAPS_API_KEY;
     if (!lovableKey || !gmKey) throw new Error("Google Maps connector not configured");
@@ -73,3 +78,18 @@ export const searchPharmacies = createServerFn({ method: "POST" })
 
     return { pharmacies };
   });
+
+async function searchViaJavaBackend(data) {
+  const res = await fetch(`${DAWAA_API_BASE_URL.replace(/\/$/, "")}/pharmacies/search`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  });
+
+  if (!res.ok) {
+    const text = await res.text();
+    throw new Error(`Dawaa API error ${res.status}: ${text.slice(0, 200)}`);
+  }
+
+  return await res.json();
+}
