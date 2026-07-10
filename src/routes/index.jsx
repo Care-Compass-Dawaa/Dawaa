@@ -319,13 +319,9 @@ function Home() {
             <div className="bg-card rounded-2xl border shadow-soft overflow-hidden">
               <div className="px-4 py-3 border-b flex items-center justify-between">
                 <h2 className="font-semibold">
-                  {pharmacies.length > 0
-                    ? `${pharmacies.length} pharmacies`
-                    : "Nearby pharmacies"}
+                  {pharmacies.length > 0 ? `${pharmacies.length} pharmacies` : "Nearby pharmacies"}
                 </h2>
-                {loading && (
-                  <span className="text-xs text-muted-foreground">Loading…</span>
-                )}
+                {loading && <span className="text-xs text-muted-foreground">Loading…</span>}
               </div>
               <ul className="max-h-[560px] overflow-y-auto divide-y">
                 {pharmacies.length === 0 && !loading && (
@@ -371,9 +367,7 @@ function Home() {
                             {formatDistance(p.distanceMeters)}
                           </div>
                         </div>
-                        <div className="text-xs text-muted-foreground truncate">
-                          {p.address}
-                        </div>
+                        <div className="text-xs text-muted-foreground truncate">{p.address}</div>
                         <div className="mt-1 flex items-center gap-3 text-xs">
                           {p.rating != null && (
                             <span className="text-foreground">
@@ -389,9 +383,7 @@ function Home() {
                           {p.openNow != null && (
                             <span
                               className={
-                                p.openNow
-                                  ? "text-[color:var(--success)]"
-                                  : "text-muted-foreground"
+                                p.openNow ? "text-[color:var(--success)]" : "text-muted-foreground"
                               }
                             >
                               {p.openNow ? "Open now" : "Closed"}
@@ -423,18 +415,16 @@ function Home() {
                 aria-label="Map of nearby pharmacies"
               />
               {!coords && !locError && (
-                <div className="p-4 text-sm text-muted-foreground">
-                  Requesting your location…
-                </div>
+                <div className="p-4 text-sm text-muted-foreground">Requesting your location…</div>
               )}
             </div>
           </div>
         </section>
 
         <p className="mt-6 text-xs text-muted-foreground text-center">
-          Medication names from the U.S. National Library of Medicine (RxNorm). Pharmacy
-          locations from Google Maps. Stock availability is not guaranteed — please call
-          the pharmacy to confirm.
+          Medication names from the U.S. National Library of Medicine (RxNorm). Pharmacy locations
+          from Google Maps. Stock availability is not guaranteed — please call the pharmacy to
+          confirm.
         </p>
       </main>
     </div>

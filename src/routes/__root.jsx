@@ -1,4 +1,4 @@
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet,
   Link,
@@ -7,7 +7,7 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { useEffect } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -34,7 +34,7 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function ErrorComponent({ error, reset }) {
   console.error(error);
   const router = useRouter();
   useEffect(() => {
@@ -72,15 +72,21 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
-export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
+export const Route = createRootRouteWithContext()({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "MedNear — Find pharmacies near you" },
-      { name: "description", content: "Search a medication and find nearby pharmacies on a live map." },
-      { property: "og:title", content: "MedNear — Find pharmacies near you" },
-      { property: "og:description", content: "Search a medication and find nearby pharmacies on a live map." },
+      { title: "MedNear - Find pharmacies near you" },
+      {
+        name: "description",
+        content: "Search a medication and find nearby pharmacies on a live map.",
+      },
+      { property: "og:title", content: "MedNear - Find pharmacies near you" },
+      {
+        property: "og:description",
+        content: "Search a medication and find nearby pharmacies on a live map.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -98,7 +104,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   errorComponent: ErrorComponent,
 });
 
-function RootShell({ children }: { children: ReactNode }) {
+function RootShell({ children }) {
   return (
     <html lang="en">
       <head>

@@ -9,26 +9,19 @@ Patient-facing medicine search feature for finding nearby pharmacies, with a Rea
 |-- src/                                      <- Main frontend application code
 |   |-- routes/                               <- App routes and pages
 |   |   |-- index.jsx                         <- Main medicine/pharmacy search page
-|   |   |-- __root.tsx                        <- Root layout, metadata, and error boundary
+|   |   |-- __root.jsx                        <- Root layout, metadata, and error boundary
 |   |   `-- README.md                         <- Route conventions
 |   |
 |   |-- lib/                                  <- Frontend/server helper logic
 |   |   |-- pharmacies.functions.js           <- Pharmacy search server function adapter
-|   |   |-- utils.ts                          <- Shared utility helpers
-|   |   |-- error-capture.ts                  <- Error capture helper
-|   |   |-- error-page.ts                     <- Error page renderer
-|   |   `-- lovable-error-reporting.ts        <- Lovable error reporting helper
+|   |   |-- error-capture.js                  <- Error capture helper
+|   |   |-- error-page.js                     <- Error page renderer
+|   |   `-- lovable-error-reporting.js        <- Lovable error reporting helper
 |   |
-|   |-- components/
-|   |   `-- ui/                               <- Reusable UI components
-|   |
-|   |-- hooks/
-|   |   `-- use-mobile.tsx                    <- Mobile viewport hook
-|   |
-|   |-- router.tsx                            <- TanStack Router setup
-|   |-- routeTree.gen.ts                      <- Generated route tree
-|   |-- server.ts                             <- Server entry wrapper
-|   |-- start.ts                              <- TanStack Start setup
+|   |-- router.jsx                            <- TanStack Router setup
+|   |-- routeTree.gen.js                      <- Generated JavaScript route tree
+|   |-- server.js                             <- Server entry wrapper
+|   |-- start.js                              <- TanStack Start setup
 |   `-- styles.css                            <- Global styles and Tailwind CSS
 |
 |-- backend/                                  <- Java backend implementation
@@ -49,8 +42,9 @@ Patient-facing medicine search feature for finding nearby pharmacies, with a Rea
 |-- bunfig.toml                               <- Bun configuration
 |-- components.json                           <- UI component configuration
 |-- eslint.config.js                          <- ESLint configuration
-|-- tsconfig.json                             <- TypeScript configuration
-|-- vite.config.ts                            <- Vite/TanStack Start configuration
+|-- tsconfig.json                             <- Path alias/tooling configuration
+|-- tsr.config.json                           <- TanStack Router JavaScript generation config
+|-- vite.config.js                            <- Vite/TanStack Start configuration
 |-- .prettierrc                               <- Prettier formatting configuration
 |-- .prettierignore                           <- Prettier ignore rules
 |-- .gitignore                                <- Git ignore rules
@@ -62,4 +56,3 @@ Patient-facing medicine search feature for finding nearby pharmacies, with a Rea
 The current implemented feature lets a patient search for a medication name, get medication suggestions from RxNorm, and view nearby pharmacies through Google Maps/Places.
 
 Important note: the current feature finds nearby pharmacies, but it does not confirm real medication stock availability yet.
-
