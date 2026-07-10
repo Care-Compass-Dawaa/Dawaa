@@ -1,27 +1,58 @@
-# Dawaa
-Dawaa is a Software as a Service (SaaS) mobile and web application that helps users search for medicine availability across pharmacies in Lebanon.
-## Problem Statement
-Due to the continuous instability in Lebanon, the medical sector has been heavily affected, leading to noticeable shortages in medication. Many patients are forced to spend a significant amount of time searching for essential medications or possible alternatives.
-Although MediTrack exists, its main focus is on hospital-related medications rather than everyday medication availability. This leaves a gap for patients who need a more accessible way to check whether their medicine is available at nearby pharmacies.
-## Project Objective
-Dawaa aims to make the medicine search process easier by allowing users to search for medications, view pharmacy availability, and receive alerts related to medicine availability.
-## Main Features
-- User login and medication tracking
-- Search for medicine using brand name or generic name
-- View pharmacies that have the searched medicine
-- Filter pharmacies based on availability and opening status
-- Receive notifications when a specific medicine becomes available
-- Pharmacy dashboard for inventory updates
-- Crowdsourced medicine availability reports
-- AI/ML-based medicine shortage prediction using real-time inventory data
-## Planned Tech Stack
-- Frontend: React
-- Backend: Java
-- Cloud Services: AWS Lambda, API Gateway
-- Database: Amazon DynamoDB
-- Version Control: GitHub
-- Project Management: GitHub Projects
-## Team Workflow
-The team will use GitHub branches for development. Each feature will be developed on a separate branch and merged into the main branch through pull requests.
-## Project Status
-Currently in the implementation phase.
+# Care Compass / Dawaa
+
+Patient-facing medicine search feature for finding nearby pharmacies, with a React frontend and a Java 21 AWS Lambda-compatible backend implementation.
+
+## Project Structure
+
+```text
+-firstTryLovable-find-my-meds-map/
+|-- src/                                      <- Main frontend application code
+|   |-- routes/                               <- App routes and pages
+|   |   |-- index.jsx                         <- Main medicine/pharmacy search page
+|   |   |-- __root.jsx                        <- Root layout, metadata, and error boundary
+|   |   `-- README.md                         <- Route conventions
+|   |
+|   |-- lib/                                  <- Frontend/server helper logic
+|   |   |-- pharmacies.functions.js           <- Pharmacy search server function adapter
+|   |   |-- error-capture.js                  <- Error capture helper
+|   |   |-- error-page.js                     <- Error page renderer
+|   |   `-- lovable-error-reporting.js        <- Lovable error reporting helper
+|   |
+|   |-- router.jsx                            <- TanStack Router setup
+|   |-- routeTree.gen.js                      <- Generated JavaScript route tree
+|   |-- server.js                             <- Server entry wrapper
+|   |-- start.js                              <- TanStack Start setup
+|   `-- styles.css                            <- Global styles and Tailwind CSS
+|
+|-- backend/                                  <- Java backend implementation
+|   |-- src/main/java/com/dawaa/pharmacies/
+|   |   `-- SearchPharmaciesHandler.java      <- Java 21 Lambda handler for pharmacy search
+|   |
+|   |-- pom.xml                               <- Maven build configuration
+|   |-- template.yaml                         <- AWS SAM Lambda/API Gateway template
+|   `-- README.md                             <- Backend setup notes
+|
+|-- public/
+|   `-- favicon.ico                           <- Static site icon
+|
+|-- CURRENT_FEATURE_NOTES.md                  <- Implemented feature status and limitations
+|-- .env.example                              <- Example environment variables
+|-- package.json                              <- Frontend dependencies and scripts
+|-- bun.lock                                  <- Dependency lockfile
+|-- bunfig.toml                               <- Bun configuration
+|-- components.json                           <- UI component configuration
+|-- eslint.config.js                          <- ESLint configuration
+|-- tsconfig.json                             <- Path alias/tooling configuration
+|-- tsr.config.json                           <- TanStack Router JavaScript generation config
+|-- vite.config.js                            <- Vite/TanStack Start configuration
+|-- .prettierrc                               <- Prettier formatting configuration
+|-- .prettierignore                           <- Prettier ignore rules
+|-- .gitignore                                <- Git ignore rules
+`-- AGENTS.md                                 <- Lovable/Codex project guidance
+```
+
+## Current Feature
+
+The current implemented feature lets a patient search for a medication name, get medication suggestions from RxNorm, and view nearby pharmacies through Google Maps/Places.
+
+Important note: the current feature finds nearby pharmacies, but it does not confirm real medication stock availability yet.

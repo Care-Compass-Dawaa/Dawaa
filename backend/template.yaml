@@ -1,0 +1,32 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: Dawaa pharmacy search backend.
+
+Globals:
+  Function:
+    Runtime: java21
+    MemorySize: 512
+    Timeout: 15
+    Architectures:
+      - x86_64
+    Environment:
+      Variables:
+        GOOGLE_MAPS_API_KEY: ""
+
+Resources:
+  SearchPharmaciesFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: .
+      Handler: com.dawaa.pharmacies.SearchPharmaciesHandler::handleRequest
+      Events:
+        SearchPharmacies:
+          Type: Api
+          Properties:
+            Path: /pharmacies/search
+            Method: post
+
+Outputs:
+  ApiBaseUrl:
+    Description: API Gateway base URL for the Dawaa backend.
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod"
