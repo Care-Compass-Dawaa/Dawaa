@@ -42,6 +42,18 @@ function formatDistance(m) {
   return `${(m / 1000).toFixed(1)} km`;
 }
 
+function buildGoogleMapsSearchUrl(coords) {
+  const query = coords ? `pharmacies near ${coords.lat},${coords.lng}` : "pharmacies near me";
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+}
+
+function buildGoogleMapsDirectionsUrl(pharmacy) {
+  const destination = pharmacy.location
+    ? `${pharmacy.location.lat},${pharmacy.location.lng}`
+    : `${pharmacy.name} ${pharmacy.address}`;
+  return `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(destination)}&travelmode=driving`;
+}
+
 function Home() {
   const [query, setQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
@@ -296,6 +308,14 @@ function Home() {
             >
               {loading ? "Searching…" : "Find pharmacies"}
             </button>
+            <a
+              href={buildGoogleMapsSearchUrl(coords)}
+              target="_blank"
+              rel="noreferrer"
+              className="h-12 rounded-xl px-5 border bg-background text-foreground font-medium hover:bg-accent transition inline-flex items-center justify-center text-center"
+            >
+              Open in Google Maps
+            </a>
           </div>
 
           {selectedMed && (
@@ -398,6 +418,15 @@ function Home() {
                               Call
                             </a>
                           )}
+                          <a
+                            href={buildGoogleMapsDirectionsUrl(p)}
+                            target="_blank"
+                            rel="noreferrer"
+                            onClick={(e) => e.stopPropagation()}
+                            className="text-primary hover:underline"
+                          >
+                            Directions
+                          </a>
                         </div>
                       </div>
                     </button>
