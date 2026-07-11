@@ -7,10 +7,8 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect } from "react";
 
 import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
   return (
@@ -37,9 +35,6 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }) {
   console.error(error);
   const router = useRouter();
-  useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -77,12 +72,12 @@ export const Route = createRootRouteWithContext()({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "MedNear - Find pharmacies near you" },
+      { title: "Dawaa - Find pharmacies near you" },
       {
         name: "description",
         content: "Search a medication and find nearby pharmacies on a live map.",
       },
-      { property: "og:title", content: "MedNear - Find pharmacies near you" },
+      { property: "og:title", content: "Dawaa - Find pharmacies near you" },
       {
         property: "og:description",
         content: "Search a medication and find nearby pharmacies on a live map.",
@@ -91,10 +86,7 @@ export const Route = createRootRouteWithContext()({
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
+      { rel: "stylesheet", href: appCss },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
   }),
@@ -123,7 +115,6 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
     </QueryClientProvider>
   );

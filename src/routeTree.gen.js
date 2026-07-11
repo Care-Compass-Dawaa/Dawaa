@@ -7,8 +7,32 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as UnauthorizedRouteImport } from './routes/unauthorized'
+import { Route as PharmacistRouteImport } from './routes/pharmacist'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as AdminRouteImport } from './routes/admin'
 import { Route as IndexRouteImport } from './routes/index'
 
+const UnauthorizedRoute = UnauthorizedRouteImport.update({
+  id: '/unauthorized',
+  path: '/unauthorized',
+  getParentRoute: () => rootRouteImport,
+})
+const PharmacistRoute = PharmacistRouteImport.update({
+  id: '/pharmacist',
+  path: '/pharmacist',
+  getParentRoute: () => rootRouteImport,
+})
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+})
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+})
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -17,6 +41,19 @@ const IndexRoute = IndexRouteImport.update({
 
 const rootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdminRoute: AdminRoute,
+  LoginRoute: LoginRoute,
+  PharmacistRoute: PharmacistRoute,
+  UnauthorizedRoute: UnauthorizedRoute,
 }
 export const routeTree = rootRouteImport._addFileChildren(rootRouteChildren)
 
+import type { getRouter } from './router.jsx'
+import type { startInstance } from './start.js'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
