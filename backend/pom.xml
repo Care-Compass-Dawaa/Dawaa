@@ -29,6 +29,18 @@
       <artifactId>jackson-databind</artifactId>
       <version>2.17.2</version>
     </dependency>
+    <!-- AWS SDK v2 DynamoDB (enhanced client) -->
+    <dependency>
+      <groupId>software.amazon.awssdk</groupId>
+      <artifactId>dynamodb-enhanced</artifactId>
+      <version>2.26.27</version>
+    </dependency>
+    <!-- BOM not used here so pull in url-connection-client explicitly -->
+    <dependency>
+      <groupId>software.amazon.awssdk</groupId>
+      <artifactId>url-connection-client</artifactId>
+      <version>2.26.27</version>
+    </dependency>
   </dependencies>
 
   <build>

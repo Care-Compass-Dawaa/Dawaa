@@ -77,15 +77,15 @@ export const Route = createRootRouteWithContext()({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "MedNear - Find pharmacies near you" },
+      { title: "Dawaa - Find your medication nearby" },
       {
         name: "description",
-        content: "Search a medication and find nearby pharmacies on a live map.",
+        content: "Search for medication and find pharmacies near you that have it in stock.",
       },
-      { property: "og:title", content: "MedNear - Find pharmacies near you" },
+      { property: "og:title", content: "Dawaa - Find your medication nearby" },
       {
         property: "og:description",
-        content: "Search a medication and find nearby pharmacies on a live map.",
+        content: "Search for medication and find pharmacies near you that have it in stock.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
