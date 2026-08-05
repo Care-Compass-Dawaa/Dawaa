@@ -19,7 +19,7 @@ Dawaa/
 |   |   `-- lovable-error-reporting.js        <- Lovable error reporting helper
 |   |
 |   |-- router.jsx                            <- TanStack Router setup
-|   |-- routeTree.gen.js                      <- Generated route tree
+|   |-- routeTree.gen.ts                      <- Generated route tree
 |   |-- server.js                             <- Server entry wrapper
 |   |-- start.js                              <- TanStack Start setup
 |   `-- styles.css                            <- Global Tailwind CSS styles
@@ -28,7 +28,10 @@ Dawaa/
 |   |-- src/main/java/com/dawaa/
 |   |   |-- auth/AuthHandler.java             <- Registration and login
 |   |   |-- common/BaseHandler.java           <- Shared JSON, error, and CORS responses
-|   |   |-- inventory/InventoryHandler.java   <- Pharmacist inventory CRUD
+|   |   |-- api/inventory/                    <- Inventory availability API
+|   |   |-- business/inventory/               <- Inventory availability service
+|   |   |-- domain/inventory/                 <- Inventory domain model and repository contract
+|   |   |-- persistence/dynamodb/inventory/   <- DynamoDB inventory availability repository
 |   |   |-- pharmacies/PharmacyHandler.java   <- Pharmacy registration and approval
 |   |   `-- pharmacies/SearchPharmaciesHandler.java
 |   |                                           <- Nearby pharmacy search through Google Places
@@ -84,27 +87,28 @@ The current interface displays pharmacy results as a list. It does not display a
 
 - View pharmacies.
 - Approve or revoke pharmacy registrations.
-- The frontend also contains a user-list screen, but the Java backend does not currently implement the required `GET /admin/users` endpoint.
+- View registered users.
 
 ## Java Backend
 
-The AWS SAM template defines four Java 21 Lambda handlers and three DynamoDB tables:
+The AWS SAM template defines Java 21 Lambda handlers that use these existing DynamoDB tables:
 
 - `DawaaUsers`
 - `DawaaInventory`
 - `DawaaPharmacies`
+- `DawaaMedicines`
 
 Implemented API routes:
 
 ```text
 POST   /auth/register
 POST   /auth/login
-GET    /inventory/{pharmacistId}
-POST   /inventory
-DELETE /inventory/{id}
+GET    /medicines/search?name={brandName}
+GET    /inventory/availability?medicineId={medicineId}
 POST   /pharmacies
 GET    /pharmacies/mine?pharmacistId={id}
 POST   /pharmacies/search
+GET    /admin/users
 GET    /admin/pharmacies
 POST   /admin/pharmacies/{id}/approve
 ```
@@ -112,13 +116,11 @@ POST   /admin/pharmacies/{id}/approve
 ## Current Limitations
 
 - The medication keyword is sent to the pharmacy-search backend but is not currently used to filter Google Places results.
-- Search results show nearby pharmacies, not pharmacies confirmed to have the requested medicine in stock.
-- Registered Dawaa pharmacies and their DynamoDB inventory are not yet connected to the patient search results.
+- Patient medicine search can show raw inventory availability, but it does not yet join those results to full registered pharmacy details.
 - The optional city/area text field is collected by the frontend but is not currently used by the search logic.
 - There is no Cognito, JWT, token, or real role-based authorization yet.
 - The Java login implementation returns user data but does not create a session or access token.
 - The frontend admin account is available only in the local in-memory fallback; the Java backend does not seed an admin account.
-- The Java backend does not currently provide `GET /admin/users`.
 - No automated backend or frontend tests are included.
 - The repository contains deployment configuration, but this alone does not confirm that the AWS resources are deployed.
 

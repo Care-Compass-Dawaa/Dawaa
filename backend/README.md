@@ -1,14 +1,23 @@
 # Dawaa Java Backend
 
-This backend is the Java 21 implementation of the current pharmacy search feature.
+This backend is the Java 21 implementation of the Dawaa API.
 It keeps the project aligned with the planning document's language choice:
 
 - Frontend: JavaScript + React
 - Backend feature logic: Java 21
 
-The deployed Lambda exposes:
+The deployed Lambdas expose:
 
 ```text
+GET  /medicines/search
+POST /auth/register
+POST /auth/login
+GET  /admin/users
+GET  /inventory/availability?medicineId={medicineId}
+POST /pharmacies
+GET  /pharmacies/mine
+GET  /admin/pharmacies
+POST /admin/pharmacies/{id}/approve
 POST /pharmacies/search
 ```
 

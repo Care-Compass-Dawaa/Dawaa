@@ -1,6 +1,6 @@
 AWSTemplateFormatVersion: "2010-09-09"
 Transform: AWS::Serverless-2016-10-31
-Description: Dawaa backend - medicine lookup, with legacy functions disabled by default.
+Description: Dawaa backend - medicine, users, inventory, and pharmacy APIs.
 
 Metadata:
   cfn-lint:
@@ -9,6 +9,11 @@ Metadata:
         - W1028
 
 Globals:
+  Api:
+    Cors:
+      AllowMethods: "'GET,POST,DELETE,OPTIONS'"
+      AllowHeaders: "'Content-Type,Authorization'"
+      AllowOrigin: "'*'"
   Function:
     Runtime: java21
     MemorySize: 512
@@ -17,41 +22,30 @@ Globals:
       - x86_64
 
 Parameters:
-  DeployLegacyFunctions:
-    Type: String
-    Default: "false"
-    AllowedValues:
-      - "true"
-      - "false"
-    Description: Set to true only when legacy auth, inventory, pharmacy, and nearby-search functions are ready to deploy.
-
   GoogleMapsApiKey:
     Type: String
     Default: ""
-    Description: Google Maps Places API key used by the legacy pharmacy search function.
+    Description: Google Maps Places API key used by the optional pharmacy search function.
 
   UsersTableName:
     Type: String
     Default: DawaaUsers
-    Description: Existing DynamoDB users table name used by legacy auth.
+    Description: Existing DynamoDB users table name used by auth.
 
   InventoryTableName:
     Type: String
     Default: DawaaInventory
-    Description: Existing DynamoDB inventory table name used by legacy inventory.
+    Description: Existing DynamoDB inventory table name used by inventory.
 
   PharmaciesTableName:
     Type: String
     Default: DawaaPharmacies
-    Description: Existing DynamoDB pharmacies table name used by legacy pharmacy management.
+    Description: Existing DynamoDB pharmacies table name used by pharmacy management.
 
   MedicinesTableName:
     Type: String
     Default: DawaaMedicines
     Description: Existing DynamoDB medicines table name used for medicine lookup.
-
-Conditions:
-  DeployLegacyFunctionsCondition: !Equals [!Ref DeployLegacyFunctions, "true"]
 
 Resources:
   MedicineLookupFunction:
@@ -81,11 +75,10 @@ Resources:
 
   SearchPharmaciesFunction:
     Type: AWS::Serverless::Function
-    Condition: DeployLegacyFunctionsCondition
     Properties:
       CodeUri: .
       Handler: com.dawaa.pharmacies.SearchPharmaciesHandler::handleRequest
-      Description: Legacy nearby pharmacy search via Google Places API.
+      Description: Nearby pharmacy search via Google Places API.
       Environment:
         Variables:
           GOOGLE_MAPS_API_KEY: !Ref GoogleMapsApiKey
@@ -100,11 +93,10 @@ Resources:
 
   AuthFunction:
     Type: AWS::Serverless::Function
-    Condition: DeployLegacyFunctionsCondition
     Properties:
       CodeUri: .
       Handler: com.dawaa.auth.AuthHandler::handleRequest
-      Description: Legacy user registration and login.
+      Description: User registration, login, and admin user listing.
       Environment:
         Variables:
           USERS_TABLE: !Ref UsersTableName
@@ -116,6 +108,7 @@ Resources:
                 - dynamodb:PutItem
                 - dynamodb:GetItem
                 - dynamodb:Query
+                - dynamodb:Scan
               Resource:
                 - !Sub "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${UsersTableName}"
                 - !Sub "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${UsersTableName}/index/email-index"
@@ -130,14 +123,18 @@ Resources:
           Properties:
             Path: /auth/login
             Method: post
+        AdminListUsers:
+          Type: Api
+          Properties:
+            Path: /admin/users
+            Method: get
 
   InventoryFunction:
     Type: AWS::Serverless::Function
-    Condition: DeployLegacyFunctionsCondition
     Properties:
       CodeUri: .
-      Handler: com.dawaa.inventory.InventoryHandler::handleRequest
-      Description: Legacy CRUD for pharmacist medicine inventory.
+      Handler: com.dawaa.api.inventory.InventoryAvailabilityHandler::handleRequest
+      Description: Looks up pharmacy inventory availability by medicine id.
       Environment:
         Variables:
           INVENTORY_TABLE: !Ref InventoryTableName
@@ -146,37 +143,23 @@ Resources:
         - Statement:
             - Effect: Allow
               Action:
-                - dynamodb:PutItem
-                - dynamodb:GetItem
-                - dynamodb:DeleteItem
                 - dynamodb:Query
               Resource:
                 - !Sub "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${InventoryTableName}"
-                - !Sub "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${InventoryTableName}/index/pharmacistId-index"
+                - !Sub "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${InventoryTableName}/index/MedicineAvailabilityIndex"
       Events:
-        ListInventory:
+        LookupInventoryAvailability:
           Type: Api
           Properties:
-            Path: /inventory/{pharmacistId}
+            Path: /inventory/availability
             Method: get
-        UpsertInventory:
-          Type: Api
-          Properties:
-            Path: /inventory
-            Method: post
-        DeleteInventory:
-          Type: Api
-          Properties:
-            Path: /inventory/{id}
-            Method: delete
 
   PharmacyFunction:
     Type: AWS::Serverless::Function
-    Condition: DeployLegacyFunctionsCondition
     Properties:
       CodeUri: .
       Handler: com.dawaa.pharmacies.PharmacyHandler::handleRequest
-      Description: Legacy pharmacy registration and admin management.
+      Description: Pharmacy registration and admin management.
       Environment:
         Variables:
           PHARMACIES_TABLE: !Ref PharmaciesTableName

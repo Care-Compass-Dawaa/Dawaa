@@ -703,6 +703,9 @@ function PatientSearch() {
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [searchedName, setSearchedName] = useState("");
   const [medicine, setMedicine] = useState(null);
+  const [availability, setAvailability] = useState([]);
+  const [availabilityStatus, setAvailabilityStatus] = useState("idle");
+  const [availabilityMessage, setAvailabilityMessage] = useState("");
   const [status, setStatus] = useState("idle");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
@@ -748,12 +751,18 @@ function PatientSearch() {
     const trimmedName = name.trim();
     if (!trimmedName) {
       setMedicine(null);
+      setAvailability([]);
+      setAvailabilityStatus("idle");
+      setAvailabilityMessage("");
       setStatus("error");
       setMessage("Enter a medicine name to search.");
       return;
     }
     if (!DAWAA_API_BASE_URL) {
       setMedicine(null);
+      setAvailability([]);
+      setAvailabilityStatus("idle");
+      setAvailabilityMessage("");
       setStatus("error");
       setMessage(
         "Medicine lookup is not configured. Set VITE_DAWAA_API_BASE_URL in your .env file.",
@@ -767,7 +776,11 @@ function PatientSearch() {
     setStatus("loading");
     setMessage("");
     setMedicine(null);
+    setAvailability([]);
+    setAvailabilityStatus("idle");
+    setAvailabilityMessage("");
 
+    let medicineLookupComplete = false;
     try {
       const baseUrl = DAWAA_API_BASE_URL.replace(/\/$/, "");
       const response = await fetch(
@@ -786,11 +799,45 @@ function PatientSearch() {
       }
 
       const result = await response.json();
-      setMedicine(result.medicine);
+      const foundMedicine = result.medicine;
+      setMedicine(foundMedicine);
       setStatus("success");
+      medicineLookupComplete = true;
+
+      if (!foundMedicine?.medicineId) {
+        setAvailabilityStatus("error");
+        setAvailabilityMessage("Medicine found, but it does not have an inventory lookup id.");
+        return;
+      }
+
+      setAvailabilityStatus("loading");
+      const availabilityResponse = await fetch(
+        `${baseUrl}/inventory/availability?medicineId=${encodeURIComponent(foundMedicine.medicineId)}`,
+      );
+
+      if (!availabilityResponse.ok) {
+        const text = await availabilityResponse.text();
+        throw new Error(
+          `Inventory availability lookup failed (${availabilityResponse.status}): ${text.slice(0, 200)}`,
+        );
+      }
+
+      const availabilityResult = await availabilityResponse.json();
+      const availableItems = Array.isArray(availabilityResult.availability)
+        ? availabilityResult.availability
+        : [];
+      setAvailability(availableItems);
+      setAvailabilityStatus(availableItems.length > 0 ? "success" : "empty");
     } catch (error) {
-      setStatus("error");
-      setMessage(error?.message ?? "Medicine lookup failed. Please try again.");
+      if (medicineLookupComplete) {
+        setAvailabilityStatus("error");
+        setAvailabilityMessage(
+          error?.message ?? "Inventory availability lookup failed. Please try again.",
+        );
+      } else {
+        setStatus("error");
+        setMessage(error?.message ?? "Medicine lookup failed. Please try again.");
+      }
     } finally {
       setLoading(false);
     }
@@ -919,9 +966,65 @@ function PatientSearch() {
         </section>
       )}
 
+      {status === "success" && medicine && (
+        <section className="bg-card rounded-2xl border shadow-soft overflow-hidden">
+          <div className="px-4 py-3 border-b flex items-center justify-between gap-3">
+            <h2 className="font-semibold">Pharmacy availability</h2>
+            {availabilityStatus === "success" && (
+              <span className="text-xs text-muted-foreground">
+                {availability.length} location{availability.length === 1 ? "" : "s"}
+              </span>
+            )}
+          </div>
+          <div className="px-4 py-4">
+            {availabilityStatus === "loading" && (
+              <p className="text-sm bg-accent border border-border rounded-lg px-3 py-2">
+                Checking pharmacy inventory...
+              </p>
+            )}
+            {availabilityStatus === "empty" && (
+              <p className="text-sm bg-accent border border-border rounded-lg px-3 py-2">
+                No pharmacies currently report this medicine as in stock.
+              </p>
+            )}
+            {availabilityStatus === "error" && (
+              <p className="text-sm text-red-500 bg-red-50 border border-red-200 rounded-lg px-3 py-2">
+                {availabilityMessage}
+              </p>
+            )}
+            {availabilityStatus === "success" && (
+              <ul className="divide-y">
+                {availability.map((item) => (
+                  <li
+                    key={`${item.pharmacyId}-${item.availableLocationKey || item.availableMedicineId}`}
+                    className="py-3 flex items-center justify-between gap-4"
+                  >
+                    <div className="min-w-0">
+                      <div className="font-medium truncate">
+                        Pharmacy {item.pharmacyId || "unknown"}
+                      </div>
+                      <div className="text-xs text-muted-foreground truncate">
+                        Location key: {item.availableLocationKey || "not provided"}
+                      </div>
+                    </div>
+                    <div className="text-right shrink-0">
+                      <div className="text-sm font-semibold">{item.quantity ?? 0} available</div>
+                      <div className="text-xs text-muted-foreground">
+                        {item.updatedAt
+                          ? `Updated ${new Date(item.updatedAt).toLocaleDateString()}`
+                          : "Updated date unavailable"}
+                      </div>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </section>
+      )}
+
       <p className="text-xs text-muted-foreground text-center">
         Medication suggestions may come from the U.S. National Library of Medicine (RxNorm).
-        Pharmacy availability is not connected yet.
       </p>
     </div>
   );

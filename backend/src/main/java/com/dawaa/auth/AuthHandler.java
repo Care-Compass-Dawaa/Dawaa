@@ -20,6 +20,8 @@ import software.amazon.awssdk.services.dynamodb.model.GetItemRequest;
 import software.amazon.awssdk.services.dynamodb.model.PutItemRequest;
 import software.amazon.awssdk.services.dynamodb.model.QueryRequest;
 import software.amazon.awssdk.services.dynamodb.model.QueryResponse;
+import software.amazon.awssdk.services.dynamodb.model.ScanRequest;
+import software.amazon.awssdk.services.dynamodb.model.ScanResponse;
 
 /**
  * Handles POST /auth/register and POST /auth/login.
@@ -47,6 +49,8 @@ public class AuthHandler extends BaseHandler
         return register(parseBody(req.getBody()));
       } else if (path.endsWith("/login")) {
         return login(parseBody(req.getBody()));
+      } else if ("GET".equalsIgnoreCase(req.getHttpMethod()) && path.equals("/admin/users")) {
+        return listUsers();
       } else {
         return error(404, "Not found");
       }
@@ -139,6 +143,18 @@ public class AuthHandler extends BaseHandler
     return !res.items().isEmpty();
   }
 
+  private APIGatewayProxyResponseEvent listUsers() {
+    ScanResponse res = dynamo.scan(ScanRequest.builder().tableName(TABLE).build());
+
+    ObjectNode wrapper = MAPPER.createObjectNode();
+    var users = wrapper.putArray("users");
+    res.items().stream()
+        .filter(item -> !"admin".equals(item.getOrDefault("role", AttributeValue.fromS("")).s()))
+        .forEach(item -> users.add(userOnlyNode(item)));
+
+    return ok(wrapper);
+  }
+
   private ObjectNode userNode(String id, String email, String name, String role, String createdAt) {
     ObjectNode wrapper = MAPPER.createObjectNode();
     ObjectNode user    = wrapper.putObject("user");
@@ -148,6 +164,16 @@ public class AuthHandler extends BaseHandler
     user.put("role",      role);
     user.put("createdAt", createdAt);
     return wrapper;
+  }
+
+  private ObjectNode userOnlyNode(Map<String, AttributeValue> item) {
+    ObjectNode user = MAPPER.createObjectNode();
+    user.put("id", item.getOrDefault("id", AttributeValue.fromS("")).s());
+    user.put("email", item.getOrDefault("email", AttributeValue.fromS("")).s());
+    user.put("name", item.getOrDefault("name", AttributeValue.fromS("")).s());
+    user.put("role", item.getOrDefault("role", AttributeValue.fromS("patient")).s());
+    user.put("createdAt", item.getOrDefault("createdAt", AttributeValue.fromS("")).s());
+    return user;
   }
 
   private String hash(String password) {

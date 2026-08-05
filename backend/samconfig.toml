@@ -7,7 +7,7 @@ s3_prefix = "dawaa-backend-dev"
 profile = "dawaa-dev"
 confirm_changeset = true
 capabilities = "CAPABILITY_IAM"
-parameter_overrides = "DeployLegacyFunctions=\"false\" GoogleMapsApiKey=\"\" UsersTableName=\"DawaaUsers\" InventoryTableName=\"DawaaInventory\" PharmaciesTableName=\"DawaaPharmacies\" MedicinesTableName=\"DawaaMedicines\""
+parameter_overrides = "GoogleMapsApiKey=\"\" UsersTableName=\"DawaaUsers\" InventoryTableName=\"DawaaInventory\" PharmaciesTableName=\"DawaaPharmacies\" MedicinesTableName=\"DawaaMedicines\""
 image_repositories = []
 
 [default.global.parameters]
