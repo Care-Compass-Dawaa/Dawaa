@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
-import { Search } from "lucide-react";
+import { MapPin, Navigation, Search } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import {
   loginUser,
@@ -13,6 +13,7 @@ import {
   approvePharmacy,
   registerPharmacy,
   getMyPharmacy,
+  searchPharmacies,
 } from "@/lib/pharmacies.functions";
 
 export const Route = createFileRoute("/")({
@@ -698,6 +699,7 @@ function AdminPanel() {
 const DAWAA_API_BASE_URL = import.meta.env.VITE_DAWAA_API_BASE_URL;
 
 function PatientSearch() {
+  const searchPharmaciesFn = useServerFn(searchPharmacies);
   const [query, setQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
@@ -706,6 +708,13 @@ function PatientSearch() {
   const [availability, setAvailability] = useState([]);
   const [availabilityStatus, setAvailabilityStatus] = useState("idle");
   const [availabilityMessage, setAvailabilityMessage] = useState("");
+  const [userLocation, setUserLocation] = useState(null);
+  const [locationStatus, setLocationStatus] = useState("idle");
+  const [locationMessage, setLocationMessage] = useState("");
+  const [nearbyPharmacies, setNearbyPharmacies] = useState([]);
+  const [nearestPharmacy, setNearestPharmacy] = useState(null);
+  const [nearbyStatus, setNearbyStatus] = useState("idle");
+  const [nearbyMessage, setNearbyMessage] = useState("");
   const [status, setStatus] = useState("idle");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
@@ -754,6 +763,7 @@ function PatientSearch() {
       setAvailability([]);
       setAvailabilityStatus("idle");
       setAvailabilityMessage("");
+      resetNearbyResults();
       setStatus("error");
       setMessage("Enter a medicine name to search.");
       return;
@@ -763,6 +773,7 @@ function PatientSearch() {
       setAvailability([]);
       setAvailabilityStatus("idle");
       setAvailabilityMessage("");
+      resetNearbyResults();
       setStatus("error");
       setMessage(
         "Medicine lookup is not configured. Set VITE_DAWAA_API_BASE_URL in your .env file.",
@@ -779,6 +790,7 @@ function PatientSearch() {
     setAvailability([]);
     setAvailabilityStatus("idle");
     setAvailabilityMessage("");
+    resetNearbyResults();
 
     let medicineLookupComplete = false;
     try {
@@ -828,6 +840,10 @@ function PatientSearch() {
         : [];
       setAvailability(availableItems);
       setAvailabilityStatus(availableItems.length > 0 ? "success" : "empty");
+
+      if (userLocation) {
+        await loadNearbyPharmacies(userLocation);
+      }
     } catch (error) {
       if (medicineLookupComplete) {
         setAvailabilityStatus("error");
@@ -841,6 +857,70 @@ function PatientSearch() {
     } finally {
       setLoading(false);
     }
+  }
+
+  async function requestLocation() {
+    if (!navigator.geolocation) {
+      setLocationStatus("error");
+      setLocationMessage("Location is not available in this browser.");
+      return;
+    }
+
+    setLocationStatus("loading");
+    setLocationMessage("");
+
+    navigator.geolocation.getCurrentPosition(
+      async (position) => {
+        const nextLocation = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude,
+        };
+        setUserLocation(nextLocation);
+        setLocationStatus("success");
+        setLocationMessage("Location ready.");
+
+        if (status === "success") {
+          await loadNearbyPharmacies(nextLocation);
+        }
+      },
+      (error) => {
+        setLocationStatus("error");
+        setLocationMessage(error?.message || "Could not get your location.");
+      },
+      { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 },
+    );
+  }
+
+  async function loadNearbyPharmacies(location) {
+    setNearbyStatus("loading");
+    setNearbyMessage("");
+    setNearbyPharmacies([]);
+    setNearestPharmacy(null);
+
+    try {
+      const result = await searchPharmaciesFn({
+        data: {
+          lat: location.lat,
+          lng: location.lng,
+          radius: 5000,
+          limit: 10,
+        },
+      });
+      const pharmacies = Array.isArray(result.pharmacies) ? result.pharmacies : [];
+      setNearbyPharmacies(pharmacies);
+      setNearestPharmacy(result.nearestPharmacy ?? pharmacies[0] ?? null);
+      setNearbyStatus(pharmacies.length > 0 ? "success" : "empty");
+    } catch (error) {
+      setNearbyStatus("error");
+      setNearbyMessage(error?.message ?? "Nearby pharmacy lookup failed. Please try again.");
+    }
+  }
+
+  function resetNearbyResults() {
+    setNearbyPharmacies([]);
+    setNearestPharmacy(null);
+    setNearbyStatus(userLocation ? "idle" : "idle");
+    setNearbyMessage("");
   }
 
   const canSearch = useMemo(() => query.trim().length > 0, [query]);
@@ -896,6 +976,25 @@ function PatientSearch() {
           >
             {loading ? "Searching..." : "Search medicine"}
           </button>
+        </div>
+        <div className="mt-3 flex flex-col sm:flex-row sm:items-center gap-2">
+          <button
+            type="button"
+            onClick={requestLocation}
+            disabled={locationStatus === "loading"}
+            className="inline-flex h-10 items-center justify-center gap-2 rounded-xl border bg-background px-4 text-sm font-medium hover:bg-accent disabled:opacity-50 transition"
+          >
+            <MapPin className="h-4 w-4" aria-hidden="true" />
+            {locationStatus === "loading" ? "Getting location..." : "Use my location"}
+          </button>
+          {locationStatus === "success" && (
+            <span className="text-sm text-muted-foreground">
+              Location ready for nearby pharmacy results.
+            </span>
+          )}
+          {locationStatus === "error" && (
+            <span className="text-sm text-red-500">{locationMessage}</span>
+          )}
         </div>
         {searchedName && status !== "loading" && (
           <p className="mt-3 text-sm text-muted-foreground">
@@ -969,6 +1068,97 @@ function PatientSearch() {
       {status === "success" && medicine && (
         <section className="bg-card rounded-2xl border shadow-soft overflow-hidden">
           <div className="px-4 py-3 border-b flex items-center justify-between gap-3">
+            <h2 className="font-semibold">Nearest pharmacy</h2>
+            {nearbyStatus === "success" && (
+              <span className="text-xs text-muted-foreground">
+                {nearbyPharmacies.length} nearby
+              </span>
+            )}
+          </div>
+          <div className="px-4 py-4">
+            {!userLocation && (
+              <div className="flex flex-col sm:flex-row sm:items-center gap-3 rounded-lg border bg-accent px-3 py-3">
+                <p className="text-sm flex-1">Use your location to rank registered pharmacies.</p>
+                <button
+                  type="button"
+                  onClick={requestLocation}
+                  className="inline-flex h-10 items-center justify-center gap-2 rounded-xl bg-primary px-4 text-sm font-medium text-primary-foreground hover:opacity-95 transition"
+                >
+                  <Navigation className="h-4 w-4" aria-hidden="true" />
+                  Use location
+                </button>
+              </div>
+            )}
+            {userLocation && nearbyStatus === "idle" && (
+              <button
+                type="button"
+                onClick={() => loadNearbyPharmacies(userLocation)}
+                className="inline-flex h-10 items-center justify-center gap-2 rounded-xl border bg-background px-4 text-sm font-medium hover:bg-accent transition"
+              >
+                <Navigation className="h-4 w-4" aria-hidden="true" />
+                Find nearest pharmacy
+              </button>
+            )}
+            {nearbyStatus === "loading" && (
+              <p className="text-sm bg-accent border border-border rounded-lg px-3 py-2">
+                Checking nearby pharmacies...
+              </p>
+            )}
+            {nearbyStatus === "empty" && (
+              <p className="text-sm bg-accent border border-border rounded-lg px-3 py-2">
+                No registered pharmacies found within 5 km.
+              </p>
+            )}
+            {nearbyStatus === "error" && (
+              <p className="text-sm text-red-500 bg-red-50 border border-red-200 rounded-lg px-3 py-2">
+                {nearbyMessage}
+              </p>
+            )}
+            {nearbyStatus === "success" && nearestPharmacy && (
+              <div className="space-y-3">
+                <div className="rounded-lg border bg-accent px-4 py-3">
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
+                    <div className="min-w-0">
+                      <div className="text-xs font-medium text-muted-foreground">Closest match</div>
+                      <div className="font-semibold truncate">{nearestPharmacy.name}</div>
+                      <div className="text-sm text-muted-foreground">
+                        {nearestPharmacy.address || nearestPharmacy.area || "Address unavailable"}
+                      </div>
+                    </div>
+                    <span className="text-sm font-semibold shrink-0">
+                      {formatDistance(closestDistance(nearestPharmacy))}
+                    </span>
+                  </div>
+                </div>
+                {nearbyPharmacies.length > 1 && (
+                  <ul className="divide-y">
+                    {nearbyPharmacies.slice(1, 4).map((pharmacy) => (
+                      <li
+                        key={pharmacy.pharmacyId || pharmacy.id}
+                        className="py-3 flex items-center justify-between gap-4"
+                      >
+                        <div className="min-w-0">
+                          <div className="font-medium truncate">{pharmacy.name}</div>
+                          <div className="text-xs text-muted-foreground truncate">
+                            {pharmacy.area || pharmacy.address || "Address unavailable"}
+                          </div>
+                        </div>
+                        <div className="text-sm font-semibold shrink-0">
+                          {formatDistance(closestDistance(pharmacy))}
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            )}
+          </div>
+        </section>
+      )}
+
+      {status === "success" && medicine && (
+        <section className="bg-card rounded-2xl border shadow-soft overflow-hidden">
+          <div className="px-4 py-3 border-b flex items-center justify-between gap-3">
             <h2 className="font-semibold">Pharmacy availability</h2>
             {availabilityStatus === "success" && (
               <span className="text-xs text-muted-foreground">
@@ -1029,6 +1219,21 @@ function PatientSearch() {
     </div>
   );
 }
+
+function closestDistance(pharmacy) {
+  return pharmacy?.distanceMeters ?? pharmacy?.distance ?? 0;
+}
+
+function formatDistance(distanceMeters) {
+  if (!Number.isFinite(distanceMeters)) {
+    return "Distance unavailable";
+  }
+  if (distanceMeters < 1000) {
+    return `${Math.max(0, Math.round(distanceMeters))} m`;
+  }
+  return `${(distanceMeters / 1000).toFixed(1)} km`;
+}
+
 function Home() {
   const { user, login, logout } = useAuth();
   const [showAuth, setShowAuth] = useState(false);

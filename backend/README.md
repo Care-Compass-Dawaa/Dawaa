@@ -18,25 +18,23 @@ POST /pharmacies
 GET  /pharmacies/mine
 GET  /admin/pharmacies
 POST /admin/pharmacies/{id}/approve
+GET  /pharmacies/nearby?lat={latitude}&lng={longitude}
 POST /pharmacies/search
 ```
 
-Expected request body:
+Expected `/pharmacies/search` request body:
 
 ```json
 {
   "lat": 33.8938,
   "lng": 35.5018,
   "radius": 5000,
-  "keyword": "ibuprofen"
+  "limit": 10
 }
 ```
 
-Expected environment variable:
-
-```text
-GOOGLE_MAPS_API_KEY=...
-```
+Pharmacy search reads from the `DawaaPharmacies` DynamoDB table and ranks results by
+straight-line distance.
 
 After deploying this backend, set the frontend server environment variable:
 

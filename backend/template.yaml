@@ -22,11 +22,6 @@ Globals:
       - x86_64
 
 Parameters:
-  GoogleMapsApiKey:
-    Type: String
-    Default: ""
-    Description: Google Maps Places API key used by the optional pharmacy search function.
-
   UsersTableName:
     Type: String
     Default: DawaaUsers
@@ -72,24 +67,6 @@ Resources:
           Properties:
             Path: /medicines/search
             Method: get
-
-  SearchPharmaciesFunction:
-    Type: AWS::Serverless::Function
-    Properties:
-      CodeUri: .
-      Handler: com.dawaa.pharmacies.SearchPharmaciesHandler::handleRequest
-      Description: Nearby pharmacy search via Google Places API.
-      Environment:
-        Variables:
-          GOOGLE_MAPS_API_KEY: !Ref GoogleMapsApiKey
-      Policies:
-        - AWSLambdaBasicExecutionRole
-      Events:
-        SearchPharmacies:
-          Type: Api
-          Properties:
-            Path: /pharmacies/search
-            Method: post
 
   AuthFunction:
     Type: AWS::Serverless::Function
@@ -158,8 +135,8 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       CodeUri: .
-      Handler: com.dawaa.pharmacies.PharmacyHandler::handleRequest
-      Description: Pharmacy registration and admin management.
+      Handler: com.dawaa.api.pharmacy.PharmacyHandler::handleRequest
+      Description: Pharmacy registration, admin management, and nearby lookup.
       Environment:
         Variables:
           PHARMACIES_TABLE: !Ref PharmaciesTableName
@@ -196,6 +173,16 @@ Resources:
           Type: Api
           Properties:
             Path: /admin/pharmacies/{id}/approve
+            Method: post
+        NearbyPharmacies:
+          Type: Api
+          Properties:
+            Path: /pharmacies/nearby
+            Method: get
+        SearchPharmacies:
+          Type: Api
+          Properties:
+            Path: /pharmacies/search
             Method: post
 
 Outputs:
