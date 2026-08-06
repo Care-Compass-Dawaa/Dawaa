@@ -1,0 +1,76 @@
+{
+  "DawaaPharmacies": [
+    {
+      "PutRequest": {
+        "Item": {
+          "pharmacyId": { "S": "PHARMACY#003" },
+          "name": { "S": "Al Tawaree Pharmacy" },
+          "address": { "S": "Beirut" },
+          "area": { "S": "Beirut" },
+          "district": { "S": "Beirut" },
+          "latitude": { "N": "33.8748522" },
+          "longitude": { "N": "35.5037291" },
+          "approved": { "BOOL": true },
+          "active": { "BOOL": true },
+          "source": { "S": "openstreetmap" },
+          "sourceId": { "S": "node/359932035" },
+          "sourceExportedAt": { "S": "2026-08-06T14:41:32Z" }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "pharmacyId": { "S": "PHARMACY#004" },
+          "name": { "S": "Wardieh pharmacy" },
+          "address": { "S": "Hamra, Beirut" },
+          "area": { "S": "Hamra" },
+          "district": { "S": "Beirut" },
+          "latitude": { "N": "33.8964825" },
+          "longitude": { "N": "35.4870599" },
+          "approved": { "BOOL": true },
+          "active": { "BOOL": true },
+          "source": { "S": "openstreetmap" },
+          "sourceId": { "S": "node/512476153" },
+          "sourceExportedAt": { "S": "2026-08-06T14:41:32Z" }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "pharmacyId": { "S": "PHARMACY#005" },
+          "name": { "S": "Christ-Roi" },
+          "address": { "S": "Mount Lebanon" },
+          "area": { "S": "Mount Lebanon" },
+          "district": { "S": "Mount Lebanon" },
+          "latitude": { "N": "33.956938" },
+          "longitude": { "N": "35.6046361" },
+          "approved": { "BOOL": true },
+          "active": { "BOOL": true },
+          "source": { "S": "openstreetmap" },
+          "sourceId": { "S": "node/365942618" },
+          "sourceExportedAt": { "S": "2026-08-06T14:41:32Z" }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "pharmacyId": { "S": "PHARMACY#006" },
+          "name": { "S": "Roula" },
+          "address": { "S": "Bsalim, Mount Lebanon" },
+          "area": { "S": "Bsalim" },
+          "district": { "S": "Mount Lebanon" },
+          "latitude": { "N": "33.9000349" },
+          "longitude": { "N": "35.5988179" },
+          "approved": { "BOOL": true },
+          "active": { "BOOL": true },
+          "source": { "S": "openstreetmap" },
+          "sourceId": { "S": "node/5576648624" },
+          "sourceExportedAt": { "S": "2026-08-06T14:41:32Z" }
+        }
+      }
+    }
+  ]
+}

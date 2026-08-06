@@ -902,7 +902,7 @@ function PatientSearch() {
         data: {
           lat: location.lat,
           lng: location.lng,
-          radius: 5000,
+          radius: 50000,
           limit: 10,
         },
       });
@@ -1106,7 +1106,7 @@ function PatientSearch() {
             )}
             {nearbyStatus === "empty" && (
               <p className="text-sm bg-accent border border-border rounded-lg px-3 py-2">
-                No registered pharmacies found within 5 km.
+                No registered pharmacies found within 50 km.
               </p>
             )}
             {nearbyStatus === "error" && (
