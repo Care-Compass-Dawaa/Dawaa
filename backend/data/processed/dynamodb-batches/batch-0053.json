@@ -1,0 +1,2013 @@
+{
+  "RequestItems": {
+    "DawaaMedicines": [
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12173"
+            },
+            "sourceCode": {
+              "S": "12173"
+            },
+            "registrationNumber": {
+              "S": "21924/1"
+            },
+            "brandName": {
+              "S": "CURACNE"
+            },
+            "strength": {
+              "S": "40mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Capsule, soft"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Catalent France Beinheim SA"
+            },
+            "country": {
+              "S": "France"
+            },
+            "publicPriceLbp": {
+              "N": "3553119.5700000008"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "39.69966000000001"
+            },
+            "responsiblePartyName": {
+              "S": "Pierre Fabre Medicament"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "curacne"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1306"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            },
+            "duplicateSearchKey": {
+              "BOOL": true
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12174"
+            },
+            "sourceCode": {
+              "S": "12174"
+            },
+            "registrationNumber": {
+              "S": "21524/1"
+            },
+            "brandName": {
+              "S": "CURACNE"
+            },
+            "strength": {
+              "S": "10mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Capsule, soft"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Catalent Germany Eberbach GmbH"
+            },
+            "country": {
+              "S": "Germany"
+            },
+            "publicPriceLbp": {
+              "N": "970254.2850000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "10.840830000000002"
+            },
+            "responsiblePartyName": {
+              "S": "Pierre Fabre Medicament"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "curacne"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1307"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            },
+            "duplicateSearchKey": {
+              "BOOL": true
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12175"
+            },
+            "sourceCode": {
+              "S": "12175"
+            },
+            "registrationNumber": {
+              "S": "21724/1"
+            },
+            "brandName": {
+              "S": "CURACNE"
+            },
+            "strength": {
+              "S": "20mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Capsule, soft"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Catalent Germany Eberbach GmbH"
+            },
+            "country": {
+              "S": "Germany"
+            },
+            "publicPriceLbp": {
+              "N": "1603204.1025000003"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "17.912895000000002"
+            },
+            "responsiblePartyName": {
+              "S": "Pierre Fabre Medicament"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "curacne"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1308"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            },
+            "duplicateSearchKey": {
+              "BOOL": true
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12218"
+            },
+            "sourceCode": {
+              "S": "12218"
+            },
+            "registrationNumber": {
+              "S": "21624/1"
+            },
+            "brandName": {
+              "S": "CURACNE"
+            },
+            "strength": {
+              "S": "5mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Capsule, soft"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Catalent Germany Eberbach GmbH"
+            },
+            "country": {
+              "S": "Germany"
+            },
+            "publicPriceLbp": {
+              "N": "856027.6725000002"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "9.564555000000002"
+            },
+            "responsiblePartyName": {
+              "S": "Pierre Fabre Medicament"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "curacne"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1309"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            },
+            "duplicateSearchKey": {
+              "BOOL": true
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12219"
+            },
+            "sourceCode": {
+              "S": "12219"
+            },
+            "registrationNumber": {
+              "S": "21424/1"
+            },
+            "brandName": {
+              "S": "CURACNE"
+            },
+            "strength": {
+              "S": "10mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Capsule, soft"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Catalent France Beinheim SA"
+            },
+            "country": {
+              "S": "France"
+            },
+            "publicPriceLbp": {
+              "N": "970254.2850000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "10.840830000000002"
+            },
+            "responsiblePartyName": {
+              "S": "Pierre Fabre Medicament"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "curacne"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1310"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            },
+            "duplicateSearchKey": {
+              "BOOL": true
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12220"
+            },
+            "sourceCode": {
+              "S": "12220"
+            },
+            "registrationNumber": {
+              "S": "21824/1"
+            },
+            "brandName": {
+              "S": "CURACNE"
+            },
+            "strength": {
+              "S": "20mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Capsule, soft"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Catalent France Beinheim SA"
+            },
+            "country": {
+              "S": "France"
+            },
+            "publicPriceLbp": {
+              "N": "1603204.1025000003"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "17.912895000000002"
+            },
+            "responsiblePartyName": {
+              "S": "Pierre Fabre Medicament"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "curacne"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1311"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            },
+            "duplicateSearchKey": {
+              "BOOL": true
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12221"
+            },
+            "sourceCode": {
+              "S": "12221"
+            },
+            "registrationNumber": {
+              "S": "22024/1"
+            },
+            "brandName": {
+              "S": "CURACNE"
+            },
+            "strength": {
+              "S": "40mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Capsule, soft"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Catalent Germany Eberbach GmbH"
+            },
+            "country": {
+              "S": "Germany"
+            },
+            "publicPriceLbp": {
+              "N": "3553119.5700000008"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "39.69966000000001"
+            },
+            "responsiblePartyName": {
+              "S": "Pierre Fabre Medicament"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "curacne"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1312"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            },
+            "duplicateSearchKey": {
+              "BOOL": true
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#3976"
+            },
+            "sourceCode": {
+              "S": "3976"
+            },
+            "registrationNumber": {
+              "S": "195469/04"
+            },
+            "brandName": {
+              "S": "CURACNE"
+            },
+            "strength": {
+              "S": "5mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Capsule, soft"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Catalent France Beinheim SA"
+            },
+            "country": {
+              "S": "France"
+            },
+            "publicPriceLbp": {
+              "N": "856027.6725"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "9.564555"
+            },
+            "responsiblePartyName": {
+              "S": "Pierre Fabre Dermatologie"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "curacne"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1297"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#3977"
+            },
+            "sourceCode": {
+              "S": "3977"
+            },
+            "registrationNumber": {
+              "S": "195471/04"
+            },
+            "brandName": {
+              "S": "CURACNE"
+            },
+            "strength": {
+              "S": "10mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Capsule, soft"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Catalent France Beinheim SA"
+            },
+            "country": {
+              "S": "France"
+            },
+            "publicPriceLbp": {
+              "N": "970254.285"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "10.84083"
+            },
+            "responsiblePartyName": {
+              "S": "Pierre Fabre Dermatologie"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "curacne"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1298"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#3978"
+            },
+            "sourceCode": {
+              "S": "3978"
+            },
+            "registrationNumber": {
+              "S": "195470/04"
+            },
+            "brandName": {
+              "S": "CURACNE"
+            },
+            "strength": {
+              "S": "20mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Capsule, soft"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Catalent France Beinheim SA"
+            },
+            "country": {
+              "S": "France"
+            },
+            "publicPriceLbp": {
+              "N": "1603204.1025000003"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "17.912895000000002"
+            },
+            "responsiblePartyName": {
+              "S": "Pierre Fabre Dermatologie"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "curacne"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1299"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#5114"
+            },
+            "sourceCode": {
+              "S": "5114"
+            },
+            "registrationNumber": {
+              "S": "24301"
+            },
+            "brandName": {
+              "S": "CURACNE"
+            },
+            "strength": {
+              "S": "40mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Capsule, soft"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Catalent France Beinheim SA"
+            },
+            "country": {
+              "S": "France"
+            },
+            "publicPriceLbp": {
+              "N": "3553119.5700000003"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "39.69966"
+            },
+            "responsiblePartyName": {
+              "S": "Pierre Fabre Dermatologie"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "curacne"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1300"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#8322"
+            },
+            "sourceCode": {
+              "S": "8322"
+            },
+            "registrationNumber": {
+              "S": "84015/1"
+            },
+            "brandName": {
+              "S": "CURAM"
+            },
+            "strength": {
+              "S": "625mg"
+            },
+            "presentation": {
+              "S": "20"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Khalil Fattal & Fils S.A.L."
+            },
+            "manufacturer": {
+              "S": "Pharmaline under license from Sandoz GmbH, Austria"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "402189.064277"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "4.49373256175419"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "curam"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1313"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#8820"
+            },
+            "sourceCode": {
+              "S": "8820"
+            },
+            "registrationNumber": {
+              "S": "118316/1"
+            },
+            "brandName": {
+              "S": "CURAM"
+            },
+            "strength": {
+              "S": "1g"
+            },
+            "presentation": {
+              "S": "14"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Khalil Fattal & Fils S.A.L."
+            },
+            "manufacturer": {
+              "S": "Pharmaline Licensed by Sandoz GmbH, KUNDL, Austria"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "541235.8411460001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "6.047327834033521"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "curam"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1314"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7049"
+            },
+            "sourceCode": {
+              "S": "7049"
+            },
+            "registrationNumber": {
+              "S": "218863/09"
+            },
+            "brandName": {
+              "S": "CURCARD"
+            },
+            "strength": {
+              "S": "4mg"
+            },
+            "presentation": {
+              "S": "20"
+            },
+            "dosageForm": {
+              "S": "Tablet"
+            },
+            "agent": {
+              "S": "Premium Serve Drugstore Co. P.S.D. SAL"
+            },
+            "manufacturer": {
+              "S": "The United Pharmaceutical Manufacturing Co Ltd"
+            },
+            "country": {
+              "S": "Jordan"
+            },
+            "publicPriceLbp": {
+              "N": "452874.92250000004"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "5.060055"
+            },
+            "responsiblePartyName": {
+              "S": "The United Pharmaceutical Manufacturing Co Ltd"
+            },
+            "responsiblePartyCountry": {
+              "S": "Jordan"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "curcard"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1315"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7495"
+            },
+            "sourceCode": {
+              "S": "7495"
+            },
+            "registrationNumber": {
+              "S": "96715/12"
+            },
+            "brandName": {
+              "S": "CUREAML"
+            },
+            "strength": {
+              "S": "500mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Capsule"
+            },
+            "agent": {
+              "S": "Abela Frères S.A.L."
+            },
+            "manufacturer": {
+              "S": "The Arab Pharmaceutical Manufacturing PSC"
+            },
+            "country": {
+              "S": "Jordan"
+            },
+            "publicPriceLbp": {
+              "N": "1228272.0450000004"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "13.723710000000004"
+            },
+            "responsiblePartyName": {
+              "S": "Hikma Pharmaceuticals"
+            },
+            "responsiblePartyCountry": {
+              "S": "Jordan"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "cureaml"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1316"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7560"
+            },
+            "sourceCode": {
+              "S": "7560"
+            },
+            "registrationNumber": {
+              "S": "186379/13"
+            },
+            "brandName": {
+              "S": "CUTIDERMINE"
+            },
+            "presentation": {
+              "S": "30g"
+            },
+            "dosageForm": {
+              "S": "Topical Gel"
+            },
+            "agent": {
+              "S": "Pharmapro"
+            },
+            "manufacturer": {
+              "S": "Mediphar Laboratories"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "593850.4"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "6.6352"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "cutidermine"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1317"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10478"
+            },
+            "sourceCode": {
+              "S": "10478"
+            },
+            "registrationNumber": {
+              "S": "63320/1"
+            },
+            "brandName": {
+              "S": "CUVITRU"
+            },
+            "strength": {
+              "S": "200mg/ml (4g/20ml)"
+            },
+            "presentation": {
+              "S": "1Vial x 20ml"
+            },
+            "dosageForm": {
+              "S": "Solution for subcutaneous injection"
+            },
+            "agent": {
+              "S": "Abela Frères S.A.L."
+            },
+            "manufacturer": {
+              "S": "Baxalta Belgium Manufacturing SA"
+            },
+            "country": {
+              "S": "Belgium"
+            },
+            "publicPriceLbp": {
+              "N": "29806626.628800005"
+            },
+            "pharmacistMarginPercent": {
+              "N": "19.35"
+            },
+            "stratum": {
+              "S": "D"
+            },
+            "publicPriceDecision119": {
+              "N": "333.03493440000005"
+            },
+            "responsiblePartyName": {
+              "S": "Baxalta Innovations GmbH"
+            },
+            "responsiblePartyCountry": {
+              "S": "Austria"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "cuvitru"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1318"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10479"
+            },
+            "sourceCode": {
+              "S": "10479"
+            },
+            "registrationNumber": {
+              "S": "63420/1"
+            },
+            "brandName": {
+              "S": "CUVITRU"
+            },
+            "strength": {
+              "S": "200mg/ml (8g/40ml)"
+            },
+            "presentation": {
+              "S": "1Vial x 40ml"
+            },
+            "dosageForm": {
+              "S": "Solution for subcutaneous injection"
+            },
+            "agent": {
+              "S": "Abela Frères S.A.L."
+            },
+            "manufacturer": {
+              "S": "Baxalta Belgium Manufacturing SA"
+            },
+            "country": {
+              "S": "Belgium"
+            },
+            "publicPriceLbp": {
+              "N": "53593818.453"
+            },
+            "pharmacistMarginPercent": {
+              "N": "10.71"
+            },
+            "stratum": {
+              "S": "E1"
+            },
+            "publicPriceDecision119": {
+              "N": "598.813614"
+            },
+            "responsiblePartyName": {
+              "S": "Baxalta Innovations GmbH"
+            },
+            "responsiblePartyCountry": {
+              "S": "Austria"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "cuvitru"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1319"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12449"
+            },
+            "sourceCode": {
+              "S": "12449"
+            },
+            "registrationNumber": {
+              "S": "129822/1"
+            },
+            "brandName": {
+              "S": "CYBRIN"
+            },
+            "strength": {
+              "S": "125mg"
+            },
+            "presentation": {
+              "S": "21"
+            },
+            "dosageForm": {
+              "S": "Capsule, hard gelatin"
+            },
+            "agent": {
+              "S": "Lebiran SARL"
+            },
+            "manufacturer": {
+              "S": "Nano Fanavaran Darouei Alvand Co"
+            },
+            "country": {
+              "S": "Iran"
+            },
+            "publicPriceLbp": {
+              "N": "103298115.26343748"
+            },
+            "pharmacistMarginPercent": {
+              "N": "2.44"
+            },
+            "stratum": {
+              "S": "E2"
+            },
+            "publicPriceDecision119": {
+              "N": "1154.1688856249998"
+            },
+            "responsiblePartyName": {
+              "S": "Nano Fanavaran Darouei Alvand Co"
+            },
+            "responsiblePartyCountry": {
+              "S": "Iran"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "cybrin"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1320"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11539"
+            },
+            "sourceCode": {
+              "S": "11539"
+            },
+            "registrationNumber": {
+              "S": "164820/1"
+            },
+            "brandName": {
+              "S": "CYCLOGEST"
+            },
+            "strength": {
+              "S": "400mg"
+            },
+            "presentation": {
+              "S": "15"
+            },
+            "dosageForm": {
+              "S": "Pessary"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Accord UK Ltd"
+            },
+            "country": {
+              "S": "UK"
+            },
+            "publicPriceLbp": {
+              "N": "1546762.7175000003"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "17.282265000000002"
+            },
+            "responsiblePartyName": {
+              "S": "LD Collins & Co. Ltd"
+            },
+            "responsiblePartyCountry": {
+              "S": "UK"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "cyclogest"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1321"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#4285"
+            },
+            "sourceCode": {
+              "S": "4285"
+            },
+            "registrationNumber": {
+              "S": "236959/99"
+            },
+            "brandName": {
+              "S": "CYCLOVEX"
+            },
+            "strength": {
+              "S": "200mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet"
+            },
+            "agent": {
+              "S": "Droguerie de l'Union"
+            },
+            "manufacturer": {
+              "S": "Algorithm S.A.L."
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "1164663.4999999998"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "13.012999999999998"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "cyclovex"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1322"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#4286"
+            },
+            "sourceCode": {
+              "S": "4286"
+            },
+            "registrationNumber": {
+              "S": "236958/99"
+            },
+            "brandName": {
+              "S": "CYCLOVEX"
+            },
+            "strength": {
+              "S": "400mg"
+            },
+            "presentation": {
+              "S": "40"
+            },
+            "dosageForm": {
+              "S": "Tablet"
+            },
+            "agent": {
+              "S": "Droguerie de l'Union"
+            },
+            "manufacturer": {
+              "S": "Algorithm S.A.L."
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "2687684.9999999995"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "30.029999999999994"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "cyclovex"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1323"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#4287"
+            },
+            "sourceCode": {
+              "S": "4287"
+            },
+            "registrationNumber": {
+              "S": "236962/99"
+            },
+            "brandName": {
+              "S": "CYCLOVEX"
+            },
+            "strength": {
+              "S": "50mg/g"
+            },
+            "presentation": {
+              "S": "2g"
+            },
+            "dosageForm": {
+              "S": "Cream"
+            },
+            "agent": {
+              "S": "Droguerie de l'Union"
+            },
+            "manufacturer": {
+              "S": "Algorithm S.A.L."
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "345559.5000000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "3.861000000000001"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "cyclovex"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1324"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10253"
+            },
+            "sourceCode": {
+              "S": "10253"
+            },
+            "registrationNumber": {
+              "S": "153519/1"
+            },
+            "brandName": {
+              "S": "CYMEVENE"
+            },
+            "strength": {
+              "S": "500mg"
+            },
+            "presentation": {
+              "S": "1"
+            },
+            "dosageForm": {
+              "S": "Vial"
+            },
+            "agent": {
+              "S": "Omnipharma"
+            },
+            "manufacturer": {
+              "S": "Valdepharm Val De Reuil Cedex"
+            },
+            "country": {
+              "S": "France"
+            },
+            "publicPriceLbp": {
+              "N": "1726837.6124999998"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "19.294275"
+            },
+            "responsiblePartyName": {
+              "S": "Cheplapharm Arzneimittel GmbH"
+            },
+            "responsiblePartyCountry": {
+              "S": "Germany"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "cymevene"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1325"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10941"
+            },
+            "sourceCode": {
+              "S": "10941"
+            },
+            "registrationNumber": {
+              "S": "95818/1"
+            },
+            "brandName": {
+              "S": "CYNOVIT-JULPHAR"
+            },
+            "strength": {
+              "S": "1mg/ml"
+            },
+            "presentation": {
+              "S": "5Ampoules"
+            },
+            "dosageForm": {
+              "S": "Injection IM"
+            },
+            "agent": {
+              "S": "Pharmanet Drugstore S.A.R.L."
+            },
+            "manufacturer": {
+              "S": "Julphar"
+            },
+            "country": {
+              "S": "United Arab Emirates"
+            },
+            "publicPriceLbp": {
+              "N": "167980.3125"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "1.876875"
+            },
+            "responsiblePartyName": {
+              "S": "Julphar"
+            },
+            "responsiblePartyCountry": {
+              "S": "United Arab Emirates"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "cynovit julphar"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1326"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

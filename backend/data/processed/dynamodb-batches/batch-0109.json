@@ -1,0 +1,2001 @@
+{
+  "RequestItems": {
+    "DawaaMedicines": [
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7871"
+            },
+            "sourceCode": {
+              "S": "7871"
+            },
+            "registrationNumber": {
+              "S": "44014/1"
+            },
+            "brandName": {
+              "S": "JANUVIA"
+            },
+            "strength": {
+              "S": "100mg"
+            },
+            "presentation": {
+              "S": "28"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Droguerie de l'Union"
+            },
+            "manufacturer": {
+              "S": "Organon Pharma (UK) Limited"
+            },
+            "country": {
+              "S": "UK"
+            },
+            "publicPriceLbp": {
+              "N": "1884067.185"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "21.05103"
+            },
+            "responsiblePartyName": {
+              "S": "MSD Ltd"
+            },
+            "responsiblePartyCountry": {
+              "S": "UK"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "januvia"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "2702"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#8203"
+            },
+            "sourceCode": {
+              "S": "8203"
+            },
+            "registrationNumber": {
+              "S": "55515/1"
+            },
+            "brandName": {
+              "S": "JARDIANCE"
+            },
+            "strength": {
+              "S": "25mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Rottendorf Pharma GmbH"
+            },
+            "country": {
+              "S": "Germany"
+            },
+            "publicPriceLbp": {
+              "N": "3282953.4738000003"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "36.681044400000005"
+            },
+            "responsiblePartyName": {
+              "S": "Boehringer Ingelheim International GmbH"
+            },
+            "responsiblePartyCountry": {
+              "S": "Germany"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "jardiance"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "2703"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#8204"
+            },
+            "sourceCode": {
+              "S": "8204"
+            },
+            "registrationNumber": {
+              "S": "55415/1"
+            },
+            "brandName": {
+              "S": "JARDIANCE"
+            },
+            "strength": {
+              "S": "10mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Rottendorf Pharma GmbH"
+            },
+            "country": {
+              "S": "Germany"
+            },
+            "publicPriceLbp": {
+              "N": "3282953.4738000003"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "36.681044400000005"
+            },
+            "responsiblePartyName": {
+              "S": "Boehringer Ingelheim International GmbH"
+            },
+            "responsiblePartyCountry": {
+              "S": "Germany"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "jardiance"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "2704"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10624"
+            },
+            "sourceCode": {
+              "S": "10624"
+            },
+            "registrationNumber": {
+              "S": "100020/1"
+            },
+            "brandName": {
+              "S": "JECTIN-12"
+            },
+            "strength": {
+              "S": "1000mcg/1ml"
+            },
+            "presentation": {
+              "S": "5Ampoules"
+            },
+            "dosageForm": {
+              "S": "for IM injection"
+            },
+            "agent": {
+              "S": "Droguerie Mercury S.A.L."
+            },
+            "manufacturer": {
+              "S": "Hikma Italia SpA"
+            },
+            "country": {
+              "S": "Italy"
+            },
+            "publicPriceLbp": {
+              "N": "567101.535"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "6.33633"
+            },
+            "responsiblePartyName": {
+              "S": "Hikma Pharmaceuticals"
+            },
+            "responsiblePartyCountry": {
+              "S": "Jordan"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "jectin 12"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "2705"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11881"
+            },
+            "sourceCode": {
+              "S": "11881"
+            },
+            "registrationNumber": {
+              "S": "57923/1"
+            },
+            "brandName": {
+              "S": "JEDARA"
+            },
+            "strength": {
+              "S": "5%"
+            },
+            "presentation": {
+              "S": "12Sachets"
+            },
+            "dosageForm": {
+              "S": "Cream"
+            },
+            "agent": {
+              "S": "Medway Healthcare SARL Single Partner"
+            },
+            "manufacturer": {
+              "S": "Jerash Pharmaceuticals Ltd. Co"
+            },
+            "country": {
+              "S": "Jordan"
+            },
+            "publicPriceLbp": {
+              "N": "3850108.7625"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "43.017975"
+            },
+            "responsiblePartyName": {
+              "S": "Jerash Pharmaceuticals Ltd. Co"
+            },
+            "responsiblePartyCountry": {
+              "S": "Jordan"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "jedara"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "2706"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11047"
+            },
+            "sourceCode": {
+              "S": "11047"
+            },
+            "registrationNumber": {
+              "S": "136021/1"
+            },
+            "brandName": {
+              "S": "JENTADUETO"
+            },
+            "strength": {
+              "S": "2.5mg/850mg"
+            },
+            "presentation": {
+              "S": "60"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Dragenopharm Apotheker Puschl GmbH"
+            },
+            "country": {
+              "S": "Germany"
+            },
+            "publicPriceLbp": {
+              "N": "3542368.83"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "39.57954"
+            },
+            "responsiblePartyName": {
+              "S": "Boehringer Ingelheim (Canada) Ltd LTEE"
+            },
+            "responsiblePartyCountry": {
+              "S": "Canada"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "jentadueto"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "2707"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11048"
+            },
+            "sourceCode": {
+              "S": "11048"
+            },
+            "registrationNumber": {
+              "S": "136121/1"
+            },
+            "brandName": {
+              "S": "JENTADUETO"
+            },
+            "strength": {
+              "S": "2.5mg/1,000mg"
+            },
+            "presentation": {
+              "S": "60"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Dragenopharm Apotheker Puschl GmbH"
+            },
+            "country": {
+              "S": "Germany"
+            },
+            "publicPriceLbp": {
+              "N": "3542368.83"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "39.57954"
+            },
+            "responsiblePartyName": {
+              "S": "Boehringer Ingelheim (Canada) Ltd LTEE"
+            },
+            "responsiblePartyCountry": {
+              "S": "Canada"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "jentadueto"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "2708"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11865"
+            },
+            "sourceCode": {
+              "S": "11865"
+            },
+            "registrationNumber": {
+              "S": "14724/1"
+            },
+            "brandName": {
+              "S": "JEVTANA INJECTION"
+            },
+            "strength": {
+              "S": "60mg/1.5ml"
+            },
+            "presentation": {
+              "S": "1+1, 1vial of Jevtana + 1vial of diluent"
+            },
+            "dosageForm": {
+              "S": "Injection"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Sanofi Aventis Deutschland GmbH"
+            },
+            "country": {
+              "S": "Germany"
+            },
+            "publicPriceLbp": {
+              "N": "75619930.80600001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "10.71"
+            },
+            "stratum": {
+              "S": "E1"
+            },
+            "publicPriceDecision119": {
+              "N": "844.9154280000001"
+            },
+            "responsiblePartyName": {
+              "S": "Sanofi Winthrop Industrie"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "jevtana injection"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "2709"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#8701"
+            },
+            "sourceCode": {
+              "S": "8701"
+            },
+            "registrationNumber": {
+              "S": "66016/1"
+            },
+            "brandName": {
+              "S": "JEVTANA INJECTION"
+            },
+            "strength": {
+              "S": "60mg/1.5ml"
+            },
+            "presentation": {
+              "S": "1vial of Jevtana + 1vial of diluent"
+            },
+            "dosageForm": {
+              "S": "Injection"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Sanofi Aventis Deutschland GmbH"
+            },
+            "country": {
+              "S": "Germany"
+            },
+            "publicPriceLbp": {
+              "N": "75619930.80600001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "10.71"
+            },
+            "stratum": {
+              "S": "E1"
+            },
+            "publicPriceDecision119": {
+              "N": "844.9154280000001"
+            },
+            "responsiblePartyName": {
+              "S": "Sanofi Aventis Groupe"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "jevtana injection"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "2710"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12288"
+            },
+            "sourceCode": {
+              "S": "12288"
+            },
+            "registrationNumber": {
+              "S": "47624/1"
+            },
+            "brandName": {
+              "S": "JOFLAM"
+            },
+            "strength": {
+              "S": "50mg"
+            },
+            "presentation": {
+              "S": "20"
+            },
+            "dosageForm": {
+              "S": "FCT"
+            },
+            "agent": {
+              "S": "Atrissi SARL"
+            },
+            "manufacturer": {
+              "S": "Jordan River Pharmaceutical Industries LLC"
+            },
+            "country": {
+              "S": "Jordan"
+            },
+            "publicPriceLbp": {
+              "N": "215014.80000000005"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "2.4024000000000005"
+            },
+            "responsiblePartyName": {
+              "S": "Jordan River Pharmaceutical Industries LLC"
+            },
+            "responsiblePartyCountry": {
+              "S": "Jordan"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "joflam"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "2712"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#5180"
+            },
+            "sourceCode": {
+              "S": "5180"
+            },
+            "registrationNumber": {
+              "S": "222369/08"
+            },
+            "brandName": {
+              "S": "JOFLAM"
+            },
+            "strength": {
+              "S": "50mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Atrissi SARL"
+            },
+            "manufacturer": {
+              "S": "Jordan River Pharmaceutical Industries LLC"
+            },
+            "country": {
+              "S": "Jordan"
+            },
+            "publicPriceLbp": {
+              "N": "322522.2"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "3.6036"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "joflam"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "2711"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12337"
+            },
+            "sourceCode": {
+              "S": "12337"
+            },
+            "registrationNumber": {
+              "S": "141623/1"
+            },
+            "brandName": {
+              "S": "JOLITE FORTE CREAM"
+            },
+            "strength": {
+              "S": "4%"
+            },
+            "presentation": {
+              "S": "30g"
+            },
+            "dosageForm": {
+              "S": "Cream"
+            },
+            "agent": {
+              "S": "Medway Healthcare SARL Single Partner"
+            },
+            "manufacturer": {
+              "S": "Jerash Pharmaceuticals Ltd. Co"
+            },
+            "country": {
+              "S": "Jordan"
+            },
+            "publicPriceLbp": {
+              "N": "612792.1800000002"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "6.846840000000002"
+            },
+            "responsiblePartyName": {
+              "S": "Jerash Pharmaceuticals Ltd. Co"
+            },
+            "responsiblePartyCountry": {
+              "S": "Jordan"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "jolite forte cream"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "2713"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#9860"
+            },
+            "sourceCode": {
+              "S": "9860"
+            },
+            "registrationNumber": {
+              "S": "131116/1"
+            },
+            "brandName": {
+              "S": "JOS-PAN"
+            },
+            "presentation": {
+              "S": "100ml"
+            },
+            "dosageForm": {
+              "S": "Syrup"
+            },
+            "agent": {
+              "S": "Qualipharm"
+            },
+            "manufacturer": {
+              "S": "Jerash Pharmaceuticals"
+            },
+            "country": {
+              "S": "Jordan"
+            },
+            "publicPriceLbp": {
+              "N": "306396.0899999999"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "3.423419999999999"
+            },
+            "responsiblePartyName": {
+              "S": "Jerash Pharmaceuticals"
+            },
+            "responsiblePartyCountry": {
+              "S": "Jordan"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "jos pan"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "2714"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#9649"
+            },
+            "sourceCode": {
+              "S": "9649"
+            },
+            "registrationNumber": {
+              "S": "68316/1"
+            },
+            "brandName": {
+              "S": "JOSWE ARIPAL 10"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet"
+            },
+            "agent": {
+              "S": "Eva Pharm Plus"
+            },
+            "manufacturer": {
+              "S": "Joswe Medical (Jordan Sweden Medical and Sterilization Co)"
+            },
+            "country": {
+              "S": "Jordan"
+            },
+            "publicPriceLbp": {
+              "N": "2210620.9125"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "24.699675000000003"
+            },
+            "responsiblePartyName": {
+              "S": "Joswe Medical (Jordan Sweden Medical and Sterilization Co)"
+            },
+            "responsiblePartyCountry": {
+              "S": "Jordan"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "joswe aripal 10"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "2715"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#9650"
+            },
+            "sourceCode": {
+              "S": "9650"
+            },
+            "registrationNumber": {
+              "S": "68416/1"
+            },
+            "brandName": {
+              "S": "JOSWE ARIPAL 15"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet"
+            },
+            "agent": {
+              "S": "Eva Pharm Plus"
+            },
+            "manufacturer": {
+              "S": "Joswe Medical (Jordan Sweden Medical and Sterilization Co)"
+            },
+            "country": {
+              "S": "Jordan"
+            },
+            "publicPriceLbp": {
+              "N": "2413541.1300000004"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "26.966940000000005"
+            },
+            "responsiblePartyName": {
+              "S": "Joswe Medical (Jordan Sweden Medical and Sterilization Co)"
+            },
+            "responsiblePartyCountry": {
+              "S": "Jordan"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "joswe aripal 15"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "2716"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#9651"
+            },
+            "sourceCode": {
+              "S": "9651"
+            },
+            "registrationNumber": {
+              "S": "68516/1"
+            },
+            "brandName": {
+              "S": "JOSWE ARIPAL 30"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet"
+            },
+            "agent": {
+              "S": "Eva Pharm Plus"
+            },
+            "manufacturer": {
+              "S": "Joswe Medical (Jordan Sweden Medical and Sterilization Co)"
+            },
+            "country": {
+              "S": "Jordan"
+            },
+            "publicPriceLbp": {
+              "N": "4687322.640000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "52.37232000000001"
+            },
+            "responsiblePartyName": {
+              "S": "Joswe Medical (Jordan Sweden Medical and Sterilization Co)"
+            },
+            "responsiblePartyCountry": {
+              "S": "Jordan"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "joswe aripal 30"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "2717"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#9648"
+            },
+            "sourceCode": {
+              "S": "9648"
+            },
+            "registrationNumber": {
+              "S": "68216/1"
+            },
+            "brandName": {
+              "S": "JOSWE ARIPAL 5"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet"
+            },
+            "agent": {
+              "S": "Eva Pharm Plus"
+            },
+            "manufacturer": {
+              "S": "Joswe Medical (Jordan Sweden Medical and Sterilization Co)"
+            },
+            "country": {
+              "S": "Jordan"
+            },
+            "publicPriceLbp": {
+              "N": "1389533.1450000003"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "15.525510000000002"
+            },
+            "responsiblePartyName": {
+              "S": "Joswe Medical (Jordan Sweden Medical and Sterilization Co)"
+            },
+            "responsiblePartyCountry": {
+              "S": "Jordan"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "joswe aripal 5"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "2718"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7525"
+            },
+            "sourceCode": {
+              "S": "7525"
+            },
+            "registrationNumber": {
+              "S": "186173/13"
+            },
+            "brandName": {
+              "S": "JOSWE ATORVAST 10"
+            },
+            "strength": {
+              "S": "10mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Caplet, film coated"
+            },
+            "agent": {
+              "S": "Eva Pharm Plus"
+            },
+            "manufacturer": {
+              "S": "Joswe Medical (Jordan Sweden Medical and Sterilization Co)"
+            },
+            "country": {
+              "S": "Jordan"
+            },
+            "publicPriceLbp": {
+              "N": "849308.4600000002"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "9.489480000000002"
+            },
+            "responsiblePartyName": {
+              "S": "Joswe Medical (Jordan Sweden Medical and Sterilization Co)"
+            },
+            "responsiblePartyCountry": {
+              "S": "Jordan"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "joswe atorvast 10"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "2719"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7177"
+            },
+            "sourceCode": {
+              "S": "7177"
+            },
+            "registrationNumber": {
+              "S": "166831/11"
+            },
+            "brandName": {
+              "S": "JOSWE ATORVAST 20"
+            },
+            "strength": {
+              "S": "20mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Caplet, film coated"
+            },
+            "agent": {
+              "S": "Eva Pharm Plus"
+            },
+            "manufacturer": {
+              "S": "Joswe Medical (Jordan Sweden Medical and Sterilization Co)"
+            },
+            "country": {
+              "S": "Jordan"
+            },
+            "publicPriceLbp": {
+              "N": "956815.8599999999"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "10.690679999999999"
+            },
+            "responsiblePartyName": {
+              "S": "Joswe Medical (Jordan Sweden Medical and Sterilization Co)"
+            },
+            "responsiblePartyCountry": {
+              "S": "Jordan"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "joswe atorvast 20"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "2720"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7526"
+            },
+            "sourceCode": {
+              "S": "7526"
+            },
+            "registrationNumber": {
+              "S": "186174/13"
+            },
+            "brandName": {
+              "S": "JOSWE ATORVAST 40"
+            },
+            "strength": {
+              "S": "40mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Caplet, film coated"
+            },
+            "agent": {
+              "S": "Eva Pharm Plus"
+            },
+            "manufacturer": {
+              "S": "Joswe Medical (Jordan Sweden Medical and Sterilization Co)"
+            },
+            "country": {
+              "S": "Jordan"
+            },
+            "publicPriceLbp": {
+              "N": "1327716.3900000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "14.834820000000002"
+            },
+            "responsiblePartyName": {
+              "S": "Joswe Medical (Jordan Sweden Medical and Sterilization Co)"
+            },
+            "responsiblePartyCountry": {
+              "S": "Jordan"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "joswe atorvast 40"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "2721"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7195"
+            },
+            "sourceCode": {
+              "S": "7195"
+            },
+            "registrationNumber": {
+              "S": "96695/12"
+            },
+            "brandName": {
+              "S": "JOSWE AVOXIN 500"
+            },
+            "strength": {
+              "S": "500mg"
+            },
+            "presentation": {
+              "S": "7"
+            },
+            "dosageForm": {
+              "S": "Oral Tablet, film coated"
+            },
+            "agent": {
+              "S": "Eva Pharm Plus"
+            },
+            "manufacturer": {
+              "S": "Joswe Medical (Jordan Sweden Medical and Sterilization Co)"
+            },
+            "country": {
+              "S": "Jordan"
+            },
+            "publicPriceLbp": {
+              "N": "786147.8625"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "8.783775"
+            },
+            "responsiblePartyName": {
+              "S": "Joswe Medical (Jordan Sweden Medical and Sterilization Co)"
+            },
+            "responsiblePartyCountry": {
+              "S": "Jordan"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "joswe avoxin 500"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "2722"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7196"
+            },
+            "sourceCode": {
+              "S": "7196"
+            },
+            "registrationNumber": {
+              "S": "96694/12"
+            },
+            "brandName": {
+              "S": "JOSWE AVOXIN 750"
+            },
+            "strength": {
+              "S": "750mg"
+            },
+            "presentation": {
+              "S": "7"
+            },
+            "dosageForm": {
+              "S": "Oral Tablet, film coated"
+            },
+            "agent": {
+              "S": "Eva Pharm Plus"
+            },
+            "manufacturer": {
+              "S": "Joswe Medical (Jordan Sweden Medical and Sterilization Co)"
+            },
+            "country": {
+              "S": "Jordan"
+            },
+            "publicPriceLbp": {
+              "N": "1550794.245"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "17.32731"
+            },
+            "responsiblePartyName": {
+              "S": "Joswe Medical (Jordan Sweden Medical and Sterilization Co)"
+            },
+            "responsiblePartyCountry": {
+              "S": "Jordan"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "joswe avoxin 750"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "2723"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10480"
+            },
+            "sourceCode": {
+              "S": "10480"
+            },
+            "registrationNumber": {
+              "S": "13017/1"
+            },
+            "brandName": {
+              "S": "JOSWE COXIT 120"
+            },
+            "presentation": {
+              "S": "10"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Eva Pharm Plus"
+            },
+            "manufacturer": {
+              "S": "Joswe Medical"
+            },
+            "country": {
+              "S": "Jordan"
+            },
+            "publicPriceLbp": {
+              "N": "412559.6475"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "4.609605"
+            },
+            "responsiblePartyName": {
+              "S": "Joswe Medical"
+            },
+            "responsiblePartyCountry": {
+              "S": "Jordan"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "joswe coxit 120"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "2724"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#8034"
+            },
+            "sourceCode": {
+              "S": "8034"
+            },
+            "registrationNumber": {
+              "S": "186111/13"
+            },
+            "brandName": {
+              "S": "JOSWE DUBARA 10/10"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Caplet, film coated"
+            },
+            "agent": {
+              "S": "Eva Pharm Plus"
+            },
+            "manufacturer": {
+              "S": "Joswe Medical (Jordan Sweden Medical and Sterilization Co)"
+            },
+            "country": {
+              "S": "Jordan"
+            },
+            "publicPriceLbp": {
+              "N": "2655432.7800000007"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "29.66964000000001"
+            },
+            "responsiblePartyName": {
+              "S": "Joswe Medical (Jordan Sweden Medical and Sterilization Co)"
+            },
+            "responsiblePartyCountry": {
+              "S": "Jordan"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "joswe dubara 10 10"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "2725"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#8035"
+            },
+            "sourceCode": {
+              "S": "8035"
+            },
+            "registrationNumber": {
+              "S": "186110/13"
+            },
+            "brandName": {
+              "S": "JOSWE DUBARA 5/10"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Caplet, film coated"
+            },
+            "agent": {
+              "S": "Eva Pharm Plus"
+            },
+            "manufacturer": {
+              "S": "Joswe Medical (Jordan Sweden Medical and Sterilization Co)"
+            },
+            "country": {
+              "S": "Jordan"
+            },
+            "publicPriceLbp": {
+              "N": "2370538.170000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "26.486460000000008"
+            },
+            "responsiblePartyName": {
+              "S": "Joswe Medical (Jordan Sweden Medical and Sterilization Co)"
+            },
+            "responsiblePartyCountry": {
+              "S": "Jordan"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "joswe dubara 5 10"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "2726"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

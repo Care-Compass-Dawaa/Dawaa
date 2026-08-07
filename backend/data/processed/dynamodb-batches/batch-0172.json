@@ -1,0 +1,1989 @@
+{
+  "RequestItems": {
+    "DawaaMedicines": [
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10142"
+            },
+            "sourceCode": {
+              "S": "10142"
+            },
+            "registrationNumber": {
+              "S": "113319/1"
+            },
+            "brandName": {
+              "S": "RAMIPRIL/AMLODIPINE GENERICON"
+            },
+            "strength": {
+              "S": "10mg/10mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Capsule, hard"
+            },
+            "agent": {
+              "S": "Algenericon Med"
+            },
+            "manufacturer": {
+              "S": "Adamed Pharma S.A."
+            },
+            "country": {
+              "S": "Poland"
+            },
+            "publicPriceLbp": {
+              "N": "1358624.7675"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "15.180165"
+            },
+            "responsiblePartyName": {
+              "S": "Genericon Pharma GmbH"
+            },
+            "responsiblePartyCountry": {
+              "S": "Austria"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "ramipril amlodipine genericon"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4274"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#8103"
+            },
+            "sourceCode": {
+              "S": "8103"
+            },
+            "registrationNumber": {
+              "S": "23915/1"
+            },
+            "brandName": {
+              "S": "RANEXA"
+            },
+            "strength": {
+              "S": "500mg"
+            },
+            "presentation": {
+              "S": "60"
+            },
+            "dosageForm": {
+              "S": "Tablet, prolonged release"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Berlin Chemie AG"
+            },
+            "country": {
+              "S": "Germany"
+            },
+            "publicPriceLbp": {
+              "N": "3985836.8550000004"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "44.534490000000005"
+            },
+            "responsiblePartyName": {
+              "S": "Menarini International Operations Luxembourg SA"
+            },
+            "responsiblePartyCountry": {
+              "S": "Luxembourg"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "ranexa"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4277"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#8104"
+            },
+            "sourceCode": {
+              "S": "8104"
+            },
+            "registrationNumber": {
+              "S": "24015/1"
+            },
+            "brandName": {
+              "S": "RANEXA"
+            },
+            "strength": {
+              "S": "750mg"
+            },
+            "presentation": {
+              "S": "60"
+            },
+            "dosageForm": {
+              "S": "Tablet, prolonged release"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Berlin Chemie AG"
+            },
+            "country": {
+              "S": "Germany"
+            },
+            "publicPriceLbp": {
+              "N": "3985836.8550000004"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "44.534490000000005"
+            },
+            "responsiblePartyName": {
+              "S": "Menarini International Operations Luxembourg SA"
+            },
+            "responsiblePartyCountry": {
+              "S": "Luxembourg"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "ranexa"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4278"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#8105"
+            },
+            "sourceCode": {
+              "S": "8105"
+            },
+            "registrationNumber": {
+              "S": "23815/1"
+            },
+            "brandName": {
+              "S": "RANEXA"
+            },
+            "strength": {
+              "S": "375mg"
+            },
+            "presentation": {
+              "S": "60"
+            },
+            "dosageForm": {
+              "S": "Tablet, prolonged release"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Berlin Chemie AG"
+            },
+            "country": {
+              "S": "Germany"
+            },
+            "publicPriceLbp": {
+              "N": "3985836.8550000004"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "44.534490000000005"
+            },
+            "responsiblePartyName": {
+              "S": "Menarini International Operations Luxembourg SA"
+            },
+            "responsiblePartyCountry": {
+              "S": "Luxembourg"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "ranexa"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4279"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11707"
+            },
+            "sourceCode": {
+              "S": "11707"
+            },
+            "registrationNumber": {
+              "S": "30724/1"
+            },
+            "brandName": {
+              "S": "RAPAMUNE"
+            },
+            "strength": {
+              "S": "1mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Pfizer Ireland Pharmaceuticals"
+            },
+            "country": {
+              "S": "Ireland"
+            },
+            "publicPriceLbp": {
+              "N": "12907489.367850002"
+            },
+            "pharmacistMarginPercent": {
+              "N": "21.26"
+            },
+            "stratum": {
+              "S": "C"
+            },
+            "publicPriceDecision119": {
+              "N": "144.2177583"
+            },
+            "responsiblePartyName": {
+              "S": "Pfizer Europe MA EEIG"
+            },
+            "responsiblePartyCountry": {
+              "S": "Belgium"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "rapamune"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4280"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7909"
+            },
+            "sourceCode": {
+              "S": "7909"
+            },
+            "registrationNumber": {
+              "S": "96207/1"
+            },
+            "brandName": {
+              "S": "RAPICOD"
+            },
+            "strength": {
+              "S": "0.15%"
+            },
+            "presentation": {
+              "S": "200ml"
+            },
+            "dosageForm": {
+              "S": "Syrup"
+            },
+            "agent": {
+              "S": "Macromed S.A.R.L."
+            },
+            "manufacturer": {
+              "S": "Hayat Pharmaceuticals Industries Co PLC"
+            },
+            "country": {
+              "S": "Jordan"
+            },
+            "publicPriceLbp": {
+              "N": "296989.1925"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "3.318315"
+            },
+            "responsiblePartyName": {
+              "S": "Hayat Pharmaceuticals Industries Co PLC"
+            },
+            "responsiblePartyCountry": {
+              "S": "Jordan"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "rapicod"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4281"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#1497"
+            },
+            "sourceCode": {
+              "S": "1497"
+            },
+            "registrationNumber": {
+              "S": "974019/02"
+            },
+            "brandName": {
+              "S": "RAPIDUS"
+            },
+            "strength": {
+              "S": "50mg"
+            },
+            "presentation": {
+              "S": "20"
+            },
+            "dosageForm": {
+              "S": "Tablet, coated"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Tabuk Pharmaceutical Manufacturing Company"
+            },
+            "country": {
+              "S": "Saudi Arabia"
+            },
+            "publicPriceLbp": {
+              "N": "287582.295"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "3.2132099999999997"
+            },
+            "responsiblePartyName": {
+              "S": "Tabuk Pharmaceutical Manufacturing Company"
+            },
+            "responsiblePartyCountry": {
+              "S": "Saudi Arabia"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "rapidus"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4282"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#9767"
+            },
+            "sourceCode": {
+              "S": "9767"
+            },
+            "registrationNumber": {
+              "S": "186518/1"
+            },
+            "brandName": {
+              "S": "RASAGILINE BIOGARAN"
+            },
+            "strength": {
+              "S": "1mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Comprimé"
+            },
+            "agent": {
+              "S": "Commercial and Trading Ressources SAL (CTR)"
+            },
+            "manufacturer": {
+              "S": "Remedica Ltd"
+            },
+            "country": {
+              "S": "Cyprus"
+            },
+            "publicPriceLbp": {
+              "N": "5214108.9"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "58.2582"
+            },
+            "responsiblePartyName": {
+              "S": "Laboratoires Biogaran"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "rasagiline biogaran"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4283"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#5583"
+            },
+            "sourceCode": {
+              "S": "5583"
+            },
+            "registrationNumber": {
+              "S": "222377/08"
+            },
+            "brandName": {
+              "S": "RAVANA"
+            },
+            "strength": {
+              "S": "20mg"
+            },
+            "presentation": {
+              "S": "2"
+            },
+            "dosageForm": {
+              "S": "Tablet"
+            },
+            "agent": {
+              "S": "Pharmapro"
+            },
+            "manufacturer": {
+              "S": "Mediphar Laboratories"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "500421.35000000003"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "5.5913"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "ravana"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4284"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#6557"
+            },
+            "sourceCode": {
+              "S": "6557"
+            },
+            "registrationNumber": {
+              "S": "096208/11"
+            },
+            "brandName": {
+              "S": "RAVANA"
+            },
+            "strength": {
+              "S": "5mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet"
+            },
+            "agent": {
+              "S": "Pharmapro"
+            },
+            "manufacturer": {
+              "S": "Mediphar Laboratories"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "1501264.0500000005"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "16.773900000000005"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "ravana"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4285"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#9224"
+            },
+            "sourceCode": {
+              "S": "9224"
+            },
+            "registrationNumber": {
+              "S": "142315/1"
+            },
+            "brandName": {
+              "S": "RAWEL SR"
+            },
+            "strength": {
+              "S": "1.5mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet, prolonged release"
+            },
+            "agent": {
+              "S": "Pharmamedic S.A.R.L."
+            },
+            "manufacturer": {
+              "S": "KrKa, dd, Novo Mesto"
+            },
+            "country": {
+              "S": "Slovenia"
+            },
+            "publicPriceLbp": {
+              "N": "362837.47500000003"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "4.05405"
+            },
+            "responsiblePartyName": {
+              "S": "KrKa Farmaceutica, Sociedade Unipessoal, Lda"
+            },
+            "responsiblePartyCountry": {
+              "S": "Portugal"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "rawel sr"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4286"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#6439"
+            },
+            "sourceCode": {
+              "S": "6439"
+            },
+            "registrationNumber": {
+              "S": "FE96430/11"
+            },
+            "brandName": {
+              "S": "RAZOLE 20"
+            },
+            "strength": {
+              "S": "20mg"
+            },
+            "presentation": {
+              "S": "10"
+            },
+            "dosageForm": {
+              "S": "Tablet, enteric coated"
+            },
+            "agent": {
+              "S": "Benta Trading Co s.a.l."
+            },
+            "manufacturer": {
+              "S": "Benta SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "282846.85000000003"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "3.1603000000000003"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "razole 20"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4287"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7734"
+            },
+            "sourceCode": {
+              "S": "7734"
+            },
+            "registrationNumber": {
+              "S": "FE096856/12"
+            },
+            "brandName": {
+              "S": "RAZOLE 20"
+            },
+            "strength": {
+              "S": "20mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet, enteric coated"
+            },
+            "agent": {
+              "S": "Benta Trading Co s.a.l."
+            },
+            "manufacturer": {
+              "S": "Benta SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "639925"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "7.15"
+            },
+            "responsiblePartyName": {
+              "S": "Benta SAL"
+            },
+            "responsiblePartyCountry": {
+              "S": "Lebanon"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "razole 20"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4288"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10082"
+            },
+            "sourceCode": {
+              "S": "10082"
+            },
+            "registrationNumber": {
+              "S": "71319/1"
+            },
+            "brandName": {
+              "S": "RAZON 20"
+            },
+            "strength": {
+              "S": "20mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet, enteric coated"
+            },
+            "agent": {
+              "S": "C. Catafago & Co"
+            },
+            "manufacturer": {
+              "S": "The Jordanian Pharmaceutical Manufacturing Co. (JPM)"
+            },
+            "country": {
+              "S": "Jordan"
+            },
+            "publicPriceLbp": {
+              "N": "747176.4299999998"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "8.348339999999999"
+            },
+            "responsiblePartyName": {
+              "S": "The Jordanian Pharmaceutical Manufacturing & Co Ltd"
+            },
+            "responsiblePartyCountry": {
+              "S": "Jordan"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "razon 20"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4289"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11498"
+            },
+            "sourceCode": {
+              "S": "11498"
+            },
+            "registrationNumber": {
+              "S": "76521/1"
+            },
+            "brandName": {
+              "S": "RAZON 40"
+            },
+            "strength": {
+              "S": "40mg"
+            },
+            "presentation": {
+              "S": "28"
+            },
+            "dosageForm": {
+              "S": "Tablet, enteric coated"
+            },
+            "agent": {
+              "S": "C. Catafago & Co"
+            },
+            "manufacturer": {
+              "S": "The Jordanian Pharmaceutical Manufacturing Co. (JPM)"
+            },
+            "country": {
+              "S": "Jordan"
+            },
+            "publicPriceLbp": {
+              "N": "1252461.2100000002"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "13.993980000000002"
+            },
+            "responsiblePartyName": {
+              "S": "The Jordanian Pharmaceutical Manufacturing Co. (JPM)"
+            },
+            "responsiblePartyCountry": {
+              "S": "Jordan"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "razon 40"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4291"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#1859"
+            },
+            "sourceCode": {
+              "S": "1859"
+            },
+            "registrationNumber": {
+              "S": "405949/00"
+            },
+            "brandName": {
+              "S": "RAZON 40"
+            },
+            "strength": {
+              "S": "40mg"
+            },
+            "presentation": {
+              "S": "14"
+            },
+            "dosageForm": {
+              "S": "Tablet, enteric coated"
+            },
+            "agent": {
+              "S": "C. Catafago & Co"
+            },
+            "manufacturer": {
+              "S": "The Jordanian Pharmaceutical Manufacturing & Co Ltd"
+            },
+            "country": {
+              "S": "Jordan"
+            },
+            "publicPriceLbp": {
+              "N": "727018.7925"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "8.123115"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "razon 40"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4290"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10330"
+            },
+            "sourceCode": {
+              "S": "10330"
+            },
+            "registrationNumber": {
+              "S": "109618/1"
+            },
+            "brandName": {
+              "S": "RAZYLECT 0.5"
+            },
+            "strength": {
+              "S": "0.5mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet"
+            },
+            "agent": {
+              "S": "Benta Trading Co s.a.l."
+            },
+            "manufacturer": {
+              "S": "Benta SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "2036369.3350000002"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "22.752730000000003"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "razylect 0 5"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4292"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10331"
+            },
+            "sourceCode": {
+              "S": "10331"
+            },
+            "registrationNumber": {
+              "S": "109718/1"
+            },
+            "brandName": {
+              "S": "RAZYLECT 1"
+            },
+            "strength": {
+              "S": "1mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet"
+            },
+            "agent": {
+              "S": "Benta Trading Co s.a.l."
+            },
+            "manufacturer": {
+              "S": "Benta SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "3532513.9850000003"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "39.46943"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "razylect 1"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4293"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10840"
+            },
+            "sourceCode": {
+              "S": "10840"
+            },
+            "registrationNumber": {
+              "S": "119220/1"
+            },
+            "brandName": {
+              "S": "REAGILA"
+            },
+            "strength": {
+              "S": "6mg"
+            },
+            "presentation": {
+              "S": "28"
+            },
+            "dosageForm": {
+              "S": "Capsule, hard"
+            },
+            "agent": {
+              "S": "Abela Frères S.A.L."
+            },
+            "manufacturer": {
+              "S": "Gedeon Richter PLC"
+            },
+            "country": {
+              "S": "Hungary"
+            },
+            "publicPriceLbp": {
+              "N": "6394002.615000002"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "71.44137000000002"
+            },
+            "responsiblePartyName": {
+              "S": "Hikma Pharmaceuticals"
+            },
+            "responsiblePartyCountry": {
+              "S": "Jordan"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "reagila"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4294"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10841"
+            },
+            "sourceCode": {
+              "S": "10841"
+            },
+            "registrationNumber": {
+              "S": "119120/1"
+            },
+            "brandName": {
+              "S": "REAGILA"
+            },
+            "strength": {
+              "S": "4.5mg"
+            },
+            "presentation": {
+              "S": "28"
+            },
+            "dosageForm": {
+              "S": "Capsule, hard"
+            },
+            "agent": {
+              "S": "Abela Frères S.A.L."
+            },
+            "manufacturer": {
+              "S": "Gedeon Richter PLC"
+            },
+            "country": {
+              "S": "Hungary"
+            },
+            "publicPriceLbp": {
+              "N": "6394002.615000002"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "71.44137000000002"
+            },
+            "responsiblePartyName": {
+              "S": "Hikma Pharmaceuticals"
+            },
+            "responsiblePartyCountry": {
+              "S": "Jordan"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "reagila"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4295"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10842"
+            },
+            "sourceCode": {
+              "S": "10842"
+            },
+            "registrationNumber": {
+              "S": "119020/1"
+            },
+            "brandName": {
+              "S": "REAGILA"
+            },
+            "strength": {
+              "S": "3mg"
+            },
+            "presentation": {
+              "S": "28"
+            },
+            "dosageForm": {
+              "S": "Capsule, hard"
+            },
+            "agent": {
+              "S": "Abela Frères S.A.L."
+            },
+            "manufacturer": {
+              "S": "Gedeon Richter PLC"
+            },
+            "country": {
+              "S": "Hungary"
+            },
+            "publicPriceLbp": {
+              "N": "6394002.615000002"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "71.44137000000002"
+            },
+            "responsiblePartyName": {
+              "S": "Hikma Pharmaceuticals"
+            },
+            "responsiblePartyCountry": {
+              "S": "Jordan"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "reagila"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4296"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10843"
+            },
+            "sourceCode": {
+              "S": "10843"
+            },
+            "registrationNumber": {
+              "S": "118920/1"
+            },
+            "brandName": {
+              "S": "REAGILA"
+            },
+            "strength": {
+              "S": "1.5mg"
+            },
+            "presentation": {
+              "S": "28"
+            },
+            "dosageForm": {
+              "S": "Capsule, hard"
+            },
+            "agent": {
+              "S": "Abela Frères S.A.L."
+            },
+            "manufacturer": {
+              "S": "Gedeon Richter PLC"
+            },
+            "country": {
+              "S": "Hungary"
+            },
+            "publicPriceLbp": {
+              "N": "6394002.615000002"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "71.44137000000002"
+            },
+            "responsiblePartyName": {
+              "S": "Hikma Pharmaceuticals"
+            },
+            "responsiblePartyCountry": {
+              "S": "Jordan"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "reagila"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4297"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#3426"
+            },
+            "sourceCode": {
+              "S": "3426"
+            },
+            "registrationNumber": {
+              "S": "973729/02"
+            },
+            "brandName": {
+              "S": "REBIF"
+            },
+            "strength": {
+              "S": "44mcg (12MIU)"
+            },
+            "presentation": {
+              "S": "12Prefilled syringes"
+            },
+            "dosageForm": {
+              "S": "Solution for injection"
+            },
+            "agent": {
+              "S": "Food & Drug Corporation FDC"
+            },
+            "manufacturer": {
+              "S": "Merck Serono SpA"
+            },
+            "country": {
+              "S": "Italy"
+            },
+            "publicPriceLbp": {
+              "N": "82479504.72411245"
+            },
+            "pharmacistMarginPercent": {
+              "N": "2.44"
+            },
+            "stratum": {
+              "S": "E2"
+            },
+            "publicPriceDecision119": {
+              "N": "921.5587120012565"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "rebif"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4298"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12021"
+            },
+            "sourceCode": {
+              "S": "12021"
+            },
+            "registrationNumber": {
+              "S": "140321/1"
+            },
+            "brandName": {
+              "S": "REBLOZYL"
+            },
+            "strength": {
+              "S": "25mg"
+            },
+            "presentation": {
+              "S": "1Vial"
+            },
+            "dosageForm": {
+              "S": "Powder for solution for injection"
+            },
+            "agent": {
+              "S": "Pacific pharma"
+            },
+            "manufacturer": {
+              "S": "Patheon Italia SpA"
+            },
+            "country": {
+              "S": "Italy"
+            },
+            "publicPriceLbp": {
+              "N": "125960784.42937502"
+            },
+            "pharmacistMarginPercent": {
+              "N": "2.44"
+            },
+            "stratum": {
+              "S": "E2"
+            },
+            "publicPriceDecision119": {
+              "N": "1407.3830662500002"
+            },
+            "responsiblePartyName": {
+              "S": "Bristol-Myers Squibb Pharma EEIG"
+            },
+            "responsiblePartyCountry": {
+              "S": "Ireland"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "reblozyl"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4299"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12022"
+            },
+            "sourceCode": {
+              "S": "12022"
+            },
+            "registrationNumber": {
+              "S": "14021/1"
+            },
+            "brandName": {
+              "S": "REBLOZYL"
+            },
+            "strength": {
+              "S": "75mg"
+            },
+            "presentation": {
+              "S": "1Vial"
+            },
+            "dosageForm": {
+              "S": "Powder for solution for injection"
+            },
+            "agent": {
+              "S": "Pacific pharma"
+            },
+            "manufacturer": {
+              "S": "Patheon Italia SpA"
+            },
+            "country": {
+              "S": "Italy"
+            },
+            "publicPriceLbp": {
+              "N": "377881317.8010937"
+            },
+            "pharmacistMarginPercent": {
+              "N": "2.44"
+            },
+            "stratum": {
+              "S": "E2"
+            },
+            "publicPriceDecision119": {
+              "N": "4222.137629062499"
+            },
+            "responsiblePartyName": {
+              "S": "Bristol-Myers Squibb Pharma EEIG"
+            },
+            "responsiblePartyCountry": {
+              "S": "Ireland"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "reblozyl"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4300"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,1959 @@
+{
+  "RequestItems": {
+    "DawaaMedicines": [
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11885"
+            },
+            "sourceCode": {
+              "S": "11885"
+            },
+            "registrationNumber": {
+              "S": "51323/1"
+            },
+            "brandName": {
+              "S": "METAPRO"
+            },
+            "strength": {
+              "S": "40mg"
+            },
+            "presentation": {
+              "S": "56"
+            },
+            "dosageForm": {
+              "S": "Tablet, gastroresistant"
+            },
+            "agent": {
+              "S": "Mediterranean Pharmaceutical Company"
+            },
+            "manufacturer": {
+              "S": "Pharminicio SL"
+            },
+            "country": {
+              "S": "Spain"
+            },
+            "publicPriceLbp": {
+              "N": "639669.0300000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "7.147140000000002"
+            },
+            "responsiblePartyName": {
+              "S": "Pharminicio SL"
+            },
+            "responsiblePartyCountry": {
+              "S": "Spain"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "metapro"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3250"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#6027"
+            },
+            "sourceCode": {
+              "S": "6027"
+            },
+            "registrationNumber": {
+              "S": "221948/09"
+            },
+            "brandName": {
+              "S": "METASONE"
+            },
+            "strength": {
+              "S": "0.1%"
+            },
+            "presentation": {
+              "S": "30g"
+            },
+            "dosageForm": {
+              "S": "Cream"
+            },
+            "agent": {
+              "S": "Medapharm Healthcare SAL"
+            },
+            "manufacturer": {
+              "S": "Mediphar Laboratories"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "335320.70000000007"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "3.746600000000001"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "metasone"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3251"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#6834"
+            },
+            "sourceCode": {
+              "S": "6834"
+            },
+            "registrationNumber": {
+              "S": "166621/11"
+            },
+            "brandName": {
+              "S": "METASONE"
+            },
+            "presentation": {
+              "S": "120 sprays"
+            },
+            "dosageForm": {
+              "S": "Aqueous nasal Spray"
+            },
+            "agent": {
+              "S": "Medapharm Healthcare SAL"
+            },
+            "manufacturer": {
+              "S": "Mediphar Laboratories"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "419790.80000000005"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "4.6904"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "metasone"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3252"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#9530"
+            },
+            "sourceCode": {
+              "S": "9530"
+            },
+            "registrationNumber": {
+              "S": "62417/1"
+            },
+            "brandName": {
+              "S": "METASONE"
+            },
+            "strength": {
+              "S": "0.1%"
+            },
+            "presentation": {
+              "S": "30ml"
+            },
+            "dosageForm": {
+              "S": "Lotion"
+            },
+            "agent": {
+              "S": "Medapharm"
+            },
+            "manufacturer": {
+              "S": "Mediphar Laboratories"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "239331.95000000004"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "2.6741000000000006"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "metasone"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3253"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#9531"
+            },
+            "sourceCode": {
+              "S": "9531"
+            },
+            "registrationNumber": {
+              "S": "86516/1"
+            },
+            "brandName": {
+              "S": "METASONE-D"
+            },
+            "presentation": {
+              "S": "120sprays"
+            },
+            "dosageForm": {
+              "S": "Nasal spray"
+            },
+            "agent": {
+              "S": "Medapharm"
+            },
+            "manufacturer": {
+              "S": "Mediphar Laboratories"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "534977.3"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "5.9774"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "metasone d"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3254"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#5624"
+            },
+            "sourceCode": {
+              "S": "5624"
+            },
+            "registrationNumber": {
+              "S": "23631/06"
+            },
+            "brandName": {
+              "S": "METASPRAY"
+            },
+            "strength": {
+              "S": "50mcg/dose"
+            },
+            "presentation": {
+              "S": "100 metered doses"
+            },
+            "dosageForm": {
+              "S": "nasal spray"
+            },
+            "agent": {
+              "S": "Droguerie de l'Union"
+            },
+            "manufacturer": {
+              "S": "Cipla Ltd"
+            },
+            "country": {
+              "S": "India"
+            },
+            "publicPriceLbp": {
+              "N": "349399.05"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "3.9038999999999997"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "metaspray"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3255"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#3058"
+            },
+            "sourceCode": {
+              "S": "3058"
+            },
+            "registrationNumber": {
+              "S": "236818/99"
+            },
+            "brandName": {
+              "S": "METEOSPASMYL"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Capsule"
+            },
+            "agent": {
+              "S": "Droguerie de l'Union"
+            },
+            "manufacturer": {
+              "S": "Mayoly Spindler"
+            },
+            "country": {
+              "S": "France"
+            },
+            "publicPriceLbp": {
+              "N": "474376.40249999997"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "5.300294999999999"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "meteospasmyl"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3256"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#3896"
+            },
+            "sourceCode": {
+              "S": "3896"
+            },
+            "registrationNumber": {
+              "S": "194120/05"
+            },
+            "brandName": {
+              "S": "METFORKEY"
+            },
+            "strength": {
+              "S": "850mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet, extended release"
+            },
+            "agent": {
+              "S": "Mediterranean Pharmaceutical Company"
+            },
+            "manufacturer": {
+              "S": "Pharminicio SL"
+            },
+            "country": {
+              "S": "Spain"
+            },
+            "publicPriceLbp": {
+              "N": "357462.10500000004"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "3.9939900000000006"
+            },
+            "responsiblePartyName": {
+              "S": "Pharminicio SL"
+            },
+            "responsiblePartyCountry": {
+              "S": "Spain"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "metforkey"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3257"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#3897"
+            },
+            "sourceCode": {
+              "S": "3897"
+            },
+            "registrationNumber": {
+              "S": "194121/05"
+            },
+            "brandName": {
+              "S": "METFORKEY"
+            },
+            "strength": {
+              "S": "1,000mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet, extended release"
+            },
+            "agent": {
+              "S": "Mediterranean Pharmaceutical Company"
+            },
+            "manufacturer": {
+              "S": "Pharminicio SL"
+            },
+            "country": {
+              "S": "Spain"
+            },
+            "publicPriceLbp": {
+              "N": "374932.0575"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "4.189185"
+            },
+            "responsiblePartyName": {
+              "S": "Pharminicio SL"
+            },
+            "responsiblePartyCountry": {
+              "S": "Spain"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "metforkey"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3258"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11932"
+            },
+            "sourceCode": {
+              "S": "11932"
+            },
+            "registrationNumber": {
+              "S": "67524/1"
+            },
+            "brandName": {
+              "S": "METFORMINE ARROW LAB"
+            },
+            "strength": {
+              "S": "500mg"
+            },
+            "presentation": {
+              "S": "90"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Darapharma S.A.L."
+            },
+            "manufacturer": {
+              "S": "APL Swift Services (Malta) Limited"
+            },
+            "country": {
+              "S": "Malta"
+            },
+            "publicPriceLbp": {
+              "N": "560382.3225"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "6.261255"
+            },
+            "responsiblePartyName": {
+              "S": "Arrow Génériques"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "metformine arrow lab"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3262"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11933"
+            },
+            "sourceCode": {
+              "S": "11933"
+            },
+            "registrationNumber": {
+              "S": "67324/1"
+            },
+            "brandName": {
+              "S": "METFORMINE ARROW LAB"
+            },
+            "strength": {
+              "S": "850mg"
+            },
+            "presentation": {
+              "S": "90"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Darapharma S.A.L."
+            },
+            "manufacturer": {
+              "S": "APL Swift Services (Malta) Limited"
+            },
+            "country": {
+              "S": "Malta"
+            },
+            "publicPriceLbp": {
+              "N": "689391.2025"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "7.702695"
+            },
+            "responsiblePartyName": {
+              "S": "Arrow Génériques"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "metformine arrow lab"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3263"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11934"
+            },
+            "sourceCode": {
+              "S": "11934"
+            },
+            "registrationNumber": {
+              "S": "67424/1"
+            },
+            "brandName": {
+              "S": "METFORMINE ARROW LAB"
+            },
+            "strength": {
+              "S": "1000mg"
+            },
+            "presentation": {
+              "S": "90"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated, scored"
+            },
+            "agent": {
+              "S": "Darapharma S.A.L."
+            },
+            "manufacturer": {
+              "S": "APL Swift Services (Malta) Limited"
+            },
+            "country": {
+              "S": "Malta"
+            },
+            "publicPriceLbp": {
+              "N": "689391.2025"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "7.702695"
+            },
+            "responsiblePartyName": {
+              "S": "Arrow Génériques"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "metformine arrow lab"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3264"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12081"
+            },
+            "sourceCode": {
+              "S": "12081"
+            },
+            "registrationNumber": {
+              "S": "67324/1"
+            },
+            "brandName": {
+              "S": "METFORMINE ARROW LAB"
+            },
+            "strength": {
+              "S": "850mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Darapharma S.A.L."
+            },
+            "manufacturer": {
+              "S": "Generis Farmaceutica SA"
+            },
+            "country": {
+              "S": "Portugal"
+            },
+            "publicPriceLbp": {
+              "N": "237860.1225"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "2.657655"
+            },
+            "responsiblePartyName": {
+              "S": "Arrow Génériques"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "metformine arrow lab"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3265"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            },
+            "duplicateSearchKey": {
+              "BOOL": true
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12082"
+            },
+            "sourceCode": {
+              "S": "12082"
+            },
+            "registrationNumber": {
+              "S": "15424/1"
+            },
+            "brandName": {
+              "S": "METFORMINE ARROW LAB"
+            },
+            "strength": {
+              "S": "500mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Darapharma S.A.L."
+            },
+            "manufacturer": {
+              "S": "Generis Farmaceutica SA"
+            },
+            "country": {
+              "S": "Portugal"
+            },
+            "publicPriceLbp": {
+              "N": "193513.32000000004"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "2.1621600000000005"
+            },
+            "responsiblePartyName": {
+              "S": "Arrow Génériques"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "metformine arrow lab"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3266"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            },
+            "duplicateSearchKey": {
+              "BOOL": true
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12083"
+            },
+            "sourceCode": {
+              "S": "12083"
+            },
+            "registrationNumber": {
+              "S": "15224/1"
+            },
+            "brandName": {
+              "S": "METFORMINE ARROW LAB"
+            },
+            "strength": {
+              "S": "1000mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated, scored"
+            },
+            "agent": {
+              "S": "Darapharma S.A.L."
+            },
+            "manufacturer": {
+              "S": "Generis Farmaceutica SA"
+            },
+            "country": {
+              "S": "Portugal"
+            },
+            "publicPriceLbp": {
+              "N": "237860.1225"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "2.657655"
+            },
+            "responsiblePartyName": {
+              "S": "Arrow Génériques"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "metformine arrow lab"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3267"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            },
+            "duplicateSearchKey": {
+              "BOOL": true
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#9011"
+            },
+            "sourceCode": {
+              "S": "9011"
+            },
+            "registrationNumber": {
+              "S": "169116/1"
+            },
+            "brandName": {
+              "S": "METFORMINE ARROW LAB"
+            },
+            "strength": {
+              "S": "1000mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated, scored"
+            },
+            "agent": {
+              "S": "Darapharma S.A.L."
+            },
+            "manufacturer": {
+              "S": "APL Swift Services (Malta) Limited"
+            },
+            "country": {
+              "S": "Malta"
+            },
+            "publicPriceLbp": {
+              "N": "237860.1225"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "2.657655"
+            },
+            "responsiblePartyName": {
+              "S": "Arrow Génériques"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "metformine arrow lab"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3259"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#9012"
+            },
+            "sourceCode": {
+              "S": "9012"
+            },
+            "registrationNumber": {
+              "S": "169016/1"
+            },
+            "brandName": {
+              "S": "METFORMINE ARROW LAB"
+            },
+            "strength": {
+              "S": "850mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Darapharma S.A.L."
+            },
+            "manufacturer": {
+              "S": "APL Swift Services (Malta) Limited"
+            },
+            "country": {
+              "S": "Malta"
+            },
+            "publicPriceLbp": {
+              "N": "237860.1225"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "2.657655"
+            },
+            "responsiblePartyName": {
+              "S": "Arrow Génériques"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "metformine arrow lab"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3260"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#9115"
+            },
+            "sourceCode": {
+              "S": "9115"
+            },
+            "registrationNumber": {
+              "S": "98117/1"
+            },
+            "brandName": {
+              "S": "METFORMINE ARROW LAB"
+            },
+            "strength": {
+              "S": "500mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Darapharma S.A.L."
+            },
+            "manufacturer": {
+              "S": "APL Swift Services (Malta) Limited"
+            },
+            "country": {
+              "S": "Malta"
+            },
+            "publicPriceLbp": {
+              "N": "193513.32000000004"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "2.1621600000000005"
+            },
+            "responsiblePartyName": {
+              "S": "Arrow Génériques"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "metformine arrow lab"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3261"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10321"
+            },
+            "sourceCode": {
+              "S": "10321"
+            },
+            "registrationNumber": {
+              "S": "63720/1"
+            },
+            "brandName": {
+              "S": "METHOFEN PLATINUM"
+            },
+            "presentation": {
+              "S": "Box of 20"
+            },
+            "dosageForm": {
+              "S": "Tablet"
+            },
+            "agent": {
+              "S": "Medi Drug S.A.R.L."
+            },
+            "manufacturer": {
+              "S": "Packed by Pharmadex SAL Lebanon under license from Marcan Pharmaceuticals Inc. Canada"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "668081.7"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "7.4646"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "methofen platinum"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3269"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#6206"
+            },
+            "sourceCode": {
+              "S": "6206"
+            },
+            "registrationNumber": {
+              "S": "167486/10"
+            },
+            "brandName": {
+              "S": "METHOTREXAT EBEWE"
+            },
+            "strength": {
+              "S": "500mg"
+            },
+            "presentation": {
+              "S": "1vialx50ml"
+            },
+            "dosageForm": {
+              "S": "Injection"
+            },
+            "agent": {
+              "S": "Khalil Fattal & Fils S.A.L."
+            },
+            "manufacturer": {
+              "S": "Fareva Unterach GmbH"
+            },
+            "country": {
+              "S": "Austria"
+            },
+            "publicPriceLbp": {
+              "N": "1842408.0675000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "20.585565000000003"
+            },
+            "responsiblePartyName": {
+              "S": "Ebewe Pharma GesmbH.NFG.KG"
+            },
+            "responsiblePartyCountry": {
+              "S": "Austria"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "methotrexat ebewe"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3270"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#5498"
+            },
+            "sourceCode": {
+              "S": "5498"
+            },
+            "registrationNumber": {
+              "S": "222459/08"
+            },
+            "brandName": {
+              "S": "METHYL PREDNISOLONE VIATRIS 120MG"
+            },
+            "strength": {
+              "S": "120mg"
+            },
+            "presentation": {
+              "S": "1 Vial IM/IV"
+            },
+            "dosageForm": {
+              "S": "Injectable powder for solution"
+            },
+            "agent": {
+              "S": "Benta Trading Co s.a.l."
+            },
+            "manufacturer": {
+              "S": "Benta SAL under license from Viatris Santé, France"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "602536.0330990001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "6.732246179877096"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "methyl prednisolone viatris 120mg"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3271"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#6904"
+            },
+            "sourceCode": {
+              "S": "6904"
+            },
+            "registrationNumber": {
+              "S": "97214/12"
+            },
+            "brandName": {
+              "S": "METHYL PREDNISOLONE VIATRIS 1G"
+            },
+            "strength": {
+              "S": "1g"
+            },
+            "presentation": {
+              "S": "1 Vial"
+            },
+            "dosageForm": {
+              "S": "Powder for solution for injection (IV)"
+            },
+            "agent": {
+              "S": "Benta Trading Co s.a.l."
+            },
+            "manufacturer": {
+              "S": "Benta SAL under license from Viatris Santé, France"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "1348604.222966"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "15.068203608558658"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "methyl prednisolone viatris 1g"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3272"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#5497"
+            },
+            "sourceCode": {
+              "S": "5497"
+            },
+            "registrationNumber": {
+              "S": "222460/08"
+            },
+            "brandName": {
+              "S": "METHYL PREDNISOLONE VIATRIS 40MG"
+            },
+            "strength": {
+              "S": "40mg"
+            },
+            "presentation": {
+              "S": "1Vial IM/IV"
+            },
+            "dosageForm": {
+              "S": "Injectable dry powder for solution"
+            },
+            "agent": {
+              "S": "Benta Trading Co s.a.l."
+            },
+            "manufacturer": {
+              "S": "Benta SAL under license from Viatris Santé, France"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "258656.907509"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "2.8900213129497208"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "methyl prednisolone viatris 40mg"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3273"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#4610"
+            },
+            "sourceCode": {
+              "S": "4610"
+            },
+            "registrationNumber": {
+              "S": "2891"
+            },
+            "brandName": {
+              "S": "METHYL SALICYLATE COMPOUND UNGUENTUM"
+            },
+            "presentation": {
+              "S": "30g"
+            },
+            "dosageForm": {
+              "S": "Ointment"
+            },
+            "agent": {
+              "S": "Pharmadex"
+            },
+            "manufacturer": {
+              "S": "Pharmadex"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "165100.65000000005"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "1.8447000000000007"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "methyl salicylate compound unguentum"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3274"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#2855"
+            },
+            "sourceCode": {
+              "S": "2855"
+            },
+            "registrationNumber": {
+              "S": "L0344/91"
+            },
+            "brandName": {
+              "S": "METHYL SULFATE DE NEOSTIGMINE RENAUDIN"
+            },
+            "strength": {
+              "S": "0.5mg/ml"
+            },
+            "presentation": {
+              "S": "bt de 10Amps (1ml)"
+            },
+            "dosageForm": {
+              "S": "Sol inj"
+            },
+            "agent": {
+              "S": "Minapharm Halabi"
+            },
+            "manufacturer": {
+              "S": "Renaudin"
+            },
+            "country": {
+              "S": "France"
+            },
+            "publicPriceLbp": {
+              "N": "467657.19"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "5.22522"
+            },
+            "responsiblePartyName": {
+              "S": "Renaudin"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "methyl sulfate de neostigmine renaudin"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3275"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

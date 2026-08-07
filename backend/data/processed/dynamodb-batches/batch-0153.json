@@ -1,0 +1,1992 @@
+{
+  "RequestItems": {
+    "DawaaMedicines": [
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11322"
+            },
+            "sourceCode": {
+              "S": "11322"
+            },
+            "registrationNumber": {
+              "S": "24523/1"
+            },
+            "brandName": {
+              "S": "OTOREZA 10/10"
+            },
+            "presentation": {
+              "S": "14"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Premium Serve Drugstore Co. P.S.D. SAL"
+            },
+            "manufacturer": {
+              "S": "Marcyrl Pharmaceuticals Industries (MPI)"
+            },
+            "country": {
+              "S": "Egypt"
+            },
+            "publicPriceLbp": {
+              "N": "454218.765"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "5.07507"
+            },
+            "responsiblePartyName": {
+              "S": "Marcyrl Pharmaceuticals Industries (MPI)"
+            },
+            "responsiblePartyCountry": {
+              "S": "Egypt"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "otoreza 10 10"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3802"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11748"
+            },
+            "sourceCode": {
+              "S": "11748"
+            },
+            "registrationNumber": {
+              "S": "47124/1"
+            },
+            "brandName": {
+              "S": "OTOREZA 10MG/20MG"
+            },
+            "presentation": {
+              "S": "21"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Premium Serve Drugstore Co. P.S.D. SAL"
+            },
+            "manufacturer": {
+              "S": "Marcyrl Pharmaceuticals Industries (MPI)"
+            },
+            "country": {
+              "S": "Egypt"
+            },
+            "publicPriceLbp": {
+              "N": "561726.1650000002"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "6.276270000000002"
+            },
+            "responsiblePartyName": {
+              "S": "Marcyrl Pharmaceuticals Industries (MPI)"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "otoreza 10mg 20mg"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3803"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11747"
+            },
+            "sourceCode": {
+              "S": "11747"
+            },
+            "registrationNumber": {
+              "S": "47224/1"
+            },
+            "brandName": {
+              "S": "OTOREZA 10MG/40MG"
+            },
+            "presentation": {
+              "S": "28"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Premium Serve Drugstore Co. P.S.D. SAL"
+            },
+            "manufacturer": {
+              "S": "Marcyrl Pharmaceuticals Industries (MPI)"
+            },
+            "country": {
+              "S": "Egypt"
+            },
+            "publicPriceLbp": {
+              "N": "1144953.81"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "12.79278"
+            },
+            "responsiblePartyName": {
+              "S": "Marcyrl Pharmaceuticals Industries (MPI)"
+            },
+            "responsiblePartyCountry": {
+              "S": "Egypt"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "otoreza 10mg 40mg"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3804"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10893"
+            },
+            "sourceCode": {
+              "S": "10893"
+            },
+            "registrationNumber": {
+              "S": "68121/1"
+            },
+            "brandName": {
+              "S": "OTRIALLERGY"
+            },
+            "strength": {
+              "S": "50mcg"
+            },
+            "presentation": {
+              "S": "120 metered spray"
+            },
+            "dosageForm": {
+              "S": "Aqueous nasal spray suspension"
+            },
+            "agent": {
+              "S": "Sadco"
+            },
+            "manufacturer": {
+              "S": "GlaxoWellcome SA"
+            },
+            "country": {
+              "S": "Spain"
+            },
+            "publicPriceLbp": {
+              "N": "675952.7775000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "7.552545000000001"
+            },
+            "responsiblePartyName": {
+              "S": "Haleon UK Trading Limited"
+            },
+            "responsiblePartyCountry": {
+              "S": "UK"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "otriallergy"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3805"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10067"
+            },
+            "sourceCode": {
+              "S": "10067"
+            },
+            "registrationNumber": {
+              "S": "86919/1"
+            },
+            "brandName": {
+              "S": "OTRIVIN"
+            },
+            "strength": {
+              "S": "0.1%"
+            },
+            "presentation": {
+              "S": "10ml"
+            },
+            "dosageForm": {
+              "S": "Nasal Drops"
+            },
+            "agent": {
+              "S": "Sadco"
+            },
+            "manufacturer": {
+              "S": "Haleon CH SARL"
+            },
+            "country": {
+              "S": "Switzerland"
+            },
+            "publicPriceLbp": {
+              "N": "241891.65000000002"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "2.7027"
+            },
+            "responsiblePartyName": {
+              "S": "Haleon Schweiz AG"
+            },
+            "responsiblePartyCountry": {
+              "S": "Switzerland"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "otrivin"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3806"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10068"
+            },
+            "sourceCode": {
+              "S": "10068"
+            },
+            "registrationNumber": {
+              "S": "71819/1"
+            },
+            "brandName": {
+              "S": "OTRIVIN"
+            },
+            "strength": {
+              "S": "0.05%"
+            },
+            "presentation": {
+              "S": "10ml"
+            },
+            "dosageForm": {
+              "S": "Metered dose nasal spray"
+            },
+            "agent": {
+              "S": "Sadco"
+            },
+            "manufacturer": {
+              "S": "Haleon CH SARL"
+            },
+            "country": {
+              "S": "Switzerland"
+            },
+            "publicPriceLbp": {
+              "N": "376275.9"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "4.2042"
+            },
+            "responsiblePartyName": {
+              "S": "Haleon Schweiz AG"
+            },
+            "responsiblePartyCountry": {
+              "S": "Switzerland"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "otrivin"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3807"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10069"
+            },
+            "sourceCode": {
+              "S": "10069"
+            },
+            "registrationNumber": {
+              "S": "71919/1"
+            },
+            "brandName": {
+              "S": "OTRIVIN"
+            },
+            "strength": {
+              "S": "0.1%"
+            },
+            "presentation": {
+              "S": "10ml"
+            },
+            "dosageForm": {
+              "S": "Metered dose nasal spray"
+            },
+            "agent": {
+              "S": "Sadco"
+            },
+            "manufacturer": {
+              "S": "Haleon CH SARL"
+            },
+            "country": {
+              "S": "Switzerland"
+            },
+            "publicPriceLbp": {
+              "N": "260705.445"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "2.91291"
+            },
+            "responsiblePartyName": {
+              "S": "Haleon Schweiz AG"
+            },
+            "responsiblePartyCountry": {
+              "S": "Switzerland"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "otrivin"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3808"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10651"
+            },
+            "sourceCode": {
+              "S": "10651"
+            },
+            "registrationNumber": {
+              "S": "180520/1"
+            },
+            "brandName": {
+              "S": "OTRIVIN"
+            },
+            "strength": {
+              "S": "0.05%"
+            },
+            "presentation": {
+              "S": "10ml"
+            },
+            "dosageForm": {
+              "S": "Nasal drops"
+            },
+            "agent": {
+              "S": "Sadco"
+            },
+            "manufacturer": {
+              "S": "Haleon CH SARL"
+            },
+            "country": {
+              "S": "Switzerland"
+            },
+            "publicPriceLbp": {
+              "N": "181418.73750000002"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "2.027025"
+            },
+            "responsiblePartyName": {
+              "S": "Haleon Schweiz AG"
+            },
+            "responsiblePartyCountry": {
+              "S": "Switzerland"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "otrivin"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3809"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10894"
+            },
+            "sourceCode": {
+              "S": "10894"
+            },
+            "registrationNumber": {
+              "S": "8122/1"
+            },
+            "brandName": {
+              "S": "OTRIVIN DUAL RELIEF"
+            },
+            "presentation": {
+              "S": "10ml"
+            },
+            "dosageForm": {
+              "S": "Nasal Spray Solution"
+            },
+            "agent": {
+              "S": "Sadco"
+            },
+            "manufacturer": {
+              "S": "Haleon CH SARL"
+            },
+            "country": {
+              "S": "Switzerland"
+            },
+            "publicPriceLbp": {
+              "N": "563070.0075000002"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "6.291285000000002"
+            },
+            "responsiblePartyName": {
+              "S": "Haleon UK Trading Limited"
+            },
+            "responsiblePartyCountry": {
+              "S": "UK"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "otrivin dual relief"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3810"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10123"
+            },
+            "sourceCode": {
+              "S": "10123"
+            },
+            "registrationNumber": {
+              "S": "101119/1"
+            },
+            "brandName": {
+              "S": "OTRIVIN MENTHOL 0.1%"
+            },
+            "strength": {
+              "S": "0.1%"
+            },
+            "presentation": {
+              "S": "10ml"
+            },
+            "dosageForm": {
+              "S": "Metered dose nasal spray"
+            },
+            "agent": {
+              "S": "Sadco"
+            },
+            "manufacturer": {
+              "S": "Haleon CH SARL"
+            },
+            "country": {
+              "S": "Switzerland"
+            },
+            "publicPriceLbp": {
+              "N": "387026.64"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "4.32432"
+            },
+            "responsiblePartyName": {
+              "S": "Haleon Schweiz AG"
+            },
+            "responsiblePartyCountry": {
+              "S": "Switzerland"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "otrivin menthol 0 1"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3811"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10975"
+            },
+            "sourceCode": {
+              "S": "10975"
+            },
+            "registrationNumber": {
+              "S": "116021/1"
+            },
+            "brandName": {
+              "S": "OVITRELLE"
+            },
+            "strength": {
+              "S": "250mcg/0.5ml"
+            },
+            "presentation": {
+              "S": "1 prefilled syringe"
+            },
+            "dosageForm": {
+              "S": "solution for inj"
+            },
+            "agent": {
+              "S": "Food & Drug Corporation FDC"
+            },
+            "manufacturer": {
+              "S": "Merck Serono SpA"
+            },
+            "country": {
+              "S": "Italy"
+            },
+            "publicPriceLbp": {
+              "N": "4145754.1125000007"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "46.32127500000001"
+            },
+            "responsiblePartyName": {
+              "S": "Merck Serono SpA"
+            },
+            "responsiblePartyCountry": {
+              "S": "Italy"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "ovitrelle"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3812"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#1523"
+            },
+            "sourceCode": {
+              "S": "1523"
+            },
+            "registrationNumber": {
+              "S": "15315"
+            },
+            "brandName": {
+              "S": "OVOL"
+            },
+            "presentation": {
+              "S": "15ml"
+            },
+            "dosageForm": {
+              "S": "Drops"
+            },
+            "agent": {
+              "S": "Mectapharm S.A.L."
+            },
+            "manufacturer": {
+              "S": "Church and Dwight Canada Corp"
+            },
+            "country": {
+              "S": "Canada"
+            },
+            "publicPriceLbp": {
+              "N": "233828.595"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "2.61261"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "ovol"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3813"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#1525"
+            },
+            "sourceCode": {
+              "S": "1525"
+            },
+            "registrationNumber": {
+              "S": "208598/03"
+            },
+            "brandName": {
+              "S": "OVOL FOR GAZ"
+            },
+            "strength": {
+              "S": "180mg"
+            },
+            "presentation": {
+              "S": "32"
+            },
+            "dosageForm": {
+              "S": "Capsule, liquid gel"
+            },
+            "agent": {
+              "S": "Mectapharm S.A.L."
+            },
+            "manufacturer": {
+              "S": "Catalent Ontario Limited"
+            },
+            "country": {
+              "S": "Canada"
+            },
+            "publicPriceLbp": {
+              "N": "241891.65000000002"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "2.7027"
+            },
+            "responsiblePartyName": {
+              "S": "Church and Dwight Canada Corp"
+            },
+            "responsiblePartyCountry": {
+              "S": "Canada"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "ovol for gaz"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3814"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#5071"
+            },
+            "sourceCode": {
+              "S": "5071"
+            },
+            "registrationNumber": {
+              "S": "23730/06"
+            },
+            "brandName": {
+              "S": "OVUMIX"
+            },
+            "presentation": {
+              "S": "6"
+            },
+            "dosageForm": {
+              "S": "Vaginal Suppositories/ Ovules"
+            },
+            "agent": {
+              "S": "Droguerie Phenicia"
+            },
+            "manufacturer": {
+              "S": "Laboratorio Elea Phoenix SA"
+            },
+            "country": {
+              "S": "Argentine"
+            },
+            "publicPriceLbp": {
+              "N": "395089.69499999995"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "4.414409999999999"
+            },
+            "responsiblePartyName": {
+              "S": "Laboratorio Elea Phoenix SA"
+            },
+            "responsiblePartyCountry": {
+              "S": "Argentine"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "ovumix"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3815"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7303"
+            },
+            "sourceCode": {
+              "S": "7303"
+            },
+            "registrationNumber": {
+              "S": "186377/13"
+            },
+            "brandName": {
+              "S": "OXALEV"
+            },
+            "strength": {
+              "S": "500mg"
+            },
+            "presentation": {
+              "S": "7"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Khalil Fattal & Fils S.A.L."
+            },
+            "manufacturer": {
+              "S": "Lek Pharmaceuticals dd"
+            },
+            "country": {
+              "S": "Slovenia"
+            },
+            "publicPriceLbp": {
+              "N": "791523.2325"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "8.843835"
+            },
+            "responsiblePartyName": {
+              "S": "Sandoz GmbH"
+            },
+            "responsiblePartyCountry": {
+              "S": "Austria"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "oxalev"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3816"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7847"
+            },
+            "sourceCode": {
+              "S": "7847"
+            },
+            "registrationNumber": {
+              "S": "92514/1"
+            },
+            "brandName": {
+              "S": "OXALEV"
+            },
+            "strength": {
+              "S": "500mg"
+            },
+            "presentation": {
+              "S": "5"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Khalil Fattal & Fils S.A.L."
+            },
+            "manufacturer": {
+              "S": "Lek Pharmaceuticals dd"
+            },
+            "country": {
+              "S": "Slovenia"
+            },
+            "publicPriceLbp": {
+              "N": "565757.6924999999"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "6.3213149999999985"
+            },
+            "responsiblePartyName": {
+              "S": "Sandoz GmbH"
+            },
+            "responsiblePartyCountry": {
+              "S": "Austria"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "oxalev"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3817"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12514"
+            },
+            "sourceCode": {
+              "S": "12514"
+            },
+            "registrationNumber": {
+              "S": "37425/1"
+            },
+            "brandName": {
+              "S": "OXALIPLATIN"
+            },
+            "strength": {
+              "S": "5mg/ml"
+            },
+            "presentation": {
+              "S": "1Vialx20ml"
+            },
+            "dosageForm": {
+              "S": "Concentarte for solution for infusion"
+            },
+            "agent": {
+              "S": "Droguerie Fattal S.A.L."
+            },
+            "manufacturer": {
+              "S": "Zydus Hospira Oncology Private Limited"
+            },
+            "country": {
+              "S": "India"
+            },
+            "publicPriceLbp": {
+              "N": "6137328.697500001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "68.57350500000001"
+            },
+            "responsiblePartyName": {
+              "S": "pfizer Canada ULC"
+            },
+            "responsiblePartyCountry": {
+              "S": "Canada"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "oxaliplatin"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3818"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12515"
+            },
+            "sourceCode": {
+              "S": "12515"
+            },
+            "registrationNumber": {
+              "S": "37525/1"
+            },
+            "brandName": {
+              "S": "OXALIPLATIN"
+            },
+            "strength": {
+              "S": "5mg/ml"
+            },
+            "presentation": {
+              "S": "1Vialx10ml"
+            },
+            "dosageForm": {
+              "S": "Concentarte for solution for infusion"
+            },
+            "agent": {
+              "S": "Droguerie Fattal S.A.L."
+            },
+            "manufacturer": {
+              "S": "Zydus Hospira Oncology Private Limited"
+            },
+            "country": {
+              "S": "UK"
+            },
+            "publicPriceLbp": {
+              "N": "3450987.540000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "38.55852000000001"
+            },
+            "responsiblePartyName": {
+              "S": "pfizer Canada ULC"
+            },
+            "responsiblePartyCountry": {
+              "S": "Canada"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "oxaliplatin"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3819"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11522"
+            },
+            "sourceCode": {
+              "S": "11522"
+            },
+            "registrationNumber": {
+              "S": "20420/1"
+            },
+            "brandName": {
+              "S": "OXALIPLATIN EBEWE"
+            },
+            "strength": {
+              "S": "50mg/10ml"
+            },
+            "presentation": {
+              "S": "1 vialx 10ml"
+            },
+            "dosageForm": {
+              "S": "concentrate for solution for infusion"
+            },
+            "agent": {
+              "S": "Khalil Fattal & Fils S.A.L."
+            },
+            "manufacturer": {
+              "S": "Fareva Unterach GmbH"
+            },
+            "country": {
+              "S": "Austria"
+            },
+            "publicPriceLbp": {
+              "N": "3405296.8950000005"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "38.048010000000005"
+            },
+            "responsiblePartyName": {
+              "S": "Sandoz Pharmaceuticals AG"
+            },
+            "responsiblePartyCountry": {
+              "S": "Switzerland"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "oxaliplatin ebewe"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3820"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#8487"
+            },
+            "sourceCode": {
+              "S": "8487"
+            },
+            "registrationNumber": {
+              "S": "99415/1"
+            },
+            "brandName": {
+              "S": "OXALIPLATIN MEDAC"
+            },
+            "strength": {
+              "S": "50mg (5mg/ml)"
+            },
+            "presentation": {
+              "S": "1Vial"
+            },
+            "dosageForm": {
+              "S": "Powder for solution for infusion"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Medac Gesellschaft Fur Klinische Spezialpraparate mbH"
+            },
+            "country": {
+              "S": "Germany"
+            },
+            "publicPriceLbp": {
+              "N": "3440236.8000000007"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "38.43840000000001"
+            },
+            "responsiblePartyName": {
+              "S": "Medac Gesellschaft Fur Klinische Spezialpraparate mbH"
+            },
+            "responsiblePartyCountry": {
+              "S": "Germany"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "oxaliplatin medac"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3821"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#8488"
+            },
+            "sourceCode": {
+              "S": "8488"
+            },
+            "registrationNumber": {
+              "S": "99515/1"
+            },
+            "brandName": {
+              "S": "OXALIPLATIN MEDAC"
+            },
+            "strength": {
+              "S": "100mg (5mg/ml)"
+            },
+            "presentation": {
+              "S": "1Vial"
+            },
+            "dosageForm": {
+              "S": "Powder for solution for infusion"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Medac Gesellschaft Fur Klinische Spezialpraparate mbH"
+            },
+            "country": {
+              "S": "Germany"
+            },
+            "publicPriceLbp": {
+              "N": "7841800.635899999"
+            },
+            "pharmacistMarginPercent": {
+              "N": "21.26"
+            },
+            "stratum": {
+              "S": "C"
+            },
+            "publicPriceDecision119": {
+              "N": "87.61788419999999"
+            },
+            "responsiblePartyName": {
+              "S": "Medac Gesellschaft Fur Klinische Spezialpraparate mbH"
+            },
+            "responsiblePartyCountry": {
+              "S": "Germany"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "oxaliplatin medac"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3822"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12558"
+            },
+            "sourceCode": {
+              "S": "12558"
+            },
+            "registrationNumber": {
+              "S": "98724/1"
+            },
+            "brandName": {
+              "S": "OXALIPLATINE ARROW LAB"
+            },
+            "strength": {
+              "S": "5mg/ml"
+            },
+            "presentation": {
+              "S": "1Flacon de 40ml"
+            },
+            "dosageForm": {
+              "S": "Solution à diluer pour perfusion"
+            },
+            "agent": {
+              "S": "Darapharma S.A.L."
+            },
+            "manufacturer": {
+              "S": "APL Swift Services (Malta) Limited"
+            },
+            "country": {
+              "S": "Malta"
+            },
+            "publicPriceLbp": {
+              "N": "13513674.883231293"
+            },
+            "pharmacistMarginPercent": {
+              "N": "19.35"
+            },
+            "stratum": {
+              "S": "D"
+            },
+            "publicPriceDecision119": {
+              "N": "150.99078081822674"
+            },
+            "responsiblePartyName": {
+              "S": "Arrow Génériques"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "oxaliplatine arrow lab"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3823"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#6383"
+            },
+            "sourceCode": {
+              "S": "6383"
+            },
+            "registrationNumber": {
+              "S": "218856/09"
+            },
+            "brandName": {
+              "S": "OXALIPLATINE VIATRIS 5MG/ML"
+            },
+            "strength": {
+              "S": "100mg"
+            },
+            "presentation": {
+              "S": "1vial"
+            },
+            "dosageForm": {
+              "S": "powder for solution for IV infusion"
+            },
+            "agent": {
+              "S": "Benta Trading Co s.a.l."
+            },
+            "manufacturer": {
+              "S": "Benta SAL under license from Viatris Santé, France"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "6976204.410250601"
+            },
+            "pharmacistMarginPercent": {
+              "N": "21.26"
+            },
+            "stratum": {
+              "S": "C"
+            },
+            "publicPriceDecision119": {
+              "N": "77.94641799162683"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "oxaliplatine viatris 5mg ml"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3824"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#6384"
+            },
+            "sourceCode": {
+              "S": "6384"
+            },
+            "registrationNumber": {
+              "S": "218855/09"
+            },
+            "brandName": {
+              "S": "OXALIPLATINE VIATRIS 5MG/ML"
+            },
+            "strength": {
+              "S": "50mg"
+            },
+            "presentation": {
+              "S": "1vial"
+            },
+            "dosageForm": {
+              "S": "powder for solution for IV infusion"
+            },
+            "agent": {
+              "S": "Benta Trading Co s.a.l."
+            },
+            "manufacturer": {
+              "S": "Benta SAL under license from Viatris Santé, France"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "4428565.086946"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "49.481174155821236"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "oxaliplatine viatris 5mg ml"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3825"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12115"
+            },
+            "sourceCode": {
+              "S": "12115"
+            },
+            "registrationNumber": {
+              "S": "116024/1"
+            },
+            "brandName": {
+              "S": "OXALIPLATINO PHARMINICIO"
+            },
+            "strength": {
+              "S": "100mg"
+            },
+            "presentation": {
+              "S": "1Vial"
+            },
+            "dosageForm": {
+              "S": "Lyophilised powder for solution for injection"
+            },
+            "agent": {
+              "S": "Mediterranean Pharmaceutical Company"
+            },
+            "manufacturer": {
+              "S": "GP-Pharm SA"
+            },
+            "country": {
+              "S": "Spain"
+            },
+            "publicPriceLbp": {
+              "N": "6197801.610000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "69.24918000000001"
+            },
+            "responsiblePartyName": {
+              "S": "Pharminicio SL"
+            },
+            "responsiblePartyCountry": {
+              "S": "Spain"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "oxaliplatino pharminicio"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3826"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,1959 @@
+{
+  "RequestItems": {
+    "DawaaMedicines": [
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#197"
+            },
+            "sourceCode": {
+              "S": "197"
+            },
+            "registrationNumber": {
+              "S": "27716"
+            },
+            "brandName": {
+              "S": "EFFERALGAN CODEINE"
+            },
+            "presentation": {
+              "S": "16"
+            },
+            "dosageForm": {
+              "S": "Tablet, effervescent scored"
+            },
+            "agent": {
+              "S": "Pacific pharma"
+            },
+            "manufacturer": {
+              "S": "UPSA"
+            },
+            "country": {
+              "S": "France"
+            },
+            "publicPriceLbp": {
+              "N": "215014.80000000005"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "2.4024000000000005"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "efferalgan codeine"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1801"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#8814"
+            },
+            "sourceCode": {
+              "S": "8814"
+            },
+            "registrationNumber": {
+              "S": "111716/1"
+            },
+            "brandName": {
+              "S": "EFUDIX"
+            },
+            "strength": {
+              "S": "5%"
+            },
+            "presentation": {
+              "S": "20g"
+            },
+            "dosageForm": {
+              "S": "Cream"
+            },
+            "agent": {
+              "S": "Omnipharma"
+            },
+            "manufacturer": {
+              "S": "ICN Polfa Rzeszow SA"
+            },
+            "country": {
+              "S": "Poland"
+            },
+            "publicPriceLbp": {
+              "N": "671921.25"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "7.5075"
+            },
+            "responsiblePartyName": {
+              "S": "Meda Pharma GmbH & Co KG"
+            },
+            "responsiblePartyCountry": {
+              "S": "Germany"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "efudix"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1803"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12107"
+            },
+            "sourceCode": {
+              "S": "12107"
+            },
+            "registrationNumber": {
+              "S": "45224/1"
+            },
+            "brandName": {
+              "S": "ELAPIX 2.5"
+            },
+            "strength": {
+              "S": "2.5mg"
+            },
+            "presentation": {
+              "S": "60"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Benta Trading Co s.a.l."
+            },
+            "manufacturer": {
+              "S": "Benta SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "1970969"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "22.022"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "elapix 2 5"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1804"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12108"
+            },
+            "sourceCode": {
+              "S": "12108"
+            },
+            "registrationNumber": {
+              "S": "45324/1"
+            },
+            "brandName": {
+              "S": "ELAPIX 5"
+            },
+            "strength": {
+              "S": "5mg"
+            },
+            "presentation": {
+              "S": "60"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Benta Trading Co s.a.l."
+            },
+            "manufacturer": {
+              "S": "Benta SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "1970969"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "22.022"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "elapix 5"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1805"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#4163"
+            },
+            "sourceCode": {
+              "S": "4163"
+            },
+            "registrationNumber": {
+              "S": "208491/97"
+            },
+            "brandName": {
+              "S": "ELECTROLYE 67"
+            },
+            "presentation": {
+              "S": "500ml"
+            },
+            "dosageForm": {
+              "S": "Injectable solution"
+            },
+            "agent": {
+              "S": "Alfa Laboratoires S.A.L."
+            },
+            "manufacturer": {
+              "S": "Alfa Laboratoires S.A.L."
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "165727.0784"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "1.8516991999999999"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "electrolye 67"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1806"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#9106"
+            },
+            "sourceCode": {
+              "S": "9106"
+            },
+            "registrationNumber": {
+              "S": "3517/1"
+            },
+            "brandName": {
+              "S": "ELEVIT PRONATAL"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Nouvelle Pharm Drugstore"
+            },
+            "manufacturer": {
+              "S": "Rottendorf Pharma GmbH"
+            },
+            "country": {
+              "S": "Germany"
+            },
+            "publicPriceLbp": {
+              "N": "893655.2625000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "9.984975"
+            },
+            "responsiblePartyName": {
+              "S": "Bayer Consumer Care AG"
+            },
+            "responsiblePartyCountry": {
+              "S": "Switzerland"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "elevit pronatal"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1807"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10967"
+            },
+            "sourceCode": {
+              "S": "10967"
+            },
+            "registrationNumber": {
+              "S": "123518/1"
+            },
+            "brandName": {
+              "S": "ELICA"
+            },
+            "strength": {
+              "S": "0.1%"
+            },
+            "presentation": {
+              "S": "30g"
+            },
+            "dosageForm": {
+              "S": "Ointment"
+            },
+            "agent": {
+              "S": "Droguerie Mercury S.A.L."
+            },
+            "manufacturer": {
+              "S": "Jamjoum Pharmaceutical Co"
+            },
+            "country": {
+              "S": "Saudi Arabia"
+            },
+            "publicPriceLbp": {
+              "N": "399121.22250000003"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "4.459455"
+            },
+            "responsiblePartyName": {
+              "S": "Jamjoum Pharmaceutical Co"
+            },
+            "responsiblePartyCountry": {
+              "S": "Saudi Arabia"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "elica"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1809"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#3559"
+            },
+            "sourceCode": {
+              "S": "3559"
+            },
+            "registrationNumber": {
+              "S": "194793/05"
+            },
+            "brandName": {
+              "S": "ELICA"
+            },
+            "strength": {
+              "S": "0.1%"
+            },
+            "presentation": {
+              "S": "30g"
+            },
+            "dosageForm": {
+              "S": "Cream"
+            },
+            "agent": {
+              "S": "Droguerie Mercury S.A.L."
+            },
+            "manufacturer": {
+              "S": "Jamjoum Pharmaceuticals"
+            },
+            "country": {
+              "S": "Saudi Arabia"
+            },
+            "publicPriceLbp": {
+              "N": "341335.995"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "3.81381"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "elica"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1808"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#3526"
+            },
+            "sourceCode": {
+              "S": "3526"
+            },
+            "registrationNumber": {
+              "S": "194792/05"
+            },
+            "brandName": {
+              "S": "ELICA M"
+            },
+            "presentation": {
+              "S": "30g"
+            },
+            "dosageForm": {
+              "S": "Cream"
+            },
+            "agent": {
+              "S": "Droguerie Mercury S.A.L."
+            },
+            "manufacturer": {
+              "S": "Jamjoum Pharmaceuticals"
+            },
+            "country": {
+              "S": "Saudi Arabia"
+            },
+            "publicPriceLbp": {
+              "N": "459594.135"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "5.13513"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "elica m"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1810"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#5239"
+            },
+            "sourceCode": {
+              "S": "5239"
+            },
+            "registrationNumber": {
+              "S": "24303/06"
+            },
+            "brandName": {
+              "S": "ELICASAL"
+            },
+            "presentation": {
+              "S": "30g"
+            },
+            "dosageForm": {
+              "S": "Ointment"
+            },
+            "agent": {
+              "S": "Droguerie Mercury S.A.L."
+            },
+            "manufacturer": {
+              "S": "Jamjoum Pharmaceuticals"
+            },
+            "country": {
+              "S": "Saudi Arabia"
+            },
+            "publicPriceLbp": {
+              "N": "462281.82"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "5.16516"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "elicasal"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1811"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7630"
+            },
+            "sourceCode": {
+              "S": "7630"
+            },
+            "registrationNumber": {
+              "S": "186106/13"
+            },
+            "brandName": {
+              "S": "ELIDEL"
+            },
+            "strength": {
+              "S": "1%"
+            },
+            "presentation": {
+              "S": "15g"
+            },
+            "dosageForm": {
+              "S": "Cream"
+            },
+            "agent": {
+              "S": "Omnipharma"
+            },
+            "manufacturer": {
+              "S": "Meda Manufacturing"
+            },
+            "country": {
+              "S": "France"
+            },
+            "publicPriceLbp": {
+              "N": "1780591.3125"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "19.894875"
+            },
+            "responsiblePartyName": {
+              "S": "Meda Pharma GmbH & Co KG"
+            },
+            "responsiblePartyCountry": {
+              "S": "Germany"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "elidel"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1812"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10340"
+            },
+            "sourceCode": {
+              "S": "10340"
+            },
+            "registrationNumber": {
+              "S": "141419/1"
+            },
+            "brandName": {
+              "S": "ELIQUIS"
+            },
+            "strength": {
+              "S": "2.5mg"
+            },
+            "presentation": {
+              "S": "60"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Droguerie Fattal S.A.L."
+            },
+            "manufacturer": {
+              "S": "Pfizer Manufacturing Deutschland GmbH"
+            },
+            "country": {
+              "S": "Germany"
+            },
+            "publicPriceLbp": {
+              "N": "4183603.2410445"
+            },
+            "pharmacistMarginPercent": {
+              "N": "21.26"
+            },
+            "stratum": {
+              "S": "C"
+            },
+            "publicPriceDecision119": {
+              "N": "46.744170290999996"
+            },
+            "responsiblePartyName": {
+              "S": "Bristol Myers Squibb/ Pfizer EEIG"
+            },
+            "responsiblePartyCountry": {
+              "S": "Ireland"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "eliquis"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1813"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10341"
+            },
+            "sourceCode": {
+              "S": "10341"
+            },
+            "registrationNumber": {
+              "S": "141519/1"
+            },
+            "brandName": {
+              "S": "ELIQUIS"
+            },
+            "strength": {
+              "S": "5mg"
+            },
+            "presentation": {
+              "S": "60"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Droguerie Fattal S.A.L."
+            },
+            "manufacturer": {
+              "S": "Pfizer Manufacturing Deutschland GmbH"
+            },
+            "country": {
+              "S": "Germany"
+            },
+            "publicPriceLbp": {
+              "N": "4183603.2410445"
+            },
+            "pharmacistMarginPercent": {
+              "N": "21.26"
+            },
+            "stratum": {
+              "S": "C"
+            },
+            "publicPriceDecision119": {
+              "N": "46.744170290999996"
+            },
+            "responsiblePartyName": {
+              "S": "Bristol Myers Squibb/ Pfizer EEIG"
+            },
+            "responsiblePartyCountry": {
+              "S": "Ireland"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "eliquis"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1814"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10136"
+            },
+            "sourceCode": {
+              "S": "10136"
+            },
+            "registrationNumber": {
+              "S": "85419/1"
+            },
+            "brandName": {
+              "S": "ELISONE"
+            },
+            "strength": {
+              "S": "0.1%"
+            },
+            "presentation": {
+              "S": "30g"
+            },
+            "dosageForm": {
+              "S": "Skin cream"
+            },
+            "agent": {
+              "S": "Germanos Health Care Supplies SARL"
+            },
+            "manufacturer": {
+              "S": "Amman Pharmaceutical Industries"
+            },
+            "country": {
+              "S": "Jordan"
+            },
+            "publicPriceLbp": {
+              "N": "435404.97000000003"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "4.86486"
+            },
+            "responsiblePartyName": {
+              "S": "Amman Pharmaceutical Industries"
+            },
+            "responsiblePartyCountry": {
+              "S": "Jordan"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "elisone"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1816"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#6905"
+            },
+            "sourceCode": {
+              "S": "6905"
+            },
+            "registrationNumber": {
+              "S": "218696/10"
+            },
+            "brandName": {
+              "S": "ELISONE"
+            },
+            "strength": {
+              "S": "0.1%"
+            },
+            "presentation": {
+              "S": "15g"
+            },
+            "dosageForm": {
+              "S": "Skin cream"
+            },
+            "agent": {
+              "S": "Germanos Health Care Supplies SARL"
+            },
+            "manufacturer": {
+              "S": "Amman Pharmaceutical Industries Co"
+            },
+            "country": {
+              "S": "Jordan"
+            },
+            "publicPriceLbp": {
+              "N": "249954.70499999996"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "2.7927899999999997"
+            },
+            "responsiblePartyName": {
+              "S": "Amman Pharmaceutical Industries Co"
+            },
+            "responsiblePartyCountry": {
+              "S": "Jordan"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "elisone"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1815"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#8871"
+            },
+            "sourceCode": {
+              "S": "8871"
+            },
+            "registrationNumber": {
+              "S": "167315/1"
+            },
+            "brandName": {
+              "S": "ELITAN"
+            },
+            "strength": {
+              "S": "10mg/2ml"
+            },
+            "presentation": {
+              "S": "10 ampoules"
+            },
+            "dosageForm": {
+              "S": "Solution for injection"
+            },
+            "agent": {
+              "S": "New Allpharma"
+            },
+            "manufacturer": {
+              "S": "Medochemie Ltd"
+            },
+            "country": {
+              "S": "Cyprus"
+            },
+            "publicPriceLbp": {
+              "N": "295645.35000000003"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "3.3033000000000006"
+            },
+            "responsiblePartyName": {
+              "S": "Medochemie Ltd"
+            },
+            "responsiblePartyCountry": {
+              "S": "Cyprus"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "elitan"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1817"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#6255"
+            },
+            "sourceCode": {
+              "S": "6255"
+            },
+            "registrationNumber": {
+              "S": "222481/08"
+            },
+            "brandName": {
+              "S": "ELIZA 120"
+            },
+            "strength": {
+              "S": "120mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Capsule"
+            },
+            "agent": {
+              "S": "Benta Trading Co s.a.l."
+            },
+            "manufacturer": {
+              "S": "Benta SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "1167223.2"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "13.041599999999999"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "eliza 120"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1818"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12265"
+            },
+            "sourceCode": {
+              "S": "12265"
+            },
+            "registrationNumber": {
+              "S": "87325/1"
+            },
+            "brandName": {
+              "S": "ELIZASLIM 120"
+            },
+            "strength": {
+              "S": "120mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Capsule"
+            },
+            "agent": {
+              "S": "Benta Trading Co s.a.l."
+            },
+            "manufacturer": {
+              "S": "Benta SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "1167223.2"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "13.041599999999999"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "elizaslim 120"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1819"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#6561"
+            },
+            "sourceCode": {
+              "S": "6561"
+            },
+            "registrationNumber": {
+              "S": "96426/11"
+            },
+            "brandName": {
+              "S": "ELLAONE"
+            },
+            "strength": {
+              "S": "30mg"
+            },
+            "presentation": {
+              "S": "1"
+            },
+            "dosageForm": {
+              "S": "Tablet"
+            },
+            "agent": {
+              "S": "UPO S.A.L."
+            },
+            "manufacturer": {
+              "S": "Cenexi"
+            },
+            "country": {
+              "S": "France"
+            },
+            "publicPriceLbp": {
+              "N": "2276469.1950000003"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "25.435410000000005"
+            },
+            "responsiblePartyName": {
+              "S": "Laboratoire HRA Pharma"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "ellaone"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1820"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#9261"
+            },
+            "sourceCode": {
+              "S": "9261"
+            },
+            "registrationNumber": {
+              "S": "148817/1"
+            },
+            "brandName": {
+              "S": "ELOCOM"
+            },
+            "strength": {
+              "S": "0.1%"
+            },
+            "presentation": {
+              "S": "30ml"
+            },
+            "dosageForm": {
+              "S": "Lotion"
+            },
+            "agent": {
+              "S": "Abela Frères S.A.L."
+            },
+            "manufacturer": {
+              "S": "Delpharm Montreal Inc"
+            },
+            "country": {
+              "S": "Canada"
+            },
+            "publicPriceLbp": {
+              "N": "282206.925"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "3.1531499999999997"
+            },
+            "responsiblePartyName": {
+              "S": "Organon Canada Inc"
+            },
+            "responsiblePartyCountry": {
+              "S": "Canada"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "elocom"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1821"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11021"
+            },
+            "sourceCode": {
+              "S": "11021"
+            },
+            "registrationNumber": {
+              "S": "37222/1"
+            },
+            "brandName": {
+              "S": "ELONVA"
+            },
+            "strength": {
+              "S": "150mcg/0.5ml"
+            },
+            "presentation": {
+              "S": "1Prefilled syringe + 1needle"
+            },
+            "dosageForm": {
+              "S": "Injectable solution"
+            },
+            "agent": {
+              "S": "Droguerie de l'Union"
+            },
+            "manufacturer": {
+              "S": "Vetter Pharma- Fertigung GmbH & Co KG"
+            },
+            "country": {
+              "S": "Germany"
+            },
+            "publicPriceLbp": {
+              "N": "44141609.967"
+            },
+            "pharmacistMarginPercent": {
+              "N": "10.71"
+            },
+            "stratum": {
+              "S": "E1"
+            },
+            "publicPriceDecision119": {
+              "N": "493.202346"
+            },
+            "responsiblePartyName": {
+              "S": "N.V. Organon"
+            },
+            "responsiblePartyCountry": {
+              "S": "The Netherlands"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "elonva"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1822"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11022"
+            },
+            "sourceCode": {
+              "S": "11022"
+            },
+            "registrationNumber": {
+              "S": "37322/1"
+            },
+            "brandName": {
+              "S": "ELONVA"
+            },
+            "strength": {
+              "S": "100mcg/0.5ml"
+            },
+            "presentation": {
+              "S": "1Prefilled syringe + 1needle"
+            },
+            "dosageForm": {
+              "S": "Injectable solution"
+            },
+            "agent": {
+              "S": "Droguerie de l'Union"
+            },
+            "manufacturer": {
+              "S": "Vetter Pharma- Fertigung GmbH & Co KG"
+            },
+            "country": {
+              "S": "Germany"
+            },
+            "publicPriceLbp": {
+              "N": "35131801.949999996"
+            },
+            "pharmacistMarginPercent": {
+              "N": "10.71"
+            },
+            "stratum": {
+              "S": "E1"
+            },
+            "publicPriceDecision119": {
+              "N": "392.53409999999997"
+            },
+            "responsiblePartyName": {
+              "S": "N.V. Organon"
+            },
+            "responsiblePartyCountry": {
+              "S": "The Netherlands"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "elonva"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1823"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#5150"
+            },
+            "sourceCode": {
+              "S": "5150"
+            },
+            "registrationNumber": {
+              "S": "23718/06"
+            },
+            "brandName": {
+              "S": "ELOXATIN"
+            },
+            "strength": {
+              "S": "50mg/10ml"
+            },
+            "presentation": {
+              "S": "Vial 10ml"
+            },
+            "dosageForm": {
+              "S": "Concentrate for solution for infusion"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Sanofi Aventis Deutschland GmbH"
+            },
+            "country": {
+              "S": "Germany"
+            },
+            "publicPriceLbp": {
+              "N": "4930558.132499999"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "55.09003499999999"
+            },
+            "responsiblePartyName": {
+              "S": "Sanofi Aventis"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "eloxatin"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1824"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11004"
+            },
+            "sourceCode": {
+              "S": "11004"
+            },
+            "registrationNumber": {
+              "S": "119/1"
+            },
+            "brandName": {
+              "S": "ELPIDA"
+            },
+            "strength": {
+              "S": "20mg"
+            },
+            "presentation": {
+              "S": "60"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Droguerie Mercury S.A.L."
+            },
+            "manufacturer": {
+              "S": "The Arab Pharmaceutical Manufacturing PSC"
+            },
+            "country": {
+              "S": "Jordan"
+            },
+            "publicPriceLbp": {
+              "N": "103165572.92343749"
+            },
+            "pharmacistMarginPercent": {
+              "N": "2.44"
+            },
+            "stratum": {
+              "S": "E2"
+            },
+            "publicPriceDecision119": {
+              "N": "1152.6879656249998"
+            },
+            "responsiblePartyName": {
+              "S": "Hikma Pharmaceuticals"
+            },
+            "responsiblePartyCountry": {
+              "S": "Jordan"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "elpida"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1825"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11005"
+            },
+            "sourceCode": {
+              "S": "11005"
+            },
+            "registrationNumber": {
+              "S": "219/1"
+            },
+            "brandName": {
+              "S": "ELPIDA"
+            },
+            "strength": {
+              "S": "50mg"
+            },
+            "presentation": {
+              "S": "60"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Droguerie Mercury S.A.L."
+            },
+            "manufacturer": {
+              "S": "The Arab Pharmaceutical Manufacturing PSC"
+            },
+            "country": {
+              "S": "Jordan"
+            },
+            "publicPriceLbp": {
+              "N": "127364904.84374999"
+            },
+            "pharmacistMarginPercent": {
+              "N": "2.44"
+            },
+            "stratum": {
+              "S": "E2"
+            },
+            "publicPriceDecision119": {
+              "N": "1423.0715624999998"
+            },
+            "responsiblePartyName": {
+              "S": "Hikma Pharmaceuticals"
+            },
+            "responsiblePartyCountry": {
+              "S": "Jordan"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "elpida"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1826"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

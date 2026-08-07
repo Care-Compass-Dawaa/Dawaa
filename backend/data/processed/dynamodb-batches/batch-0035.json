@@ -1,0 +1,1917 @@
+{
+  "RequestItems": {
+    "DawaaMedicines": [
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12457"
+            },
+            "sourceCode": {
+              "S": "12457"
+            },
+            "registrationNumber": {
+              "S": "81023/1"
+            },
+            "brandName": {
+              "S": "CABERGOL"
+            },
+            "strength": {
+              "S": "0.5mg"
+            },
+            "presentation": {
+              "S": "8"
+            },
+            "dosageForm": {
+              "S": "Tablet, scored"
+            },
+            "agent": {
+              "S": "Medis Pharm Drugstore"
+            },
+            "manufacturer": {
+              "S": "Neapolis Pharma"
+            },
+            "country": {
+              "S": "Tunisia"
+            },
+            "publicPriceLbp": {
+              "N": "976973.4975"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "10.915905"
+            },
+            "responsiblePartyName": {
+              "S": "Les Laboratoires Medis"
+            },
+            "responsiblePartyCountry": {
+              "S": "Tunisia"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "cabergol"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "852"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#9629"
+            },
+            "sourceCode": {
+              "S": "9629"
+            },
+            "registrationNumber": {
+              "S": "70718/1"
+            },
+            "brandName": {
+              "S": "CABOMETYX"
+            },
+            "strength": {
+              "S": "20mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Droguerie de l'Union"
+            },
+            "manufacturer": {
+              "S": "Tjoapack Netherlands BV"
+            },
+            "country": {
+              "S": "The Netherlands"
+            },
+            "publicPriceLbp": {
+              "N": "440893500.5768265"
+            },
+            "pharmacistMarginPercent": {
+              "N": "2.44"
+            },
+            "stratum": {
+              "S": "E2"
+            },
+            "publicPriceDecision119": {
+              "N": "4926.1843639868885"
+            },
+            "responsiblePartyName": {
+              "S": "Ipsen Pharma"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "cabometyx"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "853"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#9630"
+            },
+            "sourceCode": {
+              "S": "9630"
+            },
+            "registrationNumber": {
+              "S": "70818/1"
+            },
+            "brandName": {
+              "S": "CABOMETYX"
+            },
+            "strength": {
+              "S": "40mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Droguerie de l'Union"
+            },
+            "manufacturer": {
+              "S": "Tjoapack Netherlands BV"
+            },
+            "country": {
+              "S": "The Netherlands"
+            },
+            "publicPriceLbp": {
+              "N": "440893500.5768265"
+            },
+            "pharmacistMarginPercent": {
+              "N": "2.44"
+            },
+            "stratum": {
+              "S": "E2"
+            },
+            "publicPriceDecision119": {
+              "N": "4926.1843639868885"
+            },
+            "responsiblePartyName": {
+              "S": "Ipsen Pharma"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "cabometyx"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "854"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#9631"
+            },
+            "sourceCode": {
+              "S": "9631"
+            },
+            "registrationNumber": {
+              "S": "70918/1"
+            },
+            "brandName": {
+              "S": "CABOMETYX"
+            },
+            "strength": {
+              "S": "60mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Droguerie de l'Union"
+            },
+            "manufacturer": {
+              "S": "Tjoapack Netherlands BV"
+            },
+            "country": {
+              "S": "The Netherlands"
+            },
+            "publicPriceLbp": {
+              "N": "440893500.5768265"
+            },
+            "pharmacistMarginPercent": {
+              "N": "2.44"
+            },
+            "stratum": {
+              "S": "E2"
+            },
+            "publicPriceDecision119": {
+              "N": "4926.1843639868885"
+            },
+            "responsiblePartyName": {
+              "S": "Ipsen Pharma"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "cabometyx"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "855"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12448"
+            },
+            "sourceCode": {
+              "S": "12448"
+            },
+            "registrationNumber": {
+              "S": "10621/1"
+            },
+            "brandName": {
+              "S": "CABOTAX"
+            },
+            "strength": {
+              "S": "60mg/1.5ml"
+            },
+            "presentation": {
+              "S": "Single dose vial + 1vial of diluent"
+            },
+            "dosageForm": {
+              "S": "Concentrate for solution for infusion"
+            },
+            "agent": {
+              "S": "Lebiran SARL"
+            },
+            "manufacturer": {
+              "S": "Nano Fanavaran Darouei Alvand Co"
+            },
+            "country": {
+              "S": "Iran"
+            },
+            "publicPriceLbp": {
+              "N": "45371505.9"
+            },
+            "pharmacistMarginPercent": {
+              "N": "10.71"
+            },
+            "stratum": {
+              "S": "E1"
+            },
+            "publicPriceDecision119": {
+              "N": "506.94419999999997"
+            },
+            "responsiblePartyName": {
+              "S": "Nano Fanavaran Darouei Alvand Co"
+            },
+            "responsiblePartyCountry": {
+              "S": "Iran"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "cabotax"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "856"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11020"
+            },
+            "sourceCode": {
+              "S": "11020"
+            },
+            "registrationNumber": {
+              "S": "40122/1"
+            },
+            "brandName": {
+              "S": "CAELYX"
+            },
+            "strength": {
+              "S": "2mg/ml"
+            },
+            "presentation": {
+              "S": "1Vial x 10ml"
+            },
+            "dosageForm": {
+              "S": "concentrate for infusion"
+            },
+            "agent": {
+              "S": "Abela Frères S.A.L."
+            },
+            "manufacturer": {
+              "S": "Baxter Oncology GmbH, Halle"
+            },
+            "country": {
+              "S": "Germany"
+            },
+            "publicPriceLbp": {
+              "N": "34821487.44283994"
+            },
+            "pharmacistMarginPercent": {
+              "N": "19.35"
+            },
+            "stratum": {
+              "S": "D"
+            },
+            "publicPriceDecision119": {
+              "N": "389.06689880268095"
+            },
+            "responsiblePartyName": {
+              "S": "Baxter Holding BV"
+            },
+            "responsiblePartyCountry": {
+              "S": "The Netherlands"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "caelyx"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "857"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#1385"
+            },
+            "sourceCode": {
+              "S": "1385"
+            },
+            "registrationNumber": {
+              "S": "14247"
+            },
+            "brandName": {
+              "S": "CAL-C-VITA EFFERVESCENT"
+            },
+            "presentation": {
+              "S": "15"
+            },
+            "dosageForm": {
+              "S": "Tablet"
+            },
+            "agent": {
+              "S": "Nouvelle Pharm Drugstore"
+            },
+            "manufacturer": {
+              "S": "Delpharm Gaillard"
+            },
+            "country": {
+              "S": "France"
+            },
+            "publicPriceLbp": {
+              "N": "494534.0400000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "5.525520000000001"
+            },
+            "responsiblePartyName": {
+              "S": "Bayer Consumer Care AG"
+            },
+            "responsiblePartyCountry": {
+              "S": "Switzerland"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "cal c vita effervescent"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "865"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11329"
+            },
+            "sourceCode": {
+              "S": "11329"
+            },
+            "registrationNumber": {
+              "S": "130922/1"
+            },
+            "brandName": {
+              "S": "CAL-VIT"
+            },
+            "presentation": {
+              "S": "1000"
+            },
+            "dosageForm": {
+              "S": "Tablet"
+            },
+            "agent": {
+              "S": "Pharmadex"
+            },
+            "manufacturer": {
+              "S": "Pharmadex"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "4025128.25"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "44.9735"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "cal vit"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "874"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#4576"
+            },
+            "sourceCode": {
+              "S": "4576"
+            },
+            "registrationNumber": {
+              "S": "19273"
+            },
+            "brandName": {
+              "S": "CAL-VIT"
+            },
+            "presentation": {
+              "S": "100ml"
+            },
+            "dosageForm": {
+              "S": "Syrup"
+            },
+            "agent": {
+              "S": "Pharmadex"
+            },
+            "manufacturer": {
+              "S": "Pharmadex"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "163820.80000000002"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "1.8304000000000002"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "cal vit"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "872"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#4577"
+            },
+            "sourceCode": {
+              "S": "4577"
+            },
+            "registrationNumber": {
+              "S": "19264"
+            },
+            "brandName": {
+              "S": "CAL-VIT"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet"
+            },
+            "agent": {
+              "S": "Pharmadex"
+            },
+            "manufacturer": {
+              "S": "Pharmadex"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "142063.35000000003"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "1.5873000000000004"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "cal vit"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "873"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#4481"
+            },
+            "sourceCode": {
+              "S": "4481"
+            },
+            "registrationNumber": {
+              "S": "22448"
+            },
+            "brandName": {
+              "S": "CALAMINE PLUS"
+            },
+            "presentation": {
+              "S": "120ml"
+            },
+            "dosageForm": {
+              "S": "Lotion"
+            },
+            "agent": {
+              "S": "Mephico S.A.L."
+            },
+            "manufacturer": {
+              "S": "Mephico SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "177899.15000000005"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "1.9877000000000007"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "calamine plus"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "858"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#4103"
+            },
+            "sourceCode": {
+              "S": "4103"
+            },
+            "registrationNumber": {
+              "S": "2803/94"
+            },
+            "brandName": {
+              "S": "CALCIUM CHLORIDE"
+            },
+            "strength": {
+              "S": "10g/100ml"
+            },
+            "presentation": {
+              "S": "100 x 10ml"
+            },
+            "dosageForm": {
+              "S": "Injectable solution"
+            },
+            "agent": {
+              "S": "Alfa Laboratoires S.A.L."
+            },
+            "manufacturer": {
+              "S": "Alfa Laboratoires S.A.L."
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "5436770.580000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "60.74604000000001"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "calcium chloride"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "859"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11983"
+            },
+            "sourceCode": {
+              "S": "11983"
+            },
+            "registrationNumber": {
+              "S": "83824/1"
+            },
+            "brandName": {
+              "S": "CALCIUM GLUCONATE"
+            },
+            "strength": {
+              "S": "10g/100ml"
+            },
+            "presentation": {
+              "S": "100 x 10ml"
+            },
+            "dosageForm": {
+              "S": "Injectable solution"
+            },
+            "agent": {
+              "S": "Alfa Laboratoires S.A.L."
+            },
+            "manufacturer": {
+              "S": "Alfa Laboratoires S.A.L."
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "6867499.680000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "76.73184"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "calcium gluconate"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "861"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#4104"
+            },
+            "sourceCode": {
+              "S": "4104"
+            },
+            "registrationNumber": {
+              "S": "2836/94"
+            },
+            "brandName": {
+              "S": "CALCIUM GLUCONATE"
+            },
+            "strength": {
+              "S": "10g/100ml"
+            },
+            "presentation": {
+              "S": "10 x 10ml"
+            },
+            "dosageForm": {
+              "S": "Injectable solution"
+            },
+            "agent": {
+              "S": "Alfa Laboratoires S.A.L."
+            },
+            "manufacturer": {
+              "S": "Alfa Laboratoires S.A.L."
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "763055.52"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "8.52576"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "calcium gluconate"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "860"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7735"
+            },
+            "sourceCode": {
+              "S": "7735"
+            },
+            "registrationNumber": {
+              "S": "45814/1"
+            },
+            "brandName": {
+              "S": "CALCIUM GLUCONATE S.A.L.F"
+            },
+            "strength": {
+              "S": "10%"
+            },
+            "presentation": {
+              "S": "5Ampoules x 10ml"
+            },
+            "dosageForm": {
+              "S": "IV Solution for injection"
+            },
+            "agent": {
+              "S": "New Europharm"
+            },
+            "manufacturer": {
+              "S": "SALFSpA Laboratorio Farmacologico"
+            },
+            "country": {
+              "S": "Italy"
+            },
+            "publicPriceLbp": {
+              "N": "389714.325"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "4.35435"
+            },
+            "responsiblePartyName": {
+              "S": "SALFSpA Laboratorio Farmacologico"
+            },
+            "responsiblePartyCountry": {
+              "S": "Italy"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "calcium gluconate s a l f"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "862"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#1161"
+            },
+            "sourceCode": {
+              "S": "1161"
+            },
+            "registrationNumber": {
+              "S": "135391"
+            },
+            "brandName": {
+              "S": "CALCIUM RESONIUM"
+            },
+            "strength": {
+              "S": "15g"
+            },
+            "presentation": {
+              "S": "300g"
+            },
+            "dosageForm": {
+              "S": "Powder"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Sanofi Winthrop Industrie"
+            },
+            "country": {
+              "S": "France"
+            },
+            "publicPriceLbp": {
+              "N": "2053391.3400000003"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "22.942920000000004"
+            },
+            "responsiblePartyName": {
+              "S": "Sanofi Aventis"
+            },
+            "responsiblePartyCountry": {
+              "S": "UK"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "calcium resonium"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "863"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#8503"
+            },
+            "sourceCode": {
+              "S": "8503"
+            },
+            "registrationNumber": {
+              "S": "172515/1"
+            },
+            "brandName": {
+              "S": "CALCIUMFOLINAT EBEWE"
+            },
+            "strength": {
+              "S": "100mg/10ml"
+            },
+            "presentation": {
+              "S": "1Vial"
+            },
+            "dosageForm": {
+              "S": "Solution for injection"
+            },
+            "agent": {
+              "S": "Khalil Fattal & Fils S.A.L."
+            },
+            "manufacturer": {
+              "S": "Salutas Pharma GmbH"
+            },
+            "country": {
+              "S": "Germany"
+            },
+            "publicPriceLbp": {
+              "N": "1289872.073639403"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "14.41197847641791"
+            },
+            "responsiblePartyName": {
+              "S": "Ebewe Pharma GesmbH.NFG.KG"
+            },
+            "responsiblePartyCountry": {
+              "S": "Austria"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "calciumfolinat ebewe"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "864"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7221"
+            },
+            "sourceCode": {
+              "S": "7221"
+            },
+            "registrationNumber": {
+              "S": "185810/13"
+            },
+            "brandName": {
+              "S": "CALIVIDA"
+            },
+            "strength": {
+              "S": "0.5mg/ml"
+            },
+            "presentation": {
+              "S": "200ml bottle"
+            },
+            "dosageForm": {
+              "S": "Oral solution"
+            },
+            "agent": {
+              "S": "Raymond Georges Abou Adal & Co"
+            },
+            "manufacturer": {
+              "S": "Medana Pharma SA, Sieradz- Poland for Arwan Pharmaceutical Industries Lebanon"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "1158264.2500000002"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "12.941500000000003"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "calivida"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "866"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7222"
+            },
+            "sourceCode": {
+              "S": "7222"
+            },
+            "registrationNumber": {
+              "S": "185811/13"
+            },
+            "brandName": {
+              "S": "CALIVIDA"
+            },
+            "strength": {
+              "S": "5mg"
+            },
+            "presentation": {
+              "S": "28"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Raymond Georges Abou Adal & Co"
+            },
+            "manufacturer": {
+              "S": "Adamed Pharma S.A. Ksawerow, Poland for Arwan Pharmaceutical Industries Lebanon SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "447947.50000000006"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "5.005000000000001"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "calivida"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "867"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#2248"
+            },
+            "sourceCode": {
+              "S": "2248"
+            },
+            "registrationNumber": {
+              "S": "78728/97"
+            },
+            "brandName": {
+              "S": "CALPEROS"
+            },
+            "strength": {
+              "S": "500mg"
+            },
+            "presentation": {
+              "S": "60"
+            },
+            "dosageForm": {
+              "S": "Tablet"
+            },
+            "agent": {
+              "S": "Droguerie de l'Union"
+            },
+            "manufacturer": {
+              "S": "Bouchara Recordati"
+            },
+            "country": {
+              "S": "France"
+            },
+            "publicPriceLbp": {
+              "N": "705517.3125"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "7.882875"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "calperos"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "868"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#2249"
+            },
+            "sourceCode": {
+              "S": "2249"
+            },
+            "registrationNumber": {
+              "S": "78727/97"
+            },
+            "brandName": {
+              "S": "CALPEROS D3 A SUCER"
+            },
+            "presentation": {
+              "S": "60"
+            },
+            "dosageForm": {
+              "S": "Tablet"
+            },
+            "agent": {
+              "S": "Droguerie de l'Union"
+            },
+            "manufacturer": {
+              "S": "Bouchara Recordati"
+            },
+            "country": {
+              "S": "France"
+            },
+            "publicPriceLbp": {
+              "N": "705517.3125"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "7.882875"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "calperos d3 a sucer"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "869"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10917"
+            },
+            "sourceCode": {
+              "S": "10917"
+            },
+            "registrationNumber": {
+              "S": "110620/1"
+            },
+            "brandName": {
+              "S": "CALQUENCE"
+            },
+            "strength": {
+              "S": "100mg"
+            },
+            "presentation": {
+              "S": "60"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Omnipharma"
+            },
+            "manufacturer": {
+              "S": "AstraZeneca AB"
+            },
+            "country": {
+              "S": "Sweden"
+            },
+            "publicPriceLbp": {
+              "N": "650653453.5210938"
+            },
+            "pharmacistMarginPercent": {
+              "N": "2.44"
+            },
+            "stratum": {
+              "S": "E2"
+            },
+            "publicPriceDecision119": {
+              "N": "7269.870989062501"
+            },
+            "responsiblePartyName": {
+              "S": "AstraZeneca UK Ltd"
+            },
+            "responsiblePartyCountry": {
+              "S": "UK"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "calquence"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "870"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10895"
+            },
+            "sourceCode": {
+              "S": "10895"
+            },
+            "registrationNumber": {
+              "S": "65421/1"
+            },
+            "brandName": {
+              "S": "CALTRATE 600"
+            },
+            "presentation": {
+              "S": "60"
+            },
+            "dosageForm": {
+              "S": "Tablet"
+            },
+            "agent": {
+              "S": "Sadco"
+            },
+            "manufacturer": {
+              "S": "Pf Consumer Healthcare Canada ULC"
+            },
+            "country": {
+              "S": "Canada"
+            },
+            "publicPriceLbp": {
+              "N": "618167.55"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "6.9069"
+            },
+            "responsiblePartyName": {
+              "S": "GlaxoSmithKline Consumer Healthcare ULC"
+            },
+            "responsiblePartyCountry": {
+              "S": "Canada"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "caltrate 600"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "871"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11357"
+            },
+            "sourceCode": {
+              "S": "11357"
+            },
+            "registrationNumber": {
+              "S": "19423/1"
+            },
+            "brandName": {
+              "S": "CAMPHO-PNEUMINE AMINOPHYLLINE ADULTES"
+            },
+            "presentation": {
+              "S": "12"
+            },
+            "dosageForm": {
+              "S": "Suppository"
+            },
+            "agent": {
+              "S": "Pharmamedic S.A.R.L."
+            },
+            "manufacturer": {
+              "S": "Chaoul Pharmaceuticals (Cha-Pha) SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "490182.55000000005"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "5.4769000000000005"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "campho pneumine aminophylline adultes"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "876"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#4351"
+            },
+            "sourceCode": {
+              "S": "4351"
+            },
+            "registrationNumber": {
+              "S": "20606"
+            },
+            "brandName": {
+              "S": "CAMPHO-PNEUMINE AMINOPHYLLINE ADULTES"
+            },
+            "presentation": {
+              "S": "8"
+            },
+            "dosageForm": {
+              "S": "Suppository"
+            },
+            "agent": {
+              "S": "Pharmamedic S.A.R.L."
+            },
+            "manufacturer": {
+              "S": "Chaoul Pharmaceuticals (Cha-Pha) SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "326361.75000000006"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "3.6465000000000005"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "campho pneumine aminophylline adultes"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "875"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

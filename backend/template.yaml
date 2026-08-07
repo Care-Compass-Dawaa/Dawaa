@@ -58,6 +58,7 @@ Resources:
             - Effect: Allow
               Action:
                 - dynamodb:Query
+                - dynamodb:Scan
               Resource:
                 - !Sub "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${MedicinesTableName}"
                 - !Sub "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${MedicinesTableName}/index/BrandNameIndex"
@@ -66,6 +67,11 @@ Resources:
           Type: Api
           Properties:
             Path: /medicines/search
+            Method: get
+        SuggestMedicines:
+          Type: Api
+          Properties:
+            Path: /medicines/suggestions
             Method: get
 
   AuthFunction:

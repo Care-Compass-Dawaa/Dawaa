@@ -1,0 +1,1986 @@
+{
+  "RequestItems": {
+    "DawaaMedicines": [
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11008"
+            },
+            "sourceCode": {
+              "S": "11008"
+            },
+            "registrationNumber": {
+              "S": "126021/1"
+            },
+            "brandName": {
+              "S": "SANCUSO"
+            },
+            "strength": {
+              "S": "3.1mg/24h"
+            },
+            "presentation": {
+              "S": "1 patch"
+            },
+            "dosageForm": {
+              "S": "Transdermal patch"
+            },
+            "agent": {
+              "S": "Droguerie Mercury S.A.L."
+            },
+            "manufacturer": {
+              "S": "Pharbil Waltrop GmbH (a subsidiary of Nextpharma)"
+            },
+            "country": {
+              "S": "Germany"
+            },
+            "publicPriceLbp": {
+              "N": "7590727.722375"
+            },
+            "pharmacistMarginPercent": {
+              "N": "21.26"
+            },
+            "stratum": {
+              "S": "C"
+            },
+            "publicPriceDecision119": {
+              "N": "84.81260025"
+            },
+            "responsiblePartyName": {
+              "S": "Kyowa Kirin Holdings B.V."
+            },
+            "responsiblePartyCountry": {
+              "S": "The Netherlands"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "sancuso"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4527"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#845"
+            },
+            "sourceCode": {
+              "S": "845"
+            },
+            "registrationNumber": {
+              "S": "26396"
+            },
+            "brandName": {
+              "S": "SANDIMMUN"
+            },
+            "strength": {
+              "S": "250mg/5ml"
+            },
+            "presentation": {
+              "S": "10x5ml"
+            },
+            "dosageForm": {
+              "S": "Ampoule Infusion"
+            },
+            "agent": {
+              "S": "Khalil Fattal & Fils S.A.L."
+            },
+            "manufacturer": {
+              "S": "Novartis Pharma Stein AG"
+            },
+            "country": {
+              "S": "Switzerland"
+            },
+            "publicPriceLbp": {
+              "N": "6992012.527500002"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "78.12304500000002"
+            },
+            "responsiblePartyName": {
+              "S": "Novartis Pharma AG"
+            },
+            "responsiblePartyCountry": {
+              "S": "Switzerland"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "sandimmun"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4528"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#870"
+            },
+            "sourceCode": {
+              "S": "870"
+            },
+            "registrationNumber": {
+              "S": "27958"
+            },
+            "brandName": {
+              "S": "SANDIMMUN NEORAL"
+            },
+            "strength": {
+              "S": "100mg/ml"
+            },
+            "presentation": {
+              "S": "50ml"
+            },
+            "dosageForm": {
+              "S": "Oral Solution"
+            },
+            "agent": {
+              "S": "Khalil Fattal & Fils S.A.L."
+            },
+            "manufacturer": {
+              "S": "Delpharm Huningue SAS Huningue"
+            },
+            "country": {
+              "S": "France"
+            },
+            "publicPriceLbp": {
+              "N": "8264591.811525"
+            },
+            "pharmacistMarginPercent": {
+              "N": "21.26"
+            },
+            "stratum": {
+              "S": "C"
+            },
+            "publicPriceDecision119": {
+              "N": "92.34180795"
+            },
+            "responsiblePartyName": {
+              "S": "Novartis Pharma AG"
+            },
+            "responsiblePartyCountry": {
+              "S": "Switzerland"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "sandimmun neoral"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4529"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#867"
+            },
+            "sourceCode": {
+              "S": "867"
+            },
+            "registrationNumber": {
+              "S": "27955"
+            },
+            "brandName": {
+              "S": "SANDIMMUN NEORAL SOFT GELATIN"
+            },
+            "strength": {
+              "S": "25mg"
+            },
+            "presentation": {
+              "S": "50"
+            },
+            "dosageForm": {
+              "S": "Capsule"
+            },
+            "agent": {
+              "S": "Khalil Fattal & Fils S.A.L."
+            },
+            "manufacturer": {
+              "S": "Catalent Germany Eberbach GmbH"
+            },
+            "country": {
+              "S": "Germany"
+            },
+            "publicPriceLbp": {
+              "N": "2385320.4375000005"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "26.651625000000006"
+            },
+            "responsiblePartyName": {
+              "S": "Novartis Pharma AG"
+            },
+            "responsiblePartyCountry": {
+              "S": "Switzerland"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "sandimmun neoral soft gelatin"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4530"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#868"
+            },
+            "sourceCode": {
+              "S": "868"
+            },
+            "registrationNumber": {
+              "S": "27956"
+            },
+            "brandName": {
+              "S": "SANDIMMUN NEORAL SOFT GELATIN"
+            },
+            "strength": {
+              "S": "50mg"
+            },
+            "presentation": {
+              "S": "50"
+            },
+            "dosageForm": {
+              "S": "Capsule"
+            },
+            "agent": {
+              "S": "Khalil Fattal & Fils S.A.L."
+            },
+            "manufacturer": {
+              "S": "Catalent Germany Eberbach GmbH"
+            },
+            "country": {
+              "S": "Germany"
+            },
+            "publicPriceLbp": {
+              "N": "4309702.897500001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "48.15310500000001"
+            },
+            "responsiblePartyName": {
+              "S": "Novartis Pharma AG"
+            },
+            "responsiblePartyCountry": {
+              "S": "Switzerland"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "sandimmun neoral soft gelatin"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4531"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#869"
+            },
+            "sourceCode": {
+              "S": "869"
+            },
+            "registrationNumber": {
+              "S": "27957"
+            },
+            "brandName": {
+              "S": "SANDIMMUN NEORAL SOFT GELATIN"
+            },
+            "strength": {
+              "S": "100mg"
+            },
+            "presentation": {
+              "S": "50"
+            },
+            "dosageForm": {
+              "S": "Capsule"
+            },
+            "agent": {
+              "S": "Khalil Fattal & Fils S.A.L."
+            },
+            "manufacturer": {
+              "S": "Catalent Germany Eberbach GmbH"
+            },
+            "country": {
+              "S": "Germany"
+            },
+            "publicPriceLbp": {
+              "N": "8264591.811525"
+            },
+            "pharmacistMarginPercent": {
+              "N": "21.26"
+            },
+            "stratum": {
+              "S": "C"
+            },
+            "publicPriceDecision119": {
+              "N": "92.34180795"
+            },
+            "responsiblePartyName": {
+              "S": "Novartis Pharma AG"
+            },
+            "responsiblePartyCountry": {
+              "S": "Switzerland"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "sandimmun neoral soft gelatin"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4532"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#850"
+            },
+            "sourceCode": {
+              "S": "850"
+            },
+            "registrationNumber": {
+              "S": "26820"
+            },
+            "brandName": {
+              "S": "SANDOSTATIN"
+            },
+            "strength": {
+              "S": "0.1mg/ml"
+            },
+            "presentation": {
+              "S": "5x1ml"
+            },
+            "dosageForm": {
+              "S": "Ampoule"
+            },
+            "agent": {
+              "S": "Khalil Fattal & Fils S.A.L."
+            },
+            "manufacturer": {
+              "S": "Delpharm Dijon"
+            },
+            "country": {
+              "S": "France"
+            },
+            "publicPriceLbp": {
+              "N": "1038790.2525000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "11.606595"
+            },
+            "responsiblePartyName": {
+              "S": "Novartis Pharma AG"
+            },
+            "responsiblePartyCountry": {
+              "S": "Switzerland"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "sandostatin"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4533"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#5848"
+            },
+            "sourceCode": {
+              "S": "5848"
+            },
+            "registrationNumber": {
+              "S": "218903/10"
+            },
+            "brandName": {
+              "S": "SANDOSTATIN LAR"
+            },
+            "strength": {
+              "S": "20mg"
+            },
+            "presentation": {
+              "S": "1 vial"
+            },
+            "dosageForm": {
+              "S": "Injectable powder"
+            },
+            "agent": {
+              "S": "Khalil Fattal & Fils S.A.L."
+            },
+            "manufacturer": {
+              "S": "Novartis Pharmaceutical Manufacturing GmbH, Langkampfen"
+            },
+            "country": {
+              "S": "Austria"
+            },
+            "publicPriceLbp": {
+              "N": "38081641.740905695"
+            },
+            "pharmacistMarginPercent": {
+              "N": "10.71"
+            },
+            "stratum": {
+              "S": "E1"
+            },
+            "publicPriceDecision119": {
+              "N": "425.4932038090022"
+            },
+            "responsiblePartyName": {
+              "S": "Novartis Pharma AG"
+            },
+            "responsiblePartyCountry": {
+              "S": "Switzerland"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "sandostatin lar"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4534"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#5849"
+            },
+            "sourceCode": {
+              "S": "5849"
+            },
+            "registrationNumber": {
+              "S": "218904/10"
+            },
+            "brandName": {
+              "S": "SANDOSTATIN LAR"
+            },
+            "strength": {
+              "S": "30mg"
+            },
+            "presentation": {
+              "S": "1 vial"
+            },
+            "dosageForm": {
+              "S": "Injectable powder"
+            },
+            "agent": {
+              "S": "Khalil Fattal & Fils S.A.L."
+            },
+            "manufacturer": {
+              "S": "Novartis Pharmaceutical Manufacturing GmbH, Langkampfen"
+            },
+            "country": {
+              "S": "Austria"
+            },
+            "publicPriceLbp": {
+              "N": "57123170.7381342"
+            },
+            "pharmacistMarginPercent": {
+              "N": "10.71"
+            },
+            "stratum": {
+              "S": "E1"
+            },
+            "publicPriceDecision119": {
+              "N": "638.2477177445162"
+            },
+            "responsiblePartyName": {
+              "S": "Novartis Pharma AG"
+            },
+            "responsiblePartyCountry": {
+              "S": "Switzerland"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "sandostatin lar"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4535"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#8854"
+            },
+            "sourceCode": {
+              "S": "8854"
+            },
+            "registrationNumber": {
+              "S": "93816/1"
+            },
+            "brandName": {
+              "S": "SAXENDA"
+            },
+            "strength": {
+              "S": "6mg/ml"
+            },
+            "presentation": {
+              "S": "Prefilled pen 3x3ml"
+            },
+            "dosageForm": {
+              "S": "Injectable solution"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Novo Nordisk AS"
+            },
+            "country": {
+              "S": "Denmark"
+            },
+            "publicPriceLbp": {
+              "N": "16747035.152399998"
+            },
+            "pharmacistMarginPercent": {
+              "N": "19.35"
+            },
+            "stratum": {
+              "S": "D"
+            },
+            "publicPriceDecision119": {
+              "N": "187.11771119999997"
+            },
+            "responsiblePartyName": {
+              "S": "Novo Nordisk AS"
+            },
+            "responsiblePartyCountry": {
+              "S": "Denmark"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "saxenda"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4536"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12031"
+            },
+            "sourceCode": {
+              "S": "12031"
+            },
+            "registrationNumber": {
+              "S": "100724/1"
+            },
+            "brandName": {
+              "S": "SCANDINIBSA"
+            },
+            "strength": {
+              "S": "3%"
+            },
+            "presentation": {
+              "S": "50Cartriges"
+            },
+            "dosageForm": {
+              "S": "Solution for injection"
+            },
+            "agent": {
+              "S": "Richa Dental Drugstore"
+            },
+            "manufacturer": {
+              "S": "Laboratorios Inibsa SA"
+            },
+            "country": {
+              "S": "Spain"
+            },
+            "publicPriceLbp": {
+              "N": "1191988.2975"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "13.318305"
+            },
+            "responsiblePartyName": {
+              "S": "Laboratorios Inibsa SA"
+            },
+            "responsiblePartyCountry": {
+              "S": "Spain"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "scandinibsa"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4537"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#3863"
+            },
+            "sourceCode": {
+              "S": "3863"
+            },
+            "registrationNumber": {
+              "S": "26492"
+            },
+            "brandName": {
+              "S": "SCANDONEST 3% sans vasoconstricteur"
+            },
+            "strength": {
+              "S": "3%"
+            },
+            "presentation": {
+              "S": "50Cartridges x 1.8ml"
+            },
+            "dosageForm": {
+              "S": "Injectable solution"
+            },
+            "agent": {
+              "S": "Droguerie Tamer SAL"
+            },
+            "manufacturer": {
+              "S": "Septodont"
+            },
+            "country": {
+              "S": "France"
+            },
+            "publicPriceLbp": {
+              "N": "3461738.2800000003"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "38.67864"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "scandonest 3 sans vasoconstricteur"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4538"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11532"
+            },
+            "sourceCode": {
+              "S": "11532"
+            },
+            "registrationNumber": {
+              "S": "119623/1"
+            },
+            "brandName": {
+              "S": "SCLEMOD"
+            },
+            "strength": {
+              "S": "0.5mg"
+            },
+            "presentation": {
+              "S": "28"
+            },
+            "dosageForm": {
+              "S": "Capsule"
+            },
+            "agent": {
+              "S": "Benta Trading Co s.a.l."
+            },
+            "manufacturer": {
+              "S": "Manufactured by Benta Lyon, France for Benta SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "17079643"
+            },
+            "pharmacistMarginPercent": {
+              "N": "10.71"
+            },
+            "stratum": {
+              "S": "E1"
+            },
+            "publicPriceDecision119": {
+              "N": "190.834"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "sclemod"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4540"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#9783"
+            },
+            "sourceCode": {
+              "S": "9783"
+            },
+            "registrationNumber": {
+              "S": "113716/1"
+            },
+            "brandName": {
+              "S": "SCLEMOD"
+            },
+            "strength": {
+              "S": "0.5mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Capsule"
+            },
+            "agent": {
+              "S": "Benta Trading Co s.a.l."
+            },
+            "manufacturer": {
+              "S": "Manufactured by Hetero Labs Ltd, India Packed by Benta SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "18264981.000000004"
+            },
+            "pharmacistMarginPercent": {
+              "N": "10.71"
+            },
+            "stratum": {
+              "S": "E1"
+            },
+            "publicPriceDecision119": {
+              "N": "204.07800000000003"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "sclemod"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4539"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#3119"
+            },
+            "sourceCode": {
+              "S": "3119"
+            },
+            "registrationNumber": {
+              "S": "405494/00"
+            },
+            "brandName": {
+              "S": "SCOBUREN"
+            },
+            "strength": {
+              "S": "20mg/ml"
+            },
+            "presentation": {
+              "S": "10amp x1ml"
+            },
+            "dosageForm": {
+              "S": "Injectable solution"
+            },
+            "agent": {
+              "S": "Minapharm Halabi"
+            },
+            "manufacturer": {
+              "S": "Renaudin"
+            },
+            "country": {
+              "S": "France"
+            },
+            "publicPriceLbp": {
+              "N": "370900.5299999999"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "4.144139999999999"
+            },
+            "responsiblePartyName": {
+              "S": "Renaudin"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "scoburen"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4541"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#1579"
+            },
+            "sourceCode": {
+              "S": "1579"
+            },
+            "registrationNumber": {
+              "S": "208377/02"
+            },
+            "brandName": {
+              "S": "SCOPINAL"
+            },
+            "strength": {
+              "S": "20mg/ml"
+            },
+            "presentation": {
+              "S": "5Ampoules"
+            },
+            "dosageForm": {
+              "S": "Injection"
+            },
+            "agent": {
+              "S": "Pharmanet Drugstore S.A.R.L."
+            },
+            "manufacturer": {
+              "S": "Julphar"
+            },
+            "country": {
+              "S": "United Arab Emirates"
+            },
+            "publicPriceLbp": {
+              "N": "178731.05250000002"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "1.9969950000000003"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "scopinal"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4542"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#3748"
+            },
+            "sourceCode": {
+              "S": "3748"
+            },
+            "registrationNumber": {
+              "S": "208378/02"
+            },
+            "brandName": {
+              "S": "SCOPINAL"
+            },
+            "strength": {
+              "S": "10mg"
+            },
+            "presentation": {
+              "S": "20"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Pharmanet Drugstore S.A.R.L."
+            },
+            "manufacturer": {
+              "S": "Julphar"
+            },
+            "country": {
+              "S": "United Arab Emirates"
+            },
+            "publicPriceLbp": {
+              "N": "162604.94249999998"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "1.8168149999999996"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "scopinal"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4543"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#3749"
+            },
+            "sourceCode": {
+              "S": "3749"
+            },
+            "registrationNumber": {
+              "S": "208379/02"
+            },
+            "brandName": {
+              "S": "SCOPINAL"
+            },
+            "strength": {
+              "S": "5mg/5ml"
+            },
+            "presentation": {
+              "S": "100ml"
+            },
+            "dosageForm": {
+              "S": "Syrup"
+            },
+            "agent": {
+              "S": "Pharmanet Drugstore S.A.R.L."
+            },
+            "manufacturer": {
+              "S": "Julphar"
+            },
+            "country": {
+              "S": "United Arab Emirates"
+            },
+            "publicPriceLbp": {
+              "N": "210983.27250000002"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "2.357355"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "scopinal"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4544"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11643"
+            },
+            "sourceCode": {
+              "S": "11643"
+            },
+            "registrationNumber": {
+              "S": "98923/1"
+            },
+            "brandName": {
+              "S": "SECNOL"
+            },
+            "strength": {
+              "S": "2g"
+            },
+            "presentation": {
+              "S": "Boite de 1sachet"
+            },
+            "dosageForm": {
+              "S": "Granules en sachet-dose"
+            },
+            "agent": {
+              "S": "Medi drug International SAL (MDI)"
+            },
+            "manufacturer": {
+              "S": "Macors"
+            },
+            "country": {
+              "S": "France"
+            },
+            "publicPriceLbp": {
+              "N": "842589.2475"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "9.414405"
+            },
+            "responsiblePartyName": {
+              "S": "Substipharm"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "secnol"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4545"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12581"
+            },
+            "sourceCode": {
+              "S": "12581"
+            },
+            "registrationNumber": {
+              "S": "78125/1"
+            },
+            "brandName": {
+              "S": "SECNOL"
+            },
+            "strength": {
+              "S": "2g"
+            },
+            "presentation": {
+              "S": "Boite de 1sachet"
+            },
+            "dosageForm": {
+              "S": "Granules en sachet-dose"
+            },
+            "agent": {
+              "S": "Medi drug International SAL (MDI)"
+            },
+            "manufacturer": {
+              "S": "Inpharmasci"
+            },
+            "country": {
+              "S": "France"
+            },
+            "publicPriceLbp": {
+              "N": "842589.2475"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "9.414405"
+            },
+            "responsiblePartyName": {
+              "S": "Substipharm"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "secnol"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4546"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            },
+            "duplicateSearchKey": {
+              "BOOL": true
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7703"
+            },
+            "sourceCode": {
+              "S": "7703"
+            },
+            "registrationNumber": {
+              "S": "187434/13"
+            },
+            "brandName": {
+              "S": "SEDIPROCT"
+            },
+            "presentation": {
+              "S": "20g"
+            },
+            "dosageForm": {
+              "S": "Topical Cream"
+            },
+            "agent": {
+              "S": "Macromed S.A.R.L."
+            },
+            "manufacturer": {
+              "S": "Medical Union Pharmaceuticals (MUP)"
+            },
+            "country": {
+              "S": "Egypt"
+            },
+            "publicPriceLbp": {
+              "N": "290269.98000000004"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "3.2432400000000006"
+            },
+            "responsiblePartyName": {
+              "S": "Medical Union Pharmaceuticals (MUP)"
+            },
+            "responsiblePartyCountry": {
+              "S": "Egypt"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "sediproct"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4547"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#9781"
+            },
+            "sourceCode": {
+              "S": "9781"
+            },
+            "registrationNumber": {
+              "S": "160515/1"
+            },
+            "brandName": {
+              "S": "SEDIPROCT"
+            },
+            "presentation": {
+              "S": "6"
+            },
+            "dosageForm": {
+              "S": "Rectal suppositories"
+            },
+            "agent": {
+              "S": "Macromed S.A.R.L."
+            },
+            "manufacturer": {
+              "S": "Medical Union Pharmaceuticals (MUP)"
+            },
+            "country": {
+              "S": "Egypt"
+            },
+            "publicPriceLbp": {
+              "N": "237860.1225"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "2.657655"
+            },
+            "responsiblePartyName": {
+              "S": "Medical Union Pharmaceuticals (MUP)"
+            },
+            "responsiblePartyCountry": {
+              "S": "Egypt"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "sediproct"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4548"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10105"
+            },
+            "sourceCode": {
+              "S": "10105"
+            },
+            "registrationNumber": {
+              "S": "173817/1"
+            },
+            "brandName": {
+              "S": "SEDOXIL"
+            },
+            "presentation": {
+              "S": "60"
+            },
+            "dosageForm": {
+              "S": "Tablet"
+            },
+            "agent": {
+              "S": "Levant Alie Houses S.A.L."
+            },
+            "manufacturer": {
+              "S": "Bial- Portela & Ca, SA"
+            },
+            "country": {
+              "S": "Portugal"
+            },
+            "publicPriceLbp": {
+              "N": "1705336.1325000003"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "19.054035000000002"
+            },
+            "responsiblePartyName": {
+              "S": "Bial- Portela & Ca, SA"
+            },
+            "responsiblePartyCountry": {
+              "S": "Portugal"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "sedoxil"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4549"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7534"
+            },
+            "sourceCode": {
+              "S": "7534"
+            },
+            "registrationNumber": {
+              "S": "186628/13"
+            },
+            "brandName": {
+              "S": "SEEBRI BREEZHALER"
+            },
+            "strength": {
+              "S": "50mcg"
+            },
+            "presentation": {
+              "S": "30 Hard capsules with inhaler"
+            },
+            "dosageForm": {
+              "S": "Inhalation Powder"
+            },
+            "agent": {
+              "S": "Khalil Fattal & Fils S.A.L."
+            },
+            "manufacturer": {
+              "S": "Siegfried Barbera SL"
+            },
+            "country": {
+              "S": "Spain"
+            },
+            "publicPriceLbp": {
+              "N": "2687685"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "30.03"
+            },
+            "responsiblePartyName": {
+              "S": "Novartis Pharma AG"
+            },
+            "responsiblePartyCountry": {
+              "S": "Switzerland"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "seebri breezhaler"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4550"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7910"
+            },
+            "sourceCode": {
+              "S": "7910"
+            },
+            "registrationNumber": {
+              "S": "31414/1"
+            },
+            "brandName": {
+              "S": "SEFARIN"
+            },
+            "strength": {
+              "S": "125mg/5ml"
+            },
+            "presentation": {
+              "S": "100ml"
+            },
+            "dosageForm": {
+              "S": "Suspension"
+            },
+            "agent": {
+              "S": "Picomed SARL"
+            },
+            "manufacturer": {
+              "S": "Pharma International Co Ltd"
+            },
+            "country": {
+              "S": "Jordan"
+            },
+            "publicPriceLbp": {
+              "N": "1695929.235"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "18.94893"
+            },
+            "responsiblePartyName": {
+              "S": "Pharma International Co Ltd"
+            },
+            "responsiblePartyCountry": {
+              "S": "Jordan"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "sefarin"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4551"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

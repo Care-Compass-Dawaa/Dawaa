@@ -1,0 +1,1947 @@
+{
+  "RequestItems": {
+    "DawaaMedicines": [
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#4258"
+            },
+            "sourceCode": {
+              "S": "4258"
+            },
+            "registrationNumber": {
+              "S": "195056/04"
+            },
+            "brandName": {
+              "S": "ZEVLEN"
+            },
+            "strength": {
+              "S": "250mg"
+            },
+            "presentation": {
+              "S": "6"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Droguerie de l'Union"
+            },
+            "manufacturer": {
+              "S": "Algorithm S.A.L."
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "409552.00000000006"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "4.5760000000000005"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "zevlen"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "5627"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10096"
+            },
+            "sourceCode": {
+              "S": "10096"
+            },
+            "registrationNumber": {
+              "S": "56319/1"
+            },
+            "brandName": {
+              "S": "ZEVTERA"
+            },
+            "strength": {
+              "S": "500mg"
+            },
+            "presentation": {
+              "S": "10Vials"
+            },
+            "dosageForm": {
+              "S": "Powder for concentrate for solution for infusion"
+            },
+            "agent": {
+              "S": "Droguerie de l'Union"
+            },
+            "manufacturer": {
+              "S": "Patheon UK Ltd under license from Basilea Pharmaceutica international ltd, Switzerland"
+            },
+            "country": {
+              "S": "UK"
+            },
+            "publicPriceLbp": {
+              "N": "47129773.02201001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "10.71"
+            },
+            "stratum": {
+              "S": "E1"
+            },
+            "publicPriceDecision119": {
+              "N": "526.5896427040225"
+            },
+            "responsiblePartyName": {
+              "S": "Jazeera Pharmaceutical Industries"
+            },
+            "responsiblePartyCountry": {
+              "S": "Saudi Arabia"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "zevtera"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "5628"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10448"
+            },
+            "sourceCode": {
+              "S": "10448"
+            },
+            "registrationNumber": {
+              "S": "60120/1"
+            },
+            "brandName": {
+              "S": "ZIEXTENZO"
+            },
+            "strength": {
+              "S": "6mg"
+            },
+            "presentation": {
+              "S": "1 pre-filled syringe"
+            },
+            "dosageForm": {
+              "S": "Solution for injection"
+            },
+            "agent": {
+              "S": "Khalil Fattal & Fils S.A.L."
+            },
+            "manufacturer": {
+              "S": "Sandoz GmbH, (Schaftenau)"
+            },
+            "country": {
+              "S": "Austria"
+            },
+            "publicPriceLbp": {
+              "N": "42676168.378114745"
+            },
+            "pharmacistMarginPercent": {
+              "N": "10.71"
+            },
+            "stratum": {
+              "S": "E1"
+            },
+            "publicPriceDecision119": {
+              "N": "476.8286969621759"
+            },
+            "responsiblePartyName": {
+              "S": "Sandoz GmbH, Kundl"
+            },
+            "responsiblePartyCountry": {
+              "S": "Austria"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "ziextenzo"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "5629"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#2334"
+            },
+            "sourceCode": {
+              "S": "2334"
+            },
+            "registrationNumber": {
+              "S": "974030/02"
+            },
+            "brandName": {
+              "S": "ZILISTEN"
+            },
+            "strength": {
+              "S": "750mg"
+            },
+            "presentation": {
+              "S": "1Vial"
+            },
+            "dosageForm": {
+              "S": "IV/IM"
+            },
+            "agent": {
+              "S": "Macromed S.A.R.L."
+            },
+            "manufacturer": {
+              "S": "Demo SA"
+            },
+            "country": {
+              "S": "Greece"
+            },
+            "publicPriceLbp": {
+              "N": "155885.72999999998"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "1.7417399999999998"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "zilisten"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "5630"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#808"
+            },
+            "sourceCode": {
+              "S": "808"
+            },
+            "registrationNumber": {
+              "S": "208727/03"
+            },
+            "brandName": {
+              "S": "ZIMAX"
+            },
+            "strength": {
+              "S": "250mg"
+            },
+            "presentation": {
+              "S": "6"
+            },
+            "dosageForm": {
+              "S": "Capsule"
+            },
+            "agent": {
+              "S": "Khalil Fattal & Fils S.A.L."
+            },
+            "manufacturer": {
+              "S": "Spimaco"
+            },
+            "country": {
+              "S": "Saudi Arabia"
+            },
+            "publicPriceLbp": {
+              "N": "360149.79000000004"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "4.02402"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "zimax"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "5631"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#2349"
+            },
+            "sourceCode": {
+              "S": "2349"
+            },
+            "registrationNumber": {
+              "S": "973933/02"
+            },
+            "brandName": {
+              "S": "ZINASEN"
+            },
+            "strength": {
+              "S": "10mg"
+            },
+            "presentation": {
+              "S": "20"
+            },
+            "dosageForm": {
+              "S": "Tablet"
+            },
+            "agent": {
+              "S": "Pharmamedic S.A.R.L."
+            },
+            "manufacturer": {
+              "S": "Laboratorios Atral SA"
+            },
+            "country": {
+              "S": "Portugal"
+            },
+            "publicPriceLbp": {
+              "N": "591290.7000000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "6.606600000000001"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "zinasen"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "5632"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10071"
+            },
+            "sourceCode": {
+              "S": "10071"
+            },
+            "registrationNumber": {
+              "S": "32619/1"
+            },
+            "brandName": {
+              "S": "ZINFORO"
+            },
+            "strength": {
+              "S": "600mg"
+            },
+            "presentation": {
+              "S": "10Vials"
+            },
+            "dosageForm": {
+              "S": "Injectable powder for concentrate for solution for Infusion"
+            },
+            "agent": {
+              "S": "Droguerie Fattal S.A.L."
+            },
+            "manufacturer": {
+              "S": "ACS Dobfar S.P.A."
+            },
+            "country": {
+              "S": "Italy"
+            },
+            "publicPriceLbp": {
+              "N": "44995861.512"
+            },
+            "pharmacistMarginPercent": {
+              "N": "10.71"
+            },
+            "stratum": {
+              "S": "E1"
+            },
+            "publicPriceDecision119": {
+              "N": "502.74705600000004"
+            },
+            "responsiblePartyName": {
+              "S": "Pfizer Ireland Pharmaceuticals"
+            },
+            "responsiblePartyCountry": {
+              "S": "Ireland"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "zinforo"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "5633"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11689"
+            },
+            "sourceCode": {
+              "S": "11689"
+            },
+            "registrationNumber": {
+              "S": "141123/1"
+            },
+            "brandName": {
+              "S": "ZINNAT"
+            },
+            "strength": {
+              "S": "250mg/5ml"
+            },
+            "presentation": {
+              "S": "50ml"
+            },
+            "dosageForm": {
+              "S": "Suspension"
+            },
+            "agent": {
+              "S": "Khalil Fattal & Fils S.A.L."
+            },
+            "manufacturer": {
+              "S": "Pharmaline Licensed by Sandoz Pharmaceuticals D.D., Slovenia"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "1120781.5275800002"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "12.522698632178773"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "zinnat"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "5634"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11690"
+            },
+            "sourceCode": {
+              "S": "11690"
+            },
+            "registrationNumber": {
+              "S": "141223/1"
+            },
+            "brandName": {
+              "S": "ZINNAT"
+            },
+            "strength": {
+              "S": "500mg"
+            },
+            "presentation": {
+              "S": "10"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Khalil Fattal & Fils S.A.L."
+            },
+            "manufacturer": {
+              "S": "Pharmaline Licensed by Sandoz Pharmaceuticals D.D., Slovenia"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "908603.039916"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "10.15198927280447"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "zinnat"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "5635"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11834"
+            },
+            "sourceCode": {
+              "S": "11834"
+            },
+            "registrationNumber": {
+              "S": "58823/1"
+            },
+            "brandName": {
+              "S": "ZINNAT"
+            },
+            "strength": {
+              "S": "250mg"
+            },
+            "presentation": {
+              "S": "10"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Khalil Fattal & Fils S.A.L."
+            },
+            "manufacturer": {
+              "S": "Glaxo Operations UK Ltd"
+            },
+            "country": {
+              "S": "UK"
+            },
+            "publicPriceLbp": {
+              "N": "349399.0500000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "3.903900000000001"
+            },
+            "responsiblePartyName": {
+              "S": "Sandoz GmbH"
+            },
+            "responsiblePartyCountry": {
+              "S": "Austria"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "zinnat"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "5636"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#5382"
+            },
+            "sourceCode": {
+              "S": "5382"
+            },
+            "registrationNumber": {
+              "S": "24474/06"
+            },
+            "brandName": {
+              "S": "ZINOXIMOR"
+            },
+            "strength": {
+              "S": "500mg"
+            },
+            "presentation": {
+              "S": "14"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Tabuk Pharmaceutical Manufacturing Company"
+            },
+            "country": {
+              "S": "Saudi Arabia"
+            },
+            "publicPriceLbp": {
+              "N": "698798.1"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "7.807799999999999"
+            },
+            "responsiblePartyName": {
+              "S": "Tabuk Pharmaceutical Manufacturing Company"
+            },
+            "responsiblePartyCountry": {
+              "S": "Saudi Arabia"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "zinoximor"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "5637"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11561"
+            },
+            "sourceCode": {
+              "S": "11561"
+            },
+            "registrationNumber": {
+              "S": "81723/1"
+            },
+            "brandName": {
+              "S": "ZIOPROL"
+            },
+            "strength": {
+              "S": "5mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Droguerie de l'Union"
+            },
+            "manufacturer": {
+              "S": "Algorithm S.A.L., Zekrit"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "409552.00000000006"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "4.5760000000000005"
+            },
+            "responsiblePartyName": {
+              "S": "Algorithm S.A.L., Zouk Mosbeh"
+            },
+            "responsiblePartyCountry": {
+              "S": "Lebanon"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "zioprol"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "5638"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#6222"
+            },
+            "sourceCode": {
+              "S": "6222"
+            },
+            "registrationNumber": {
+              "S": "167545/10"
+            },
+            "brandName": {
+              "S": "ZIOREL"
+            },
+            "strength": {
+              "S": "150mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Droguerie de l'Union"
+            },
+            "manufacturer": {
+              "S": "Algorithm S.A.L."
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "575932.5"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "6.435"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "ziorel"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "5639"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#6223"
+            },
+            "sourceCode": {
+              "S": "6223"
+            },
+            "registrationNumber": {
+              "S": "167479/10"
+            },
+            "brandName": {
+              "S": "ZIOREL"
+            },
+            "strength": {
+              "S": "300mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Droguerie de l'Union"
+            },
+            "manufacturer": {
+              "S": "Algorithm S.A.L."
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "575932.5"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "6.435"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "ziorel"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "5640"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#6224"
+            },
+            "sourceCode": {
+              "S": "6224"
+            },
+            "registrationNumber": {
+              "S": "167546/10"
+            },
+            "brandName": {
+              "S": "ZIOREL PLUS"
+            },
+            "strength": {
+              "S": "150/12.5mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Droguerie de l'Union"
+            },
+            "manufacturer": {
+              "S": "Algorithm S.A.L."
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "559294.4500000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "6.249100000000001"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "ziorel plus"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "5641"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#6225"
+            },
+            "sourceCode": {
+              "S": "6225"
+            },
+            "registrationNumber": {
+              "S": "167547/10"
+            },
+            "brandName": {
+              "S": "ZIOREL PLUS"
+            },
+            "strength": {
+              "S": "300/12.5mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Droguerie de l'Union"
+            },
+            "manufacturer": {
+              "S": "Algorithm S.A.L."
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "559294.4500000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "6.249100000000001"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "ziorel plus"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "5642"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10249"
+            },
+            "sourceCode": {
+              "S": "10249"
+            },
+            "registrationNumber": {
+              "S": "100220/1"
+            },
+            "brandName": {
+              "S": "ZIRABEV"
+            },
+            "strength": {
+              "S": "400mg/16ml (25mg/ml)"
+            },
+            "presentation": {
+              "S": "1Vial"
+            },
+            "dosageForm": {
+              "S": "Solution for intravenous infusion"
+            },
+            "agent": {
+              "S": "Droguerie Fattal S.A.L."
+            },
+            "manufacturer": {
+              "S": "Pharmacia & Upjohn Company LLC"
+            },
+            "country": {
+              "S": "USA"
+            },
+            "publicPriceLbp": {
+              "N": "49965229.440000005"
+            },
+            "pharmacistMarginPercent": {
+              "N": "10.71"
+            },
+            "stratum": {
+              "S": "E1"
+            },
+            "publicPriceDecision119": {
+              "N": "558.2707200000001"
+            },
+            "responsiblePartyName": {
+              "S": "Pfizer Inc"
+            },
+            "responsiblePartyCountry": {
+              "S": "USA"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "zirabev"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "5643"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10287"
+            },
+            "sourceCode": {
+              "S": "10287"
+            },
+            "registrationNumber": {
+              "S": "100120/1"
+            },
+            "brandName": {
+              "S": "ZIRABEV"
+            },
+            "strength": {
+              "S": "100mg/4ml (25mg/ml)"
+            },
+            "presentation": {
+              "S": "1Vial"
+            },
+            "dosageForm": {
+              "S": "Solution for intravenous infusion"
+            },
+            "agent": {
+              "S": "Droguerie Fattal S.A.L."
+            },
+            "manufacturer": {
+              "S": "Pharmacia & Upjohn Company LLC"
+            },
+            "country": {
+              "S": "USA"
+            },
+            "publicPriceLbp": {
+              "N": "14800115.232000003"
+            },
+            "pharmacistMarginPercent": {
+              "N": "19.35"
+            },
+            "stratum": {
+              "S": "D"
+            },
+            "publicPriceDecision119": {
+              "N": "165.36441600000003"
+            },
+            "responsiblePartyName": {
+              "S": "Pfizer Inc"
+            },
+            "responsiblePartyCountry": {
+              "S": "USA"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "zirabev"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "5644"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#6721"
+            },
+            "sourceCode": {
+              "S": "6721"
+            },
+            "registrationNumber": {
+              "S": "166966/11"
+            },
+            "brandName": {
+              "S": "ZITERA"
+            },
+            "strength": {
+              "S": "500mg"
+            },
+            "presentation": {
+              "S": "60"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Droguerie de l'Union"
+            },
+            "manufacturer": {
+              "S": "Algorithm S.A.L."
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "2203901.7"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "24.6246"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "zitera"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "5645"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#6722"
+            },
+            "sourceCode": {
+              "S": "6722"
+            },
+            "registrationNumber": {
+              "S": "166967/11"
+            },
+            "brandName": {
+              "S": "ZITERA"
+            },
+            "strength": {
+              "S": "1000mg"
+            },
+            "presentation": {
+              "S": "60"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Droguerie de l'Union"
+            },
+            "manufacturer": {
+              "S": "Algorithm S.A.L."
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "3225222"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "36.036"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "zitera"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "5646"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7436"
+            },
+            "sourceCode": {
+              "S": "7436"
+            },
+            "registrationNumber": {
+              "S": "187349/13"
+            },
+            "brandName": {
+              "S": "ZITHROFORTE"
+            },
+            "strength": {
+              "S": "500mg"
+            },
+            "presentation": {
+              "S": "3"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "New Allpharma"
+            },
+            "manufacturer": {
+              "S": "Kern Pharma SL"
+            },
+            "country": {
+              "S": "Spain"
+            },
+            "publicPriceLbp": {
+              "N": "485127.1425"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "5.420415"
+            },
+            "responsiblePartyName": {
+              "S": "Korhispana SL"
+            },
+            "responsiblePartyCountry": {
+              "S": "Spain"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "zithroforte"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "5647"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#6947"
+            },
+            "sourceCode": {
+              "S": "6947"
+            },
+            "registrationNumber": {
+              "S": "96721/12"
+            },
+            "brandName": {
+              "S": "ZITHROMAX"
+            },
+            "strength": {
+              "S": "250mg"
+            },
+            "presentation": {
+              "S": "6"
+            },
+            "dosageForm": {
+              "S": "Capsule"
+            },
+            "agent": {
+              "S": "Droguerie Fattal S.A.L."
+            },
+            "manufacturer": {
+              "S": "Haupt Pharma Latina SRL"
+            },
+            "country": {
+              "S": "Italy"
+            },
+            "publicPriceLbp": {
+              "N": "591290.7000000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "6.606600000000001"
+            },
+            "responsiblePartyName": {
+              "S": "Pfizer Ltd"
+            },
+            "responsiblePartyCountry": {
+              "S": "UK"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "zithromax"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "5648"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7136"
+            },
+            "sourceCode": {
+              "S": "7136"
+            },
+            "registrationNumber": {
+              "S": "187476/13"
+            },
+            "brandName": {
+              "S": "ZITHROMAX"
+            },
+            "strength": {
+              "S": "300mg/7.5ml"
+            },
+            "presentation": {
+              "S": "22.5ml"
+            },
+            "dosageForm": {
+              "S": "POS"
+            },
+            "agent": {
+              "S": "Droguerie Fattal S.A.L."
+            },
+            "manufacturer": {
+              "S": "Haupt Pharma Latina SRL"
+            },
+            "country": {
+              "S": "Italy"
+            },
+            "publicPriceLbp": {
+              "N": "489158.67000000004"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "5.46546"
+            },
+            "responsiblePartyName": {
+              "S": "Pfizer Ltd"
+            },
+            "responsiblePartyCountry": {
+              "S": "UK"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "zithromax"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "5649"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12555"
+            },
+            "sourceCode": {
+              "S": "12555"
+            },
+            "registrationNumber": {
+              "S": "196125/1"
+            },
+            "brandName": {
+              "S": "ZOFAMED ODT"
+            },
+            "strength": {
+              "S": "8mg"
+            },
+            "presentation": {
+              "S": "10"
+            },
+            "dosageForm": {
+              "S": "Tablet, orodispersible"
+            },
+            "agent": {
+              "S": "New Larys Pharm SARL"
+            },
+            "manufacturer": {
+              "S": "UBSA Pharma Industries SARL (Secondary Packaging), manufacturer: Hiral Labs Ltd, India"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "998283"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "11.154"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "zofamed odt"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "5650"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#8918"
+            },
+            "sourceCode": {
+              "S": "8918"
+            },
+            "registrationNumber": {
+              "S": "171816/1"
+            },
+            "brandName": {
+              "S": "ZOFRAN"
+            },
+            "strength": {
+              "S": "8mg"
+            },
+            "presentation": {
+              "S": "10"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Khalil Fattal & Fils S.A.L."
+            },
+            "manufacturer": {
+              "S": "Pharmaline Licensed by Sandoz Pharmaceuticals AG, Switzerland"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "6323075.824065002"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "70.64889188899443"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "zofran"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "5651"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

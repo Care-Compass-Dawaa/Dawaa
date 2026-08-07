@@ -1,0 +1,1971 @@
+{
+  "RequestItems": {
+    "DawaaMedicines": [
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#4450"
+            },
+            "sourceCode": {
+              "S": "4450"
+            },
+            "registrationNumber": {
+              "S": "405486/00"
+            },
+            "brandName": {
+              "S": "OFLOMED"
+            },
+            "strength": {
+              "S": "200mg"
+            },
+            "presentation": {
+              "S": "10"
+            },
+            "dosageForm": {
+              "S": "Tablet, film-scored"
+            },
+            "agent": {
+              "S": "Pharmapro"
+            },
+            "manufacturer": {
+              "S": "Mediphar Laboratories"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "601529.5000000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "6.721000000000001"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "oflomed"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3652"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#4451"
+            },
+            "sourceCode": {
+              "S": "4451"
+            },
+            "registrationNumber": {
+              "S": "208842/03"
+            },
+            "brandName": {
+              "S": "OFLOMED"
+            },
+            "strength": {
+              "S": "3mg/ml"
+            },
+            "presentation": {
+              "S": "5ml"
+            },
+            "dosageForm": {
+              "S": "Drops solution"
+            },
+            "agent": {
+              "S": "Pharmapro"
+            },
+            "manufacturer": {
+              "S": "Mediphar Laboratories"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "317402.80000000005"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "3.5464000000000007"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "oflomed"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3653"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11436"
+            },
+            "sourceCode": {
+              "S": "11436"
+            },
+            "registrationNumber": {
+              "S": "138022/1"
+            },
+            "brandName": {
+              "S": "OFLOX"
+            },
+            "strength": {
+              "S": "0.3%"
+            },
+            "presentation": {
+              "S": "5ml"
+            },
+            "dosageForm": {
+              "S": "Ophtalmic solution"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Allergan Pharmaceuticals Ireland"
+            },
+            "country": {
+              "S": "Ireland"
+            },
+            "publicPriceLbp": {
+              "N": "366869.0025000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "4.099095000000001"
+            },
+            "responsiblePartyName": {
+              "S": "Abbvie Limited"
+            },
+            "responsiblePartyCountry": {
+              "S": "Ireland"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "oflox"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3655"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            },
+            "duplicateSearchKey": {
+              "BOOL": true
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#3382"
+            },
+            "sourceCode": {
+              "S": "3382"
+            },
+            "registrationNumber": {
+              "S": "974208/01"
+            },
+            "brandName": {
+              "S": "OFLOX"
+            },
+            "strength": {
+              "S": "0.3%"
+            },
+            "presentation": {
+              "S": "5ml"
+            },
+            "dosageForm": {
+              "S": "Ophtalmic solution"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Allergan Pharmaceuticals Ireland"
+            },
+            "country": {
+              "S": "Ireland"
+            },
+            "publicPriceLbp": {
+              "N": "366869.00249999994"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "4.099094999999999"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "oflox"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3654"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11519"
+            },
+            "sourceCode": {
+              "S": "11519"
+            },
+            "registrationNumber": {
+              "S": "114723/1"
+            },
+            "brandName": {
+              "S": "OGIVRI"
+            },
+            "strength": {
+              "S": "440mg"
+            },
+            "presentation": {
+              "S": "1Vial"
+            },
+            "dosageForm": {
+              "S": "Lyophilised powder for IV infusion"
+            },
+            "agent": {
+              "S": "Droguerie de l'Union"
+            },
+            "manufacturer": {
+              "S": "Biocon Biologics Limited"
+            },
+            "country": {
+              "S": "India"
+            },
+            "publicPriceLbp": {
+              "N": "80027615.21015625"
+            },
+            "pharmacistMarginPercent": {
+              "N": "2.44"
+            },
+            "stratum": {
+              "S": "E2"
+            },
+            "publicPriceDecision119": {
+              "N": "894.1632984375"
+            },
+            "responsiblePartyName": {
+              "S": "Biosimilars Newco Limited"
+            },
+            "responsiblePartyCountry": {
+              "S": "UK"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "ogivri"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3656"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#5548"
+            },
+            "sourceCode": {
+              "S": "5548"
+            },
+            "registrationNumber": {
+              "S": "222492/08"
+            },
+            "brandName": {
+              "S": "OLANZAMED"
+            },
+            "strength": {
+              "S": "20mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet"
+            },
+            "agent": {
+              "S": "Pharmapro"
+            },
+            "manufacturer": {
+              "S": "Mediphar Laboratories"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "3941938.0000000005"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "44.044000000000004"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "olanzamed"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3657"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#5549"
+            },
+            "sourceCode": {
+              "S": "5549"
+            },
+            "registrationNumber": {
+              "S": "222491/08"
+            },
+            "brandName": {
+              "S": "OLANZAMED"
+            },
+            "strength": {
+              "S": "10mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet"
+            },
+            "agent": {
+              "S": "Pharmapro"
+            },
+            "manufacturer": {
+              "S": "Mediphar Laboratories"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "902294.2500000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "10.081500000000002"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "olanzamed"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3658"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7680"
+            },
+            "sourceCode": {
+              "S": "7680"
+            },
+            "registrationNumber": {
+              "S": "185939/13"
+            },
+            "brandName": {
+              "S": "OLANZAMED"
+            },
+            "strength": {
+              "S": "5mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet"
+            },
+            "agent": {
+              "S": "Pharmapro"
+            },
+            "manufacturer": {
+              "S": "Mediphar Laboratories"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "665522.0000000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "7.436000000000002"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "olanzamed"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3659"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12391"
+            },
+            "sourceCode": {
+              "S": "12391"
+            },
+            "registrationNumber": {
+              "S": "165216/1"
+            },
+            "brandName": {
+              "S": "OLANZAPINE ARROW"
+            },
+            "strength": {
+              "S": "5mg"
+            },
+            "presentation": {
+              "S": "28"
+            },
+            "dosageForm": {
+              "S": "Tablet, orodispersible"
+            },
+            "agent": {
+              "S": "Darapharma S.A.L."
+            },
+            "manufacturer": {
+              "S": "APL Swift Services (Malta) Limited"
+            },
+            "country": {
+              "S": "Malta"
+            },
+            "publicPriceLbp": {
+              "N": "1385501.6175000004"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "15.480465000000004"
+            },
+            "responsiblePartyName": {
+              "S": "Arrow Génériques"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "olanzapine arrow"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3663"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12392"
+            },
+            "sourceCode": {
+              "S": "12392"
+            },
+            "registrationNumber": {
+              "S": "9625/1"
+            },
+            "brandName": {
+              "S": "OLANZAPINE ARROW"
+            },
+            "strength": {
+              "S": "10mg"
+            },
+            "presentation": {
+              "S": "28"
+            },
+            "dosageForm": {
+              "S": "Tablet, orodispersible"
+            },
+            "agent": {
+              "S": "Darapharma S.A.L."
+            },
+            "manufacturer": {
+              "S": "APL Swift Services (Malta) Limited"
+            },
+            "country": {
+              "S": "Malta"
+            },
+            "publicPriceLbp": {
+              "N": "1385501.6175000004"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "15.480465000000004"
+            },
+            "responsiblePartyName": {
+              "S": "Arrow Génériques"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "olanzapine arrow"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3664"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#8830"
+            },
+            "sourceCode": {
+              "S": "8830"
+            },
+            "registrationNumber": {
+              "S": "165216/1"
+            },
+            "brandName": {
+              "S": "OLANZAPINE ARROW"
+            },
+            "strength": {
+              "S": "5mg"
+            },
+            "presentation": {
+              "S": "28"
+            },
+            "dosageForm": {
+              "S": "Tablet"
+            },
+            "agent": {
+              "S": "Darapharma S.A.L."
+            },
+            "manufacturer": {
+              "S": "APL Swift Services (Malta) Limited"
+            },
+            "country": {
+              "S": "Malta"
+            },
+            "publicPriceLbp": {
+              "N": "670577.4075000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "7.492485000000001"
+            },
+            "responsiblePartyName": {
+              "S": "Arrow Génériques"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "olanzapine arrow"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3660"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#8831"
+            },
+            "sourceCode": {
+              "S": "8831"
+            },
+            "registrationNumber": {
+              "S": "165316/1"
+            },
+            "brandName": {
+              "S": "OLANZAPINE ARROW"
+            },
+            "strength": {
+              "S": "10mg"
+            },
+            "presentation": {
+              "S": "28"
+            },
+            "dosageForm": {
+              "S": "Tablet"
+            },
+            "agent": {
+              "S": "Darapharma S.A.L."
+            },
+            "manufacturer": {
+              "S": "APL Swift Services (Malta) Limited"
+            },
+            "country": {
+              "S": "Malta"
+            },
+            "publicPriceLbp": {
+              "N": "822431.6100000002"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "9.189180000000002"
+            },
+            "responsiblePartyName": {
+              "S": "Arrow Génériques"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "olanzapine arrow"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3661"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#9541"
+            },
+            "sourceCode": {
+              "S": "9541"
+            },
+            "registrationNumber": {
+              "S": "45818/1"
+            },
+            "brandName": {
+              "S": "OLANZAPINE ARROW"
+            },
+            "strength": {
+              "S": "7.5mg"
+            },
+            "presentation": {
+              "S": "28"
+            },
+            "dosageForm": {
+              "S": "Tablet"
+            },
+            "agent": {
+              "S": "Darapharma S.A.L."
+            },
+            "manufacturer": {
+              "S": "APL Swift Services (Malta) Limited"
+            },
+            "country": {
+              "S": "Malta"
+            },
+            "publicPriceLbp": {
+              "N": "822431.6100000002"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "9.189180000000002"
+            },
+            "responsiblePartyName": {
+              "S": "Arrow Génériques"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "olanzapine arrow"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3662"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7363"
+            },
+            "sourceCode": {
+              "S": "7363"
+            },
+            "registrationNumber": {
+              "S": "221894/08"
+            },
+            "brandName": {
+              "S": "OLANZAX 10"
+            },
+            "strength": {
+              "S": "10mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet, mouth dissolving"
+            },
+            "agent": {
+              "S": "Benta Trading Co s.a.l."
+            },
+            "manufacturer": {
+              "S": "Benta SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "2329326.9999999995"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "26.025999999999996"
+            },
+            "responsiblePartyName": {
+              "S": "Benta SAL"
+            },
+            "responsiblePartyCountry": {
+              "S": "Lebanon"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "olanzax 10"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3665"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7362"
+            },
+            "sourceCode": {
+              "S": "7362"
+            },
+            "registrationNumber": {
+              "S": "221893/08"
+            },
+            "brandName": {
+              "S": "OLANZAX 5"
+            },
+            "strength": {
+              "S": "5mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet, mouth dissolving"
+            },
+            "agent": {
+              "S": "Benta Trading Co s.a.l."
+            },
+            "manufacturer": {
+              "S": "Benta SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "1316965.6500000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "14.714700000000002"
+            },
+            "responsiblePartyName": {
+              "S": "Benta SAL"
+            },
+            "responsiblePartyCountry": {
+              "S": "Lebanon"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "olanzax 5"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3666"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#9638"
+            },
+            "sourceCode": {
+              "S": "9638"
+            },
+            "registrationNumber": {
+              "S": "43017/1"
+            },
+            "brandName": {
+              "S": "OLFEN"
+            },
+            "strength": {
+              "S": "1%"
+            },
+            "presentation": {
+              "S": "50g"
+            },
+            "dosageForm": {
+              "S": "Gel"
+            },
+            "agent": {
+              "S": "Mectapharm S.A.L."
+            },
+            "manufacturer": {
+              "S": "Sofarimex SA"
+            },
+            "country": {
+              "S": "Portugal"
+            },
+            "publicPriceLbp": {
+              "N": "247267.02000000005"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "2.7627600000000005"
+            },
+            "responsiblePartyName": {
+              "S": "Acino Pharma AG"
+            },
+            "responsiblePartyCountry": {
+              "S": "Switzerland"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "olfen"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3667"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7594"
+            },
+            "sourceCode": {
+              "S": "7594"
+            },
+            "registrationNumber": {
+              "S": "186152/13"
+            },
+            "brandName": {
+              "S": "OLFEN 75MG"
+            },
+            "presentation": {
+              "S": "5"
+            },
+            "dosageForm": {
+              "S": "Ampoule"
+            },
+            "agent": {
+              "S": "Mectapharm S.A.L."
+            },
+            "manufacturer": {
+              "S": "Haupt Pharma Wulfing GmbH"
+            },
+            "country": {
+              "S": "Germany"
+            },
+            "publicPriceLbp": {
+              "N": "307739.9325"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "3.438435"
+            },
+            "responsiblePartyName": {
+              "S": "Acino Pharma AG"
+            },
+            "responsiblePartyCountry": {
+              "S": "Switzerland"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "olfen 75mg"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3668"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7595"
+            },
+            "sourceCode": {
+              "S": "7595"
+            },
+            "registrationNumber": {
+              "S": "186153/13"
+            },
+            "brandName": {
+              "S": "OLFEN-100 SR"
+            },
+            "presentation": {
+              "S": "20"
+            },
+            "dosageForm": {
+              "S": "Capsule, prolonged release"
+            },
+            "agent": {
+              "S": "Mectapharm S.A.L."
+            },
+            "manufacturer": {
+              "S": "Acino Pharma AG"
+            },
+            "country": {
+              "S": "Switzerland"
+            },
+            "publicPriceLbp": {
+              "N": "356118.26249999995"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "3.9789749999999993"
+            },
+            "responsiblePartyName": {
+              "S": "Acino Pharma AG"
+            },
+            "responsiblePartyCountry": {
+              "S": "Switzerland"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "olfen 100 sr"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3669"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7664"
+            },
+            "sourceCode": {
+              "S": "7664"
+            },
+            "registrationNumber": {
+              "S": "185966/13"
+            },
+            "brandName": {
+              "S": "OLFEN-50"
+            },
+            "presentation": {
+              "S": "20"
+            },
+            "dosageForm": {
+              "S": "Tablet, gastroresistant"
+            },
+            "agent": {
+              "S": "Mectapharm S.A.L."
+            },
+            "manufacturer": {
+              "S": "Acino Pharma AG"
+            },
+            "country": {
+              "S": "Switzerland"
+            },
+            "publicPriceLbp": {
+              "N": "223077.855"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "2.49249"
+            },
+            "responsiblePartyName": {
+              "S": "Acino Pharma AG"
+            },
+            "responsiblePartyCountry": {
+              "S": "Switzerland"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "olfen 50"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3670"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7665"
+            },
+            "sourceCode": {
+              "S": "7665"
+            },
+            "registrationNumber": {
+              "S": "186792/14"
+            },
+            "brandName": {
+              "S": "OLFEN-75 SR"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet, prolonged release"
+            },
+            "agent": {
+              "S": "Mectapharm S.A.L."
+            },
+            "manufacturer": {
+              "S": "Acino Pharma AG"
+            },
+            "country": {
+              "S": "Switzerland"
+            },
+            "publicPriceLbp": {
+              "N": "326553.72750000004"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "3.6486450000000006"
+            },
+            "responsiblePartyName": {
+              "S": "Acino Pharma AG"
+            },
+            "responsiblePartyCountry": {
+              "S": "Switzerland"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "olfen 75 sr"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3671"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7129"
+            },
+            "sourceCode": {
+              "S": "7129"
+            },
+            "registrationNumber": {
+              "S": "186469/12"
+            },
+            "brandName": {
+              "S": "OLIMEL N7E"
+            },
+            "presentation": {
+              "S": "1000ml en 3compartiments (200ml +400ml +400ml)"
+            },
+            "dosageForm": {
+              "S": "Emulsion pour perfusion"
+            },
+            "agent": {
+              "S": "Abela Frères S.A.L."
+            },
+            "manufacturer": {
+              "S": "Baxter SA"
+            },
+            "country": {
+              "S": "Belgium"
+            },
+            "publicPriceLbp": {
+              "N": "3534305.7750000004"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "39.489450000000005"
+            },
+            "responsiblePartyName": {
+              "S": "Baxter SA"
+            },
+            "responsiblePartyCountry": {
+              "S": "Belgium"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "olimel n7e"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3672"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7130"
+            },
+            "sourceCode": {
+              "S": "7130"
+            },
+            "registrationNumber": {
+              "S": "186470/12"
+            },
+            "brandName": {
+              "S": "OLIMEL N7E"
+            },
+            "presentation": {
+              "S": "2000ml en 3compartiments (400ml +800ml +800ml)"
+            },
+            "dosageForm": {
+              "S": "Emulsion pour perfusion"
+            },
+            "agent": {
+              "S": "Abela Frères S.A.L."
+            },
+            "manufacturer": {
+              "S": "Baxter SA"
+            },
+            "country": {
+              "S": "Belgium"
+            },
+            "publicPriceLbp": {
+              "N": "4711511.805000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "52.642590000000006"
+            },
+            "responsiblePartyName": {
+              "S": "Baxter SA"
+            },
+            "responsiblePartyCountry": {
+              "S": "Belgium"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "olimel n7e"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3673"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7126"
+            },
+            "sourceCode": {
+              "S": "7126"
+            },
+            "registrationNumber": {
+              "S": "186468/12"
+            },
+            "brandName": {
+              "S": "OLIMEL N9"
+            },
+            "presentation": {
+              "S": "1000ml en 3compartiments (200ml +400ml +400ml)"
+            },
+            "dosageForm": {
+              "S": "Emulsion pour perfusion"
+            },
+            "agent": {
+              "S": "Abela Frères S.A.L."
+            },
+            "manufacturer": {
+              "S": "Baxter SA"
+            },
+            "country": {
+              "S": "Belgium"
+            },
+            "publicPriceLbp": {
+              "N": "5630028.1537500005"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "62.9053425"
+            },
+            "responsiblePartyName": {
+              "S": "Baxter SA"
+            },
+            "responsiblePartyCountry": {
+              "S": "Belgium"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "olimel n9"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3674"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7125"
+            },
+            "sourceCode": {
+              "S": "7125"
+            },
+            "registrationNumber": {
+              "S": "186467/12"
+            },
+            "brandName": {
+              "S": "OLIMEL N9E"
+            },
+            "presentation": {
+              "S": "2000ml en 3compartiments (400ml +800ml +800ml)"
+            },
+            "dosageForm": {
+              "S": "Emulsion pour perfusion"
+            },
+            "agent": {
+              "S": "Abela Frères S.A.L."
+            },
+            "manufacturer": {
+              "S": "Baxter SA"
+            },
+            "country": {
+              "S": "Belgium"
+            },
+            "publicPriceLbp": {
+              "N": "4711511.805000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "52.642590000000006"
+            },
+            "responsiblePartyName": {
+              "S": "Baxter SA"
+            },
+            "responsiblePartyCountry": {
+              "S": "Belgium"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "olimel n9e"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3675"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7127"
+            },
+            "sourceCode": {
+              "S": "7127"
+            },
+            "registrationNumber": {
+              "S": "186466/12"
+            },
+            "brandName": {
+              "S": "OLIMEL N9E"
+            },
+            "presentation": {
+              "S": "1000ml en 3compartiments (200ml +400ml +400ml)"
+            },
+            "dosageForm": {
+              "S": "Emulsion pour perfusion"
+            },
+            "agent": {
+              "S": "Abela Frères S.A.L."
+            },
+            "manufacturer": {
+              "S": "Baxter SA"
+            },
+            "country": {
+              "S": "Belgium"
+            },
+            "publicPriceLbp": {
+              "N": "3550431.8850000002"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "39.669630000000005"
+            },
+            "responsiblePartyName": {
+              "S": "Baxter SA"
+            },
+            "responsiblePartyCountry": {
+              "S": "Belgium"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "olimel n9e"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3676"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

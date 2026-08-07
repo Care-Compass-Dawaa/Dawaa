@@ -1,0 +1,1971 @@
+{
+  "RequestItems": {
+    "DawaaMedicines": [
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10088"
+            },
+            "sourceCode": {
+              "S": "10088"
+            },
+            "registrationNumber": {
+              "S": "139419/1"
+            },
+            "brandName": {
+              "S": "RECIGEN 44"
+            },
+            "strength": {
+              "S": "44mcg/0.5ml"
+            },
+            "presentation": {
+              "S": "12prefilled syringe"
+            },
+            "dosageForm": {
+              "S": "Solution for injection"
+            },
+            "agent": {
+              "S": "Lebiran SARL"
+            },
+            "manufacturer": {
+              "S": "Cinnagen Co"
+            },
+            "country": {
+              "S": "Iran"
+            },
+            "publicPriceLbp": {
+              "N": "15147973.092"
+            },
+            "pharmacistMarginPercent": {
+              "N": "10.71"
+            },
+            "stratum": {
+              "S": "E1"
+            },
+            "publicPriceDecision119": {
+              "N": "169.251096"
+            },
+            "responsiblePartyName": {
+              "S": "Cinnagen Co"
+            },
+            "responsiblePartyCountry": {
+              "S": "Iran"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "recigen 44"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4301"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#9762"
+            },
+            "sourceCode": {
+              "S": "9762"
+            },
+            "registrationNumber": {
+              "S": "83014/1"
+            },
+            "brandName": {
+              "S": "RECOFACT VII"
+            },
+            "strength": {
+              "S": "1.2mg"
+            },
+            "presentation": {
+              "S": "1Vial + 1Vial of diluent"
+            },
+            "dosageForm": {
+              "S": "Lyophilizate for solution for Intavenous injection"
+            },
+            "agent": {
+              "S": "Benta Trading Co s.a.l."
+            },
+            "manufacturer": {
+              "S": "Manufactured by Generium CJSC, Russia for Benta SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "47533131.38"
+            },
+            "pharmacistMarginPercent": {
+              "N": "10.71"
+            },
+            "stratum": {
+              "S": "E1"
+            },
+            "publicPriceDecision119": {
+              "N": "531.09644"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "recofact vii"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4302"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#9763"
+            },
+            "sourceCode": {
+              "S": "9763"
+            },
+            "registrationNumber": {
+              "S": "94914/1"
+            },
+            "brandName": {
+              "S": "RECOFACT VIII"
+            },
+            "strength": {
+              "S": "500IU"
+            },
+            "presentation": {
+              "S": "1Vial + 1Vial of solvent"
+            },
+            "dosageForm": {
+              "S": "Lyophilizate for solution for Intavenous injection"
+            },
+            "agent": {
+              "S": "Benta Trading Co s.a.l."
+            },
+            "manufacturer": {
+              "S": "Manufactured by Generium CJSC, Russia for Benta SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "12049005.376799999"
+            },
+            "pharmacistMarginPercent": {
+              "N": "19.35"
+            },
+            "stratum": {
+              "S": "D"
+            },
+            "publicPriceDecision119": {
+              "N": "134.6257584"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "recofact viii"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4303"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#9120"
+            },
+            "sourceCode": {
+              "S": "9120"
+            },
+            "registrationNumber": {
+              "S": "28517/1"
+            },
+            "brandName": {
+              "S": "RECTOGESIC"
+            },
+            "strength": {
+              "S": "0.2% w/w"
+            },
+            "presentation": {
+              "S": "30g"
+            },
+            "dosageForm": {
+              "S": "Ointment"
+            },
+            "agent": {
+              "S": "Medis Pharm Drugstore"
+            },
+            "manufacturer": {
+              "S": "Mayne Pharma International Pty Ltd"
+            },
+            "country": {
+              "S": "Australia"
+            },
+            "publicPriceLbp": {
+              "N": "2553300.75"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "28.5285"
+            },
+            "responsiblePartyName": {
+              "S": "Care Pharmaceuticals PTY Ltd"
+            },
+            "responsiblePartyCountry": {
+              "S": "Australia"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "rectogesic"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4304"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#1551"
+            },
+            "sourceCode": {
+              "S": "1551"
+            },
+            "registrationNumber": {
+              "S": "20539"
+            },
+            "brandName": {
+              "S": "REDOXON EFF.ORANGE"
+            },
+            "strength": {
+              "S": "1g"
+            },
+            "presentation": {
+              "S": "15"
+            },
+            "dosageForm": {
+              "S": "Tablet"
+            },
+            "agent": {
+              "S": "Nouvelle Pharm Drugstore"
+            },
+            "manufacturer": {
+              "S": "Delpharm Gaillard"
+            },
+            "country": {
+              "S": "France"
+            },
+            "publicPriceLbp": {
+              "N": "366869.00249999994"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "4.099094999999999"
+            },
+            "responsiblePartyName": {
+              "S": "Bayer Consumer Care AG"
+            },
+            "responsiblePartyCountry": {
+              "S": "Switzerland"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "redoxon eff orange"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4305"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12466"
+            },
+            "sourceCode": {
+              "S": "12466"
+            },
+            "registrationNumber": {
+              "S": "141523/1"
+            },
+            "brandName": {
+              "S": "REFCON DOUBLE ACTION"
+            },
+            "strength": {
+              "S": "50mg+21.3mg+32.5mg/ml"
+            },
+            "presentation": {
+              "S": "200ml"
+            },
+            "dosageForm": {
+              "S": "Oral suspension"
+            },
+            "agent": {
+              "S": "Al Enas Pharm"
+            },
+            "manufacturer": {
+              "S": "Vefa Ilac San. ve Tic. AS"
+            },
+            "country": {
+              "S": "Turkey"
+            },
+            "publicPriceLbp": {
+              "N": "399121.2225000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "4.459455000000001"
+            },
+            "responsiblePartyName": {
+              "S": "Vefa Ilac San. ve Tic. AS"
+            },
+            "responsiblePartyCountry": {
+              "S": "Turkey"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "refcon double action"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4306"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10284"
+            },
+            "sourceCode": {
+              "S": "10284"
+            },
+            "registrationNumber": {
+              "S": "162219/1"
+            },
+            "brandName": {
+              "S": "REFIXIA"
+            },
+            "strength": {
+              "S": "500IU"
+            },
+            "presentation": {
+              "S": "1Vial + 1pre-filled syringe"
+            },
+            "dosageForm": {
+              "S": "Powder and solvent for soution for injection"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Novo Nordisk AS"
+            },
+            "country": {
+              "S": "Denmark"
+            },
+            "publicPriceLbp": {
+              "N": "76080434.619"
+            },
+            "pharmacistMarginPercent": {
+              "N": "10.71"
+            },
+            "stratum": {
+              "S": "E1"
+            },
+            "publicPriceDecision119": {
+              "N": "850.060722"
+            },
+            "responsiblePartyName": {
+              "S": "Novo Nordisk AS"
+            },
+            "responsiblePartyCountry": {
+              "S": "Denmark"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "refixia"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4307"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10285"
+            },
+            "sourceCode": {
+              "S": "10285"
+            },
+            "registrationNumber": {
+              "S": "162319/1"
+            },
+            "brandName": {
+              "S": "REFIXIA"
+            },
+            "strength": {
+              "S": "1000IU"
+            },
+            "presentation": {
+              "S": "1Vial + 1pre-filled syringe"
+            },
+            "dosageForm": {
+              "S": "Powder and solvent for soution for injection"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Novo Nordisk AS"
+            },
+            "country": {
+              "S": "Denmark"
+            },
+            "publicPriceLbp": {
+              "N": "149006583.79687497"
+            },
+            "pharmacistMarginPercent": {
+              "N": "2.44"
+            },
+            "stratum": {
+              "S": "E2"
+            },
+            "publicPriceDecision119": {
+              "N": "1664.8780312499996"
+            },
+            "responsiblePartyName": {
+              "S": "Novo Nordisk AS"
+            },
+            "responsiblePartyCountry": {
+              "S": "Denmark"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "refixia"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4308"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10286"
+            },
+            "sourceCode": {
+              "S": "10286"
+            },
+            "registrationNumber": {
+              "S": "162419/1"
+            },
+            "brandName": {
+              "S": "REFIXIA"
+            },
+            "strength": {
+              "S": "2000IU"
+            },
+            "presentation": {
+              "S": "1Vial + 1pre-filled syringe"
+            },
+            "dosageForm": {
+              "S": "Powder and solvent for soution for injection"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Novo Nordisk AS"
+            },
+            "country": {
+              "S": "Denmark"
+            },
+            "publicPriceLbp": {
+              "N": "298171597.1095312"
+            },
+            "pharmacistMarginPercent": {
+              "N": "2.44"
+            },
+            "stratum": {
+              "S": "E2"
+            },
+            "publicPriceDecision119": {
+              "N": "3331.5262246874995"
+            },
+            "responsiblePartyName": {
+              "S": "Novo Nordisk AS"
+            },
+            "responsiblePartyCountry": {
+              "S": "Denmark"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "refixia"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4309"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#8274"
+            },
+            "sourceCode": {
+              "S": "8274"
+            },
+            "registrationNumber": {
+              "S": "61415/1"
+            },
+            "brandName": {
+              "S": "REGAINE FOAM FOR MEN"
+            },
+            "strength": {
+              "S": "5%"
+            },
+            "presentation": {
+              "S": "60g (Pack of 1)"
+            },
+            "dosageForm": {
+              "S": "Cutaneous foam"
+            },
+            "agent": {
+              "S": "Droguerie Columbus"
+            },
+            "manufacturer": {
+              "S": "Aerosol Service AG"
+            },
+            "country": {
+              "S": "Switzerland"
+            },
+            "publicPriceLbp": {
+              "N": "1370719.3499999999"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "15.315299999999999"
+            },
+            "responsiblePartyName": {
+              "S": "McNeil Products Ltd"
+            },
+            "responsiblePartyCountry": {
+              "S": "UK"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "regaine foam for men"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4310"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#8275"
+            },
+            "sourceCode": {
+              "S": "8275"
+            },
+            "registrationNumber": {
+              "S": "61315/1"
+            },
+            "brandName": {
+              "S": "REGAINE FOAM FOR MEN"
+            },
+            "strength": {
+              "S": "5%"
+            },
+            "presentation": {
+              "S": "60g (Pack of 3)"
+            },
+            "dosageForm": {
+              "S": "Cutaneous foam"
+            },
+            "agent": {
+              "S": "Droguerie Columbus"
+            },
+            "manufacturer": {
+              "S": "Aerosol Service AG"
+            },
+            "country": {
+              "S": "Switzerland"
+            },
+            "publicPriceLbp": {
+              "N": "3090837.7499999995"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "34.534499999999994"
+            },
+            "responsiblePartyName": {
+              "S": "McNeil Products Ltd"
+            },
+            "responsiblePartyCountry": {
+              "S": "UK"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "regaine foam for men"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4311"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12247"
+            },
+            "sourceCode": {
+              "S": "12247"
+            },
+            "registrationNumber": {
+              "S": "123023/1"
+            },
+            "brandName": {
+              "S": "RELANCIUM"
+            },
+            "strength": {
+              "S": "100mg/ml"
+            },
+            "presentation": {
+              "S": "10Vials"
+            },
+            "dosageForm": {
+              "S": "Solution for injection"
+            },
+            "agent": {
+              "S": "Droguerie Mercury S.A.L."
+            },
+            "manufacturer": {
+              "S": "Hikma Farmaceutica (Portugal) SA"
+            },
+            "country": {
+              "S": "Portugal"
+            },
+            "publicPriceLbp": {
+              "N": "45660027.94500001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "10.71"
+            },
+            "stratum": {
+              "S": "E1"
+            },
+            "publicPriceDecision119": {
+              "N": "510.16791000000006"
+            },
+            "responsiblePartyName": {
+              "S": "Hikma Pharmaceuticals"
+            },
+            "responsiblePartyCountry": {
+              "S": "Jordan"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "relancium"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4312"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#8106"
+            },
+            "sourceCode": {
+              "S": "8106"
+            },
+            "registrationNumber": {
+              "S": "128314/1"
+            },
+            "brandName": {
+              "S": "RELAXINE TRENKER"
+            },
+            "strength": {
+              "S": "500mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Comprimés enrobés"
+            },
+            "agent": {
+              "S": "Biopharm"
+            },
+            "manufacturer": {
+              "S": "SA Laboratoires Pharmaceutiques Trenker"
+            },
+            "country": {
+              "S": "Belgium"
+            },
+            "publicPriceLbp": {
+              "N": "1134203.07"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "12.67266"
+            },
+            "responsiblePartyName": {
+              "S": "SA Laboratoires Pharmaceutiques Trenker"
+            },
+            "responsiblePartyCountry": {
+              "S": "Belgium"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "relaxine trenker"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4313"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7152"
+            },
+            "sourceCode": {
+              "S": "7152"
+            },
+            "registrationNumber": {
+              "S": "218144/09"
+            },
+            "brandName": {
+              "S": "RELAXON"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Capsule"
+            },
+            "agent": {
+              "S": "Droguerie Mercury S.A.L."
+            },
+            "manufacturer": {
+              "S": "Jamjoum Pharmaceuticals"
+            },
+            "country": {
+              "S": "Saudi Arabia"
+            },
+            "publicPriceLbp": {
+              "N": "296989.1925"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "3.318315"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "relaxon"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4314"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10010"
+            },
+            "sourceCode": {
+              "S": "10010"
+            },
+            "registrationNumber": {
+              "S": "187818/1"
+            },
+            "brandName": {
+              "S": "RELI-FLU"
+            },
+            "presentation": {
+              "S": "20"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Pharmaline S.A.L."
+            },
+            "manufacturer": {
+              "S": "Pharmaline SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "139503.65000000002"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "1.5587000000000002"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "reli flu"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4318"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#6940"
+            },
+            "sourceCode": {
+              "S": "6940"
+            },
+            "registrationNumber": {
+              "S": "96591/12"
+            },
+            "brandName": {
+              "S": "RELIEFAST"
+            },
+            "strength": {
+              "S": "4mg"
+            },
+            "presentation": {
+              "S": "28"
+            },
+            "dosageForm": {
+              "S": "Tablet, chewable"
+            },
+            "agent": {
+              "S": "Raymond Georges Abou Adal & Co"
+            },
+            "manufacturer": {
+              "S": "Adamed Pharma S.A., Pabianice, Poland, for Arwan Pharmaceutical industries Lebanon SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "1034118.8000000003"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "11.554400000000003"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "reliefast"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4315"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#6941"
+            },
+            "sourceCode": {
+              "S": "6941"
+            },
+            "registrationNumber": {
+              "S": "96593/12"
+            },
+            "brandName": {
+              "S": "RELIEFAST"
+            },
+            "strength": {
+              "S": "10mg"
+            },
+            "presentation": {
+              "S": "28"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Raymond Georges Abou Adal & Co"
+            },
+            "manufacturer": {
+              "S": "Adamed Pharma S.A., Pabianice, Poland, for Arwan Pharmaceutical industries Lebanon SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "844701.0000000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "9.438"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "reliefast"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4316"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#6942"
+            },
+            "sourceCode": {
+              "S": "6942"
+            },
+            "registrationNumber": {
+              "S": "96592/12"
+            },
+            "brandName": {
+              "S": "RELIEFAST"
+            },
+            "strength": {
+              "S": "5mg"
+            },
+            "presentation": {
+              "S": "28"
+            },
+            "dosageForm": {
+              "S": "Tablet, chewable"
+            },
+            "agent": {
+              "S": "Raymond Georges Abou Adal & Co"
+            },
+            "manufacturer": {
+              "S": "Adamed Pharma S.A., Pabianice, Poland, for Arwan Pharmaceutical industries Lebanon SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "1034118.8000000003"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "11.554400000000003"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "reliefast"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4317"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7907"
+            },
+            "sourceCode": {
+              "S": "7907"
+            },
+            "registrationNumber": {
+              "S": "116014/1"
+            },
+            "brandName": {
+              "S": "RELVAR ELLIPTA"
+            },
+            "strength": {
+              "S": "200mcg/25mcg"
+            },
+            "presentation": {
+              "S": "30 pre-dispensed doses"
+            },
+            "dosageForm": {
+              "S": "Inhalation powder"
+            },
+            "agent": {
+              "S": "Abela Frères S.A.L."
+            },
+            "manufacturer": {
+              "S": "Glaxo Operations UK Ltd"
+            },
+            "country": {
+              "S": "UK"
+            },
+            "publicPriceLbp": {
+              "N": "3928051.627500001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "43.88884500000001"
+            },
+            "responsiblePartyName": {
+              "S": "Glaxo Group Ltd"
+            },
+            "responsiblePartyCountry": {
+              "S": "UK"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "relvar ellipta"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4319"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7908"
+            },
+            "sourceCode": {
+              "S": "7908"
+            },
+            "registrationNumber": {
+              "S": "116114/1"
+            },
+            "brandName": {
+              "S": "RELVAR ELLIPTA"
+            },
+            "strength": {
+              "S": "100mcg/25mcg"
+            },
+            "presentation": {
+              "S": "30 pre-dispensed doses"
+            },
+            "dosageForm": {
+              "S": "Inhalation powder"
+            },
+            "agent": {
+              "S": "Abela Frères S.A.L."
+            },
+            "manufacturer": {
+              "S": "Glaxo Operations UK Ltd"
+            },
+            "country": {
+              "S": "UK"
+            },
+            "publicPriceLbp": {
+              "N": "3928051.627500001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "43.88884500000001"
+            },
+            "responsiblePartyName": {
+              "S": "Glaxo Group Ltd"
+            },
+            "responsiblePartyCountry": {
+              "S": "UK"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "relvar ellipta"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4320"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#3047"
+            },
+            "sourceCode": {
+              "S": "3047"
+            },
+            "registrationNumber": {
+              "S": "261364"
+            },
+            "brandName": {
+              "S": "REMERON SOLTAB"
+            },
+            "strength": {
+              "S": "30mg"
+            },
+            "presentation": {
+              "S": "3x10"
+            },
+            "dosageForm": {
+              "S": "Tablet, orodispersible"
+            },
+            "agent": {
+              "S": "Droguerie de l'Union"
+            },
+            "manufacturer": {
+              "S": "Anesta LLC"
+            },
+            "country": {
+              "S": "USA"
+            },
+            "publicPriceLbp": {
+              "N": "1486289.8050000004"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "16.606590000000004"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "remeron soltab"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4321"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#6320"
+            },
+            "sourceCode": {
+              "S": "6320"
+            },
+            "registrationNumber": {
+              "S": "195461/04"
+            },
+            "brandName": {
+              "S": "REMETHAN"
+            },
+            "strength": {
+              "S": "50mg"
+            },
+            "presentation": {
+              "S": "2x10"
+            },
+            "dosageForm": {
+              "S": "Tablet"
+            },
+            "agent": {
+              "S": "Droguerie Columbus"
+            },
+            "manufacturer": {
+              "S": "Remedica Ltd"
+            },
+            "country": {
+              "S": "Cyprus"
+            },
+            "publicPriceLbp": {
+              "N": "196201.005"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "2.19219"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "remethan"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4322"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#4028"
+            },
+            "sourceCode": {
+              "S": "4028"
+            },
+            "registrationNumber": {
+              "S": "23638/06"
+            },
+            "brandName": {
+              "S": "REMICADE"
+            },
+            "strength": {
+              "S": "100mg"
+            },
+            "presentation": {
+              "S": "1vial"
+            },
+            "dosageForm": {
+              "S": "powder for concentrate for solution for infusion"
+            },
+            "agent": {
+              "S": "Abela Frères S.A.L."
+            },
+            "manufacturer": {
+              "S": "Cilag AG"
+            },
+            "country": {
+              "S": "Switzerland"
+            },
+            "publicPriceLbp": {
+              "N": "30111023.216484"
+            },
+            "pharmacistMarginPercent": {
+              "N": "19.35"
+            },
+            "stratum": {
+              "S": "D"
+            },
+            "publicPriceDecision119": {
+              "N": "336.436013592"
+            },
+            "responsiblePartyName": {
+              "S": "Janssen Biologics BV"
+            },
+            "responsiblePartyCountry": {
+              "S": "The Netherlands"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "remicade"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4323"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11205"
+            },
+            "sourceCode": {
+              "S": "11205"
+            },
+            "registrationNumber": {
+              "S": "144121/1"
+            },
+            "brandName": {
+              "S": "REMIDOL"
+            },
+            "strength": {
+              "S": "650mg/20mg/4mg"
+            },
+            "presentation": {
+              "S": "10Sachets"
+            },
+            "dosageForm": {
+              "S": "Granules for oral solution EFG"
+            },
+            "agent": {
+              "S": "Macromed S.A.R.L."
+            },
+            "manufacturer": {
+              "S": "Farmasierra Manufacturing SL"
+            },
+            "country": {
+              "S": "Spain"
+            },
+            "publicPriceLbp": {
+              "N": "537537.0000000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "6.006000000000001"
+            },
+            "responsiblePartyName": {
+              "S": "Farmasierra Laboratorios SL"
+            },
+            "responsiblePartyCountry": {
+              "S": "Spain"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "remidol"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4324"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#8101"
+            },
+            "sourceCode": {
+              "S": "8101"
+            },
+            "registrationNumber": {
+              "S": "186198/13"
+            },
+            "brandName": {
+              "S": "REMIFENTANIL MEDIS"
+            },
+            "strength": {
+              "S": "5mg"
+            },
+            "presentation": {
+              "S": "5Vials"
+            },
+            "dosageForm": {
+              "S": "Poudre pour préparation injectable ou pour perfusion IV"
+            },
+            "agent": {
+              "S": "Medis Pharm Drugstore"
+            },
+            "manufacturer": {
+              "S": "Les Laboratoires Medis SA"
+            },
+            "country": {
+              "S": "Tunisia"
+            },
+            "publicPriceLbp": {
+              "N": "2576146.0725000002"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "28.783755000000003"
+            },
+            "responsiblePartyName": {
+              "S": "Les Laboratoires Medis SA"
+            },
+            "responsiblePartyCountry": {
+              "S": "Tunisia"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "remifentanil medis"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4325"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

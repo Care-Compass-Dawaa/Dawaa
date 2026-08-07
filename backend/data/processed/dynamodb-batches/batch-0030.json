@@ -1,0 +1,1980 @@
+{
+  "RequestItems": {
+    "DawaaMedicines": [
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#5181"
+            },
+            "sourceCode": {
+              "S": "5181"
+            },
+            "registrationNumber": {
+              "S": "24718/07"
+            },
+            "brandName": {
+              "S": "BISOCOR 10"
+            },
+            "strength": {
+              "S": "10mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Benta Trading Co s.a.l."
+            },
+            "manufacturer": {
+              "S": "Benta SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "460746.0000000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "5.1480000000000015"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "bisocor 10"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "727"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11445"
+            },
+            "sourceCode": {
+              "S": "11445"
+            },
+            "registrationNumber": {
+              "S": "35223/1"
+            },
+            "brandName": {
+              "S": "BISOCOR 2.5"
+            },
+            "strength": {
+              "S": "2.5mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Benta Trading Co s.a.l."
+            },
+            "manufacturer": {
+              "S": "Manufactured by Benta Lyon, France for Benta SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "207335.70000000007"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "2.3166000000000007"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "bisocor 2 5"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "728"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11444"
+            },
+            "sourceCode": {
+              "S": "11444"
+            },
+            "registrationNumber": {
+              "S": "35123/1"
+            },
+            "brandName": {
+              "S": "BISOCOR 5"
+            },
+            "strength": {
+              "S": "5mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Benta Trading Co s.a.l."
+            },
+            "manufacturer": {
+              "S": "Manufactured by Benta Lyon, France for Benta SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "345559.5"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "3.861"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "bisocor 5"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "730"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            },
+            "duplicateSearchKey": {
+              "BOOL": true
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#5192"
+            },
+            "sourceCode": {
+              "S": "5192"
+            },
+            "registrationNumber": {
+              "S": "24714/07"
+            },
+            "brandName": {
+              "S": "BISOCOR 5"
+            },
+            "strength": {
+              "S": "5mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Benta Trading Co s.a.l."
+            },
+            "manufacturer": {
+              "S": "Benta SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "345559.5"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "3.861"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "bisocor 5"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "729"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#5397"
+            },
+            "sourceCode": {
+              "S": "5397"
+            },
+            "registrationNumber": {
+              "S": "222455/08"
+            },
+            "brandName": {
+              "S": "BISOCOR 5 PLUS"
+            },
+            "strength": {
+              "S": "5mg/12.5mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Benta Trading Co s.a.l."
+            },
+            "manufacturer": {
+              "S": "Benta SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "678320.5"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "7.579"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "bisocor 5 plus"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "731"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#4078"
+            },
+            "sourceCode": {
+              "S": "4078"
+            },
+            "registrationNumber": {
+              "S": "23881/07"
+            },
+            "brandName": {
+              "S": "BISOPROLOL NORMON"
+            },
+            "strength": {
+              "S": "5mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Droguerie Phenicia"
+            },
+            "manufacturer": {
+              "S": "Normon SA"
+            },
+            "country": {
+              "S": "Spain"
+            },
+            "publicPriceLbp": {
+              "N": "321178.35750000004"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "3.5885850000000006"
+            },
+            "responsiblePartyName": {
+              "S": "Normon SA"
+            },
+            "responsiblePartyCountry": {
+              "S": "Spain"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "bisoprolol normon"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "732"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#4079"
+            },
+            "sourceCode": {
+              "S": "4079"
+            },
+            "registrationNumber": {
+              "S": "23882/07"
+            },
+            "brandName": {
+              "S": "BISOPROLOL NORMON"
+            },
+            "strength": {
+              "S": "10mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Droguerie Phenicia"
+            },
+            "manufacturer": {
+              "S": "Normon SA"
+            },
+            "country": {
+              "S": "Spain"
+            },
+            "publicPriceLbp": {
+              "N": "372244.3725000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "4.159155000000001"
+            },
+            "responsiblePartyName": {
+              "S": "Normon SA"
+            },
+            "responsiblePartyCountry": {
+              "S": "Spain"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "bisoprolol normon"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "733"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7838"
+            },
+            "sourceCode": {
+              "S": "7838"
+            },
+            "registrationNumber": {
+              "S": "66314/1"
+            },
+            "brandName": {
+              "S": "BISOPROLOL NORMON"
+            },
+            "strength": {
+              "S": "2.5mg"
+            },
+            "presentation": {
+              "S": "28"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Droguerie Phenicia"
+            },
+            "manufacturer": {
+              "S": "Normon SA"
+            },
+            "country": {
+              "S": "Spain"
+            },
+            "publicPriceLbp": {
+              "N": "235172.43750000006"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "2.6276250000000005"
+            },
+            "responsiblePartyName": {
+              "S": "Normon SA"
+            },
+            "responsiblePartyCountry": {
+              "S": "Spain"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "bisoprolol normon"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "734"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11251"
+            },
+            "sourceCode": {
+              "S": "11251"
+            },
+            "registrationNumber": {
+              "S": "121720/1"
+            },
+            "brandName": {
+              "S": "BISOPROLOL QUIVER LAB"
+            },
+            "strength": {
+              "S": "2.5mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Comprimés pelliculés sécables"
+            },
+            "agent": {
+              "S": "Darapharma S.A.L."
+            },
+            "manufacturer": {
+              "S": "APL Swift Services (Malta) Limited"
+            },
+            "country": {
+              "S": "Malta"
+            },
+            "publicPriceLbp": {
+              "N": "292957.66500000004"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "3.2732700000000006"
+            },
+            "responsiblePartyName": {
+              "S": "Arrow Génériques"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "bisoprolol quiver lab"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "735"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11252"
+            },
+            "sourceCode": {
+              "S": "11252"
+            },
+            "registrationNumber": {
+              "S": "121820/1"
+            },
+            "brandName": {
+              "S": "BISOPROLOL QUIVER LAB"
+            },
+            "strength": {
+              "S": "3.75mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Comprimés pelliculés sécables"
+            },
+            "agent": {
+              "S": "Darapharma S.A.L."
+            },
+            "manufacturer": {
+              "S": "APL Swift Services (Malta) Limited"
+            },
+            "country": {
+              "S": "Malta"
+            },
+            "publicPriceLbp": {
+              "N": "544256.2125000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "6.081075000000001"
+            },
+            "responsiblePartyName": {
+              "S": "Arrow Génériques"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "bisoprolol quiver lab"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "736"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11253"
+            },
+            "sourceCode": {
+              "S": "11253"
+            },
+            "registrationNumber": {
+              "S": "121920/1"
+            },
+            "brandName": {
+              "S": "BISOPROLOL QUIVER LAB"
+            },
+            "strength": {
+              "S": "7.5mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Comprimés pelliculés sécables"
+            },
+            "agent": {
+              "S": "Darapharma S.A.L."
+            },
+            "manufacturer": {
+              "S": "APL Swift Services (Malta) Limited"
+            },
+            "country": {
+              "S": "Malta"
+            },
+            "publicPriceLbp": {
+              "N": "544256.2125000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "6.081075000000001"
+            },
+            "responsiblePartyName": {
+              "S": "Arrow Génériques"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "bisoprolol quiver lab"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "737"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12079"
+            },
+            "sourceCode": {
+              "S": "12079"
+            },
+            "registrationNumber": {
+              "S": "57824/1"
+            },
+            "brandName": {
+              "S": "BISOPROLOL QUIVER LAB"
+            },
+            "strength": {
+              "S": "5mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated, scored"
+            },
+            "agent": {
+              "S": "Darapharma S.A.L."
+            },
+            "manufacturer": {
+              "S": "APL Swift Services (Malta) Limited"
+            },
+            "country": {
+              "S": "Malta"
+            },
+            "publicPriceLbp": {
+              "N": "264736.97250000003"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "2.9579550000000006"
+            },
+            "responsiblePartyName": {
+              "S": "Arrow Génériques"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "bisoprolol quiver lab"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "738"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12080"
+            },
+            "sourceCode": {
+              "S": "12080"
+            },
+            "registrationNumber": {
+              "S": "57924/1"
+            },
+            "brandName": {
+              "S": "BISOPROLOL QUIVER LAB"
+            },
+            "strength": {
+              "S": "10mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated, scored"
+            },
+            "agent": {
+              "S": "Darapharma S.A.L."
+            },
+            "manufacturer": {
+              "S": "APL Swift Services (Malta) Limited"
+            },
+            "country": {
+              "S": "Malta"
+            },
+            "publicPriceLbp": {
+              "N": "526786.2599999999"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "5.8858799999999984"
+            },
+            "responsiblePartyName": {
+              "S": "Arrow Génériques"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "bisoprolol quiver lab"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "739"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11383"
+            },
+            "sourceCode": {
+              "S": "11383"
+            },
+            "registrationNumber": {
+              "S": "72222/1"
+            },
+            "brandName": {
+              "S": "BISOPROLOL REF"
+            },
+            "strength": {
+              "S": "2.5mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Comprimés pelliculés sécables"
+            },
+            "agent": {
+              "S": "Commercial and Trading Ressources SAL (CTR)"
+            },
+            "manufacturer": {
+              "S": "Les Laboratoires Servier Industrie"
+            },
+            "country": {
+              "S": "France"
+            },
+            "publicPriceLbp": {
+              "N": "272800.0275"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "3.048045"
+            },
+            "responsiblePartyName": {
+              "S": "Laboratoires Biogaran"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "bisoprolol ref"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "740"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11384"
+            },
+            "sourceCode": {
+              "S": "11384"
+            },
+            "registrationNumber": {
+              "S": "72422/1"
+            },
+            "brandName": {
+              "S": "BISOPROLOL REF"
+            },
+            "strength": {
+              "S": "5mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Comprimés pelliculés sécables"
+            },
+            "agent": {
+              "S": "Commercial and Trading Ressources SAL (CTR)"
+            },
+            "manufacturer": {
+              "S": "Les Laboratoires Servier Industrie"
+            },
+            "country": {
+              "S": "France"
+            },
+            "publicPriceLbp": {
+              "N": "272800.0275"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "3.048045"
+            },
+            "responsiblePartyName": {
+              "S": "Laboratoires Biogaran"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "bisoprolol ref"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "741"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11385"
+            },
+            "sourceCode": {
+              "S": "11385"
+            },
+            "registrationNumber": {
+              "S": "72322/1"
+            },
+            "brandName": {
+              "S": "BISOPROLOL REF"
+            },
+            "strength": {
+              "S": "10mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Comprimés pelliculés sécables"
+            },
+            "agent": {
+              "S": "Commercial and Trading Ressources SAL (CTR)"
+            },
+            "manufacturer": {
+              "S": "Les Laboratoires Servier Industrie"
+            },
+            "country": {
+              "S": "France"
+            },
+            "publicPriceLbp": {
+              "N": "544256.2125000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "6.081075000000001"
+            },
+            "responsiblePartyName": {
+              "S": "Laboratoires Biogaran"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "bisoprolol ref"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "742"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10795"
+            },
+            "sourceCode": {
+              "S": "10795"
+            },
+            "registrationNumber": {
+              "S": "96721/1"
+            },
+            "brandName": {
+              "S": "BIVASTINA 100"
+            },
+            "strength": {
+              "S": "100mg/4ml"
+            },
+            "presentation": {
+              "S": "2Vials"
+            },
+            "dosageForm": {
+              "S": "Concentrate for solution for infusion"
+            },
+            "agent": {
+              "S": "Benta Trading Co s.a.l."
+            },
+            "manufacturer": {
+              "S": "Manufactured by JSC Biocad, Russia for Benta SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "22840336.562400002"
+            },
+            "pharmacistMarginPercent": {
+              "N": "19.35"
+            },
+            "stratum": {
+              "S": "D"
+            },
+            "publicPriceDecision119": {
+              "N": "255.19929120000003"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "bivastina 100"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "743"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11666"
+            },
+            "sourceCode": {
+              "S": "11666"
+            },
+            "registrationNumber": {
+              "S": "130823/1"
+            },
+            "brandName": {
+              "S": "BIVASTINA 100"
+            },
+            "strength": {
+              "S": "100mg/4ml"
+            },
+            "presentation": {
+              "S": "1Vial"
+            },
+            "dosageForm": {
+              "S": "Concentrate for solution for infusion"
+            },
+            "agent": {
+              "S": "Benta Trading Co s.a.l."
+            },
+            "manufacturer": {
+              "S": "Manufactured by JSC Biocad, Russia for Benta SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "12021318.086399999"
+            },
+            "pharmacistMarginPercent": {
+              "N": "19.35"
+            },
+            "stratum": {
+              "S": "D"
+            },
+            "publicPriceDecision119": {
+              "N": "134.3164032"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "bivastina 100"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "744"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10794"
+            },
+            "sourceCode": {
+              "S": "10794"
+            },
+            "registrationNumber": {
+              "S": "96821/1"
+            },
+            "brandName": {
+              "S": "BIVASTINA 400"
+            },
+            "strength": {
+              "S": "400mg/16ml"
+            },
+            "presentation": {
+              "S": "2Vials"
+            },
+            "dosageForm": {
+              "S": "Concentrate for solution for infusion"
+            },
+            "agent": {
+              "S": "Benta Trading Co s.a.l."
+            },
+            "manufacturer": {
+              "S": "Manufactured by JSC Biocad, Russia for Benta SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "92353609.04999998"
+            },
+            "pharmacistMarginPercent": {
+              "N": "2.44"
+            },
+            "stratum": {
+              "S": "E2"
+            },
+            "publicPriceDecision119": {
+              "N": "1031.8838999999998"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "bivastina 400"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "745"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11667"
+            },
+            "sourceCode": {
+              "S": "11667"
+            },
+            "registrationNumber": {
+              "S": "6524/1"
+            },
+            "brandName": {
+              "S": "BIVASTINA 400"
+            },
+            "strength": {
+              "S": "400mg/16ml"
+            },
+            "presentation": {
+              "S": "1Vial"
+            },
+            "dosageForm": {
+              "S": "Concentrate for solution for infusion"
+            },
+            "agent": {
+              "S": "Benta Trading Co s.a.l."
+            },
+            "manufacturer": {
+              "S": "Manufactured by JSC Biocad, Russia for Benta SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "53111763.04000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "10.71"
+            },
+            "stratum": {
+              "S": "E1"
+            },
+            "publicPriceDecision119": {
+              "N": "593.4275200000001"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "bivastina 400"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "746"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10867"
+            },
+            "sourceCode": {
+              "S": "10867"
+            },
+            "registrationNumber": {
+              "S": "57317/1"
+            },
+            "brandName": {
+              "S": "BLASTOFERON"
+            },
+            "strength": {
+              "S": "44mcg"
+            },
+            "presentation": {
+              "S": "12 disposable Prefilled syringes"
+            },
+            "dosageForm": {
+              "S": "Solution for injection (SC)"
+            },
+            "agent": {
+              "S": "Droguerie Phenicia"
+            },
+            "manufacturer": {
+              "S": "BioSidus SAU"
+            },
+            "country": {
+              "S": "Argentine"
+            },
+            "publicPriceLbp": {
+              "N": "55847684.781"
+            },
+            "pharmacistMarginPercent": {
+              "N": "10.71"
+            },
+            "stratum": {
+              "S": "E1"
+            },
+            "publicPriceDecision119": {
+              "N": "623.996478"
+            },
+            "responsiblePartyName": {
+              "S": "BioSidus SAU"
+            },
+            "responsiblePartyCountry": {
+              "S": "Argentine"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "blastoferon"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "747"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10868"
+            },
+            "sourceCode": {
+              "S": "10868"
+            },
+            "registrationNumber": {
+              "S": "57217/1"
+            },
+            "brandName": {
+              "S": "BLASTOFERON"
+            },
+            "strength": {
+              "S": "22mcg"
+            },
+            "presentation": {
+              "S": "12 disposable Prefilled syringes"
+            },
+            "dosageForm": {
+              "S": "Solution for injection (SC)"
+            },
+            "agent": {
+              "S": "Droguerie Phenicia"
+            },
+            "manufacturer": {
+              "S": "BioSidus SAU"
+            },
+            "country": {
+              "S": "Argentine"
+            },
+            "publicPriceLbp": {
+              "N": "40725735.246"
+            },
+            "pharmacistMarginPercent": {
+              "N": "10.71"
+            },
+            "stratum": {
+              "S": "E1"
+            },
+            "publicPriceDecision119": {
+              "N": "455.03614799999997"
+            },
+            "responsiblePartyName": {
+              "S": "BioSidus SAU"
+            },
+            "responsiblePartyCountry": {
+              "S": "Argentine"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "blastoferon"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "748"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7551"
+            },
+            "sourceCode": {
+              "S": "7551"
+            },
+            "registrationNumber": {
+              "S": "186649/13"
+            },
+            "brandName": {
+              "S": "BLEO-CELL"
+            },
+            "strength": {
+              "S": "15mg"
+            },
+            "presentation": {
+              "S": "1Vial"
+            },
+            "dosageForm": {
+              "S": "Injectable powder for solution"
+            },
+            "agent": {
+              "S": "Drugstore 3U S.A.R.L."
+            },
+            "manufacturer": {
+              "S": "Thymoorgan Pharmazie GmbH"
+            },
+            "country": {
+              "S": "Germany"
+            },
+            "publicPriceLbp": {
+              "N": "3817856.5425"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "42.657615"
+            },
+            "responsiblePartyName": {
+              "S": "Stadapharm GmbH"
+            },
+            "responsiblePartyCountry": {
+              "S": "Germany"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "bleo cell"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "749"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12117"
+            },
+            "sourceCode": {
+              "S": "12117"
+            },
+            "registrationNumber": {
+              "S": "23825/1"
+            },
+            "brandName": {
+              "S": "BLEOCIN"
+            },
+            "strength": {
+              "S": "15U"
+            },
+            "presentation": {
+              "S": "1Vial"
+            },
+            "dosageForm": {
+              "S": "Lyophilized powder for solution for injection"
+            },
+            "agent": {
+              "S": "Mediterranean Pharmaceutical Company"
+            },
+            "manufacturer": {
+              "S": "Pharminicio SL"
+            },
+            "country": {
+              "S": "Spain"
+            },
+            "publicPriceLbp": {
+              "N": "2109832.7250000006"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "23.573550000000008"
+            },
+            "responsiblePartyName": {
+              "S": "Pharminicio SL"
+            },
+            "responsiblePartyCountry": {
+              "S": "Spain"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "bleocin"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "750"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#8498"
+            },
+            "sourceCode": {
+              "S": "8498"
+            },
+            "registrationNumber": {
+              "S": "161415/1"
+            },
+            "brandName": {
+              "S": "BLINCYTO"
+            },
+            "strength": {
+              "S": "35mcg"
+            },
+            "presentation": {
+              "S": "1 Single use Vial for Intavenous infusion"
+            },
+            "dosageForm": {
+              "S": "Lyophilized powder + Solution Stabilizer Vial"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Amgen Technology (Ireland) Unlimited Company"
+            },
+            "country": {
+              "S": "Ireland"
+            },
+            "publicPriceLbp": {
+              "N": "239128126.58765623"
+            },
+            "pharmacistMarginPercent": {
+              "N": "2.44"
+            },
+            "stratum": {
+              "S": "E2"
+            },
+            "publicPriceDecision119": {
+              "N": "2671.8226434374997"
+            },
+            "responsiblePartyName": {
+              "S": "Amgen Inc"
+            },
+            "responsiblePartyCountry": {
+              "S": "USA"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "blincyto"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "751"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

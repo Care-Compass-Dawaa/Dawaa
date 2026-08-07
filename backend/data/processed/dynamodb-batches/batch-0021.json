@@ -1,0 +1,1962 @@
+{
+  "RequestItems": {
+    "DawaaMedicines": [
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#1009"
+            },
+            "sourceCode": {
+              "S": "1009"
+            },
+            "registrationNumber": {
+              "S": "236712"
+            },
+            "brandName": {
+              "S": "ASACOL"
+            },
+            "strength": {
+              "S": "500mg"
+            },
+            "presentation": {
+              "S": "20"
+            },
+            "dosageForm": {
+              "S": "Suppository"
+            },
+            "agent": {
+              "S": "Taba Chemipharm"
+            },
+            "manufacturer": {
+              "S": "Haupt Pharma Wulfing GmbH"
+            },
+            "country": {
+              "S": "Germany"
+            },
+            "publicPriceLbp": {
+              "N": "1703992.29"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "19.03902"
+            },
+            "responsiblePartyName": {
+              "S": "Tilotts Pharma AG"
+            },
+            "responsiblePartyCountry": {
+              "S": "Switzerland"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "asacol"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "502"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10543"
+            },
+            "sourceCode": {
+              "S": "10543"
+            },
+            "registrationNumber": {
+              "S": "57620/1"
+            },
+            "brandName": {
+              "S": "ASACOL"
+            },
+            "strength": {
+              "S": "1g/100ml"
+            },
+            "presentation": {
+              "S": "7enemas x 100ml"
+            },
+            "dosageForm": {
+              "S": "Enema"
+            },
+            "agent": {
+              "S": "Taba Chemipharm"
+            },
+            "manufacturer": {
+              "S": "Tillots Pharma AG Haupstrasse 27, 4417 Zeifen"
+            },
+            "country": {
+              "S": "Switzerland"
+            },
+            "publicPriceLbp": {
+              "N": "2748157.9125000006"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "30.705675000000006"
+            },
+            "responsiblePartyName": {
+              "S": "Tillots Pharma AB, Bromma"
+            },
+            "responsiblePartyCountry": {
+              "S": "Sweden"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "asacol"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "504"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10806"
+            },
+            "sourceCode": {
+              "S": "10806"
+            },
+            "registrationNumber": {
+              "S": "122320/1"
+            },
+            "brandName": {
+              "S": "ASACOL"
+            },
+            "strength": {
+              "S": "1600mg"
+            },
+            "presentation": {
+              "S": "60"
+            },
+            "dosageForm": {
+              "S": "Tablet, modified release"
+            },
+            "agent": {
+              "S": "Taba Chemipharm"
+            },
+            "manufacturer": {
+              "S": "Haupt Pharma Wulfing GmbH"
+            },
+            "country": {
+              "S": "Germany"
+            },
+            "publicPriceLbp": {
+              "N": "8454522.616575"
+            },
+            "pharmacistMarginPercent": {
+              "N": "21.26"
+            },
+            "stratum": {
+              "S": "C"
+            },
+            "publicPriceDecision119": {
+              "N": "94.46393985"
+            },
+            "responsiblePartyName": {
+              "S": "Tillotts Pharma GmbH"
+            },
+            "responsiblePartyCountry": {
+              "S": "Germany"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "asacol"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "505"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10807"
+            },
+            "sourceCode": {
+              "S": "10807"
+            },
+            "registrationNumber": {
+              "S": "122420/1"
+            },
+            "brandName": {
+              "S": "ASACOL"
+            },
+            "strength": {
+              "S": "1600mg"
+            },
+            "presentation": {
+              "S": "90"
+            },
+            "dosageForm": {
+              "S": "Tablet, modified release"
+            },
+            "agent": {
+              "S": "Taba Chemipharm"
+            },
+            "manufacturer": {
+              "S": "Haupt Pharma Wulfing GmbH"
+            },
+            "country": {
+              "S": "Germany"
+            },
+            "publicPriceLbp": {
+              "N": "12310378.138275001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "21.26"
+            },
+            "stratum": {
+              "S": "C"
+            },
+            "publicPriceDecision119": {
+              "N": "137.54612445"
+            },
+            "responsiblePartyName": {
+              "S": "Tillotts Pharma GmbH"
+            },
+            "responsiblePartyCountry": {
+              "S": "Germany"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "asacol"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "506"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#5478"
+            },
+            "sourceCode": {
+              "S": "5478"
+            },
+            "registrationNumber": {
+              "S": "219743/09"
+            },
+            "brandName": {
+              "S": "ASACOL"
+            },
+            "strength": {
+              "S": "800mg"
+            },
+            "presentation": {
+              "S": "60"
+            },
+            "dosageForm": {
+              "S": "Tablet"
+            },
+            "agent": {
+              "S": "Taba Chemipharm"
+            },
+            "manufacturer": {
+              "S": "Haupt Pharma Wulfing GmbH"
+            },
+            "country": {
+              "S": "Germany"
+            },
+            "publicPriceLbp": {
+              "N": "6396690.300000002"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "71.47140000000002"
+            },
+            "responsiblePartyName": {
+              "S": "Tilotts Pharma AG"
+            },
+            "responsiblePartyCountry": {
+              "S": "Switzerland"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "asacol"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "503"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#5224"
+            },
+            "sourceCode": {
+              "S": "5224"
+            },
+            "registrationNumber": {
+              "S": "24468"
+            },
+            "brandName": {
+              "S": "ASCOVA"
+            },
+            "strength": {
+              "S": "20mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet"
+            },
+            "agent": {
+              "S": "Droguerie de l'Union"
+            },
+            "manufacturer": {
+              "S": "Algorithm S.A.L."
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "1356641"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "15.158"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "ascova"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "507"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#5225"
+            },
+            "sourceCode": {
+              "S": "5225"
+            },
+            "registrationNumber": {
+              "S": "24469"
+            },
+            "brandName": {
+              "S": "ASCOVA"
+            },
+            "strength": {
+              "S": "40mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet"
+            },
+            "agent": {
+              "S": "Droguerie de l'Union"
+            },
+            "manufacturer": {
+              "S": "Algorithm S.A.L."
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "1612611"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "18.018"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "ascova"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "508"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#5226"
+            },
+            "sourceCode": {
+              "S": "5226"
+            },
+            "registrationNumber": {
+              "S": "24467"
+            },
+            "brandName": {
+              "S": "ASCOVA"
+            },
+            "strength": {
+              "S": "10mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet"
+            },
+            "agent": {
+              "S": "Droguerie de l'Union"
+            },
+            "manufacturer": {
+              "S": "Algorithm S.A.L."
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "1126268.0000000002"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "12.584000000000003"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "ascova"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "509"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11752"
+            },
+            "sourceCode": {
+              "S": "11752"
+            },
+            "registrationNumber": {
+              "S": "54923/01"
+            },
+            "brandName": {
+              "S": "ASIMPLEX"
+            },
+            "strength": {
+              "S": "250mg"
+            },
+            "presentation": {
+              "S": "1Vial"
+            },
+            "dosageForm": {
+              "S": "Lyophilized powder for solution for infusion"
+            },
+            "agent": {
+              "S": "New Europharm"
+            },
+            "manufacturer": {
+              "S": "Aroma Ilac San. Ltd. Sti"
+            },
+            "country": {
+              "S": "Turkey"
+            },
+            "publicPriceLbp": {
+              "N": "278175.3975"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "3.108105"
+            },
+            "responsiblePartyName": {
+              "S": "Polifarma Ilaç San. ve Tic."
+            },
+            "responsiblePartyCountry": {
+              "S": "Turkey"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "asimplex"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "510"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#4660"
+            },
+            "sourceCode": {
+              "S": "4660"
+            },
+            "registrationNumber": {
+              "S": "28556/93"
+            },
+            "brandName": {
+              "S": "ASMALAT"
+            },
+            "strength": {
+              "S": "2mg/5ml"
+            },
+            "presentation": {
+              "S": "150ml"
+            },
+            "dosageForm": {
+              "S": "Syrup"
+            },
+            "agent": {
+              "S": "Pharmaline S.A.L."
+            },
+            "manufacturer": {
+              "S": "Pharmaline SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "177899.15000000005"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "1.9877000000000007"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "asmalat"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "511"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10695"
+            },
+            "sourceCode": {
+              "S": "10695"
+            },
+            "registrationNumber": {
+              "S": "17520/1"
+            },
+            "brandName": {
+              "S": "ASOLFENA"
+            },
+            "strength": {
+              "S": "5mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Pharmamedic S.A.R.L."
+            },
+            "manufacturer": {
+              "S": "KrKa, dd, Novo Mesto"
+            },
+            "country": {
+              "S": "Slovenia"
+            },
+            "publicPriceLbp": {
+              "N": "971598.1275000002"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "10.855845000000002"
+            },
+            "responsiblePartyName": {
+              "S": "Tad Pharma GmbH"
+            },
+            "responsiblePartyCountry": {
+              "S": "Germany"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "asolfena"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "512"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10696"
+            },
+            "sourceCode": {
+              "S": "10696"
+            },
+            "registrationNumber": {
+              "S": "17420/1"
+            },
+            "brandName": {
+              "S": "ASOLFENA"
+            },
+            "strength": {
+              "S": "10mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Pharmamedic S.A.R.L."
+            },
+            "manufacturer": {
+              "S": "KrKa, dd, Novo Mesto"
+            },
+            "country": {
+              "S": "Slovenia"
+            },
+            "publicPriceLbp": {
+              "N": "971598.1275000002"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "10.855845000000002"
+            },
+            "responsiblePartyName": {
+              "S": "Tad Pharma GmbH"
+            },
+            "responsiblePartyCountry": {
+              "S": "Germany"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "asolfena"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "513"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#9537"
+            },
+            "sourceCode": {
+              "S": "9537"
+            },
+            "registrationNumber": {
+              "S": "29818/1"
+            },
+            "brandName": {
+              "S": "ASPECTON COUGH SYRUP"
+            },
+            "presentation": {
+              "S": "100ml"
+            },
+            "agent": {
+              "S": "Mediterranean Pharmaceutical Company"
+            },
+            "manufacturer": {
+              "S": "Krewel Meuselbach GmbH"
+            },
+            "country": {
+              "S": "Germany"
+            },
+            "publicPriceLbp": {
+              "N": "580539.9600000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "6.486480000000001"
+            },
+            "responsiblePartyName": {
+              "S": "Krewel Meuselbach GmbH"
+            },
+            "responsiblePartyCountry": {
+              "S": "Germany"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "aspecton cough syrup"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "514"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#8506"
+            },
+            "sourceCode": {
+              "S": "8506"
+            },
+            "registrationNumber": {
+              "S": "157715/1"
+            },
+            "brandName": {
+              "S": "ASPI-COR"
+            },
+            "strength": {
+              "S": "81mg"
+            },
+            "presentation": {
+              "S": "120"
+            },
+            "dosageForm": {
+              "S": "Tablet, enteric coated"
+            },
+            "agent": {
+              "S": "Propre S.A.R.L."
+            },
+            "manufacturer": {
+              "S": "LNK International Inc"
+            },
+            "country": {
+              "S": "USA"
+            },
+            "publicPriceLbp": {
+              "N": "690735.0449999998"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "7.717709999999998"
+            },
+            "responsiblePartyName": {
+              "S": "Health Products Corporation"
+            },
+            "responsiblePartyCountry": {
+              "S": "USA"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "aspi cor"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "515"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10362"
+            },
+            "sourceCode": {
+              "S": "10362"
+            },
+            "registrationNumber": {
+              "S": "140420/1"
+            },
+            "brandName": {
+              "S": "ASPICOT"
+            },
+            "strength": {
+              "S": "81mg"
+            },
+            "presentation": {
+              "S": "100"
+            },
+            "dosageForm": {
+              "S": "Tablet, enteric coated"
+            },
+            "agent": {
+              "S": "Pharmaline S.A.L."
+            },
+            "manufacturer": {
+              "S": "Pharmaline SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "353238.60000000003"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "3.9468000000000005"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "aspicot"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "518"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#4673"
+            },
+            "sourceCode": {
+              "S": "4673"
+            },
+            "registrationNumber": {
+              "S": "261087/97"
+            },
+            "brandName": {
+              "S": "ASPICOT"
+            },
+            "strength": {
+              "S": "100mg"
+            },
+            "presentation": {
+              "S": "100"
+            },
+            "dosageForm": {
+              "S": "Tablet, enteric coated"
+            },
+            "agent": {
+              "S": "Pharmaline S.A.L."
+            },
+            "manufacturer": {
+              "S": "Pharmaline SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "403152.75"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "4.5045"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "aspicot"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "516"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#4680"
+            },
+            "sourceCode": {
+              "S": "4680"
+            },
+            "registrationNumber": {
+              "S": "261088/97"
+            },
+            "brandName": {
+              "S": "ASPICOT"
+            },
+            "strength": {
+              "S": "100mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet, enteric coated"
+            },
+            "agent": {
+              "S": "Pharmaline S.A.L."
+            },
+            "manufacturer": {
+              "S": "Pharmaline SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "134384.25000000003"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "1.5015000000000003"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "aspicot"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "517"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10617"
+            },
+            "sourceCode": {
+              "S": "10617"
+            },
+            "registrationNumber": {
+              "S": "57121/1"
+            },
+            "brandName": {
+              "S": "ASPIPHAR"
+            },
+            "strength": {
+              "S": "100mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet, enteric coated"
+            },
+            "agent": {
+              "S": "Pharmaline S.A.L."
+            },
+            "manufacturer": {
+              "S": "Pharmaline SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "134384.25000000003"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "1.5015000000000003"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "aspiphar"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "519"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7004"
+            },
+            "sourceCode": {
+              "S": "7004"
+            },
+            "registrationNumber": {
+              "S": "97499/12"
+            },
+            "brandName": {
+              "S": "ASPIRIN PROTECT"
+            },
+            "strength": {
+              "S": "100mg"
+            },
+            "presentation": {
+              "S": "20"
+            },
+            "dosageForm": {
+              "S": "Tablet, enteric coated"
+            },
+            "agent": {
+              "S": "Nouvelle Pharm Drugstore"
+            },
+            "manufacturer": {
+              "S": "Bayer Bitterfeld GmbH"
+            },
+            "country": {
+              "S": "Germany"
+            },
+            "publicPriceLbp": {
+              "N": "146478.83250000002"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "1.6366350000000003"
+            },
+            "responsiblePartyName": {
+              "S": "Bayer Consumer Care AG"
+            },
+            "responsiblePartyCountry": {
+              "S": "Switzerland"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "aspirin protect"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "520"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7635"
+            },
+            "sourceCode": {
+              "S": "7635"
+            },
+            "registrationNumber": {
+              "S": "50114/1"
+            },
+            "brandName": {
+              "S": "ASPIRINE"
+            },
+            "strength": {
+              "S": "0.3g"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet"
+            },
+            "agent": {
+              "S": "Droguerie R. Pharaon & Fils S.A.L."
+            },
+            "manufacturer": {
+              "S": "Bayer Bitterfeld GmbH"
+            },
+            "country": {
+              "S": "Germany"
+            },
+            "publicPriceLbp": {
+              "N": "80630.55"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "0.9009"
+            },
+            "responsiblePartyName": {
+              "S": "Bayer Consumer Care AG"
+            },
+            "responsiblePartyCountry": {
+              "S": "Switzerland"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "aspirine"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "521"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7709"
+            },
+            "sourceCode": {
+              "S": "7709"
+            },
+            "registrationNumber": {
+              "S": "61014/1"
+            },
+            "brandName": {
+              "S": "ASPIRINE C EFFERVESCENT"
+            },
+            "presentation": {
+              "S": "10"
+            },
+            "dosageForm": {
+              "S": "Tablet, effervescent"
+            },
+            "agent": {
+              "S": "Nouvelle Pharm Drugstore"
+            },
+            "manufacturer": {
+              "S": "Bayer Bitterfeld GmbH"
+            },
+            "country": {
+              "S": "Germany"
+            },
+            "publicPriceLbp": {
+              "N": "162604.94249999998"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "1.8168149999999996"
+            },
+            "responsiblePartyName": {
+              "S": "Bayer Consumer Care AG"
+            },
+            "responsiblePartyCountry": {
+              "S": "Switzerland"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "aspirine c effervescent"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "522"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12125"
+            },
+            "sourceCode": {
+              "S": "12125"
+            },
+            "registrationNumber": {
+              "S": "7324/1"
+            },
+            "brandName": {
+              "S": "ASPRIVIT"
+            },
+            "presentation": {
+              "S": "20"
+            },
+            "dosageForm": {
+              "S": "Tablet"
+            },
+            "agent": {
+              "S": "Mediterranean Pharmaceutical Company"
+            },
+            "manufacturer": {
+              "S": "Pharmex Advanced Laboratories SL"
+            },
+            "country": {
+              "S": "Spain"
+            },
+            "publicPriceLbp": {
+              "N": "186794.10750000004"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "2.0870850000000005"
+            },
+            "responsiblePartyName": {
+              "S": "Pharminicio SL"
+            },
+            "responsiblePartyCountry": {
+              "S": "Spain"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "asprivit"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "523"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#9480"
+            },
+            "sourceCode": {
+              "S": "9480"
+            },
+            "registrationNumber": {
+              "S": "107114/1"
+            },
+            "brandName": {
+              "S": "ASPROTHIN"
+            },
+            "strength": {
+              "S": "81mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet, enteric coated"
+            },
+            "agent": {
+              "S": "Pharmadex"
+            },
+            "manufacturer": {
+              "S": "Pharmadex"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "148462.6"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "1.6588"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "asprothin"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "524"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10896"
+            },
+            "sourceCode": {
+              "S": "10896"
+            },
+            "registrationNumber": {
+              "S": "195719/1"
+            },
+            "brandName": {
+              "S": "ASTEFOR"
+            },
+            "strength": {
+              "S": "400mg/30mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Macromed S.A.R.L."
+            },
+            "manufacturer": {
+              "S": "Farmasierra Manufacturing SL"
+            },
+            "country": {
+              "S": "Spain"
+            },
+            "publicPriceLbp": {
+              "N": "935314.38"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "10.45044"
+            },
+            "responsiblePartyName": {
+              "S": "Farmasierra Laboratorios SL"
+            },
+            "responsiblePartyCountry": {
+              "S": "Spain"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "astefor"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "525"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#5949"
+            },
+            "sourceCode": {
+              "S": "5949"
+            },
+            "registrationNumber": {
+              "S": "24985/07"
+            },
+            "brandName": {
+              "S": "ASTHALIN"
+            },
+            "presentation": {
+              "S": "20 x 2.5ml"
+            },
+            "dosageForm": {
+              "S": "Respule"
+            },
+            "agent": {
+              "S": "Droguerie de l'Union"
+            },
+            "manufacturer": {
+              "S": "Cipla Ltd"
+            },
+            "country": {
+              "S": "India"
+            },
+            "publicPriceLbp": {
+              "N": "325209.885"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "3.63363"
+            },
+            "responsiblePartyName": {
+              "S": "Cipla Ltd"
+            },
+            "responsiblePartyCountry": {
+              "S": "India"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "asthalin"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "526"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

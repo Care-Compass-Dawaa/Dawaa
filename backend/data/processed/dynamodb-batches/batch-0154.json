@@ -1,0 +1,2007 @@
+{
+  "RequestItems": {
+    "DawaaMedicines": [
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12116"
+            },
+            "sourceCode": {
+              "S": "12116"
+            },
+            "registrationNumber": {
+              "S": "41024/1"
+            },
+            "brandName": {
+              "S": "OXALIPLATINO PHARMINICIO"
+            },
+            "strength": {
+              "S": "50mg"
+            },
+            "presentation": {
+              "S": "1Vial"
+            },
+            "dosageForm": {
+              "S": "Lyophilised powder for solution for injection"
+            },
+            "agent": {
+              "S": "Mediterranean Pharmaceutical Company"
+            },
+            "manufacturer": {
+              "S": "GP-Pharm SA"
+            },
+            "country": {
+              "S": "Spain"
+            },
+            "publicPriceLbp": {
+              "N": "2956453.500000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "33.03300000000001"
+            },
+            "responsiblePartyName": {
+              "S": "Pharminicio SL"
+            },
+            "responsiblePartyCountry": {
+              "S": "Spain"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "oxaliplatino pharminicio"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3827"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10660"
+            },
+            "sourceCode": {
+              "S": "10660"
+            },
+            "registrationNumber": {
+              "S": "12821"
+            },
+            "brandName": {
+              "S": "OXALTIE"
+            },
+            "strength": {
+              "S": "50mg"
+            },
+            "presentation": {
+              "S": "1Vial"
+            },
+            "dosageForm": {
+              "S": "Injectable lyophilised powder"
+            },
+            "agent": {
+              "S": "New Europharm"
+            },
+            "manufacturer": {
+              "S": "Laboratorio Kemex SA"
+            },
+            "country": {
+              "S": "Argentine"
+            },
+            "publicPriceLbp": {
+              "N": "2957797.3425000007"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "33.04801500000001"
+            },
+            "responsiblePartyName": {
+              "S": "Bioprofarma Bago SA"
+            },
+            "responsiblePartyCountry": {
+              "S": "Argentine"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "oxaltie"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3829"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            },
+            "duplicateSearchKey": {
+              "BOOL": true
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10661"
+            },
+            "sourceCode": {
+              "S": "10661"
+            },
+            "registrationNumber": {
+              "S": "221168/08"
+            },
+            "brandName": {
+              "S": "OXALTIE"
+            },
+            "strength": {
+              "S": "100mg"
+            },
+            "presentation": {
+              "S": "1Vial"
+            },
+            "dosageForm": {
+              "S": "Injectable lyophilised powder"
+            },
+            "agent": {
+              "S": "New Europharm"
+            },
+            "manufacturer": {
+              "S": "Laboratorio Kemex SA"
+            },
+            "country": {
+              "S": "Argentine"
+            },
+            "publicPriceLbp": {
+              "N": "5915594.685000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "66.09603000000001"
+            },
+            "responsiblePartyName": {
+              "S": "Bioprofarma Bago SA"
+            },
+            "responsiblePartyCountry": {
+              "S": "Argentine"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "oxaltie"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3830"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#6325"
+            },
+            "sourceCode": {
+              "S": "6325"
+            },
+            "registrationNumber": {
+              "S": "221167/08"
+            },
+            "brandName": {
+              "S": "OXALTIE"
+            },
+            "strength": {
+              "S": "50mg"
+            },
+            "presentation": {
+              "S": "1Vial"
+            },
+            "dosageForm": {
+              "S": "Injectable lyophilised powder"
+            },
+            "agent": {
+              "S": "New Europharm"
+            },
+            "manufacturer": {
+              "S": "Bioprofarma S.A."
+            },
+            "country": {
+              "S": "Argentine"
+            },
+            "publicPriceLbp": {
+              "N": "2957797.3425000007"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "33.04801500000001"
+            },
+            "responsiblePartyName": {
+              "S": "Bioprofarma S.A."
+            },
+            "responsiblePartyCountry": {
+              "S": "Argentine"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "oxaltie"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3828"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#1857"
+            },
+            "sourceCode": {
+              "S": "1857"
+            },
+            "registrationNumber": {
+              "S": "973893/02"
+            },
+            "brandName": {
+              "S": "OXETINE 20"
+            },
+            "strength": {
+              "S": "20mg"
+            },
+            "presentation": {
+              "S": "20"
+            },
+            "dosageForm": {
+              "S": "Tablet, coated"
+            },
+            "agent": {
+              "S": "C. Catafago & Co"
+            },
+            "manufacturer": {
+              "S": "The Jordanian Pharmaceutical Manufacturing Company (JPM)"
+            },
+            "country": {
+              "S": "Jordan"
+            },
+            "publicPriceLbp": {
+              "N": "362837.47500000003"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "4.05405"
+            },
+            "responsiblePartyName": {
+              "S": "The Jordanian Pharmaceutical Manufacturing Company (JPM)"
+            },
+            "responsiblePartyCountry": {
+              "S": "Jordan"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "oxetine 20"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3831"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12210"
+            },
+            "sourceCode": {
+              "S": "12210"
+            },
+            "registrationNumber": {
+              "S": "20125/1"
+            },
+            "brandName": {
+              "S": "OXOMEMAZINE ARROW"
+            },
+            "strength": {
+              "S": "0.33mg/ml"
+            },
+            "presentation": {
+              "S": "150ml"
+            },
+            "dosageForm": {
+              "S": "Syrup"
+            },
+            "agent": {
+              "S": "Darapharma S.A.L."
+            },
+            "manufacturer": {
+              "S": "H2 Pharma"
+            },
+            "country": {
+              "S": "France"
+            },
+            "publicPriceLbp": {
+              "N": "431373.4425000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "4.819815000000001"
+            },
+            "responsiblePartyName": {
+              "S": "Arrow Génériques"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "oxomemazine arrow"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3832"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12211"
+            },
+            "sourceCode": {
+              "S": "12211"
+            },
+            "registrationNumber": {
+              "S": "20225/1"
+            },
+            "brandName": {
+              "S": "OXOMEMAZINE ARROW"
+            },
+            "strength": {
+              "S": "0.33mg/ml"
+            },
+            "presentation": {
+              "S": "150ml"
+            },
+            "dosageForm": {
+              "S": "Sugar free oral solution sweetened with acesulfam potassium"
+            },
+            "agent": {
+              "S": "Darapharma S.A.L."
+            },
+            "manufacturer": {
+              "S": "H2 Pharma"
+            },
+            "country": {
+              "S": "France"
+            },
+            "publicPriceLbp": {
+              "N": "431373.4425000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "4.819815000000001"
+            },
+            "responsiblePartyName": {
+              "S": "Arrow Génériques"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "oxomemazine arrow"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3833"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12207"
+            },
+            "sourceCode": {
+              "S": "12207"
+            },
+            "registrationNumber": {
+              "S": "35025/1"
+            },
+            "brandName": {
+              "S": "OXOMIL"
+            },
+            "strength": {
+              "S": "0.33mg/ml"
+            },
+            "presentation": {
+              "S": "150ml"
+            },
+            "dosageForm": {
+              "S": "Syrup, sugar free"
+            },
+            "agent": {
+              "S": "Benta Trading Co s.a.l."
+            },
+            "manufacturer": {
+              "S": "Manufactured by Benta Lyon, France for Benta SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "511940.00000000006"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "5.720000000000001"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "oxomil"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3834"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10924"
+            },
+            "sourceCode": {
+              "S": "10924"
+            },
+            "registrationNumber": {
+              "S": "92820/1"
+            },
+            "brandName": {
+              "S": "OXUBAT 120"
+            },
+            "strength": {
+              "S": "120mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Benta Trading Co s.a.l."
+            },
+            "manufacturer": {
+              "S": "Manufactured by MSN Laboratories Private Ltd, India for Benta SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "1549002.4549999998"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "17.30729"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "oxubat 120"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3835"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10923"
+            },
+            "sourceCode": {
+              "S": "10923"
+            },
+            "registrationNumber": {
+              "S": "92720/1"
+            },
+            "brandName": {
+              "S": "OXUBAT 80"
+            },
+            "strength": {
+              "S": "80mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Benta Trading Co s.a.l."
+            },
+            "manufacturer": {
+              "S": "Manufactured by MSN Laboratories Private Ltd, India for Benta SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "1356385.0300000003"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "15.155140000000003"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "oxubat 80"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3836"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11710"
+            },
+            "sourceCode": {
+              "S": "11710"
+            },
+            "registrationNumber": {
+              "S": "28924/1"
+            },
+            "brandName": {
+              "S": "OXYCODONE RENAUDIN"
+            },
+            "strength": {
+              "S": "1mg/1ml"
+            },
+            "presentation": {
+              "S": "10Amp x 10ml"
+            },
+            "agent": {
+              "S": "Minapharm Halabi"
+            },
+            "manufacturer": {
+              "S": "Renaudin"
+            },
+            "country": {
+              "S": "France"
+            },
+            "publicPriceLbp": {
+              "N": "2432354.9250000003"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "27.177150000000005"
+            },
+            "responsiblePartyName": {
+              "S": "Renaudin"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "oxycodone renaudin"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3837"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7941"
+            },
+            "sourceCode": {
+              "S": "7941"
+            },
+            "registrationNumber": {
+              "S": "121614/1"
+            },
+            "brandName": {
+              "S": "OXYNORM"
+            },
+            "strength": {
+              "S": "5mg"
+            },
+            "presentation": {
+              "S": "56"
+            },
+            "dosageForm": {
+              "S": "Capsule, hard"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Bard Pharmaceuticals Ltd"
+            },
+            "country": {
+              "S": "UK"
+            },
+            "publicPriceLbp": {
+              "N": "1991574.5850000007"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "22.252230000000008"
+            },
+            "responsiblePartyName": {
+              "S": "Napp Pharmaceuticals Ltd"
+            },
+            "responsiblePartyCountry": {
+              "S": "UK"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "oxynorm"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3838"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7942"
+            },
+            "sourceCode": {
+              "S": "7942"
+            },
+            "registrationNumber": {
+              "S": "121514/1"
+            },
+            "brandName": {
+              "S": "OXYNORM"
+            },
+            "strength": {
+              "S": "20mg"
+            },
+            "presentation": {
+              "S": "56"
+            },
+            "dosageForm": {
+              "S": "Capsule, hard"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Bard Pharmaceuticals Ltd"
+            },
+            "country": {
+              "S": "UK"
+            },
+            "publicPriceLbp": {
+              "N": "7634958.183825"
+            },
+            "pharmacistMarginPercent": {
+              "N": "21.26"
+            },
+            "stratum": {
+              "S": "C"
+            },
+            "publicPriceDecision119": {
+              "N": "85.30679535"
+            },
+            "responsiblePartyName": {
+              "S": "Napp Pharmaceuticals Ltd"
+            },
+            "responsiblePartyCountry": {
+              "S": "UK"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "oxynorm"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3839"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7943"
+            },
+            "sourceCode": {
+              "S": "7943"
+            },
+            "registrationNumber": {
+              "S": "121414/1"
+            },
+            "brandName": {
+              "S": "OXYNORM"
+            },
+            "strength": {
+              "S": "10mg"
+            },
+            "presentation": {
+              "S": "56"
+            },
+            "dosageForm": {
+              "S": "Capsule, hard"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Bard Pharmaceuticals Ltd"
+            },
+            "country": {
+              "S": "UK"
+            },
+            "publicPriceLbp": {
+              "N": "3988524.540000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "44.56452000000001"
+            },
+            "responsiblePartyName": {
+              "S": "Napp Pharmaceuticals Ltd"
+            },
+            "responsiblePartyCountry": {
+              "S": "UK"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "oxynorm"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3840"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#8107"
+            },
+            "sourceCode": {
+              "S": "8107"
+            },
+            "registrationNumber": {
+              "S": "137914/1"
+            },
+            "brandName": {
+              "S": "OXYNORM"
+            },
+            "strength": {
+              "S": "10mg/ml"
+            },
+            "presentation": {
+              "S": "5Ampoules x 2ml"
+            },
+            "dosageForm": {
+              "S": "Solution for injection or infusion IV/SC"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "B. Braun Melsungen AG"
+            },
+            "country": {
+              "S": "Germany"
+            },
+            "publicPriceLbp": {
+              "N": "1584390.3074999999"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "17.702685"
+            },
+            "responsiblePartyName": {
+              "S": "Napp Pharmaceuticals Ltd"
+            },
+            "responsiblePartyCountry": {
+              "S": "UK"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "oxynorm"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3841"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#2937"
+            },
+            "sourceCode": {
+              "S": "2937"
+            },
+            "registrationNumber": {
+              "S": "208285/03"
+            },
+            "brandName": {
+              "S": "OXYTOCIN 10 PANPHARMA 10 UI-1ML"
+            },
+            "strength": {
+              "S": "10UI"
+            },
+            "presentation": {
+              "S": "10Amp x 1ml"
+            },
+            "dosageForm": {
+              "S": "Ampoule"
+            },
+            "agent": {
+              "S": "Minapharm Halabi"
+            },
+            "manufacturer": {
+              "S": "Panpharma GmbH"
+            },
+            "country": {
+              "S": "Germany"
+            },
+            "publicPriceLbp": {
+              "N": "889623.735"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "9.93993"
+            },
+            "responsiblePartyName": {
+              "S": "Panpharma GmbH"
+            },
+            "responsiblePartyCountry": {
+              "S": "Germany"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "oxytocin 10 panpharma 10 ui 1ml"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3842"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#8577"
+            },
+            "sourceCode": {
+              "S": "8577"
+            },
+            "registrationNumber": {
+              "S": "716/1"
+            },
+            "brandName": {
+              "S": "OXYTOCIN 10 PANPHARMA 10 UI-1ML"
+            },
+            "strength": {
+              "S": "10UI"
+            },
+            "presentation": {
+              "S": "10Amp x 1ml"
+            },
+            "dosageForm": {
+              "S": "Ampoule"
+            },
+            "agent": {
+              "S": "Minapharm Halabi"
+            },
+            "manufacturer": {
+              "S": "Laboratoire Haupt Pharma Livron"
+            },
+            "country": {
+              "S": "France"
+            },
+            "publicPriceLbp": {
+              "N": "889623.735"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "9.93993"
+            },
+            "responsiblePartyName": {
+              "S": "Panpharma GmbH"
+            },
+            "responsiblePartyCountry": {
+              "S": "Germany"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "oxytocin 10 panpharma 10 ui 1ml"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3843"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            },
+            "duplicateSearchKey": {
+              "BOOL": true
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10041"
+            },
+            "sourceCode": {
+              "S": "10041"
+            },
+            "registrationNumber": {
+              "S": "10119/1"
+            },
+            "brandName": {
+              "S": "OZEMPIC"
+            },
+            "strength": {
+              "S": "0.25mg"
+            },
+            "presentation": {
+              "S": "1prefilled pen 1.5ml and 4disposable needles"
+            },
+            "dosageForm": {
+              "S": "Solution for injection"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Novo Nordisk AS"
+            },
+            "country": {
+              "S": "Denmark"
+            },
+            "publicPriceLbp": {
+              "N": "10927525.770000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "21.26"
+            },
+            "stratum": {
+              "S": "C"
+            },
+            "publicPriceDecision119": {
+              "N": "122.09526000000001"
+            },
+            "responsiblePartyName": {
+              "S": "Novo Nordisk AS"
+            },
+            "responsiblePartyCountry": {
+              "S": "Denmark"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "ozempic"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3844"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10042"
+            },
+            "sourceCode": {
+              "S": "10042"
+            },
+            "registrationNumber": {
+              "S": "10219/1"
+            },
+            "brandName": {
+              "S": "OZEMPIC"
+            },
+            "strength": {
+              "S": "0.5mg"
+            },
+            "presentation": {
+              "S": "1prefilled pen 1.5ml and 4disposable needles"
+            },
+            "dosageForm": {
+              "S": "Solution for injection"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Novo Nordisk AS"
+            },
+            "country": {
+              "S": "Denmark"
+            },
+            "publicPriceLbp": {
+              "N": "10927525.770000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "21.26"
+            },
+            "stratum": {
+              "S": "C"
+            },
+            "publicPriceDecision119": {
+              "N": "122.09526000000001"
+            },
+            "responsiblePartyName": {
+              "S": "Novo Nordisk AS"
+            },
+            "responsiblePartyCountry": {
+              "S": "Denmark"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "ozempic"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3845"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10043"
+            },
+            "sourceCode": {
+              "S": "10043"
+            },
+            "registrationNumber": {
+              "S": "10319/1"
+            },
+            "brandName": {
+              "S": "OZEMPIC"
+            },
+            "strength": {
+              "S": "1mg"
+            },
+            "presentation": {
+              "S": "1prefilled pen 3ml and 4disposable needles"
+            },
+            "dosageForm": {
+              "S": "Solution for injection"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Novo Nordisk AS"
+            },
+            "country": {
+              "S": "Denmark"
+            },
+            "publicPriceLbp": {
+              "N": "10927525.770000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "21.26"
+            },
+            "stratum": {
+              "S": "C"
+            },
+            "publicPriceDecision119": {
+              "N": "122.09526000000001"
+            },
+            "responsiblePartyName": {
+              "S": "Novo Nordisk AS"
+            },
+            "responsiblePartyCountry": {
+              "S": "Denmark"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "ozempic"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3846"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11439"
+            },
+            "sourceCode": {
+              "S": "11439"
+            },
+            "registrationNumber": {
+              "S": "139222/1"
+            },
+            "brandName": {
+              "S": "OZURDEX"
+            },
+            "strength": {
+              "S": "700mcg"
+            },
+            "presentation": {
+              "S": "1"
+            },
+            "dosageForm": {
+              "S": "Intravitreal implant in applicator"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Allergan Pharmaceuticals Ireland"
+            },
+            "country": {
+              "S": "Ireland"
+            },
+            "publicPriceLbp": {
+              "N": "80696539.83234374"
+            },
+            "pharmacistMarginPercent": {
+              "N": "2.44"
+            },
+            "stratum": {
+              "S": "E2"
+            },
+            "publicPriceDecision119": {
+              "N": "901.6373165624999"
+            },
+            "responsiblePartyName": {
+              "S": "Abbvie Deutschland GmbH & Co KG"
+            },
+            "responsiblePartyCountry": {
+              "S": "Germany"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "ozurdex"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3848"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            },
+            "duplicateSearchKey": {
+              "BOOL": true
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#6993"
+            },
+            "sourceCode": {
+              "S": "6993"
+            },
+            "registrationNumber": {
+              "S": "96418/11"
+            },
+            "brandName": {
+              "S": "OZURDEX"
+            },
+            "strength": {
+              "S": "700mcg"
+            },
+            "presentation": {
+              "S": "1"
+            },
+            "dosageForm": {
+              "S": "Intravitreal implant in applicator"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Allergan Pharmaceuticals (Ireland)"
+            },
+            "country": {
+              "S": "Ireland"
+            },
+            "publicPriceLbp": {
+              "N": "80696539.83234374"
+            },
+            "pharmacistMarginPercent": {
+              "N": "2.44"
+            },
+            "stratum": {
+              "S": "E2"
+            },
+            "publicPriceDecision119": {
+              "N": "901.6373165624999"
+            },
+            "responsiblePartyName": {
+              "S": "Allergan Pharmaceuticals (Ireland)"
+            },
+            "responsiblePartyCountry": {
+              "S": "Ireland"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "ozurdex"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3847"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#6583"
+            },
+            "sourceCode": {
+              "S": "6583"
+            },
+            "registrationNumber": {
+              "S": "219570/09"
+            },
+            "brandName": {
+              "S": "PABAL RTS"
+            },
+            "strength": {
+              "S": "100mcg/ml"
+            },
+            "presentation": {
+              "S": "5Units"
+            },
+            "dosageForm": {
+              "S": "Solution for injection IV/IM"
+            },
+            "agent": {
+              "S": "Sadco"
+            },
+            "manufacturer": {
+              "S": "Ferring GmbH"
+            },
+            "country": {
+              "S": "Germany"
+            },
+            "publicPriceLbp": {
+              "N": "12185492.129475"
+            },
+            "pharmacistMarginPercent": {
+              "N": "21.26"
+            },
+            "stratum": {
+              "S": "C"
+            },
+            "publicPriceDecision119": {
+              "N": "136.15075005"
+            },
+            "responsiblePartyName": {
+              "S": "Ferring GmbH"
+            },
+            "responsiblePartyCountry": {
+              "S": "Germany"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "pabal rts"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3849"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#6650"
+            },
+            "sourceCode": {
+              "S": "6650"
+            },
+            "registrationNumber": {
+              "S": "219217/09"
+            },
+            "brandName": {
+              "S": "PACLITAXEL MYLAN PHARMA 6MG/ML"
+            },
+            "strength": {
+              "S": "30mg/5ml"
+            },
+            "presentation": {
+              "S": "1Vial x 5ml"
+            },
+            "dosageForm": {
+              "S": "Concentrate for solution for IV infusion"
+            },
+            "agent": {
+              "S": "Benta Trading Co s.a.l."
+            },
+            "manufacturer": {
+              "S": "Benta SAL under license from Mylan S.A.S. France"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "5923691.719946001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "66.18649966420112"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "paclitaxel mylan pharma 6mg ml"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3850"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#6651"
+            },
+            "sourceCode": {
+              "S": "6651"
+            },
+            "registrationNumber": {
+              "S": "219218/09"
+            },
+            "brandName": {
+              "S": "PACLITAXEL MYLAN PHARMA 6MG/ML"
+            },
+            "strength": {
+              "S": "100mg/16.7ml"
+            },
+            "presentation": {
+              "S": "1Vial x 16.7ml"
+            },
+            "dosageForm": {
+              "S": "Concentrate for solution for IV infusion"
+            },
+            "agent": {
+              "S": "Benta Trading Co s.a.l."
+            },
+            "manufacturer": {
+              "S": "Benta SAL under license from Mylan S.A.S. France"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "22410062.068917602"
+            },
+            "pharmacistMarginPercent": {
+              "N": "19.35"
+            },
+            "stratum": {
+              "S": "D"
+            },
+            "publicPriceDecision119": {
+              "N": "250.3917549599732"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "paclitaxel mylan pharma 6mg ml"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3851"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

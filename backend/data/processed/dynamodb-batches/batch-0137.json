@@ -1,0 +1,1956 @@
+{
+  "RequestItems": {
+    "DawaaMedicines": [
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#5044"
+            },
+            "sourceCode": {
+              "S": "5044"
+            },
+            "registrationNumber": {
+              "S": "195476/04"
+            },
+            "brandName": {
+              "S": "MOXILEN"
+            },
+            "strength": {
+              "S": "1g"
+            },
+            "presentation": {
+              "S": "10vials"
+            },
+            "dosageForm": {
+              "S": "powder for injection"
+            },
+            "agent": {
+              "S": "New Allpharma"
+            },
+            "manufacturer": {
+              "S": "Medochemie Ltd"
+            },
+            "country": {
+              "S": "Cyprus"
+            },
+            "publicPriceLbp": {
+              "N": "998474.9774999999"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "11.156144999999999"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "moxilen"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3402"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#9829"
+            },
+            "sourceCode": {
+              "S": "9829"
+            },
+            "registrationNumber": {
+              "S": "186618/1"
+            },
+            "brandName": {
+              "S": "MOXITEC"
+            },
+            "strength": {
+              "S": "5mg/ml"
+            },
+            "dosageForm": {
+              "S": "Eye drops solution"
+            },
+            "agent": {
+              "S": "Levant Alie Houses S.A.L."
+            },
+            "manufacturer": {
+              "S": "Famar SA, batch releaser: pharmathen SA, Greece"
+            },
+            "country": {
+              "S": "Greece"
+            },
+            "publicPriceLbp": {
+              "N": "464969.505"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "5.19519"
+            },
+            "responsiblePartyName": {
+              "S": "Labatec Pharma SA"
+            },
+            "responsiblePartyCountry": {
+              "S": "Switzerland"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "moxitec"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3403"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7267"
+            },
+            "sourceCode": {
+              "S": "7267"
+            },
+            "registrationNumber": {
+              "S": "166612/11"
+            },
+            "brandName": {
+              "S": "MOZOBIL"
+            },
+            "strength": {
+              "S": "20mg/ml"
+            },
+            "presentation": {
+              "S": "1Vial"
+            },
+            "dosageForm": {
+              "S": "Injectable solution"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Euroapi UK Limited"
+            },
+            "country": {
+              "S": "UK"
+            },
+            "publicPriceLbp": {
+              "N": "413801327.428125"
+            },
+            "pharmacistMarginPercent": {
+              "N": "2.44"
+            },
+            "stratum": {
+              "S": "E2"
+            },
+            "publicPriceDecision119": {
+              "N": "4623.47851875"
+            },
+            "responsiblePartyName": {
+              "S": "Genzyme Europe BV"
+            },
+            "responsiblePartyCountry": {
+              "S": "The Netherlands"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "mozobil"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3404"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#8744"
+            },
+            "sourceCode": {
+              "S": "8744"
+            },
+            "registrationNumber": {
+              "S": "159715/1"
+            },
+            "brandName": {
+              "S": "MP 40"
+            },
+            "strength": {
+              "S": "40mg"
+            },
+            "presentation": {
+              "S": "1Vial + 1ampoule solvent of 2ml"
+            },
+            "dosageForm": {
+              "S": "Freeze dried"
+            },
+            "agent": {
+              "S": "Medis Pharm Drugstore"
+            },
+            "manufacturer": {
+              "S": "Les Laboratoires Medis SA"
+            },
+            "country": {
+              "S": "Tunisia"
+            },
+            "publicPriceLbp": {
+              "N": "219046.3275"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "2.447445"
+            },
+            "responsiblePartyName": {
+              "S": "Les Laboratoires Medis SA"
+            },
+            "responsiblePartyCountry": {
+              "S": "Tunisia"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "mp 40"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3405"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7868"
+            },
+            "sourceCode": {
+              "S": "7868"
+            },
+            "registrationNumber": {
+              "S": "186480/12"
+            },
+            "brandName": {
+              "S": "MP 500"
+            },
+            "strength": {
+              "S": "500mg"
+            },
+            "presentation": {
+              "S": "10Vials"
+            },
+            "dosageForm": {
+              "S": "Freeze dried"
+            },
+            "agent": {
+              "S": "Medis Pharm Drugstore"
+            },
+            "manufacturer": {
+              "S": "Les Laboratoires Medis SA"
+            },
+            "country": {
+              "S": "Tunisia"
+            },
+            "publicPriceLbp": {
+              "N": "5316240.930000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "59.39934000000001"
+            },
+            "responsiblePartyName": {
+              "S": "Les Laboratoires Medis SA"
+            },
+            "responsiblePartyCountry": {
+              "S": "Tunisia"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "mp 500"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3406"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#3632"
+            },
+            "sourceCode": {
+              "S": "3632"
+            },
+            "registrationNumber": {
+              "S": "236276"
+            },
+            "brandName": {
+              "S": "MST CONTINUS"
+            },
+            "strength": {
+              "S": "10mg"
+            },
+            "presentation": {
+              "S": "60"
+            },
+            "dosageForm": {
+              "S": "Tablet, prolonged release"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Bard Pharmaceuticals Ltd"
+            },
+            "country": {
+              "S": "UK"
+            },
+            "publicPriceLbp": {
+              "N": "972941.9700000002"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "10.870860000000002"
+            },
+            "responsiblePartyName": {
+              "S": "Napp Pharmaceuticals Ltd"
+            },
+            "responsiblePartyCountry": {
+              "S": "UK"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "mst continus"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3407"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#3633"
+            },
+            "sourceCode": {
+              "S": "3633"
+            },
+            "registrationNumber": {
+              "S": "38940"
+            },
+            "brandName": {
+              "S": "MST CONTINUS"
+            },
+            "strength": {
+              "S": "30mg"
+            },
+            "presentation": {
+              "S": "60"
+            },
+            "dosageForm": {
+              "S": "Tablet, prolonged release"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Bard Pharmaceuticals Ltd"
+            },
+            "country": {
+              "S": "UK"
+            },
+            "publicPriceLbp": {
+              "N": "2289907.62"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "25.58556"
+            },
+            "responsiblePartyName": {
+              "S": "Napp Pharmaceuticals Ltd"
+            },
+            "responsiblePartyCountry": {
+              "S": "UK"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "mst continus"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3408"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#3634"
+            },
+            "sourceCode": {
+              "S": "3634"
+            },
+            "registrationNumber": {
+              "S": "38941"
+            },
+            "brandName": {
+              "S": "MST CONTINUS"
+            },
+            "strength": {
+              "S": "60mg"
+            },
+            "presentation": {
+              "S": "60"
+            },
+            "dosageForm": {
+              "S": "Tablet, prolonged release"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Bard Pharmaceuticals Ltd"
+            },
+            "country": {
+              "S": "UK"
+            },
+            "publicPriceLbp": {
+              "N": "3839358.0225000004"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "42.89785500000001"
+            },
+            "responsiblePartyName": {
+              "S": "Napp Pharmaceuticals Ltd"
+            },
+            "responsiblePartyCountry": {
+              "S": "UK"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "mst continus"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3409"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7393"
+            },
+            "sourceCode": {
+              "S": "7393"
+            },
+            "registrationNumber": {
+              "S": "187413/13"
+            },
+            "brandName": {
+              "S": "MUCINEX"
+            },
+            "presentation": {
+              "S": "20"
+            },
+            "dosageForm": {
+              "S": "Tablet, extended release bilayer"
+            },
+            "agent": {
+              "S": "Droguerie Columbus"
+            },
+            "manufacturer": {
+              "S": "Reckitt Benckiser Healthcare International Ltd, Nottingham"
+            },
+            "country": {
+              "S": "UK"
+            },
+            "publicPriceLbp": {
+              "N": "749864.115"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "8.37837"
+            },
+            "responsiblePartyName": {
+              "S": "Reckitt Benckiser LLC"
+            },
+            "responsiblePartyCountry": {
+              "S": "USA"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "mucinex"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3410"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12425"
+            },
+            "sourceCode": {
+              "S": "12425"
+            },
+            "registrationNumber": {
+              "S": "98725/1"
+            },
+            "brandName": {
+              "S": "MUCOCURE SR"
+            },
+            "strength": {
+              "S": "75mg"
+            },
+            "presentation": {
+              "S": "10"
+            },
+            "dosageForm": {
+              "S": "Capsule"
+            },
+            "agent": {
+              "S": "Tamipharm"
+            },
+            "manufacturer": {
+              "S": "UBSA Pharma Industries SARL (Secondary Packaging), manufacturer: Livealth Biopharma Pvt. Ltd, India"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "276447.60000000003"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "3.0888000000000004"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "mucocure sr"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3411"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#9739"
+            },
+            "sourceCode": {
+              "S": "9739"
+            },
+            "registrationNumber": {
+              "S": "154118/1"
+            },
+            "brandName": {
+              "S": "MUCOSOLVAN"
+            },
+            "strength": {
+              "S": "30mg/5ml"
+            },
+            "presentation": {
+              "S": "100ml"
+            },
+            "dosageForm": {
+              "S": "Syrup"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Delpharm Reims"
+            },
+            "country": {
+              "S": "France"
+            },
+            "publicPriceLbp": {
+              "N": "380307.4275"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "4.249245"
+            },
+            "responsiblePartyName": {
+              "S": "A. Nattermann & Cie GmbH"
+            },
+            "responsiblePartyCountry": {
+              "S": "Germany"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "mucosolvan"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3412"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#9391"
+            },
+            "sourceCode": {
+              "S": "9391"
+            },
+            "registrationNumber": {
+              "S": "9118/1"
+            },
+            "brandName": {
+              "S": "MUCOSOLVAN LA"
+            },
+            "strength": {
+              "S": "75mg"
+            },
+            "presentation": {
+              "S": "10"
+            },
+            "dosageForm": {
+              "S": "Capsule"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Delpharm Reims"
+            },
+            "country": {
+              "S": "France"
+            },
+            "publicPriceLbp": {
+              "N": "345367.5224999999"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "3.858854999999999"
+            },
+            "responsiblePartyName": {
+              "S": "A. Nattermann & Cie GmbH"
+            },
+            "responsiblePartyCountry": {
+              "S": "Germany"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "mucosolvan la"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3413"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#4649"
+            },
+            "sourceCode": {
+              "S": "4649"
+            },
+            "registrationNumber": {
+              "S": "27807/94"
+            },
+            "brandName": {
+              "S": "MUCOTAL ADULTE"
+            },
+            "strength": {
+              "S": "250mg/5ml"
+            },
+            "presentation": {
+              "S": "150ml"
+            },
+            "dosageForm": {
+              "S": "Syrup"
+            },
+            "agent": {
+              "S": "Pharmaline S.A.L."
+            },
+            "manufacturer": {
+              "S": "Pharmaline SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "308443.85000000003"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "3.4463000000000004"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "mucotal adulte"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3414"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#4650"
+            },
+            "sourceCode": {
+              "S": "4650"
+            },
+            "registrationNumber": {
+              "S": "27808/94"
+            },
+            "brandName": {
+              "S": "MUCOTAL PEDIATRIQUE"
+            },
+            "strength": {
+              "S": "100mg/5ml"
+            },
+            "presentation": {
+              "S": "150ml"
+            },
+            "dosageForm": {
+              "S": "Syrup"
+            },
+            "agent": {
+              "S": "Pharmaline S.A.L."
+            },
+            "manufacturer": {
+              "S": "Pharmaline SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "298205.05000000005"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "3.3319000000000005"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "mucotal pediatrique"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3415"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#4651"
+            },
+            "sourceCode": {
+              "S": "4651"
+            },
+            "registrationNumber": {
+              "S": "27809/94"
+            },
+            "brandName": {
+              "S": "MUCOTAL PROMETHAZINE"
+            },
+            "presentation": {
+              "S": "150ml"
+            },
+            "dosageForm": {
+              "S": "Syrup"
+            },
+            "agent": {
+              "S": "Pharmaline S.A.L."
+            },
+            "manufacturer": {
+              "S": "Pharmaline SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "243171.5"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "2.717"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "mucotal promethazine"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3416"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11451"
+            },
+            "sourceCode": {
+              "S": "11451"
+            },
+            "registrationNumber": {
+              "S": "30523/1"
+            },
+            "brandName": {
+              "S": "MUCOVIC FORTE"
+            },
+            "strength": {
+              "S": "30mg/5ml"
+            },
+            "presentation": {
+              "S": "150ml"
+            },
+            "dosageForm": {
+              "S": "Oral solution sans sucre"
+            },
+            "agent": {
+              "S": "Pharmamedic S.A.R.L."
+            },
+            "manufacturer": {
+              "S": "Chaoul Pharmaceuticals (Cha-Pha) SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "440268.4000000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "4.919200000000001"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "mucovic forte"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3418"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#5859"
+            },
+            "sourceCode": {
+              "S": "5859"
+            },
+            "registrationNumber": {
+              "S": "218109/09"
+            },
+            "brandName": {
+              "S": "MUCOVIC FORTE"
+            },
+            "strength": {
+              "S": "30mg/5ml"
+            },
+            "presentation": {
+              "S": "100ml"
+            },
+            "dosageForm": {
+              "S": "Oral solution sans sucre"
+            },
+            "agent": {
+              "S": "Pharmamedic S.A.R.L."
+            },
+            "manufacturer": {
+              "S": "Chaoul Pharmaceuticals (Cha-Pha) SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "293085.65"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "3.2747"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "mucovic forte"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3417"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12426"
+            },
+            "sourceCode": {
+              "S": "12426"
+            },
+            "registrationNumber": {
+              "S": "98725/1"
+            },
+            "brandName": {
+              "S": "MUCOXELLIN LA"
+            },
+            "strength": {
+              "S": "75mg"
+            },
+            "presentation": {
+              "S": "10"
+            },
+            "dosageForm": {
+              "S": "Capsule"
+            },
+            "agent": {
+              "S": "Nova Pharm SARL"
+            },
+            "manufacturer": {
+              "S": "UBSA Pharma Industries SARL (Secondary Packaging), manufacturer: Livealth Biopharma Pvt. Ltd, India"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "276447.60000000003"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "3.0888000000000004"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "mucoxellin la"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3419"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#3491"
+            },
+            "sourceCode": {
+              "S": "3491"
+            },
+            "registrationNumber": {
+              "S": "208592/03"
+            },
+            "brandName": {
+              "S": "MUCUM"
+            },
+            "presentation": {
+              "S": "100ml"
+            },
+            "dosageForm": {
+              "S": "Syrup, sugar free"
+            },
+            "agent": {
+              "S": "Pharmanet Drugstore S.A.R.L."
+            },
+            "manufacturer": {
+              "S": "Julphar"
+            },
+            "country": {
+              "S": "United Arab Emirates"
+            },
+            "publicPriceLbp": {
+              "N": "98100.5025"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "1.096095"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "mucum"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3420"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10296"
+            },
+            "sourceCode": {
+              "S": "10296"
+            },
+            "registrationNumber": {
+              "S": "143819/1"
+            },
+            "brandName": {
+              "S": "MUCUS RELIEF DM"
+            },
+            "presentation": {
+              "S": "Box of 10"
+            },
+            "dosageForm": {
+              "S": "Tablet"
+            },
+            "agent": {
+              "S": "Medis Pharm Drugstore"
+            },
+            "manufacturer": {
+              "S": "Allegiant Health"
+            },
+            "country": {
+              "S": "USA"
+            },
+            "publicPriceLbp": {
+              "N": "413903.49"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "4.62462"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "mucus relief dm"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3421"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11227"
+            },
+            "sourceCode": {
+              "S": "11227"
+            },
+            "registrationNumber": {
+              "S": "132620/1"
+            },
+            "brandName": {
+              "S": "MUKORAL"
+            },
+            "strength": {
+              "S": "30mg"
+            },
+            "presentation": {
+              "S": "20"
+            },
+            "dosageForm": {
+              "S": "Tablet"
+            },
+            "agent": {
+              "S": "BroadMed SAL"
+            },
+            "manufacturer": {
+              "S": "Biofarma Ilac San. ve Tic. AS"
+            },
+            "country": {
+              "S": "Turkey"
+            },
+            "publicPriceLbp": {
+              "N": "201576.37500000006"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "2.2522500000000005"
+            },
+            "responsiblePartyName": {
+              "S": "Biofarma Ilac San. ve Tic. AS"
+            },
+            "responsiblePartyCountry": {
+              "S": "Turkey"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "mukoral"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3422"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12084"
+            },
+            "sourceCode": {
+              "S": "12084"
+            },
+            "registrationNumber": {
+              "S": "7521/1"
+            },
+            "brandName": {
+              "S": "MUKORAL"
+            },
+            "strength": {
+              "S": "30mg/5ml"
+            },
+            "presentation": {
+              "S": "150ml"
+            },
+            "dosageForm": {
+              "S": "Syrup"
+            },
+            "agent": {
+              "S": "BroadMed SAL"
+            },
+            "manufacturer": {
+              "S": "Biofarma Ilac San. ve Tic. AS"
+            },
+            "country": {
+              "S": "Turkey"
+            },
+            "publicPriceLbp": {
+              "N": "341335.99500000005"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "3.8138100000000006"
+            },
+            "responsiblePartyName": {
+              "S": "Biofarma Ilac San. ve Tic. AS"
+            },
+            "responsiblePartyCountry": {
+              "S": "Turkey"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "mukoral"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3423"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12307"
+            },
+            "sourceCode": {
+              "S": "12307"
+            },
+            "registrationNumber": {
+              "S": "54823/1"
+            },
+            "brandName": {
+              "S": "MUKORAL"
+            },
+            "strength": {
+              "S": "15mg/5ml"
+            },
+            "presentation": {
+              "S": "150ml"
+            },
+            "dosageForm": {
+              "S": "Pediatric syrup"
+            },
+            "agent": {
+              "S": "BroadMed SAL"
+            },
+            "manufacturer": {
+              "S": "Biofarma Ilac San. ve Tic. AS"
+            },
+            "country": {
+              "S": "Turkey"
+            },
+            "publicPriceLbp": {
+              "N": "194857.16250000003"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "2.1771750000000005"
+            },
+            "responsiblePartyName": {
+              "S": "Biofarma Ilac San. ve Tic. AS"
+            },
+            "responsiblePartyCountry": {
+              "S": "Turkey"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "mukoral"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3424"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12339"
+            },
+            "sourceCode": {
+              "S": "12339"
+            },
+            "registrationNumber": {
+              "S": "110323/1"
+            },
+            "brandName": {
+              "S": "MUKOZERO"
+            },
+            "strength": {
+              "S": "600mg"
+            },
+            "presentation": {
+              "S": "20"
+            },
+            "dosageForm": {
+              "S": "Tablet, effervescent"
+            },
+            "agent": {
+              "S": "BroadMed SAL"
+            },
+            "manufacturer": {
+              "S": "Humanis Saglik Anonim Sirketi"
+            },
+            "country": {
+              "S": "Turkey"
+            },
+            "publicPriceLbp": {
+              "N": "646388.2425000002"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "7.222215000000002"
+            },
+            "responsiblePartyName": {
+              "S": "Humanis Saglik Anonim Sirketi"
+            },
+            "responsiblePartyCountry": {
+              "S": "Turkey"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "mukozero"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3425"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10647"
+            },
+            "sourceCode": {
+              "S": "10647"
+            },
+            "registrationNumber": {
+              "S": "108216/1"
+            },
+            "brandName": {
+              "S": "MUREX"
+            },
+            "strength": {
+              "S": "100mg/5ml"
+            },
+            "presentation": {
+              "S": "60ml"
+            },
+            "dosageForm": {
+              "S": "powder for oral suspension"
+            },
+            "agent": {
+              "S": "Sadco"
+            },
+            "manufacturer": {
+              "S": "Dar Al Dawa Development & Investment Co Ltd"
+            },
+            "country": {
+              "S": "Jordan"
+            },
+            "publicPriceLbp": {
+              "N": "524098.575"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "5.85585"
+            },
+            "responsiblePartyName": {
+              "S": "Dar Al Dawa Development & Investment Co Ltd"
+            },
+            "responsiblePartyCountry": {
+              "S": "Jordan"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "murex"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3427"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

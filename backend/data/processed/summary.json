@@ -1,0 +1,21 @@
+{
+  "sourceFile": "data/WebMarketed20260710.xls",
+  "sheetName": "DRUGS 10072026",
+  "importedAt": "2026-08-06T23:44:34.156Z",
+  "sourceRows": 5722,
+  "acceptedRows": 5722,
+  "rejectedRows": 0,
+  "duplicateSearchKeys": 202,
+  "outputs": {
+    "medicinesJson": "medicines-import.json",
+    "medicinesCsv": "medicines-import.csv",
+    "dynamodbBatchJson": "medicines-dynamodb-batch.json",
+    "dynamodbBatchDirectory": "dynamodb-batches/",
+    "rejectedRowsCsv": "rejected-rows.csv"
+  },
+  "notes": [
+    "The source file does not include a separate generic-name column, so genericName is left blank.",
+    "medicineId uses the Ministry Code column as MED#<Code> for stable inventory references.",
+    "Additional source fields such as price and registration number are preserved in the JSON and DynamoDB output."
+  ]
+}

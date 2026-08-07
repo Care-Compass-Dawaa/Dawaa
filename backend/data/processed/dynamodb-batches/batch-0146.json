@@ -1,0 +1,1965 @@
+{
+  "RequestItems": {
+    "DawaaMedicines": [
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#2731"
+            },
+            "sourceCode": {
+              "S": "2731"
+            },
+            "registrationNumber": {
+              "S": "26932"
+            },
+            "brandName": {
+              "S": "NUCLEO C.M.P. FORTE"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Capsule"
+            },
+            "agent": {
+              "S": "Spephal S.A.L."
+            },
+            "manufacturer": {
+              "S": "Ferrer Internacional SA"
+            },
+            "country": {
+              "S": "Spain"
+            },
+            "publicPriceLbp": {
+              "N": "665202.0375"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "7.432424999999999"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "nucleo c m p forte"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3626"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#9322"
+            },
+            "sourceCode": {
+              "S": "9322"
+            },
+            "registrationNumber": {
+              "S": "171417/1"
+            },
+            "brandName": {
+              "S": "NUCLEOBUVIR"
+            },
+            "strength": {
+              "S": "400mg"
+            },
+            "presentation": {
+              "S": "28"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Sigmamed SARL"
+            },
+            "manufacturer": {
+              "S": "EVA Pharma for Pharmaceuticals and Medical Appliances"
+            },
+            "country": {
+              "S": "Egypt"
+            },
+            "publicPriceLbp": {
+              "N": "50670439.548225"
+            },
+            "pharmacistMarginPercent": {
+              "N": "10.71"
+            },
+            "stratum": {
+              "S": "E1"
+            },
+            "publicPriceDecision119": {
+              "N": "566.15016255"
+            },
+            "responsiblePartyName": {
+              "S": "EVA Pharma for Pharmaceuticals and Medical Appliances"
+            },
+            "responsiblePartyCountry": {
+              "S": "Egypt"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "nucleobuvir"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3627"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#8826"
+            },
+            "sourceCode": {
+              "S": "8826"
+            },
+            "registrationNumber": {
+              "S": "93216/1"
+            },
+            "brandName": {
+              "S": "NUTRYELT"
+            },
+            "presentation": {
+              "S": "10 ampoules x 10ml"
+            },
+            "dosageForm": {
+              "S": "Solution a diluer pour perfusion IV"
+            },
+            "agent": {
+              "S": "Droguerie Solupharm SAL"
+            },
+            "manufacturer": {
+              "S": "Aguettant"
+            },
+            "country": {
+              "S": "France"
+            },
+            "publicPriceLbp": {
+              "N": "3483239.7600000002"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "38.91888"
+            },
+            "responsiblePartyName": {
+              "S": "Aguettant"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "nutryelt"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3629"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#2936"
+            },
+            "sourceCode": {
+              "S": "2936"
+            },
+            "registrationNumber": {
+              "S": "208819/03"
+            },
+            "brandName": {
+              "S": "NUVARING"
+            },
+            "strength": {
+              "S": "0.120mg/0.015mg"
+            },
+            "presentation": {
+              "S": "1Sachet"
+            },
+            "dosageForm": {
+              "S": "Vaginal Ring"
+            },
+            "agent": {
+              "S": "Droguerie de l'Union"
+            },
+            "manufacturer": {
+              "S": "N.V. Organon"
+            },
+            "country": {
+              "S": "The Netherlands"
+            },
+            "publicPriceLbp": {
+              "N": "1052228.6775000002"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "11.756745000000002"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "nuvaring"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3630"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#8558"
+            },
+            "sourceCode": {
+              "S": "8558"
+            },
+            "registrationNumber": {
+              "S": "9516/1"
+            },
+            "brandName": {
+              "S": "NUWIQ"
+            },
+            "strength": {
+              "S": "500IU"
+            },
+            "presentation": {
+              "S": "1powder vial + 1prefilled syringe, 1butterfly needle, 2alcohol swabs+ 1vial adapter"
+            },
+            "dosageForm": {
+              "S": "Powder and solvent for solution for injection for IV use"
+            },
+            "agent": {
+              "S": "Mediterranean Pharmaceutical Company"
+            },
+            "manufacturer": {
+              "S": "Octapharma AB"
+            },
+            "country": {
+              "S": "Sweden"
+            },
+            "publicPriceLbp": {
+              "N": "47418699.184342496"
+            },
+            "pharmacistMarginPercent": {
+              "N": "10.71"
+            },
+            "stratum": {
+              "S": "E1"
+            },
+            "publicPriceDecision119": {
+              "N": "529.8178679814804"
+            },
+            "responsiblePartyName": {
+              "S": "Octapharma AB"
+            },
+            "responsiblePartyCountry": {
+              "S": "Sweden"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "nuwiq"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3631"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#9890"
+            },
+            "sourceCode": {
+              "S": "9890"
+            },
+            "registrationNumber": {
+              "S": "41419/1"
+            },
+            "brandName": {
+              "S": "OCALIVA"
+            },
+            "strength": {
+              "S": "10mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Droguerie Mercury S.A.L."
+            },
+            "manufacturer": {
+              "S": "Almac Pharma Services Limited"
+            },
+            "country": {
+              "S": "UK"
+            },
+            "publicPriceLbp": {
+              "N": "224503943.24531248"
+            },
+            "pharmacistMarginPercent": {
+              "N": "2.44"
+            },
+            "stratum": {
+              "S": "E2"
+            },
+            "publicPriceDecision119": {
+              "N": "2508.4239468749997"
+            },
+            "responsiblePartyName": {
+              "S": "Intercept Pharma Ltd"
+            },
+            "responsiblePartyCountry": {
+              "S": "UK"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "ocaliva"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3632"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#9891"
+            },
+            "sourceCode": {
+              "S": "9891"
+            },
+            "registrationNumber": {
+              "S": "41319/1"
+            },
+            "brandName": {
+              "S": "OCALIVA"
+            },
+            "strength": {
+              "S": "5mg"
+            },
+            "presentation": {
+              "S": "30"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Droguerie Mercury S.A.L."
+            },
+            "manufacturer": {
+              "S": "Almac Pharma Services Limited"
+            },
+            "country": {
+              "S": "UK"
+            },
+            "publicPriceLbp": {
+              "N": "224503943.24531248"
+            },
+            "pharmacistMarginPercent": {
+              "N": "2.44"
+            },
+            "stratum": {
+              "S": "E2"
+            },
+            "publicPriceDecision119": {
+              "N": "2508.4239468749997"
+            },
+            "responsiblePartyName": {
+              "S": "Intercept Pharma Ltd"
+            },
+            "responsiblePartyCountry": {
+              "S": "UK"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "ocaliva"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3633"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12314"
+            },
+            "sourceCode": {
+              "S": "12314"
+            },
+            "registrationNumber": {
+              "S": "27625/1"
+            },
+            "brandName": {
+              "S": "OCREVUS"
+            },
+            "strength": {
+              "S": "920mg/23ml"
+            },
+            "presentation": {
+              "S": "1Vial"
+            },
+            "dosageForm": {
+              "S": "solution for injection"
+            },
+            "agent": {
+              "S": "Omnipharma"
+            },
+            "manufacturer": {
+              "S": "Roche Diagnostics GmbH"
+            },
+            "country": {
+              "S": "Germany"
+            },
+            "publicPriceLbp": {
+              "N": "1095034628.6330388"
+            },
+            "pharmacistMarginPercent": {
+              "N": "2.44"
+            },
+            "stratum": {
+              "S": "E2"
+            },
+            "publicPriceDecision119": {
+              "N": "12235.023783609371"
+            },
+            "responsiblePartyName": {
+              "S": "F. Hoffmann La Roche Ltd"
+            },
+            "responsiblePartyCountry": {
+              "S": "Switzerland"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "ocrevus"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3635"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#9549"
+            },
+            "sourceCode": {
+              "S": "9549"
+            },
+            "registrationNumber": {
+              "S": "35218/1"
+            },
+            "brandName": {
+              "S": "OCREVUS"
+            },
+            "strength": {
+              "S": "300mg/10ml"
+            },
+            "presentation": {
+              "S": "1Vial of 10ml"
+            },
+            "dosageForm": {
+              "S": "Concentrate for solution for infusion"
+            },
+            "agent": {
+              "S": "Omnipharma"
+            },
+            "manufacturer": {
+              "S": "Roche Diagnostics GmbH"
+            },
+            "country": {
+              "S": "Germany"
+            },
+            "publicPriceLbp": {
+              "N": "547517314.3165194"
+            },
+            "pharmacistMarginPercent": {
+              "N": "2.44"
+            },
+            "stratum": {
+              "S": "E2"
+            },
+            "publicPriceDecision119": {
+              "N": "6117.511891804686"
+            },
+            "responsiblePartyName": {
+              "S": "F. Hoffmann La Roche Ltd"
+            },
+            "responsiblePartyCountry": {
+              "S": "Switzerland"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "ocrevus"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3634"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#3272"
+            },
+            "sourceCode": {
+              "S": "3272"
+            },
+            "registrationNumber": {
+              "S": "405919"
+            },
+            "brandName": {
+              "S": "OCTAGAM"
+            },
+            "strength": {
+              "S": "2.5g"
+            },
+            "presentation": {
+              "S": "50ml"
+            },
+            "dosageForm": {
+              "S": "Solution for IV use"
+            },
+            "agent": {
+              "S": "Mediterranean Pharmaceutical Company"
+            },
+            "manufacturer": {
+              "S": "Octapharma Pharmazeutika Produktions GesmbH"
+            },
+            "country": {
+              "S": "Austria"
+            },
+            "publicPriceLbp": {
+              "N": "19540934.456400003"
+            },
+            "pharmacistMarginPercent": {
+              "N": "19.35"
+            },
+            "stratum": {
+              "S": "D"
+            },
+            "publicPriceDecision119": {
+              "N": "218.33446320000004"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "octagam"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3637"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#3273"
+            },
+            "sourceCode": {
+              "S": "3273"
+            },
+            "registrationNumber": {
+              "S": "405920"
+            },
+            "brandName": {
+              "S": "OCTAGAM"
+            },
+            "strength": {
+              "S": "5g"
+            },
+            "presentation": {
+              "S": "100ml"
+            },
+            "dosageForm": {
+              "S": "Solution for IV use"
+            },
+            "agent": {
+              "S": "Mediterranean Pharmaceutical Company"
+            },
+            "manufacturer": {
+              "S": "Octapharma Pharmazeutika Produktions GesmbH"
+            },
+            "country": {
+              "S": "Austria"
+            },
+            "publicPriceLbp": {
+              "N": "37672334.1288"
+            },
+            "pharmacistMarginPercent": {
+              "N": "19.35"
+            },
+            "stratum": {
+              "S": "D"
+            },
+            "publicPriceDecision119": {
+              "N": "420.9199344"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "octagam"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3636"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#3274"
+            },
+            "sourceCode": {
+              "S": "3274"
+            },
+            "registrationNumber": {
+              "S": "405921"
+            },
+            "brandName": {
+              "S": "OCTAGAM"
+            },
+            "strength": {
+              "S": "10g"
+            },
+            "presentation": {
+              "S": "200ml"
+            },
+            "dosageForm": {
+              "S": "Solution for IV use"
+            },
+            "agent": {
+              "S": "Mediterranean Pharmaceutical Company"
+            },
+            "manufacturer": {
+              "S": "Octapharma Pharmazeutika Produktions GesmbH"
+            },
+            "country": {
+              "S": "Austria"
+            },
+            "publicPriceLbp": {
+              "N": "74515098.7182525"
+            },
+            "pharmacistMarginPercent": {
+              "N": "10.71"
+            },
+            "stratum": {
+              "S": "E1"
+            },
+            "publicPriceDecision119": {
+              "N": "832.5709353994692"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "octagam"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3638"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7318"
+            },
+            "sourceCode": {
+              "S": "7318"
+            },
+            "registrationNumber": {
+              "S": "97806/11"
+            },
+            "brandName": {
+              "S": "OCTAGAM 10%"
+            },
+            "strength": {
+              "S": "5g"
+            },
+            "presentation": {
+              "S": "50ml"
+            },
+            "dosageForm": {
+              "S": "Injectable solution for infusion"
+            },
+            "agent": {
+              "S": "Mediterranean Pharmaceutical Company"
+            },
+            "manufacturer": {
+              "S": "Octapharma Pharmazeutika Produktions GesmbH"
+            },
+            "country": {
+              "S": "Austria"
+            },
+            "publicPriceLbp": {
+              "N": "37672334.1288"
+            },
+            "pharmacistMarginPercent": {
+              "N": "19.35"
+            },
+            "stratum": {
+              "S": "D"
+            },
+            "publicPriceDecision119": {
+              "N": "420.9199344"
+            },
+            "responsiblePartyName": {
+              "S": "Octapharma Pharmazeutika Produktions GesmbH"
+            },
+            "responsiblePartyCountry": {
+              "S": "Austria"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "octagam 10"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3639"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#3279"
+            },
+            "sourceCode": {
+              "S": "3279"
+            },
+            "registrationNumber": {
+              "S": "208373/02"
+            },
+            "brandName": {
+              "S": "OCTANATE"
+            },
+            "strength": {
+              "S": "250IU (50IU/ml)"
+            },
+            "presentation": {
+              "S": "1Vial + 5ml solvent"
+            },
+            "dosageForm": {
+              "S": "Lyophilised powder"
+            },
+            "agent": {
+              "S": "Mediterranean Pharmaceutical Company"
+            },
+            "manufacturer": {
+              "S": "Octapharma Pharmazeutika Produktions GesmbH"
+            },
+            "country": {
+              "S": "Austria"
+            },
+            "publicPriceLbp": {
+              "N": "13247109.9432"
+            },
+            "pharmacistMarginPercent": {
+              "N": "19.35"
+            },
+            "stratum": {
+              "S": "D"
+            },
+            "publicPriceDecision119": {
+              "N": "148.0124016"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "octanate"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3640"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#3280"
+            },
+            "sourceCode": {
+              "S": "3280"
+            },
+            "registrationNumber": {
+              "S": "208374/02"
+            },
+            "brandName": {
+              "S": "OCTANATE"
+            },
+            "strength": {
+              "S": "500IU (50IU/ml)"
+            },
+            "presentation": {
+              "S": "1Vial + 10ml solvent"
+            },
+            "dosageForm": {
+              "S": "Lyophilised powder"
+            },
+            "agent": {
+              "S": "Mediterranean Pharmaceutical Company"
+            },
+            "manufacturer": {
+              "S": "Octapharma Pharmazeutika Produktions GesmbH"
+            },
+            "country": {
+              "S": "Austria"
+            },
+            "publicPriceLbp": {
+              "N": "26495478.3996"
+            },
+            "pharmacistMarginPercent": {
+              "N": "19.35"
+            },
+            "stratum": {
+              "S": "D"
+            },
+            "publicPriceDecision119": {
+              "N": "296.0388648"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "octanate"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3641"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#3281"
+            },
+            "sourceCode": {
+              "S": "3281"
+            },
+            "registrationNumber": {
+              "S": "208375/02"
+            },
+            "brandName": {
+              "S": "OCTANATE"
+            },
+            "strength": {
+              "S": "1000IU (100IU/ml)"
+            },
+            "presentation": {
+              "S": "1Vial + 10ml solvent"
+            },
+            "dosageForm": {
+              "S": "Lyophilised powder"
+            },
+            "agent": {
+              "S": "Mediterranean Pharmaceutical Company"
+            },
+            "manufacturer": {
+              "S": "Octapharma Pharmazeutika Produktions GesmbH"
+            },
+            "country": {
+              "S": "Austria"
+            },
+            "publicPriceLbp": {
+              "N": "46817510.502000004"
+            },
+            "pharmacistMarginPercent": {
+              "N": "10.71"
+            },
+            "stratum": {
+              "S": "E1"
+            },
+            "publicPriceDecision119": {
+              "N": "523.100676"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "octanate"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3642"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#6539"
+            },
+            "sourceCode": {
+              "S": "6539"
+            },
+            "registrationNumber": {
+              "S": "96419/11"
+            },
+            "brandName": {
+              "S": "OCTANINE F"
+            },
+            "strength": {
+              "S": "500IU (100IU/ml)"
+            },
+            "presentation": {
+              "S": "1vial+ 1 ampoule of 5ml water for injection"
+            },
+            "dosageForm": {
+              "S": "Injectable freeze dried powder + diluent"
+            },
+            "agent": {
+              "S": "Mediterranean Pharmaceutical Company"
+            },
+            "manufacturer": {
+              "S": "Octapharma Pharmazeutika Produktions GesmbH"
+            },
+            "country": {
+              "S": "Austria"
+            },
+            "publicPriceLbp": {
+              "N": "31425074.604000002"
+            },
+            "pharmacistMarginPercent": {
+              "N": "19.35"
+            },
+            "stratum": {
+              "S": "D"
+            },
+            "publicPriceDecision119": {
+              "N": "351.118152"
+            },
+            "responsiblePartyName": {
+              "S": "Octapharma Pharmazeutika Produktions GesmbH"
+            },
+            "responsiblePartyCountry": {
+              "S": "Austria"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "octanine f"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3643"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7193"
+            },
+            "sourceCode": {
+              "S": "7193"
+            },
+            "registrationNumber": {
+              "S": "97840/11"
+            },
+            "brandName": {
+              "S": "OCTAPLEX"
+            },
+            "strength": {
+              "S": "500IU"
+            },
+            "agent": {
+              "S": "Mediterranean Pharmaceutical Company"
+            },
+            "manufacturer": {
+              "S": "Octapharma Pharmazeutika Produktions GesmbH"
+            },
+            "country": {
+              "S": "Austria"
+            },
+            "publicPriceLbp": {
+              "N": "49501331.25000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "10.71"
+            },
+            "stratum": {
+              "S": "E1"
+            },
+            "publicPriceDecision119": {
+              "N": "553.0875000000001"
+            },
+            "responsiblePartyName": {
+              "S": "Octapharma Pharmazeutika Produktions GesmbH"
+            },
+            "responsiblePartyCountry": {
+              "S": "Austria"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "octaplex"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3644"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#9987"
+            },
+            "sourceCode": {
+              "S": "9987"
+            },
+            "registrationNumber": {
+              "S": "41716/1"
+            },
+            "brandName": {
+              "S": "ODNATRON"
+            },
+            "strength": {
+              "S": "8mg/4ml"
+            },
+            "presentation": {
+              "S": "5Ampoules"
+            },
+            "dosageForm": {
+              "S": "Injectable solution"
+            },
+            "agent": {
+              "S": "Soin Bio Pharmaceuticals sarl"
+            },
+            "manufacturer": {
+              "S": "Kleva Pharmaceuticals S.A."
+            },
+            "country": {
+              "S": "Greece"
+            },
+            "publicPriceLbp": {
+              "N": "952784.3325"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "10.645635"
+            },
+            "responsiblePartyName": {
+              "S": "Kleva Pharmaceuticals S.A."
+            },
+            "responsiblePartyCountry": {
+              "S": "Greece"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "odnatron"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3645"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#9988"
+            },
+            "sourceCode": {
+              "S": "9988"
+            },
+            "registrationNumber": {
+              "S": "86716/1"
+            },
+            "brandName": {
+              "S": "ODNATRON"
+            },
+            "strength": {
+              "S": "4mg/2ml"
+            },
+            "presentation": {
+              "S": "5Ampoules"
+            },
+            "dosageForm": {
+              "S": "Injectable solution"
+            },
+            "agent": {
+              "S": "Soin Bio Pharmaceuticals sarl"
+            },
+            "manufacturer": {
+              "S": "Kleva Pharmaceuticals S.A."
+            },
+            "country": {
+              "S": "Greece"
+            },
+            "publicPriceLbp": {
+              "N": "880216.8374999999"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "9.834824999999999"
+            },
+            "responsiblePartyName": {
+              "S": "Kleva Pharmaceuticals S.A."
+            },
+            "responsiblePartyCountry": {
+              "S": "Greece"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "odnatron"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3646"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#9455"
+            },
+            "sourceCode": {
+              "S": "9455"
+            },
+            "registrationNumber": {
+              "S": "140217/1"
+            },
+            "brandName": {
+              "S": "OESTRACLIN"
+            },
+            "strength": {
+              "S": "0.6mg/g"
+            },
+            "presentation": {
+              "S": "80g"
+            },
+            "dosageForm": {
+              "S": "Gel"
+            },
+            "agent": {
+              "S": "New Europharm"
+            },
+            "manufacturer": {
+              "S": "Seid SA"
+            },
+            "country": {
+              "S": "Spain"
+            },
+            "publicPriceLbp": {
+              "N": "448843.39499999996"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "5.015009999999999"
+            },
+            "responsiblePartyName": {
+              "S": "Seid SA"
+            },
+            "responsiblePartyCountry": {
+              "S": "Spain"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "oestraclin"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3647"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#8225"
+            },
+            "sourceCode": {
+              "S": "8225"
+            },
+            "registrationNumber": {
+              "S": "120714/1"
+            },
+            "brandName": {
+              "S": "OESTRODOSE"
+            },
+            "strength": {
+              "S": "0.06%"
+            },
+            "presentation": {
+              "S": "80g"
+            },
+            "dosageForm": {
+              "S": "Gel pour application locale"
+            },
+            "agent": {
+              "S": "Droguerie Columbus"
+            },
+            "manufacturer": {
+              "S": "Besins Manufacturing"
+            },
+            "country": {
+              "S": "Belgium"
+            },
+            "publicPriceLbp": {
+              "N": "642356.715"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "7.177169999999999"
+            },
+            "responsiblePartyName": {
+              "S": "Laboratoires Besins International"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "oestrodose"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3648"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#8524"
+            },
+            "sourceCode": {
+              "S": "8524"
+            },
+            "registrationNumber": {
+              "S": "161315/1"
+            },
+            "brandName": {
+              "S": "OFEV"
+            },
+            "strength": {
+              "S": "150mg"
+            },
+            "presentation": {
+              "S": "60"
+            },
+            "dosageForm": {
+              "S": "Capsule, soft"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Boehringer Ingelheim Pharma GmbH & Co KG"
+            },
+            "country": {
+              "S": "Germany"
+            },
+            "publicPriceLbp": {
+              "N": "209943960.09890622"
+            },
+            "pharmacistMarginPercent": {
+              "N": "2.44"
+            },
+            "stratum": {
+              "S": "E2"
+            },
+            "publicPriceDecision119": {
+              "N": "2345.7425709374997"
+            },
+            "responsiblePartyName": {
+              "S": "Boehringer Ingelheim International GmbH"
+            },
+            "responsiblePartyCountry": {
+              "S": "Germany"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "ofev"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3649"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#8525"
+            },
+            "sourceCode": {
+              "S": "8525"
+            },
+            "registrationNumber": {
+              "S": "161215/1"
+            },
+            "brandName": {
+              "S": "OFEV"
+            },
+            "strength": {
+              "S": "100mg"
+            },
+            "presentation": {
+              "S": "60"
+            },
+            "dosageForm": {
+              "S": "Capsule, soft"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Boehringer Ingelheim Pharma GmbH & Co KG"
+            },
+            "country": {
+              "S": "Germany"
+            },
+            "publicPriceLbp": {
+              "N": "104970426.81890626"
+            },
+            "pharmacistMarginPercent": {
+              "N": "2.44"
+            },
+            "stratum": {
+              "S": "E2"
+            },
+            "publicPriceDecision119": {
+              "N": "1172.8539309375"
+            },
+            "responsiblePartyName": {
+              "S": "Boehringer Ingelheim International GmbH"
+            },
+            "responsiblePartyCountry": {
+              "S": "Germany"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "ofev"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3650"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#3594"
+            },
+            "sourceCode": {
+              "S": "3594"
+            },
+            "registrationNumber": {
+              "S": "974147/01"
+            },
+            "brandName": {
+              "S": "OFLACIN"
+            },
+            "strength": {
+              "S": "200mg"
+            },
+            "presentation": {
+              "S": "10"
+            },
+            "dosageForm": {
+              "S": "Tablet"
+            },
+            "agent": {
+              "S": "Premium Serve Drugstore Co. P.S.D. SAL"
+            },
+            "manufacturer": {
+              "S": "RAM Pharmaceutical Industries Co Ltd"
+            },
+            "country": {
+              "S": "Jordan"
+            },
+            "publicPriceLbp": {
+              "N": "602041.4400000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "6.72672"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "oflacin"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3651"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

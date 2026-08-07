@@ -1,0 +1,1998 @@
+{
+  "RequestItems": {
+    "DawaaMedicines": [
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#3263"
+            },
+            "sourceCode": {
+              "S": "3263"
+            },
+            "registrationNumber": {
+              "S": "208382/02"
+            },
+            "brandName": {
+              "S": "TRAVILAN IM"
+            },
+            "strength": {
+              "S": "1g"
+            },
+            "presentation": {
+              "S": "1Vial + 1solvent 3.5ml"
+            },
+            "dosageForm": {
+              "S": "Dry powder injection IM"
+            },
+            "agent": {
+              "S": "Medi drug International SAL (MDI)"
+            },
+            "manufacturer": {
+              "S": "Anfarm Hellas SA"
+            },
+            "country": {
+              "S": "Greece"
+            },
+            "publicPriceLbp": {
+              "N": "438092.6549999999"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "4.894889999999999"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "travilan im"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "5127"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10366"
+            },
+            "sourceCode": {
+              "S": "10366"
+            },
+            "registrationNumber": {
+              "S": "94620/1"
+            },
+            "brandName": {
+              "S": "TRAVOCORT"
+            },
+            "presentation": {
+              "S": "20g"
+            },
+            "dosageForm": {
+              "S": "Cream"
+            },
+            "agent": {
+              "S": "UPO S.A.L."
+            },
+            "manufacturer": {
+              "S": "Leo Pharma Manufacturing Italy SRL"
+            },
+            "country": {
+              "S": "Italy"
+            },
+            "publicPriceLbp": {
+              "N": "435404.97000000003"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "4.86486"
+            },
+            "responsiblePartyName": {
+              "S": "Leo Pharma A/S"
+            },
+            "responsiblePartyCountry": {
+              "S": "Denmark"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "travocort"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "5128"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12041"
+            },
+            "sourceCode": {
+              "S": "12041"
+            },
+            "registrationNumber": {
+              "S": "98620/1"
+            },
+            "brandName": {
+              "S": "TRAVONORM"
+            },
+            "presentation": {
+              "S": "5ml"
+            },
+            "dosageForm": {
+              "S": "Sterile ophthalmic solution"
+            },
+            "agent": {
+              "S": "Macromed S.A.R.L."
+            },
+            "manufacturer": {
+              "S": "Orchidia Pharmaceutical Industries"
+            },
+            "country": {
+              "S": "Egypt"
+            },
+            "publicPriceLbp": {
+              "N": "919188.2700000003"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "10.270260000000002"
+            },
+            "responsiblePartyName": {
+              "S": "Orchidia Pharmaceutical Industries"
+            },
+            "responsiblePartyCountry": {
+              "S": "Egypt"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "travonorm"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "5129"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11092"
+            },
+            "sourceCode": {
+              "S": "11092"
+            },
+            "registrationNumber": {
+              "S": "115022/1"
+            },
+            "brandName": {
+              "S": "TRAVOPROST BIOGARAN"
+            },
+            "strength": {
+              "S": "40mcg/ml"
+            },
+            "presentation": {
+              "S": "Flacon de 2.5ml"
+            },
+            "dosageForm": {
+              "S": "Collyre en solution"
+            },
+            "agent": {
+              "S": "Commercial and Trading Ressources SAL (CTR)"
+            },
+            "manufacturer": {
+              "S": "Rafarm SA"
+            },
+            "country": {
+              "S": "Greece"
+            },
+            "publicPriceLbp": {
+              "N": "384338.9550000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "4.294290000000001"
+            },
+            "responsiblePartyName": {
+              "S": "Laboratoires Biogaran"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "travoprost biogaran"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "5130"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11093"
+            },
+            "sourceCode": {
+              "S": "11093"
+            },
+            "registrationNumber": {
+              "S": "114922/1"
+            },
+            "brandName": {
+              "S": "TRAVOPROST/TIMOLOL BIOGARAN"
+            },
+            "strength": {
+              "S": "40mcg/ml + 5mg/ml"
+            },
+            "presentation": {
+              "S": "Flacon de 2.5ml"
+            },
+            "dosageForm": {
+              "S": "Collyre en solution"
+            },
+            "agent": {
+              "S": "Commercial and Trading Ressources SAL (CTR)"
+            },
+            "manufacturer": {
+              "S": "Pharmathen SA"
+            },
+            "country": {
+              "S": "Greece"
+            },
+            "publicPriceLbp": {
+              "N": "501253.2525000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "5.600595000000001"
+            },
+            "responsiblePartyName": {
+              "S": "Laboratoires Biogaran"
+            },
+            "responsiblePartyCountry": {
+              "S": "France"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "travoprost timolol biogaran"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "5131"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10211"
+            },
+            "sourceCode": {
+              "S": "10211"
+            },
+            "registrationNumber": {
+              "S": "38120/1"
+            },
+            "brandName": {
+              "S": "TRAZIMERA"
+            },
+            "strength": {
+              "S": "150mg/vial"
+            },
+            "presentation": {
+              "S": "1Vial"
+            },
+            "dosageForm": {
+              "S": "Intravenous infusion"
+            },
+            "agent": {
+              "S": "Droguerie Fattal S.A.L."
+            },
+            "manufacturer": {
+              "S": "Pfizer Manufacturing Belgium NV"
+            },
+            "country": {
+              "S": "Belgium"
+            },
+            "publicPriceLbp": {
+              "N": "28550630.4552"
+            },
+            "pharmacistMarginPercent": {
+              "N": "19.35"
+            },
+            "stratum": {
+              "S": "D"
+            },
+            "publicPriceDecision119": {
+              "N": "319.00145760000004"
+            },
+            "responsiblePartyName": {
+              "S": "pfizer Canada ULC"
+            },
+            "responsiblePartyCountry": {
+              "S": "Canada"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "trazimera"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "5132"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10212"
+            },
+            "sourceCode": {
+              "S": "10212"
+            },
+            "registrationNumber": {
+              "S": "38220/1"
+            },
+            "brandName": {
+              "S": "TRAZIMERA"
+            },
+            "strength": {
+              "S": "440mg/vial"
+            },
+            "presentation": {
+              "S": "1Vial + 1Vial of solvent"
+            },
+            "dosageForm": {
+              "S": "Intravenous infusion"
+            },
+            "agent": {
+              "S": "Droguerie Fattal S.A.L."
+            },
+            "manufacturer": {
+              "S": "Pfizer Manufacturing Belgium NV"
+            },
+            "country": {
+              "S": "Belgium"
+            },
+            "publicPriceLbp": {
+              "N": "75295202.073"
+            },
+            "pharmacistMarginPercent": {
+              "N": "10.71"
+            },
+            "stratum": {
+              "S": "E1"
+            },
+            "publicPriceDecision119": {
+              "N": "841.2871739999999"
+            },
+            "responsiblePartyName": {
+              "S": "pfizer Canada ULC"
+            },
+            "responsiblePartyCountry": {
+              "S": "Canada"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "trazimera"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "5133"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#9204"
+            },
+            "sourceCode": {
+              "S": "9204"
+            },
+            "registrationNumber": {
+              "S": "99915/1"
+            },
+            "brandName": {
+              "S": "TREBON N"
+            },
+            "strength": {
+              "S": "600mg"
+            },
+            "presentation": {
+              "S": "20 single dose sticks"
+            },
+            "dosageForm": {
+              "S": "Granules for oral suspension"
+            },
+            "agent": {
+              "S": "Nobel Pharm Plus SARL"
+            },
+            "manufacturer": {
+              "S": "Uni-Pharma Kleon Tsetis Pharmaceutical Laboratories SA"
+            },
+            "country": {
+              "S": "Greece"
+            },
+            "publicPriceLbp": {
+              "N": "596666.0700000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "6.666660000000001"
+            },
+            "responsiblePartyName": {
+              "S": "Uni-Pharma Kleon Tsetis Pharmaceutical Laboratories SA"
+            },
+            "responsiblePartyCountry": {
+              "S": "Greece"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "trebon n"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "5134"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10060"
+            },
+            "sourceCode": {
+              "S": "10060"
+            },
+            "registrationNumber": {
+              "S": "99815/1"
+            },
+            "brandName": {
+              "S": "TREBON-N"
+            },
+            "strength": {
+              "S": "200mg/5ml"
+            },
+            "presentation": {
+              "S": "120ml"
+            },
+            "dosageForm": {
+              "S": "Powder for oral suspension"
+            },
+            "agent": {
+              "S": "Nobel Pharm Plus SARL"
+            },
+            "manufacturer": {
+              "S": "Uni-Pharma Kleon Tsetis Pharmaceutical Laboratories SA"
+            },
+            "country": {
+              "S": "Greece"
+            },
+            "publicPriceLbp": {
+              "N": "556350.795"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "6.21621"
+            },
+            "responsiblePartyName": {
+              "S": "Uni-Pharma Kleon Tsetis Pharmaceutical Laboratories SA"
+            },
+            "responsiblePartyCountry": {
+              "S": "Greece"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "trebon n"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "5135"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12338"
+            },
+            "sourceCode": {
+              "S": "12338"
+            },
+            "registrationNumber": {
+              "S": "5924/1"
+            },
+            "brandName": {
+              "S": "TRECZIMUS"
+            },
+            "presentation": {
+              "S": "Tube 20g"
+            },
+            "dosageForm": {
+              "S": "Topical ointment"
+            },
+            "agent": {
+              "S": "The Lebanese Pharmacists SAL"
+            },
+            "manufacturer": {
+              "S": "Marcyrl Pharmaceuticals Industries (MPI)"
+            },
+            "country": {
+              "S": "Egypt"
+            },
+            "publicPriceLbp": {
+              "N": "1276650.375"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "14.26425"
+            },
+            "responsiblePartyName": {
+              "S": "Marcyrl Pharmaceuticals Industries (MPI)"
+            },
+            "responsiblePartyCountry": {
+              "S": "Egypt"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "treczimus"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "5136"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10625"
+            },
+            "sourceCode": {
+              "S": "10625"
+            },
+            "registrationNumber": {
+              "S": "83120/1"
+            },
+            "brandName": {
+              "S": "TREMFYA"
+            },
+            "strength": {
+              "S": "100mg/ml"
+            },
+            "presentation": {
+              "S": "1prefilled pen"
+            },
+            "dosageForm": {
+              "S": "Solution for injection"
+            },
+            "agent": {
+              "S": "Abela Frères S.A.L."
+            },
+            "manufacturer": {
+              "S": "Cilag AG"
+            },
+            "country": {
+              "S": "Switzerland"
+            },
+            "publicPriceLbp": {
+              "N": "190195151.43890622"
+            },
+            "pharmacistMarginPercent": {
+              "N": "2.44"
+            },
+            "stratum": {
+              "S": "E2"
+            },
+            "publicPriceDecision119": {
+              "N": "2125.0854909375"
+            },
+            "responsiblePartyName": {
+              "S": "Janssen Cilag International NV"
+            },
+            "responsiblePartyCountry": {
+              "S": "Belgium"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "tremfya"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "5138"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12599"
+            },
+            "sourceCode": {
+              "S": "12599"
+            },
+            "registrationNumber": {
+              "S": "165025/1"
+            },
+            "brandName": {
+              "S": "TREMFYA"
+            },
+            "strength": {
+              "S": "200mg/2ml"
+            },
+            "presentation": {
+              "S": "1prefilled pen"
+            },
+            "dosageForm": {
+              "S": "Solution for injection"
+            },
+            "agent": {
+              "S": "Abela Frères S.A.L."
+            },
+            "manufacturer": {
+              "S": "Cilag AG"
+            },
+            "country": {
+              "S": "Switzerland"
+            },
+            "publicPriceLbp": {
+              "N": "214466967.45140624"
+            },
+            "pharmacistMarginPercent": {
+              "N": "2.44"
+            },
+            "stratum": {
+              "S": "E2"
+            },
+            "publicPriceDecision119": {
+              "N": "2396.2789659375"
+            },
+            "responsiblePartyName": {
+              "S": "Janssen Cilag International NV"
+            },
+            "responsiblePartyCountry": {
+              "S": "Belgium"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "tremfya"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "5139"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#9550"
+            },
+            "sourceCode": {
+              "S": "9550"
+            },
+            "registrationNumber": {
+              "S": "41718/1"
+            },
+            "brandName": {
+              "S": "TREMFYA"
+            },
+            "strength": {
+              "S": "100mg/ml"
+            },
+            "presentation": {
+              "S": "1prefilled syringe"
+            },
+            "dosageForm": {
+              "S": "Solution for injection"
+            },
+            "agent": {
+              "S": "Abela Frères S.A.L."
+            },
+            "manufacturer": {
+              "S": "Cilag AG"
+            },
+            "country": {
+              "S": "Switzerland"
+            },
+            "publicPriceLbp": {
+              "N": "190195151.43890622"
+            },
+            "pharmacistMarginPercent": {
+              "N": "2.44"
+            },
+            "stratum": {
+              "S": "E2"
+            },
+            "publicPriceDecision119": {
+              "N": "2125.0854909375"
+            },
+            "responsiblePartyName": {
+              "S": "Janssen Cilag International NV"
+            },
+            "responsiblePartyCountry": {
+              "S": "Belgium"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "tremfya"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "5137"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11882"
+            },
+            "sourceCode": {
+              "S": "11882"
+            },
+            "registrationNumber": {
+              "S": "77624/1"
+            },
+            "brandName": {
+              "S": "TREPADIO"
+            },
+            "strength": {
+              "S": "200mg/20ml"
+            },
+            "presentation": {
+              "S": "5Vials (20ml)"
+            },
+            "dosageForm": {
+              "S": "Solution for infusion"
+            },
+            "agent": {
+              "S": "Medilife S.A.L."
+            },
+            "manufacturer": {
+              "S": "Hikma Farmaceutica (Portugal) SA"
+            },
+            "country": {
+              "S": "Portugal"
+            },
+            "publicPriceLbp": {
+              "N": "9569390.424300002"
+            },
+            "pharmacistMarginPercent": {
+              "N": "21.26"
+            },
+            "stratum": {
+              "S": "C"
+            },
+            "publicPriceDecision119": {
+              "N": "106.92056340000002"
+            },
+            "responsiblePartyName": {
+              "S": "Hikma Pharmaceuticals"
+            },
+            "responsiblePartyCountry": {
+              "S": "Jordan"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "trepadio"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "5140"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12342"
+            },
+            "sourceCode": {
+              "S": "12342"
+            },
+            "registrationNumber": {
+              "S": "28623/1"
+            },
+            "brandName": {
+              "S": "TREPADIO"
+            },
+            "strength": {
+              "S": "200mg"
+            },
+            "presentation": {
+              "S": "60"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Medilife S.A.L."
+            },
+            "manufacturer": {
+              "S": "Jazeera Pharmaceutical Industries"
+            },
+            "country": {
+              "S": "Saudi Arabia"
+            },
+            "publicPriceLbp": {
+              "N": "8876012.896275003"
+            },
+            "pharmacistMarginPercent": {
+              "N": "21.26"
+            },
+            "stratum": {
+              "S": "C"
+            },
+            "publicPriceDecision119": {
+              "N": "99.17332845000003"
+            },
+            "responsiblePartyName": {
+              "S": "Hikma Pharmaceuticals"
+            },
+            "responsiblePartyCountry": {
+              "S": "Jordan"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "trepadio"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "5141"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12343"
+            },
+            "sourceCode": {
+              "S": "12343"
+            },
+            "registrationNumber": {
+              "S": "28723/1"
+            },
+            "brandName": {
+              "S": "TREPADIO"
+            },
+            "strength": {
+              "S": "10mg/ml"
+            },
+            "presentation": {
+              "S": "150ml"
+            },
+            "dosageForm": {
+              "S": "Syrup"
+            },
+            "agent": {
+              "S": "Medilife S.A.L."
+            },
+            "manufacturer": {
+              "S": "Jazeera Pharmaceutical Industries"
+            },
+            "country": {
+              "S": "Saudi Arabia"
+            },
+            "publicPriceLbp": {
+              "N": "948752.8050000002"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "10.600590000000002"
+            },
+            "responsiblePartyName": {
+              "S": "Hikma Pharmaceuticals"
+            },
+            "responsiblePartyCountry": {
+              "S": "Jordan"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "trepadio"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "5142"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12344"
+            },
+            "sourceCode": {
+              "S": "12344"
+            },
+            "registrationNumber": {
+              "S": "28423/1"
+            },
+            "brandName": {
+              "S": "TREPADIO"
+            },
+            "strength": {
+              "S": "100mg"
+            },
+            "presentation": {
+              "S": "60"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Medilife S.A.L."
+            },
+            "manufacturer": {
+              "S": "Jazeera Pharmaceutical Industries"
+            },
+            "country": {
+              "S": "Saudi Arabia"
+            },
+            "publicPriceLbp": {
+              "N": "5202014.317500001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "58.12306500000001"
+            },
+            "responsiblePartyName": {
+              "S": "Hikma Pharmaceuticals"
+            },
+            "responsiblePartyCountry": {
+              "S": "Jordan"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "trepadio"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "5143"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12345"
+            },
+            "sourceCode": {
+              "S": "12345"
+            },
+            "registrationNumber": {
+              "S": "28523/1"
+            },
+            "brandName": {
+              "S": "TREPADIO"
+            },
+            "strength": {
+              "S": "150mg"
+            },
+            "presentation": {
+              "S": "60"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Medilife S.A.L."
+            },
+            "manufacturer": {
+              "S": "Jazeera Pharmaceutical Industries"
+            },
+            "country": {
+              "S": "Saudi Arabia"
+            },
+            "publicPriceLbp": {
+              "N": "7555603.532400001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "21.26"
+            },
+            "stratum": {
+              "S": "C"
+            },
+            "publicPriceDecision119": {
+              "N": "84.4201512"
+            },
+            "responsiblePartyName": {
+              "S": "Hikma Pharmaceuticals"
+            },
+            "responsiblePartyCountry": {
+              "S": "Jordan"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "trepadio"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "5144"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12346"
+            },
+            "sourceCode": {
+              "S": "12346"
+            },
+            "registrationNumber": {
+              "S": "28323/1"
+            },
+            "brandName": {
+              "S": "TREPADIO"
+            },
+            "strength": {
+              "S": "50mg"
+            },
+            "presentation": {
+              "S": "14"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Medilife S.A.L."
+            },
+            "manufacturer": {
+              "S": "Jazeera Pharmaceutical Industries"
+            },
+            "country": {
+              "S": "Saudi Arabia"
+            },
+            "publicPriceLbp": {
+              "N": "606072.9675000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "6.771765000000002"
+            },
+            "responsiblePartyName": {
+              "S": "Hikma Pharmaceuticals"
+            },
+            "responsiblePartyCountry": {
+              "S": "Jordan"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "trepadio"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "5145"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7239"
+            },
+            "sourceCode": {
+              "S": "7239"
+            },
+            "registrationNumber": {
+              "S": "187328/13"
+            },
+            "brandName": {
+              "S": "TRESIBA"
+            },
+            "strength": {
+              "S": "100IU/ml"
+            },
+            "presentation": {
+              "S": "5 x 3ml"
+            },
+            "dosageForm": {
+              "S": "Injectable solution, flex touch"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Novo Nordisk Production SAS, Chartres"
+            },
+            "country": {
+              "S": "France"
+            },
+            "publicPriceLbp": {
+              "N": "6223334.617500001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "69.53446500000001"
+            },
+            "responsiblePartyName": {
+              "S": "Novo Nordisk AS"
+            },
+            "responsiblePartyCountry": {
+              "S": "Denmark"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "tresiba"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "5146"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#4367"
+            },
+            "sourceCode": {
+              "S": "4367"
+            },
+            "registrationNumber": {
+              "S": "2828/94"
+            },
+            "brandName": {
+              "S": "TRETINOIN"
+            },
+            "strength": {
+              "S": "0.025%"
+            },
+            "presentation": {
+              "S": "50ml"
+            },
+            "dosageForm": {
+              "S": "Solution"
+            },
+            "agent": {
+              "S": "Medapharm Healthcare SAL"
+            },
+            "manufacturer": {
+              "S": "Mediphar Laboratories"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "564413.8500000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "6.306300000000001"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "tretinoin"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "5147"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#4368"
+            },
+            "sourceCode": {
+              "S": "4368"
+            },
+            "registrationNumber": {
+              "S": "2830/94"
+            },
+            "brandName": {
+              "S": "TRETINOIN"
+            },
+            "strength": {
+              "S": "0.05%"
+            },
+            "presentation": {
+              "S": "50ml"
+            },
+            "dosageForm": {
+              "S": "Solution"
+            },
+            "agent": {
+              "S": "Medapharm Healthcare SAL"
+            },
+            "manufacturer": {
+              "S": "Mediphar Laboratories"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "623286.9500000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "6.964100000000001"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "tretinoin"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "5148"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#4369"
+            },
+            "sourceCode": {
+              "S": "4369"
+            },
+            "registrationNumber": {
+              "S": "2829/94"
+            },
+            "brandName": {
+              "S": "TRETINOIN"
+            },
+            "strength": {
+              "S": "0.1%"
+            },
+            "presentation": {
+              "S": "50ml"
+            },
+            "dosageForm": {
+              "S": "Solution"
+            },
+            "agent": {
+              "S": "Medapharm Healthcare SAL"
+            },
+            "manufacturer": {
+              "S": "Mediphar Laboratories"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "682160.05"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "7.6219"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "tretinoin"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "5149"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#8894"
+            },
+            "sourceCode": {
+              "S": "8894"
+            },
+            "registrationNumber": {
+              "S": "138116/1"
+            },
+            "brandName": {
+              "S": "TREVICTA"
+            },
+            "strength": {
+              "S": "175mg"
+            },
+            "presentation": {
+              "S": "1prefilled syringe + 2needles"
+            },
+            "dosageForm": {
+              "S": "Prolonged release suspension for IM injection"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Janssen Pharmaceutica NV"
+            },
+            "country": {
+              "S": "Belgium"
+            },
+            "publicPriceLbp": {
+              "N": "35006803.17120001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "19.35"
+            },
+            "stratum": {
+              "S": "D"
+            },
+            "publicPriceDecision119": {
+              "N": "391.1374656000001"
+            },
+            "responsiblePartyName": {
+              "S": "Janssen Cilag International NV"
+            },
+            "responsiblePartyCountry": {
+              "S": "Belgium"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "trevicta"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "5150"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#8895"
+            },
+            "sourceCode": {
+              "S": "8895"
+            },
+            "registrationNumber": {
+              "S": "138216/1"
+            },
+            "brandName": {
+              "S": "TREVICTA"
+            },
+            "strength": {
+              "S": "263mg"
+            },
+            "presentation": {
+              "S": "1prefilled syringe + 2needles"
+            },
+            "dosageForm": {
+              "S": "Prolonged release suspension for IM injection"
+            },
+            "agent": {
+              "S": "Mersaco"
+            },
+            "manufacturer": {
+              "S": "Janssen Pharmaceutica NV"
+            },
+            "country": {
+              "S": "Belgium"
+            },
+            "publicPriceLbp": {
+              "N": "40713289.197000004"
+            },
+            "pharmacistMarginPercent": {
+              "N": "10.71"
+            },
+            "stratum": {
+              "S": "E1"
+            },
+            "publicPriceDecision119": {
+              "N": "454.89708600000006"
+            },
+            "responsiblePartyName": {
+              "S": "Janssen Cilag International NV"
+            },
+            "responsiblePartyCountry": {
+              "S": "Belgium"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "trevicta"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "5151"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

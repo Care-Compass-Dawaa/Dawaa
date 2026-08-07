@@ -1,0 +1,1737 @@
+{
+  "RequestItems": {
+    "DawaaMedicines": [
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#9708"
+            },
+            "sourceCode": {
+              "S": "9708"
+            },
+            "registrationNumber": {
+              "S": "166518/1"
+            },
+            "brandName": {
+              "S": "DEXTROSE"
+            },
+            "strength": {
+              "S": "5g/100ml"
+            },
+            "presentation": {
+              "S": "1000ml Non PVC bag"
+            },
+            "dosageForm": {
+              "S": "Injectable solution"
+            },
+            "agent": {
+              "S": "Alfa Laboratoires S.A.L."
+            },
+            "manufacturer": {
+              "S": "Alfa Laboratoires S.A.L."
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "224565.0944"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "2.5091072"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "dextrose"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1496"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#9773"
+            },
+            "sourceCode": {
+              "S": "9773"
+            },
+            "registrationNumber": {
+              "S": "185918/1"
+            },
+            "brandName": {
+              "S": "DEXTROSE"
+            },
+            "strength": {
+              "S": "5g/100ml"
+            },
+            "presentation": {
+              "S": "250ml Non PVC bag"
+            },
+            "dosageForm": {
+              "S": "Injectable solution"
+            },
+            "agent": {
+              "S": "Alfa Laboratoires S.A.L."
+            },
+            "manufacturer": {
+              "S": "Alfa Laboratoires S.A.L."
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "185339.75040000002"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "2.0708352000000003"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "dextrose"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1497"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#4749"
+            },
+            "sourceCode": {
+              "S": "4749"
+            },
+            "registrationNumber": {
+              "S": "2088/94"
+            },
+            "brandName": {
+              "S": "DEXTROSE 10% INJECTION, USP"
+            },
+            "strength": {
+              "S": "10%"
+            },
+            "presentation": {
+              "S": "1000ml"
+            },
+            "dosageForm": {
+              "S": "Injectable solution"
+            },
+            "agent": {
+              "S": "Serum Products"
+            },
+            "manufacturer": {
+              "S": "Serum Products"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "217195.02"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "2.42676"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "dextrose 10 injection usp"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1502"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#4750"
+            },
+            "sourceCode": {
+              "S": "4750"
+            },
+            "registrationNumber": {
+              "S": "2088/94"
+            },
+            "brandName": {
+              "S": "DEXTROSE 10% INJECTION, USP"
+            },
+            "strength": {
+              "S": "10%"
+            },
+            "presentation": {
+              "S": "500ml"
+            },
+            "dosageForm": {
+              "S": "Injectable solution"
+            },
+            "agent": {
+              "S": "Serum Products"
+            },
+            "manufacturer": {
+              "S": "Serum Products"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "191913.05999999997"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "2.1442799999999997"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "dextrose 10 injection usp"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1503"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#4751"
+            },
+            "sourceCode": {
+              "S": "4751"
+            },
+            "registrationNumber": {
+              "S": "2088/94"
+            },
+            "brandName": {
+              "S": "DEXTROSE 10% INJECTION, USP"
+            },
+            "strength": {
+              "S": "10%"
+            },
+            "presentation": {
+              "S": "250ml"
+            },
+            "dosageForm": {
+              "S": "Injectable solution"
+            },
+            "agent": {
+              "S": "Serum Products"
+            },
+            "manufacturer": {
+              "S": "Serum Products"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "168929.46"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "1.8874799999999998"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "dextrose 10 injection usp"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1504"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11652"
+            },
+            "sourceCode": {
+              "S": "11652"
+            },
+            "registrationNumber": {
+              "S": "124223/1"
+            },
+            "brandName": {
+              "S": "DEXTROSE 2.5% & SODIUM CHLORIDE 0.45%"
+            },
+            "presentation": {
+              "S": "1000ml non pvc bag"
+            },
+            "dosageForm": {
+              "S": "Injectable solution"
+            },
+            "agent": {
+              "S": "Alfa Laboratoires S.A.L."
+            },
+            "manufacturer": {
+              "S": "Alfa Laboratoires S.A.L."
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "224090.1"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "2.5038"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "dextrose 2 5 sodium chloride 0 45"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1507"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12164"
+            },
+            "sourceCode": {
+              "S": "12164"
+            },
+            "registrationNumber": {
+              "S": "29325/1"
+            },
+            "brandName": {
+              "S": "DEXTROSE 2.5% & SODIUM CHLORIDE 0.45%"
+            },
+            "presentation": {
+              "S": "500ml Bag, non pvc"
+            },
+            "dosageForm": {
+              "S": "Injectable solution"
+            },
+            "agent": {
+              "S": "Alfa Laboratoires S.A.L."
+            },
+            "manufacturer": {
+              "S": "Alfa Laboratoires S.A.L."
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "212598.3"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "2.3754"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "dextrose 2 5 sodium chloride 0 45"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1508"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#4157"
+            },
+            "sourceCode": {
+              "S": "4157"
+            },
+            "registrationNumber": {
+              "S": "2661/94"
+            },
+            "brandName": {
+              "S": "DEXTROSE 2.5% & SODIUM CHLORIDE 0.45%"
+            },
+            "presentation": {
+              "S": "500ml Viaflex bag"
+            },
+            "dosageForm": {
+              "S": "Injectable solution"
+            },
+            "agent": {
+              "S": "Alfa Laboratoires S.A.L."
+            },
+            "manufacturer": {
+              "S": "Alfa Laboratoires S.A.L."
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "176973.72000000003"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "1.9773600000000002"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "dextrose 2 5 sodium chloride 0 45"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1505"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#4159"
+            },
+            "sourceCode": {
+              "S": "4159"
+            },
+            "registrationNumber": {
+              "S": "2661/94"
+            },
+            "brandName": {
+              "S": "DEXTROSE 2.5% & SODIUM CHLORIDE 0.45%"
+            },
+            "presentation": {
+              "S": "1.000ml Viaflex bag"
+            },
+            "dosageForm": {
+              "S": "Injectable solution"
+            },
+            "agent": {
+              "S": "Alfa Laboratoires S.A.L."
+            },
+            "manufacturer": {
+              "S": "Alfa Laboratoires S.A.L."
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "198578.30399999997"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "2.218752"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "dextrose 2 5 sodium chloride 0 45"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1506"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#4754"
+            },
+            "sourceCode": {
+              "S": "4754"
+            },
+            "registrationNumber": {
+              "S": "2094/94"
+            },
+            "brandName": {
+              "S": "DEXTROSE 2.5% SODIUM CHLORIDE 0.45% INJECTION, USP"
+            },
+            "presentation": {
+              "S": "1000ml"
+            },
+            "agent": {
+              "S": "Serum Products"
+            },
+            "manufacturer": {
+              "S": "Serum Products"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "185017.98"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "2.06724"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "dextrose 2 5 sodium chloride 0 45 injection usp"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1509"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#4755"
+            },
+            "sourceCode": {
+              "S": "4755"
+            },
+            "registrationNumber": {
+              "S": "2094/94"
+            },
+            "brandName": {
+              "S": "DEXTROSE 2.5% SODIUM CHLORIDE 0.45% INJECTION, USP"
+            },
+            "presentation": {
+              "S": "500ml"
+            },
+            "agent": {
+              "S": "Serum Products"
+            },
+            "manufacturer": {
+              "S": "Serum Products"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "174675.36000000002"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "1.95168"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "dextrose 2 5 sodium chloride 0 45 injection usp"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1510"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#4756"
+            },
+            "sourceCode": {
+              "S": "4756"
+            },
+            "registrationNumber": {
+              "S": "2094/94"
+            },
+            "brandName": {
+              "S": "DEXTROSE 2.5% SODIUM CHLORIDE 0.45% INJECTION, USP"
+            },
+            "presentation": {
+              "S": "250ml"
+            },
+            "agent": {
+              "S": "Serum Products"
+            },
+            "manufacturer": {
+              "S": "Serum Products"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "148565.99039999998"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "1.6599551999999997"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "dextrose 2 5 sodium chloride 0 45 injection usp"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1511"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#4752"
+            },
+            "sourceCode": {
+              "S": "4752"
+            },
+            "registrationNumber": {
+              "S": "2089/94"
+            },
+            "brandName": {
+              "S": "DEXTROSE 20% INJECTION USP"
+            },
+            "strength": {
+              "S": "20%"
+            },
+            "presentation": {
+              "S": "500ml"
+            },
+            "agent": {
+              "S": "Serum Products"
+            },
+            "manufacturer": {
+              "S": "Serum Products"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "316024.5"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "3.531"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "dextrose 20 injection usp"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1512"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#4753"
+            },
+            "sourceCode": {
+              "S": "4753"
+            },
+            "registrationNumber": {
+              "S": "2089/94"
+            },
+            "brandName": {
+              "S": "DEXTROSE 20% INJECTION USP"
+            },
+            "strength": {
+              "S": "20%"
+            },
+            "presentation": {
+              "S": "250ml"
+            },
+            "agent": {
+              "S": "Serum Products"
+            },
+            "manufacturer": {
+              "S": "Serum Products"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "183868.80000000002"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "2.0544000000000002"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "dextrose 20 injection usp"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1513"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#4147"
+            },
+            "sourceCode": {
+              "S": "4147"
+            },
+            "registrationNumber": {
+              "S": "2744/94"
+            },
+            "brandName": {
+              "S": "DEXTROSE 5% & SODIUM CHLORIDE 0.2%"
+            },
+            "presentation": {
+              "S": "500ml Viaflex bag"
+            },
+            "dosageForm": {
+              "S": "Injectable solution"
+            },
+            "agent": {
+              "S": "Alfa Laboratoires S.A.L."
+            },
+            "manufacturer": {
+              "S": "Alfa Laboratoires S.A.L."
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "194165.4528"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "2.1694464"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "dextrose 5 sodium chloride 0 2"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1514"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#4155"
+            },
+            "sourceCode": {
+              "S": "4155"
+            },
+            "registrationNumber": {
+              "S": "2744/94"
+            },
+            "brandName": {
+              "S": "DEXTROSE 5% & SODIUM CHLORIDE 0.2%"
+            },
+            "presentation": {
+              "S": "1000ml Viaflex bag"
+            },
+            "dosageForm": {
+              "S": "Injectable solution"
+            },
+            "agent": {
+              "S": "Alfa Laboratoires S.A.L."
+            },
+            "manufacturer": {
+              "S": "Alfa Laboratoires S.A.L."
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "220642.56"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "2.46528"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "dextrose 5 sodium chloride 0 2"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1515"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#4149"
+            },
+            "sourceCode": {
+              "S": "4149"
+            },
+            "registrationNumber": {
+              "S": "2746/94"
+            },
+            "brandName": {
+              "S": "DEXTROSE 5% & SODIUM CHLORIDE 0.3%"
+            },
+            "presentation": {
+              "S": "250ml Viaflex bag"
+            },
+            "dosageForm": {
+              "S": "Injectable solution"
+            },
+            "agent": {
+              "S": "Alfa Laboratoires S.A.L."
+            },
+            "manufacturer": {
+              "S": "Alfa Laboratoires S.A.L."
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "188771.968"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "2.109184"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "dextrose 5 sodium chloride 0 3"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1516"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#4151"
+            },
+            "sourceCode": {
+              "S": "4151"
+            },
+            "registrationNumber": {
+              "S": "2746/94"
+            },
+            "brandName": {
+              "S": "DEXTROSE 5% & SODIUM CHLORIDE 0.3%"
+            },
+            "presentation": {
+              "S": "500ml Viaflex bag"
+            },
+            "dosageForm": {
+              "S": "Injectable solution"
+            },
+            "agent": {
+              "S": "Alfa Laboratoires S.A.L."
+            },
+            "manufacturer": {
+              "S": "Alfa Laboratoires S.A.L."
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "204554.04"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "2.28552"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "dextrose 5 sodium chloride 0 3"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1517"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#4153"
+            },
+            "sourceCode": {
+              "S": "4153"
+            },
+            "registrationNumber": {
+              "S": "2746/94"
+            },
+            "brandName": {
+              "S": "DEXTROSE 5% & SODIUM CHLORIDE 0.3%"
+            },
+            "presentation": {
+              "S": "1.000ml Viaflex bag"
+            },
+            "dosageForm": {
+              "S": "Injectable solution"
+            },
+            "agent": {
+              "S": "Alfa Laboratoires S.A.L."
+            },
+            "manufacturer": {
+              "S": "Alfa Laboratoires S.A.L."
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "220642.56"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "2.46528"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "dextrose 5 sodium chloride 0 3"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1518"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#4142"
+            },
+            "sourceCode": {
+              "S": "4142"
+            },
+            "registrationNumber": {
+              "S": "2710/94"
+            },
+            "brandName": {
+              "S": "DEXTROSE 5% & SODIUM CHLORIDE 0.45%"
+            },
+            "presentation": {
+              "S": "1.000ml Viaflex bag"
+            },
+            "dosageForm": {
+              "S": "Injectable solution"
+            },
+            "agent": {
+              "S": "Alfa Laboratoires S.A.L."
+            },
+            "manufacturer": {
+              "S": "Alfa Laboratoires S.A.L."
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "205933.05599999998"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "2.300928"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "dextrose 5 sodium chloride 0 45"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1519"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#4144"
+            },
+            "sourceCode": {
+              "S": "4144"
+            },
+            "registrationNumber": {
+              "S": "2710/94"
+            },
+            "brandName": {
+              "S": "DEXTROSE 5% & SODIUM CHLORIDE 0.45%"
+            },
+            "presentation": {
+              "S": "500ml Viaflex bag"
+            },
+            "dosageForm": {
+              "S": "Injectable solution"
+            },
+            "agent": {
+              "S": "Alfa Laboratoires S.A.L."
+            },
+            "manufacturer": {
+              "S": "Alfa Laboratoires S.A.L."
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "182719.62"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "2.04156"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "dextrose 5 sodium chloride 0 45"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1520"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#9372"
+            },
+            "sourceCode": {
+              "S": "9372"
+            },
+            "registrationNumber": {
+              "S": "99817/1"
+            },
+            "brandName": {
+              "S": "DEXTROSE 5% & SODIUM CHLORIDE 0.45%"
+            },
+            "presentation": {
+              "S": "500ml Non PVC bag"
+            },
+            "dosageForm": {
+              "S": "Injectable solution"
+            },
+            "agent": {
+              "S": "Alfa Laboratoires S.A.L."
+            },
+            "manufacturer": {
+              "S": "Alfa Laboratoires S.A.L."
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "217210.3424"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "2.4269312"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "dextrose 5 sodium chloride 0 45"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1521"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#9373"
+            },
+            "sourceCode": {
+              "S": "9373"
+            },
+            "registrationNumber": {
+              "S": "99917/1"
+            },
+            "brandName": {
+              "S": "DEXTROSE 5% & SODIUM CHLORIDE 0.45%"
+            },
+            "presentation": {
+              "S": "1.000ml Non PVC bag"
+            },
+            "dosageForm": {
+              "S": "Injectable solution"
+            },
+            "agent": {
+              "S": "Alfa Laboratoires S.A.L."
+            },
+            "manufacturer": {
+              "S": "Alfa Laboratoires S.A.L."
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "240255.23200000002"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "2.684416"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "dextrose 5 sodium chloride 0 45"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1522"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#4134"
+            },
+            "sourceCode": {
+              "S": "4134"
+            },
+            "registrationNumber": {
+              "S": "2709/94"
+            },
+            "brandName": {
+              "S": "DEXTROSE 5% & SODIUM CHLORIDE 0.9%"
+            },
+            "presentation": {
+              "S": "250ml Viaflex bag"
+            },
+            "dosageForm": {
+              "S": "Injectable solution"
+            },
+            "agent": {
+              "S": "Alfa Laboratoires S.A.L."
+            },
+            "manufacturer": {
+              "S": "Alfa Laboratoires S.A.L."
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "189262.2848"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "2.1146624"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "dextrose 5 sodium chloride 0 9"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1523"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#4136"
+            },
+            "sourceCode": {
+              "S": "4136"
+            },
+            "registrationNumber": {
+              "S": "2709/94"
+            },
+            "brandName": {
+              "S": "DEXTROSE 5% & SODIUM CHLORIDE 0.9%"
+            },
+            "presentation": {
+              "S": "500ml Viaflex bag"
+            },
+            "dosageForm": {
+              "S": "Injectable solution"
+            },
+            "agent": {
+              "S": "Alfa Laboratoires S.A.L."
+            },
+            "manufacturer": {
+              "S": "Alfa Laboratoires S.A.L."
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "182719.62"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "2.04156"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "dextrose 5 sodium chloride 0 9"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "1524"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

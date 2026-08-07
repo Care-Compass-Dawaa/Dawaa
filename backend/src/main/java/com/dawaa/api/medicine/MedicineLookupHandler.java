@@ -8,7 +8,9 @@ import com.dawaa.business.medicine.MedicineService;
 import com.dawaa.common.BaseHandler;
 import com.dawaa.domain.medicine.Medicine;
 import com.dawaa.persistence.dynamodb.medicine.DynamoDbMedicineRepository;
+import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -29,18 +31,34 @@ public class MedicineLookupHandler extends BaseHandler
   public APIGatewayProxyResponseEvent handleRequest(
       APIGatewayProxyRequestEvent request, Context context) {
     try {
+      if (isSuggestionsRequest(request)) {
+        return suggestions(request);
+      }
+
       String name = queryParam(request, "name");
       if (name == null || name.isBlank()) {
         return error(400, "name is required");
       }
 
       Optional<Medicine> medicine = medicineService.findActiveMedicineByBrandName(name);
-      if (medicine.isEmpty()) {
+      List<Medicine> medicines = medicineService.suggestActiveMedicinesByBrandName(name, limit(request, 50));
+      if (medicine.isPresent()
+          && medicines.stream().noneMatch((item) -> item.medicineId().equals(medicine.get().medicineId()))) {
+        medicines = new java.util.ArrayList<>(medicines);
+        medicines.add(0, medicine.get());
+      }
+
+      if (medicine.isEmpty() && medicines.isEmpty()) {
         return error(404, "Active medicine not found");
       }
 
       ObjectNode wrapper = MAPPER.createObjectNode();
-      wrapper.set("medicine", toMedicineNode(medicine.get()));
+      Medicine primaryMedicine = medicine.orElse(medicines.get(0));
+      wrapper.set("medicine", toMedicineNode(primaryMedicine));
+      ArrayNode matches = wrapper.putArray("medicines");
+      for (Medicine match : medicines) {
+        matches.add(toMedicineNode(match));
+      }
       return ok(wrapper);
     } catch (IllegalArgumentException error) {
       return error(400, error.getMessage());
@@ -49,6 +67,39 @@ public class MedicineLookupHandler extends BaseHandler
         context.getLogger().log("MedicineLookupHandler error: " + error);
       }
       return error(500, "Medicine lookup failed");
+    }
+  }
+
+  private APIGatewayProxyResponseEvent suggestions(APIGatewayProxyRequestEvent request) {
+    String query = queryParam(request, "q");
+    if (query == null || query.isBlank()) {
+      query = queryParam(request, "name");
+    }
+    if (query == null || query.isBlank()) {
+      return error(400, "q is required");
+    }
+
+    List<Medicine> medicines = medicineService.suggestActiveMedicinesByBrandName(query, limit(request, 8));
+    ObjectNode wrapper = MAPPER.createObjectNode();
+    ArrayNode suggestions = wrapper.putArray("suggestions");
+    for (Medicine medicine : medicines) {
+      suggestions.add(toMedicineNode(medicine));
+    }
+    return ok(wrapper);
+  }
+
+  private boolean isSuggestionsRequest(APIGatewayProxyRequestEvent request) {
+    if (request == null || request.getPath() == null) {
+      return false;
+    }
+    return request.getPath().endsWith("/medicines/suggestions");
+  }
+
+  private int limit(APIGatewayProxyRequestEvent request, int defaultLimit) {
+    try {
+      return Math.min(Math.max(Integer.parseInt(queryParam(request, "limit")), 1), 100);
+    } catch (NumberFormatException error) {
+      return defaultLimit;
     }
   }
 

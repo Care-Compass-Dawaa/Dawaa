@@ -1,0 +1,1830 @@
+{
+  "RequestItems": {
+    "DawaaMedicines": [
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#5289"
+            },
+            "sourceCode": {
+              "S": "5289"
+            },
+            "registrationNumber": {
+              "S": "23855/07"
+            },
+            "brandName": {
+              "S": "SOLOTIK"
+            },
+            "strength": {
+              "S": "50mg"
+            },
+            "presentation": {
+              "S": "15"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Abela Frères S.A.L."
+            },
+            "manufacturer": {
+              "S": "Hikma Pharmaceuticals"
+            },
+            "country": {
+              "S": "Jordan"
+            },
+            "publicPriceLbp": {
+              "N": "428685.7575"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "4.789785"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "solotik"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4727"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#5672"
+            },
+            "sourceCode": {
+              "S": "5672"
+            },
+            "registrationNumber": {
+              "S": "24935/07"
+            },
+            "brandName": {
+              "S": "SOLOTIK"
+            },
+            "strength": {
+              "S": "100mg"
+            },
+            "presentation": {
+              "S": "15"
+            },
+            "dosageForm": {
+              "S": "Tablet, film coated"
+            },
+            "agent": {
+              "S": "Abela Frères S.A.L."
+            },
+            "manufacturer": {
+              "S": "Hikma Pharmaceuticals"
+            },
+            "country": {
+              "S": "Jordan"
+            },
+            "publicPriceLbp": {
+              "N": "616823.7075"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "6.891885"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "solotik"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4728"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#7180"
+            },
+            "sourceCode": {
+              "S": "7180"
+            },
+            "registrationNumber": {
+              "S": "187452/13"
+            },
+            "brandName": {
+              "S": "SOLPADEINE"
+            },
+            "presentation": {
+              "S": "24"
+            },
+            "dosageForm": {
+              "S": "Tablet"
+            },
+            "agent": {
+              "S": "Abela Frères S.A.L."
+            },
+            "manufacturer": {
+              "S": "GlaxoSmithKline Dungarvan Ltd"
+            },
+            "country": {
+              "S": "Ireland"
+            },
+            "publicPriceLbp": {
+              "N": "319834.51499999996"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "3.5735699999999997"
+            },
+            "responsiblePartyName": {
+              "S": "Aspen Pharma Trading Limited"
+            },
+            "responsiblePartyCountry": {
+              "S": "Ireland"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "solpadeine"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4729"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11676"
+            },
+            "sourceCode": {
+              "S": "11676"
+            },
+            "registrationNumber": {
+              "S": "31222/1"
+            },
+            "brandName": {
+              "S": "SOLPADEINE SOLUBLE"
+            },
+            "presentation": {
+              "S": "24"
+            },
+            "dosageForm": {
+              "S": "Tablet, effervescent"
+            },
+            "agent": {
+              "S": "Abela Frères S.A.L."
+            },
+            "manufacturer": {
+              "S": "GlaxoSmithKline Dungarvan Ltd"
+            },
+            "country": {
+              "S": "Ireland"
+            },
+            "publicPriceLbp": {
+              "N": "326553.7275000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "3.648645000000001"
+            },
+            "responsiblePartyName": {
+              "S": "Aspen Pharma Trading Limited"
+            },
+            "responsiblePartyCountry": {
+              "S": "Ireland"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "solpadeine soluble"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4730"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11849"
+            },
+            "sourceCode": {
+              "S": "11849"
+            },
+            "registrationNumber": {
+              "S": "146723/1"
+            },
+            "brandName": {
+              "S": "SOLPEX"
+            },
+            "presentation": {
+              "S": "24"
+            },
+            "dosageForm": {
+              "S": "Tablet"
+            },
+            "agent": {
+              "S": "Droguerie de l'Union"
+            },
+            "manufacturer": {
+              "S": "Algorithm S.A., Zouk Mosbeh"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "243171.5"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "2.717"
+            },
+            "responsiblePartyName": {
+              "S": "Algorithm S.A.L."
+            },
+            "responsiblePartyCountry": {
+              "S": "Lebanon"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "solpex"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4731"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#437"
+            },
+            "sourceCode": {
+              "S": "437"
+            },
+            "registrationNumber": {
+              "S": "17963"
+            },
+            "brandName": {
+              "S": "SOLU CORTEF ACT-O-VIAL"
+            },
+            "strength": {
+              "S": "250mg"
+            },
+            "presentation": {
+              "S": "1 x 2ml"
+            },
+            "dosageForm": {
+              "S": "Injectable"
+            },
+            "agent": {
+              "S": "Droguerie Fattal S.A.L."
+            },
+            "manufacturer": {
+              "S": "Pfizer Manufacturing Belgium NV"
+            },
+            "country": {
+              "S": "Belgium"
+            },
+            "publicPriceLbp": {
+              "N": "421966.5450000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "4.714710000000001"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "solu cortef act o vial"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4732"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#441"
+            },
+            "sourceCode": {
+              "S": "441"
+            },
+            "registrationNumber": {
+              "S": "25161/81"
+            },
+            "brandName": {
+              "S": "SOLU MEDROL"
+            },
+            "strength": {
+              "S": "500mg"
+            },
+            "presentation": {
+              "S": "8ml"
+            },
+            "dosageForm": {
+              "S": "Injectable"
+            },
+            "agent": {
+              "S": "Droguerie Fattal S.A.L."
+            },
+            "manufacturer": {
+              "S": "Pfizer Manufacturing Belgium NV"
+            },
+            "country": {
+              "S": "Belgium"
+            },
+            "publicPriceLbp": {
+              "N": "718955.7375"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A2"
+            },
+            "publicPriceDecision119": {
+              "N": "8.033025"
+            },
+            "responsiblePartyName": {
+              "S": "Pfizer SA"
+            },
+            "responsiblePartyCountry": {
+              "S": "Belgium"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "solu medrol"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4733"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#442"
+            },
+            "sourceCode": {
+              "S": "442"
+            },
+            "registrationNumber": {
+              "S": "25162/81"
+            },
+            "brandName": {
+              "S": "SOLU MEDROL"
+            },
+            "strength": {
+              "S": "1000mg"
+            },
+            "presentation": {
+              "S": "16ml"
+            },
+            "dosageForm": {
+              "S": "Injectable"
+            },
+            "agent": {
+              "S": "Droguerie Fattal S.A.L."
+            },
+            "manufacturer": {
+              "S": "Pfizer Manufacturing Belgium NV"
+            },
+            "country": {
+              "S": "Belgium"
+            },
+            "publicPriceLbp": {
+              "N": "1444630.6875"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "16.141125"
+            },
+            "responsiblePartyName": {
+              "S": "Pfizer SA"
+            },
+            "responsiblePartyCountry": {
+              "S": "Belgium"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "solu medrol"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4734"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#439"
+            },
+            "sourceCode": {
+              "S": "439"
+            },
+            "registrationNumber": {
+              "S": "19019"
+            },
+            "brandName": {
+              "S": "SOLU MEDROL Act-O-Vial"
+            },
+            "strength": {
+              "S": "40mg"
+            },
+            "presentation": {
+              "S": "1 x 1ml"
+            },
+            "dosageForm": {
+              "S": "Injectable"
+            },
+            "agent": {
+              "S": "Droguerie Fattal S.A.L."
+            },
+            "manufacturer": {
+              "S": "Pfizer Manufacturing Belgium NV"
+            },
+            "country": {
+              "S": "Belgium"
+            },
+            "publicPriceLbp": {
+              "N": "318490.6725"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "3.5585549999999997"
+            },
+            "responsiblePartyName": {
+              "S": "Pfizer SA"
+            },
+            "responsiblePartyCountry": {
+              "S": "Belgium"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "solu medrol act o vial"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4735"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12436"
+            },
+            "sourceCode": {
+              "S": "12436"
+            },
+            "registrationNumber": {
+              "S": "64425/1"
+            },
+            "brandName": {
+              "S": "SOLUFLEX DEXTROSE 10% INJECTION, USP"
+            },
+            "strength": {
+              "S": "10%"
+            },
+            "presentation": {
+              "S": "250ml Bag Pvc free"
+            },
+            "agent": {
+              "S": "Serum Products"
+            },
+            "manufacturer": {
+              "S": "Serum Products"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "219493.38"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "2.45244"
+            },
+            "responsiblePartyName": {
+              "S": "Serum Products"
+            },
+            "responsiblePartyCountry": {
+              "S": "Lebanon"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "soluflex dextrose 10 injection usp"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4736"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12437"
+            },
+            "sourceCode": {
+              "S": "12437"
+            },
+            "registrationNumber": {
+              "S": "64325/1"
+            },
+            "brandName": {
+              "S": "SOLUFLEX DEXTROSE 10% INJECTION, USP"
+            },
+            "strength": {
+              "S": "10%"
+            },
+            "presentation": {
+              "S": "500ml Bag Pvc free"
+            },
+            "dosageForm": {
+              "S": "Injectable solution"
+            },
+            "agent": {
+              "S": "Serum Products"
+            },
+            "manufacturer": {
+              "S": "Serum Products"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "251670.42"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "2.81196"
+            },
+            "responsiblePartyName": {
+              "S": "Serum Products"
+            },
+            "responsiblePartyCountry": {
+              "S": "Lebanon"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "soluflex dextrose 10 injection usp"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4737"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12438"
+            },
+            "sourceCode": {
+              "S": "12438"
+            },
+            "registrationNumber": {
+              "S": "67425/1"
+            },
+            "brandName": {
+              "S": "SOLUFLEX DEXTROSE 10% INJECTION, USP"
+            },
+            "strength": {
+              "S": "10%"
+            },
+            "presentation": {
+              "S": "1000ml Bag Pvc free"
+            },
+            "dosageForm": {
+              "S": "Injectable solution"
+            },
+            "agent": {
+              "S": "Serum Products"
+            },
+            "manufacturer": {
+              "S": "Serum Products"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "283847.45999999996"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "3.1714799999999994"
+            },
+            "responsiblePartyName": {
+              "S": "Serum Products"
+            },
+            "responsiblePartyCountry": {
+              "S": "Lebanon"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "soluflex dextrose 10 injection usp"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4738"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12414"
+            },
+            "sourceCode": {
+              "S": "12414"
+            },
+            "registrationNumber": {
+              "S": "61025/1"
+            },
+            "brandName": {
+              "S": "SOLUFLEX DEXTROSE 2.5% SODIUM CHLORIDE 0.45% INJECTION, USP"
+            },
+            "presentation": {
+              "S": "500ml in PVC free bag"
+            },
+            "agent": {
+              "S": "Serum Products"
+            },
+            "manufacturer": {
+              "S": "Serum Products"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "150542.58"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "1.6820399999999998"
+            },
+            "responsiblePartyName": {
+              "S": "Serum Products"
+            },
+            "responsiblePartyCountry": {
+              "S": "Lebanon"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "soluflex dextrose 2 5 sodium chloride 0 45 injection usp"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4739"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12415"
+            },
+            "sourceCode": {
+              "S": "12415"
+            },
+            "registrationNumber": {
+              "S": "61225/1"
+            },
+            "brandName": {
+              "S": "SOLUFLEX DEXTROSE 2.5% SODIUM CHLORIDE 0.45% INJECTION, USP"
+            },
+            "presentation": {
+              "S": "1000ml in PVC free bag"
+            },
+            "agent": {
+              "S": "Serum Products"
+            },
+            "manufacturer": {
+              "S": "Serum Products"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "222940.92"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "2.4909600000000003"
+            },
+            "responsiblePartyName": {
+              "S": "Serum Products"
+            },
+            "responsiblePartyCountry": {
+              "S": "Lebanon"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "soluflex dextrose 2 5 sodium chloride 0 45 injection usp"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4740"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#9954"
+            },
+            "sourceCode": {
+              "S": "9954"
+            },
+            "registrationNumber": {
+              "S": "60219/1"
+            },
+            "brandName": {
+              "S": "SOLUFLEX DEXTROSE 5% INJECTION USP"
+            },
+            "strength": {
+              "S": "5%"
+            },
+            "presentation": {
+              "S": "100ml in PVC-free bags"
+            },
+            "agent": {
+              "S": "Serum Products"
+            },
+            "manufacturer": {
+              "S": "Serum Products"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "186167.16"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "2.08008"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "soluflex dextrose 5 injection usp"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4741"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#9956"
+            },
+            "sourceCode": {
+              "S": "9956"
+            },
+            "registrationNumber": {
+              "S": "60419/1"
+            },
+            "brandName": {
+              "S": "SOLUFLEX DEXTROSE 5% INJECTION USP"
+            },
+            "strength": {
+              "S": "5%"
+            },
+            "presentation": {
+              "S": "50ml in PVC-free bags"
+            },
+            "agent": {
+              "S": "Serum Products"
+            },
+            "manufacturer": {
+              "S": "Serum Products"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "186167.16"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "2.08008"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "soluflex dextrose 5 injection usp"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4742"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12064"
+            },
+            "sourceCode": {
+              "S": "12064"
+            },
+            "registrationNumber": {
+              "S": "122120/1"
+            },
+            "brandName": {
+              "S": "SOLUFLEX DEXTROSE 5% INJECTION, USP"
+            },
+            "strength": {
+              "S": "5%"
+            },
+            "presentation": {
+              "S": "250ml in pvc-free bags"
+            },
+            "agent": {
+              "S": "Serum Products"
+            },
+            "manufacturer": {
+              "S": "Serum Products"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "185017.98"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "2.06724"
+            },
+            "responsiblePartyName": {
+              "S": "Serum Products"
+            },
+            "responsiblePartyCountry": {
+              "S": "Lebanon"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "soluflex dextrose 5 injection usp"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4745"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#9959"
+            },
+            "sourceCode": {
+              "S": "9959"
+            },
+            "registrationNumber": {
+              "S": "39219/1"
+            },
+            "brandName": {
+              "S": "SOLUFLEX DEXTROSE 5% INJECTION, USP"
+            },
+            "strength": {
+              "S": "5%"
+            },
+            "presentation": {
+              "S": "500ml in PVC-free bags"
+            },
+            "agent": {
+              "S": "Serum Products"
+            },
+            "manufacturer": {
+              "S": "Serum Products"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "205703.21999999997"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "2.2983599999999997"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "soluflex dextrose 5 injection usp"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4743"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#9998"
+            },
+            "sourceCode": {
+              "S": "9998"
+            },
+            "registrationNumber": {
+              "S": "21719/1"
+            },
+            "brandName": {
+              "S": "SOLUFLEX DEXTROSE 5% INJECTION, USP"
+            },
+            "strength": {
+              "S": "5%"
+            },
+            "presentation": {
+              "S": "1000ml in PVC-free bags"
+            },
+            "agent": {
+              "S": "Serum Products"
+            },
+            "manufacturer": {
+              "S": "Serum Products"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "221791.74000000002"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "2.47812"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "soluflex dextrose 5 injection usp"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4744"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#9562"
+            },
+            "sourceCode": {
+              "S": "9562"
+            },
+            "registrationNumber": {
+              "S": "126017/1"
+            },
+            "brandName": {
+              "S": "SOLUFLEX DEXTROSE 5% SODIUM CHLORIDE 0.45% INJECTION, USP"
+            },
+            "presentation": {
+              "S": "1000ml"
+            },
+            "agent": {
+              "S": "Serum Products"
+            },
+            "manufacturer": {
+              "S": "Serum Products"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "236731.08000000002"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "2.6450400000000003"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "soluflex dextrose 5 sodium chloride 0 45 injection usp"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4746"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#9563"
+            },
+            "sourceCode": {
+              "S": "9563"
+            },
+            "registrationNumber": {
+              "S": "125917/1"
+            },
+            "brandName": {
+              "S": "SOLUFLEX DEXTROSE 5% SODIUM CHLORIDE 0.45% INJECTION, USP"
+            },
+            "presentation": {
+              "S": "500ml"
+            },
+            "agent": {
+              "S": "Serum Products"
+            },
+            "manufacturer": {
+              "S": "Serum Products"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "211449.12000000002"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "2.36256"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "soluflex dextrose 5 sodium chloride 0 45 injection usp"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4747"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10077"
+            },
+            "sourceCode": {
+              "S": "10077"
+            },
+            "registrationNumber": {
+              "S": "126019/1"
+            },
+            "brandName": {
+              "S": "SOLUFLEX DEXTROSE 5% SODIUM CHLORIDE 0.9% INJECTION, USP"
+            },
+            "presentation": {
+              "S": "1000ml in PVC-free bags"
+            },
+            "agent": {
+              "S": "Serum Products"
+            },
+            "manufacturer": {
+              "S": "Serum Products"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "222940.92"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "2.4909600000000003"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "soluflex dextrose 5 sodium chloride 0 9 injection usp"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4748"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10131"
+            },
+            "sourceCode": {
+              "S": "10131"
+            },
+            "registrationNumber": {
+              "S": "134419/1"
+            },
+            "brandName": {
+              "S": "SOLUFLEX DEXTROSE 5% SODIUM CHLORIDE 0.9% INJECTION, USP"
+            },
+            "presentation": {
+              "S": "500ml in PVC free bags"
+            },
+            "agent": {
+              "S": "Serum Products"
+            },
+            "manufacturer": {
+              "S": "Serum Products"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "158586.84"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "1.77192"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "soluflex dextrose 5 sodium chloride 0 9 injection usp"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4749"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#9584"
+            },
+            "sourceCode": {
+              "S": "9584"
+            },
+            "registrationNumber": {
+              "S": "107117/1"
+            },
+            "brandName": {
+              "S": "SOLUFLEX LACTATED RINGER'S INJECTION, USP"
+            },
+            "presentation": {
+              "S": "500ml"
+            },
+            "agent": {
+              "S": "Serum Products"
+            },
+            "manufacturer": {
+              "S": "Serum Products"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "236731.08000000002"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "2.6450400000000003"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "soluflex lactated ringer s injection usp"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4751"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#9585"
+            },
+            "sourceCode": {
+              "S": "9585"
+            },
+            "registrationNumber": {
+              "S": "107017/1"
+            },
+            "brandName": {
+              "S": "SOLUFLEX LACTATED RINGER'S INJECTION, USP"
+            },
+            "presentation": {
+              "S": "1000ml"
+            },
+            "agent": {
+              "S": "Serum Products"
+            },
+            "manufacturer": {
+              "S": "Serum Products"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "264311.39999999997"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "2.9532"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "soluflex lactated ringer s injection usp"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4750"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

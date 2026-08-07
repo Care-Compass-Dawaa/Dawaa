@@ -1,0 +1,1728 @@
+{
+  "RequestItems": {
+    "DawaaMedicines": [
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10574"
+            },
+            "sourceCode": {
+              "S": "10574"
+            },
+            "registrationNumber": {
+              "S": "51721/1"
+            },
+            "brandName": {
+              "S": "0.45% SODIUM CHLORIDE INJECTION USP"
+            },
+            "strength": {
+              "S": "0.45%"
+            },
+            "presentation": {
+              "S": "1000ml"
+            },
+            "agent": {
+              "S": "A Pharma Solutions SAL"
+            },
+            "manufacturer": {
+              "S": "Serum and Solutions SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "160885.2"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "1.7976"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "0 45 sodium chloride injection usp"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "2"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11135"
+            },
+            "sourceCode": {
+              "S": "11135"
+            },
+            "registrationNumber": {
+              "S": "9723/1"
+            },
+            "brandName": {
+              "S": "0.45% SODIUM CHLORIDE INJECTION USP"
+            },
+            "strength": {
+              "S": "0.45%"
+            },
+            "presentation": {
+              "S": "1000ml non pvc"
+            },
+            "agent": {
+              "S": "A Pharma Solutions SAL"
+            },
+            "manufacturer": {
+              "S": "Serum and Solutions SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "176973.72000000003"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "1.9773600000000002"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "0 45 sodium chloride injection usp"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "3"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12179"
+            },
+            "sourceCode": {
+              "S": "12179"
+            },
+            "registrationNumber": {
+              "S": "115424/1"
+            },
+            "brandName": {
+              "S": "0.45% SODIUM CHLORIDE INJECTION USP"
+            },
+            "strength": {
+              "S": "0.45%"
+            },
+            "presentation": {
+              "S": "250ml non pvc"
+            },
+            "agent": {
+              "S": "A Pharma Solutions SAL"
+            },
+            "manufacturer": {
+              "S": "Serum and Solutions SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "144796.68000000002"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "1.6178400000000002"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "0 45 sodium chloride injection usp"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "4"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12182"
+            },
+            "sourceCode": {
+              "S": "12182"
+            },
+            "registrationNumber": {
+              "S": "115924/1"
+            },
+            "brandName": {
+              "S": "0.45% SODIUM CHLORIDE INJECTION USP"
+            },
+            "strength": {
+              "S": "0.45%"
+            },
+            "presentation": {
+              "S": "500ml non pvc"
+            },
+            "agent": {
+              "S": "A Pharma Solutions SAL"
+            },
+            "manufacturer": {
+              "S": "Serum and Solutions SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "162034.37999999998"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "1.8104399999999998"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "0 45 sodium chloride injection usp"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "5"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10570"
+            },
+            "sourceCode": {
+              "S": "10570"
+            },
+            "registrationNumber": {
+              "S": "51921/1"
+            },
+            "brandName": {
+              "S": "0.9% SODIUM CHLORIDE INJECTION USP"
+            },
+            "strength": {
+              "S": "0.9%"
+            },
+            "presentation": {
+              "S": "100ml"
+            },
+            "agent": {
+              "S": "A Pharma Solutions SAL"
+            },
+            "manufacturer": {
+              "S": "Serum and Solutions SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "145945.86"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "1.63068"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "0 9 sodium chloride injection usp"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "6"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10571"
+            },
+            "sourceCode": {
+              "S": "10571"
+            },
+            "registrationNumber": {
+              "S": "52121/1"
+            },
+            "brandName": {
+              "S": "0.9% SODIUM CHLORIDE INJECTION USP"
+            },
+            "strength": {
+              "S": "0.9%"
+            },
+            "presentation": {
+              "S": "500ml"
+            },
+            "agent": {
+              "S": "A Pharma Solutions SAL"
+            },
+            "manufacturer": {
+              "S": "Serum and Solutions SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "151691.76"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "1.6948800000000002"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "0 9 sodium chloride injection usp"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "7"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10572"
+            },
+            "sourceCode": {
+              "S": "10572"
+            },
+            "registrationNumber": {
+              "S": "52021/1"
+            },
+            "brandName": {
+              "S": "0.9% SODIUM CHLORIDE INJECTION USP"
+            },
+            "strength": {
+              "S": "0.9%"
+            },
+            "presentation": {
+              "S": "1000ml"
+            },
+            "agent": {
+              "S": "A Pharma Solutions SAL"
+            },
+            "manufacturer": {
+              "S": "Serum and Solutions SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "164332.74"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "1.83612"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "0 9 sodium chloride injection usp"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "8"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10573"
+            },
+            "sourceCode": {
+              "S": "10573"
+            },
+            "registrationNumber": {
+              "S": "51821/1"
+            },
+            "brandName": {
+              "S": "0.9% SODIUM CHLORIDE INJECTION USP"
+            },
+            "strength": {
+              "S": "0.9%"
+            },
+            "presentation": {
+              "S": "3000ml"
+            },
+            "agent": {
+              "S": "A Pharma Solutions SAL"
+            },
+            "manufacturer": {
+              "S": "Serum and Solutions SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "688358.82"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "7.691159999999999"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "0 9 sodium chloride injection usp"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "9"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10575"
+            },
+            "sourceCode": {
+              "S": "10575"
+            },
+            "registrationNumber": {
+              "S": "52221/1"
+            },
+            "brandName": {
+              "S": "0.9% SODIUM CHLORIDE INJECTION USP"
+            },
+            "strength": {
+              "S": "0.9%"
+            },
+            "presentation": {
+              "S": "250ml"
+            },
+            "agent": {
+              "S": "A Pharma Solutions SAL"
+            },
+            "manufacturer": {
+              "S": "Serum and Solutions SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "144796.68000000002"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "1.6178400000000002"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "0 9 sodium chloride injection usp"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "10"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11136"
+            },
+            "sourceCode": {
+              "S": "11136"
+            },
+            "registrationNumber": {
+              "S": "8323/1"
+            },
+            "brandName": {
+              "S": "0.9% SODIUM CHLORIDE INJECTION USP"
+            },
+            "strength": {
+              "S": "0.9%"
+            },
+            "presentation": {
+              "S": "100ml non pvc"
+            },
+            "agent": {
+              "S": "A Pharma Solutions SAL"
+            },
+            "manufacturer": {
+              "S": "Serum and Solutions SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "182719.62"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "2.04156"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "0 9 sodium chloride injection usp"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "11"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11137"
+            },
+            "sourceCode": {
+              "S": "11137"
+            },
+            "registrationNumber": {
+              "S": "8523/1"
+            },
+            "brandName": {
+              "S": "0.9% SODIUM CHLORIDE INJECTION USP"
+            },
+            "strength": {
+              "S": "0.9%"
+            },
+            "presentation": {
+              "S": "500ml non pvc"
+            },
+            "agent": {
+              "S": "A Pharma Solutions SAL"
+            },
+            "manufacturer": {
+              "S": "Serum and Solutions SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "209150.75999999998"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "2.33688"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "0 9 sodium chloride injection usp"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "12"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11138"
+            },
+            "sourceCode": {
+              "S": "11138"
+            },
+            "registrationNumber": {
+              "S": "8623/1"
+            },
+            "brandName": {
+              "S": "0.9% SODIUM CHLORIDE INJECTION USP"
+            },
+            "strength": {
+              "S": "0.9%"
+            },
+            "presentation": {
+              "S": "1000ml non pvc"
+            },
+            "agent": {
+              "S": "A Pharma Solutions SAL"
+            },
+            "manufacturer": {
+              "S": "Serum and Solutions SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "222940.92"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "2.4909600000000003"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "0 9 sodium chloride injection usp"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "13"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11139"
+            },
+            "sourceCode": {
+              "S": "11139"
+            },
+            "registrationNumber": {
+              "S": "8423/1"
+            },
+            "brandName": {
+              "S": "0.9% SODIUM CHLORIDE INJECTION USP"
+            },
+            "strength": {
+              "S": "0.9%"
+            },
+            "presentation": {
+              "S": "250ml non pvc"
+            },
+            "agent": {
+              "S": "A Pharma Solutions SAL"
+            },
+            "manufacturer": {
+              "S": "Serum and Solutions SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "181570.44000000003"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "2.0287200000000003"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "0 9 sodium chloride injection usp"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "14"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12052"
+            },
+            "sourceCode": {
+              "S": "12052"
+            },
+            "registrationNumber": {
+              "S": "115224/1"
+            },
+            "brandName": {
+              "S": "0.9% SODIUM CHLORIDE INJECTION USP"
+            },
+            "strength": {
+              "S": "0.9%"
+            },
+            "presentation": {
+              "S": "50ml non pvc"
+            },
+            "agent": {
+              "S": "A Pharma Solutions SAL"
+            },
+            "manufacturer": {
+              "S": "Serum and Solutions SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "170078.63999999998"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "1.9003199999999998"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "0 9 sodium chloride injection usp"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "15"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10614"
+            },
+            "sourceCode": {
+              "S": "10614"
+            },
+            "registrationNumber": {
+              "S": "63721/1"
+            },
+            "brandName": {
+              "S": "10% DEXTROSE INJECTION USP"
+            },
+            "presentation": {
+              "S": "1000ml"
+            },
+            "agent": {
+              "S": "A Pharma Solutions SAL"
+            },
+            "manufacturer": {
+              "S": "Serum and Solutions SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "219493.38"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "2.45244"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "10 dextrose injection usp"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "16"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10615"
+            },
+            "sourceCode": {
+              "S": "10615"
+            },
+            "registrationNumber": {
+              "S": "63521/1"
+            },
+            "brandName": {
+              "S": "10% DEXTROSE INJECTION USP"
+            },
+            "presentation": {
+              "S": "250ml"
+            },
+            "agent": {
+              "S": "A Pharma Solutions SAL"
+            },
+            "manufacturer": {
+              "S": "Serum and Solutions SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "170078.63999999998"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "1.9003199999999998"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "10 dextrose injection usp"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "17"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10616"
+            },
+            "sourceCode": {
+              "S": "10616"
+            },
+            "registrationNumber": {
+              "S": "63621/1"
+            },
+            "brandName": {
+              "S": "10% DEXTROSE INJECTION USP"
+            },
+            "presentation": {
+              "S": "500ml"
+            },
+            "agent": {
+              "S": "A Pharma Solutions SAL"
+            },
+            "manufacturer": {
+              "S": "Serum and Solutions SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "194211.42"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "2.16996"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "10 dextrose injection usp"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "18"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11140"
+            },
+            "sourceCode": {
+              "S": "11140"
+            },
+            "registrationNumber": {
+              "S": "9323/1"
+            },
+            "brandName": {
+              "S": "10% DEXTROSE INJECTION USP"
+            },
+            "presentation": {
+              "S": "1000ml non pvc"
+            },
+            "agent": {
+              "S": "A Pharma Solutions SAL"
+            },
+            "manufacturer": {
+              "S": "Serum and Solutions SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "284996.64"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "3.18432"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "10 dextrose injection usp"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "19"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11141"
+            },
+            "sourceCode": {
+              "S": "11141"
+            },
+            "registrationNumber": {
+              "S": "9123/1"
+            },
+            "brandName": {
+              "S": "10% DEXTROSE INJECTION USP"
+            },
+            "presentation": {
+              "S": "250ml non pvc"
+            },
+            "agent": {
+              "S": "A Pharma Solutions SAL"
+            },
+            "manufacturer": {
+              "S": "Serum and Solutions SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "220642.56"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "2.46528"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "10 dextrose injection usp"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "20"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#11142"
+            },
+            "sourceCode": {
+              "S": "11142"
+            },
+            "registrationNumber": {
+              "S": "9223/1"
+            },
+            "brandName": {
+              "S": "10% DEXTROSE INJECTION USP"
+            },
+            "presentation": {
+              "S": "500ml non pvc"
+            },
+            "agent": {
+              "S": "A Pharma Solutions SAL"
+            },
+            "manufacturer": {
+              "S": "Serum and Solutions SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "252819.6"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "2.8248"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "10 dextrose injection usp"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "21"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#12180"
+            },
+            "sourceCode": {
+              "S": "12180"
+            },
+            "registrationNumber": {
+              "S": "115324/1"
+            },
+            "brandName": {
+              "S": "10% DEXTROSE INJECTION USP"
+            },
+            "presentation": {
+              "S": "100ml non pvc"
+            },
+            "agent": {
+              "S": "A Pharma Solutions SAL"
+            },
+            "manufacturer": {
+              "S": "Serum and Solutions SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "170078.63999999998"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "1.9003199999999998"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "10 dextrose injection usp"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "22"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#9526"
+            },
+            "sourceCode": {
+              "S": "9526"
+            },
+            "registrationNumber": {
+              "S": "31316/1"
+            },
+            "brandName": {
+              "S": "10% W/V CALCIUM GLUCONATE INJECTION BP"
+            },
+            "presentation": {
+              "S": "100x10ml Plastic Ampoules"
+            },
+            "dosageForm": {
+              "S": "Injection"
+            },
+            "agent": {
+              "S": "Pharmamed"
+            },
+            "manufacturer": {
+              "S": "Pharmaceutical Solutions Industry"
+            },
+            "country": {
+              "S": "Saudi Arabia"
+            },
+            "publicPriceLbp": {
+              "N": "3952240.7925"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "B"
+            },
+            "publicPriceDecision119": {
+              "N": "44.159115"
+            },
+            "responsiblePartyName": {
+              "S": "Pharmaceutical Solutions Industry"
+            },
+            "responsiblePartyCountry": {
+              "S": "Saudi Arabia"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "10 w v calcium gluconate injection bp"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "23"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#4290"
+            },
+            "sourceCode": {
+              "S": "4290"
+            },
+            "registrationNumber": {
+              "S": "208377/97"
+            },
+            "brandName": {
+              "S": "123 COLD AND FLU"
+            },
+            "presentation": {
+              "S": "20"
+            },
+            "dosageForm": {
+              "S": "Tablet"
+            },
+            "agent": {
+              "S": "Droguerie de l'Union"
+            },
+            "manufacturer": {
+              "S": "Algorithm S.A.L."
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "409552.00000000006"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "4.5760000000000005"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "123 cold and flu"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "24"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10304"
+            },
+            "sourceCode": {
+              "S": "10304"
+            },
+            "registrationNumber": {
+              "S": "10120/1"
+            },
+            "brandName": {
+              "S": "123 COMPLETE"
+            },
+            "presentation": {
+              "S": "16Day tablets + 8Night tablets"
+            },
+            "dosageForm": {
+              "S": "Tablet"
+            },
+            "agent": {
+              "S": "Droguerie de l'Union"
+            },
+            "manufacturer": {
+              "S": "Algorithm S.A.L."
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "537537.0000000001"
+            },
+            "pharmacistMarginPercent": {
+              "N": "23.08"
+            },
+            "stratum": {
+              "S": "A1"
+            },
+            "publicPriceDecision119": {
+              "N": "6.006000000000001"
+            },
+            "responsiblePartyName": {
+              "S": "Algorithm S.A.L."
+            },
+            "responsiblePartyCountry": {
+              "S": "Lebanon"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "123 complete"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "25"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      },
+      {
+        "PutRequest": {
+          "Item": {
+            "medicineId": {
+              "S": "MED#10611"
+            },
+            "sourceCode": {
+              "S": "10611"
+            },
+            "registrationNumber": {
+              "S": "64021/1"
+            },
+            "brandName": {
+              "S": "2.5% DEXTROSE 0.45% SODIUM CHLORIDE INJECTION"
+            },
+            "presentation": {
+              "S": "1000ml"
+            },
+            "agent": {
+              "S": "A Pharma Solutions SAL"
+            },
+            "manufacturer": {
+              "S": "Serum and Solutions SAL"
+            },
+            "country": {
+              "S": "Lebanon"
+            },
+            "publicPriceLbp": {
+              "N": "172377"
+            },
+            "pharmacistMarginPercent": {
+              "N": "16.67"
+            },
+            "publicPriceDecision119": {
+              "N": "1.926"
+            },
+            "exchangeDate": {
+              "S": "2026-07-10"
+            },
+            "normalizedBrandName": {
+              "S": "2 5 dextrose 0 45 sodium chloride injection"
+            },
+            "active": {
+              "BOOL": true
+            },
+            "sourceFile": {
+              "S": "data/WebMarketed20260710.xls"
+            },
+            "sourceSheet": {
+              "S": "DRUGS 10072026"
+            },
+            "sourceRowNumber": {
+              "N": "26"
+            },
+            "createdAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "updatedAt": {
+              "S": "2026-08-06T23:44:34.156Z"
+            },
+            "version": {
+              "N": "1"
+            }
+          }
+        }
+      }
+    ]
+  }
+}
