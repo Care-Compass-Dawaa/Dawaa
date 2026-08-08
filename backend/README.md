@@ -43,3 +43,47 @@ DAWAA_API_BASE_URL=https://your-api-gateway-url
 ```
 
 Until `DAWAA_API_BASE_URL` is set, the existing local Lovable connector fallback still runs.
+
+
+## Before Handover
+
+- Refactor `GET /admin/users` out of `AuthHandler` into an admin/user handler.
+-----------------------
+Current:
+AuthHandler handles POST /auth/register
+AuthHandler handles POST /auth/login
+AuthHandler also handles GET /admin/users
+
+Target:
+AuthHandler handles only auth routes
+AdminUserHandler or UserAdminHandler handles GET /admin/users
+shared user lookup logic lives in UserService/UserRepository
+-----------------------
+
+- Modify structure to the following if possible:
+---
+api/auth/AuthHandler.java
+  POST /auth/register
+  POST /auth/login
+
+api/admin/AdminUserHandler.java
+  GET /admin/users
+
+business/user/UserService.java
+domain/user/User.java
+domain/user/UserRole.java
+domain/user/UserRepository.java
+persistence/dynamodb/user/DynamoDbUserRepository.java
+---
+
+- Add `User`, `UserRole`, `UserRepository`, `UserService`, and `DynamoDbUserRepository`. ---- HALFWAY THROUGH
+- Add role-based frontend landing tabs.
+- Add shared Settings tab for all roles.
+- Add real admin bootstrap strategy.
+- Add basic frontend/backend tests.
+
+## Later Security Pass
+
+- Add AWS Cognito.
+- Replace localStorage trust with token-based auth.
+- Protect admin and pharmacist backend routes.
