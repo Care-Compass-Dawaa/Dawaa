@@ -39,8 +39,8 @@ public class PharmacyService {
 
     Optional<Pharmacy> existing = pharmacyRepository.findByPharmacistId(pharmacy.pharmacistId());
     if (existing.isPresent()) {
-      return existing.get();
-    }
+        throw new IllegalArgumentException("This pharmacist already has a registered pharmacy");
+    }//throws an exception that a pharmacy already exists for this pharmacist
 
     String now = Instant.now().toString();
     String pharmacyId =
@@ -66,11 +66,12 @@ public class PharmacyService {
             now));
   }
 
-  public Optional<Pharmacy> findByPharmacistId(String pharmacistId) {
+  public Pharmacy findByPharmacistId(String pharmacistId) {
     if (!textPresent(pharmacistId)) {
       throw new IllegalArgumentException("pharmacistId is required");
     }
-    return pharmacyRepository.findByPharmacistId(pharmacistId.trim());
+    return pharmacyRepository.findByPharmacistId(pharmacistId.trim())
+      .orElseThrow(() -> new IllegalArgumentException("Pharmacy not found"));
   }
 
   public List<Pharmacy> listAllPharmacies() {

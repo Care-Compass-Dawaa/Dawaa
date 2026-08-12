@@ -90,6 +90,7 @@ Resources:
               Action:
                 - dynamodb:PutItem
                 - dynamodb:GetItem
+                - dynamodb:UpdateItem
                 - dynamodb:Query
                 - dynamodb:Scan
               Resource:

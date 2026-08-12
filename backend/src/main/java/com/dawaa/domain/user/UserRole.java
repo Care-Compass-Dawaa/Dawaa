@@ -1,7 +1,7 @@
 package com.dawaa.domain.user;
 
 public enum UserRole {
-    USER,
+    PATIENT,
     PHARMACIST,
     ADMIN
 }

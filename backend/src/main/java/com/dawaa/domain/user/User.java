@@ -1,7 +1,7 @@
 package com.dawaa.domain.user;
 
 public record User(
-    String id,
+    String userId,
     String email,
     String name,
     UserRole role,
