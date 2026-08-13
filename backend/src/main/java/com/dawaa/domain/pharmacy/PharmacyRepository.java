@@ -6,6 +6,8 @@ import java.util.Optional;
 public interface PharmacyRepository {
   Pharmacy save(Pharmacy pharmacy);
 
+  Optional<Pharmacy> findById(String pharmacyId);
+
   Optional<Pharmacy> findByPharmacistId(String pharmacistId);
 
   List<Pharmacy> findAll();

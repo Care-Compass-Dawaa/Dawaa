@@ -7,8 +7,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
 import software.amazon.awssdk.services.dynamodb.DynamoDbClient;
 import software.amazon.awssdk.services.dynamodb.model.AttributeValue;
+import software.amazon.awssdk.services.dynamodb.model.GetItemRequest;
+import software.amazon.awssdk.services.dynamodb.model.GetItemResponse;
 import software.amazon.awssdk.services.dynamodb.model.PutItemRequest;
 import software.amazon.awssdk.services.dynamodb.model.QueryRequest;
 import software.amazon.awssdk.services.dynamodb.model.QueryResponse;
@@ -47,9 +50,28 @@ public class DynamoDbPharmacyRepository implements PharmacyRepository {
   }
 
   @Override
-  public java.util.Optional<Pharmacy> findByPharmacistId(String pharmacistId) {
+  public Optional<Pharmacy> findById(String pharmacyId) {
+    if (pharmacyId == null || pharmacyId.isBlank()) {
+      return Optional.empty();
+    }
+
+    GetItemResponse response =
+        dynamoDb.getItem(
+            GetItemRequest.builder()
+                .tableName(tableName)
+                .key(Map.of("pharmacyId", AttributeValue.fromS(pharmacyId.trim())))
+                .build());
+
+    if (!response.hasItem()) {
+      return Optional.empty();
+    }
+    return Optional.of(toPharmacy(response.item()));
+  }
+
+  @Override
+  public Optional<Pharmacy> findByPharmacistId(String pharmacistId) {
     if (pharmacistId == null || pharmacistId.isBlank()) {
-      return java.util.Optional.empty();
+      return Optional.empty();
     }
 
     QueryResponse response =
@@ -64,9 +86,9 @@ public class DynamoDbPharmacyRepository implements PharmacyRepository {
                 .build());
 
     if (response.items().isEmpty()) {
-      return java.util.Optional.empty();
+      return Optional.empty();
     }
-    return java.util.Optional.of(toPharmacy(response.items().get(0)));
+    return Optional.of(toPharmacy(response.items().get(0)));
   }
 
   @Override

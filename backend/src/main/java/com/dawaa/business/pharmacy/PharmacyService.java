@@ -3,6 +3,9 @@ package com.dawaa.business.pharmacy;
 import com.dawaa.domain.pharmacy.NearbyPharmacy;
 import com.dawaa.domain.pharmacy.Pharmacy;
 import com.dawaa.domain.pharmacy.PharmacyRepository;
+import com.dawaa.domain.user.User;
+import com.dawaa.domain.user.UserRole;
+
 import java.time.Instant;
 import java.util.Comparator;
 import java.util.List;
@@ -19,6 +22,16 @@ public class PharmacyService {
     this.pharmacyRepository =
         Objects.requireNonNull(pharmacyRepository, "pharmacyRepository is required");
   }
+
+  private static boolean isEmpty(String value){
+        return value==null || value.isBlank();
+    }
+
+  public static void requireAdmin(User requester){
+        if (requester == null || requester.role()!=UserRole.ADMIN){
+            throw new IllegalArgumentException("Admin access is required.");
+        }
+    }
 
   public Pharmacy registerPharmacy(Pharmacy pharmacy) {
     if (!textPresent(pharmacy.pharmacistId())) {
@@ -40,7 +53,7 @@ public class PharmacyService {
     Optional<Pharmacy> existing = pharmacyRepository.findByPharmacistId(pharmacy.pharmacistId());
     if (existing.isPresent()) {
         throw new IllegalArgumentException("This pharmacist already has a registered pharmacy");
-    }//throws an exception that a pharmacy already exists for this pharmacist
+    }//throws an exception if a pharmacy already exists for this pharmacist
 
     String now = Instant.now().toString();
     String pharmacyId =
@@ -66,12 +79,27 @@ public class PharmacyService {
             now));
   }
 
-  public Pharmacy findByPharmacistId(String pharmacistId) {
+  public Pharmacy getById(User requester, String pharmacyId){
+      requireAdmin(requester);
+      if (isEmpty(pharmacyId)){
+          throw new IllegalArgumentException("phasrmacyId is required.");
+      }
+      return pharmacyRepository.findById(pharmacyId)
+          .orElseThrow(() -> new IllegalArgumentException("pharmacy not found."));
+  }
+
+  public Optional<Pharmacy> findByPharmacistId(String pharmacistId) {
     if (!textPresent(pharmacistId)) {
-      throw new IllegalArgumentException("pharmacistId is required");
+        throw new IllegalArgumentException("pharmacistId is required");
     }
-    return pharmacyRepository.findByPharmacistId(pharmacistId.trim())
-      .orElseThrow(() -> new IllegalArgumentException("Pharmacy not found"));
+     Optional<Pharmacy> pharmacy =
+          pharmacyRepository.findByPharmacistId(pharmacistId.trim());
+
+    if (pharmacy.isEmpty()) {
+        throw new IllegalArgumentException("Pharmacy not found");
+    }
+
+    return pharmacy;
   }
 
   public List<Pharmacy> listAllPharmacies() {

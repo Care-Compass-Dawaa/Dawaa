@@ -4,6 +4,7 @@ import com.dawaa.domain.user.*;
 import java.time.Instant;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.UUID;
 import java.util.List;
 
 public class UserService {
@@ -19,8 +20,7 @@ public class UserService {
     }
 
     public User registerUser(User user){
-        if(isEmpty(user.userId()) ||
-            isEmpty(user.email())||
+        if( isEmpty(user.email())||
             isEmpty(user.name())||
             isEmpty(user.passwordHash())||
             isEmpty(user.createdAt())||
@@ -36,8 +36,25 @@ public class UserService {
         if (existingUser.isPresent()) { //returns true if user already exists
             throw new IllegalArgumentException("An account with this email already exists");
         }
+
+        String now = Instant.now().toString();
+        String userId = !isEmpty(user.userId())? user.userId().trim()
+                : "USER#" + UUID.randomUUID();
+        //replaces user id if not found
+
+        User newUser = new User(
+            user.userId().trim(),
+            user.email().trim(),
+            user.name().trim(),
+            UserRole.PATIENT,
+            user.passwordHash(),
+            true,
+            now,
+            now
+        );
+
+        return userRepository.save(newUser);
         //save user if no account with this email exists
-        return userRepository.save(user);
     }
 
     public static void requireAdmin(User requester){
