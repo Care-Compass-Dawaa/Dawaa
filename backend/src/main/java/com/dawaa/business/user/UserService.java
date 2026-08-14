@@ -19,6 +19,15 @@ public class UserService {
         return value==null || value.isBlank();
     }
 
+    public User getRequester(String requesterUserId) {
+        if (isEmpty(requesterUserId)) {
+            throw new IllegalArgumentException("Requester user id is required");
+        }
+
+        return userRepository.findById(requesterUserId.trim())
+            .orElseThrow(() -> new IllegalArgumentException("Requester not found"));
+    }
+
     public User registerUser(User user){
         if( isEmpty(user.email())||
             isEmpty(user.name())||
@@ -43,10 +52,10 @@ public class UserService {
         //replaces user id if not found
 
         User newUser = new User(
-            user.userId().trim(),
-            user.email().trim(),
+            userId,
+            user.email().trim().toLowerCase(),
             user.name().trim(),
-            UserRole.PATIENT,
+            user.role(),
             user.passwordHash(),
             true,
             now,

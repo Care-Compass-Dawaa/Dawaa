@@ -107,11 +107,76 @@ Resources:
           Properties:
             Path: /auth/login
             Method: post
+
+  UserFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: .
+      Handler: com.dawaa.api.user.UserHandler::handleRequest
+      Description: Current user profile lookup and update.
+      Environment:
+        Variables:
+          USERS_TABLE: !Ref UsersTableName
+      Policies:
+        - AWSLambdaBasicExecutionRole
+        - Statement:
+            - Effect: Allow
+              Action:
+                - dynamodb:GetItem
+                - dynamodb:PutItem
+                - dynamodb:Query
+              Resource:
+                - !Sub "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${UsersTableName}"
+                - !Sub "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${UsersTableName}/index/email-index"
+      Events:
+        GetMe:
+          Type: Api
+          Properties:
+            Path: /users/me
+            Method: get
+        UpdateMe:
+          Type: Api
+          Properties:
+            Path: /users/me/update
+            Method: post
+
+  AdminUserFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: .
+      Handler: com.dawaa.api.user.AdminHandler::handleRequest
+      Description: Admin user listing, lookup, and deactivation.
+      Environment:
+        Variables:
+          USERS_TABLE: !Ref UsersTableName
+      Policies:
+        - AWSLambdaBasicExecutionRole
+        - Statement:
+            - Effect: Allow
+              Action:
+                - dynamodb:GetItem
+                - dynamodb:UpdateItem
+                - dynamodb:Query
+                - dynamodb:Scan
+              Resource:
+                - !Sub "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${UsersTableName}"
+                - !Sub "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${UsersTableName}/index/email-index"
+      Events:
         AdminListUsers:
           Type: Api
           Properties:
             Path: /admin/users
             Method: get
+        AdminGetUser:
+          Type: Api
+          Properties:
+            Path: /admin/users/{id}
+            Method: get
+        AdminDeactivateUser:
+          Type: Api
+          Properties:
+            Path: /admin/users/{id}
+            Method: delete
 
   InventoryFunction:
     Type: AWS::Serverless::Function
