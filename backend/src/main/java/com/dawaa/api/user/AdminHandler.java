@@ -13,6 +13,7 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
+import java.util.NoSuchElementException;
 import java.util.Objects;
 
 public class AdminHandler extends BaseHandler
@@ -44,6 +45,10 @@ public class AdminHandler extends BaseHandler
         return listUsers(request);
       }
 
+      if ("GET".equalsIgnoreCase(method) && path.equals("/admin/users/by-email")) {
+        return getUserByEmail(request, queryParam(request, "email"));
+      }
+
       if ("GET".equalsIgnoreCase(method) && path.matches("/admin/users/.+")) {
         return getUser(request, userIdFromPath(path));
       }
@@ -53,6 +58,10 @@ public class AdminHandler extends BaseHandler
       }
 
       return error(404, "Not found");
+    } catch (SecurityException error) {
+      return error(403, error.getMessage());
+    } catch (NoSuchElementException error) {
+      return error(404, error.getMessage());
     } catch (IllegalArgumentException error) {
       return error(400, error.getMessage());
     } catch (Exception error) {
@@ -76,6 +85,14 @@ public class AdminHandler extends BaseHandler
     User requester = requester(request);
     ObjectNode wrapper = MAPPER.createObjectNode();
     wrapper.set("user", toUserNode(userService.getById(requester, targetUserId)));
+    return ok(wrapper);
+  }
+
+  private APIGatewayProxyResponseEvent getUserByEmail(
+      APIGatewayProxyRequestEvent request, String targetEmail) {
+    User requester = requester(request);
+    ObjectNode wrapper = MAPPER.createObjectNode();
+    wrapper.set("user", toUserNode(userService.getByEmail(requester, targetEmail)));
     return ok(wrapper);
   }
 
@@ -111,6 +128,13 @@ public class AdminHandler extends BaseHandler
       throw new IllegalArgumentException("userId is required");
     }
     return URLDecoder.decode(parts[3], StandardCharsets.UTF_8);
+  }
+
+  private String queryParam(APIGatewayProxyRequestEvent request, String name) {
+    if (request == null || request.getQueryStringParameters() == null) {
+      return "";
+    }
+    return request.getQueryStringParameters().getOrDefault(name, "");
   }
 
   private ObjectNode toUserNode(User user) {

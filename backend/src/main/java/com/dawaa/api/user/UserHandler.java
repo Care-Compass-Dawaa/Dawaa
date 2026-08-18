@@ -11,6 +11,7 @@ import com.dawaa.persistence.dynamodb.user.DynamoDBUserRepository;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import java.util.Map;
+import java.util.NoSuchElementException;
 import java.util.Objects;
 
 public class UserHandler extends BaseHandler
@@ -51,6 +52,10 @@ public class UserHandler extends BaseHandler
       }
 
       return error(404, "Not found");
+    } catch (SecurityException error) {
+      return error(403, error.getMessage());
+    } catch (NoSuchElementException error) {
+      return error(404, error.getMessage());
     } catch (IllegalArgumentException error) {
       return error(400, error.getMessage());
     } catch (Exception error) {
@@ -63,7 +68,7 @@ public class UserHandler extends BaseHandler
 
   private APIGatewayProxyResponseEvent getMe(APIGatewayProxyRequestEvent request) {
     ObjectNode wrapper = MAPPER.createObjectNode();
-    wrapper.set("user", toUserNode(requester(request)));
+    wrapper.set("user", toUserNode(userService.getMyProfile(requester(request))));
     return ok(wrapper);
   }
 

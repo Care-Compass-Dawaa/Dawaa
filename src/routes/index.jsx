@@ -563,7 +563,7 @@ function PharmacistDashboard({ user }) {
 }
 
 // ─── Admin Panel ───────────────────────────────────────────────────────────────
-function AdminPanel() {
+function AdminPanel({ user }) {
   const [users, setUsers] = useState([]);
   const [pharmacies, setPharmacies] = useState([]);
   const [tab, setTab] = useState("users");
@@ -583,8 +583,8 @@ function AdminPanel() {
     setError(null);
     try {
       const [uRes, pRes] = await Promise.all([
-        getUsersFn({ data: {} }),
-        getPharmaciesFn({ data: {} }),
+        getUsersFn({ data: { requesterUserId: user.id } }),
+        getPharmaciesFn({ data: { requesterUserId: user.id } }),
       ]);
       setUsers(uRes.users);
       setPharmacies(pRes.pharmacies);
@@ -597,7 +597,7 @@ function AdminPanel() {
 
   async function handleApprove(pharmacyId, approved) {
     try {
-      await approveFn({ data: { pharmacyId, approved } });
+      await approveFn({ data: { pharmacyId, requesterUserId: user.id, approved } });
       await loadData();
     } catch (err) {
       setError(err?.message ?? "Failed to update pharmacy");
@@ -1310,7 +1310,7 @@ function Home() {
         {activeTab === "dashboard" && user?.role === "pharmacist" && (
           <PharmacistDashboard user={user} />
         )}
-        {activeTab === "admin" && user?.role === "admin" && <AdminPanel />}
+        {activeTab === "admin" && user?.role === "admin" && <AdminPanel user={user} />}
       </main>
 
       {showAuth && <AuthModal onClose={() => setShowAuth(false)} onLogin={login} />}

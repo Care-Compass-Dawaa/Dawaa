@@ -2,6 +2,7 @@ import { createServerFn } from "@tanstack/react-start";
 
 const GATEWAY_URL = "https://connector-gateway.lovable.dev/google_maps";
 const DAWAA_API_BASE_URL = process.env.DAWAA_API_BASE_URL;
+const REQUESTER_HEADER = "X-Dawaa-User-Id";
 
 // ─── In-memory stores (replace with DynamoDB when backend is wired up) ─────────
 const usersStore = new Map();
@@ -206,7 +207,9 @@ export const registerPharmacy = createServerFn({ method: "POST" })
   .handler(async ({ data }) => {
     if (DAWAA_API_BASE_URL) {
       const res = await fetch(`${DAWAA_API_BASE_URL.replace(/\/$/, "")}/pharmacies`, {
-        method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data),
+        method: "POST",
+        headers: { "Content-Type": "application/json", [REQUESTER_HEADER]: data.pharmacistId },
+        body: JSON.stringify(data),
       });
       if (!res.ok) throw new Error((await res.text()).slice(0, 200));
       return await res.json();
@@ -236,7 +239,9 @@ export const getMyPharmacy = createServerFn({ method: "POST" })
   })
   .handler(async ({ data }) => {
     if (DAWAA_API_BASE_URL) {
-      const res = await fetch(`${DAWAA_API_BASE_URL.replace(/\/$/, "")}/pharmacies/mine?pharmacistId=${data.pharmacistId}`);
+      const res = await fetch(`${DAWAA_API_BASE_URL.replace(/\/$/, "")}/pharmacies/mine`, {
+        headers: { [REQUESTER_HEADER]: data.pharmacistId },
+      });
       if (!res.ok) throw new Error((await res.text()).slice(0, 200));
       return await res.json();
     }
@@ -247,10 +252,15 @@ export const getMyPharmacy = createServerFn({ method: "POST" })
 
 // ─── Admin ─────────────────────────────────────────────────────────────────────
 export const getAllUsers = createServerFn({ method: "POST" })
-  .validator(() => ({}))
-  .handler(async () => {
+  .validator((input) => {
+    if (!input?.requesterUserId) throw new Error("requesterUserId is required");
+    return { requesterUserId: input.requesterUserId };
+  })
+  .handler(async ({ data }) => {
     if (DAWAA_API_BASE_URL) {
-      const res = await fetch(`${DAWAA_API_BASE_URL.replace(/\/$/, "")}/admin/users`);
+      const res = await fetch(`${DAWAA_API_BASE_URL.replace(/\/$/, "")}/admin/users`, {
+        headers: { [REQUESTER_HEADER]: data.requesterUserId },
+      });
       if (!res.ok) throw new Error((await res.text()).slice(0, 200));
       return await res.json();
     }
@@ -262,10 +272,15 @@ export const getAllUsers = createServerFn({ method: "POST" })
   });
 
 export const getAllPharmacies = createServerFn({ method: "POST" })
-  .validator(() => ({}))
-  .handler(async () => {
+  .validator((input) => {
+    if (!input?.requesterUserId) throw new Error("requesterUserId is required");
+    return { requesterUserId: input.requesterUserId };
+  })
+  .handler(async ({ data }) => {
     if (DAWAA_API_BASE_URL) {
-      const res = await fetch(`${DAWAA_API_BASE_URL.replace(/\/$/, "")}/admin/pharmacies`);
+      const res = await fetch(`${DAWAA_API_BASE_URL.replace(/\/$/, "")}/admin/pharmacies`, {
+        headers: { [REQUESTER_HEADER]: data.requesterUserId },
+      });
       if (!res.ok) throw new Error((await res.text()).slice(0, 200));
       return await res.json();
     }
@@ -275,14 +290,24 @@ export const getAllPharmacies = createServerFn({ method: "POST" })
 
 export const approvePharmacy = createServerFn({ method: "POST" })
   .validator((input) => {
-    if (!input?.pharmacyId) throw new Error("pharmacyId is required");
-    return { pharmacyId: input.pharmacyId, approved: input.approved !== false };
+    if (!input?.pharmacyId || !input?.requesterUserId) {
+      throw new Error("pharmacyId and requesterUserId are required");
+    }
+    return {
+      pharmacyId: input.pharmacyId,
+      requesterUserId: input.requesterUserId,
+      approved: input.approved !== false,
+    };
   })
   .handler(async ({ data }) => {
     if (DAWAA_API_BASE_URL) {
       const res = await fetch(
         `${DAWAA_API_BASE_URL.replace(/\/$/, "")}/admin/pharmacies/${data.pharmacyId}/approve`,
-        { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ approved: data.approved }) },
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json", [REQUESTER_HEADER]: data.requesterUserId },
+          body: JSON.stringify({ approved: data.approved }),
+        },
       );
       if (!res.ok) throw new Error((await res.text()).slice(0, 200));
       return await res.json();

@@ -5,10 +5,13 @@ import com.amazonaws.services.lambda.runtime.RequestHandler;
 import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent;
 import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyResponseEvent;
 import com.dawaa.business.pharmacy.PharmacyService;
+import com.dawaa.business.user.UserService;
 import com.dawaa.common.BaseHandler;
 import com.dawaa.domain.pharmacy.NearbyPharmacy;
 import com.dawaa.domain.pharmacy.Pharmacy;
+import com.dawaa.domain.user.User;
 import com.dawaa.persistence.dynamodb.pharmacy.DynamoDbPharmacyRepository;
+import com.dawaa.persistence.dynamodb.user.DynamoDBUserRepository;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
@@ -16,18 +19,29 @@ import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Map;
+import java.util.NoSuchElementException;
 import java.util.Objects;
 
 public class PharmacyHandler extends BaseHandler
     implements RequestHandler<APIGatewayProxyRequestEvent, APIGatewayProxyResponseEvent> {
+  private static final String REQUESTER_HEADER = "X-Dawaa-User-Id";
+
   private final PharmacyService pharmacyService;
+  private final UserService userService;
 
   public PharmacyHandler() {
-    this(new PharmacyService(new DynamoDbPharmacyRepository()));
+    this(
+        new PharmacyService(new DynamoDbPharmacyRepository()),
+        new UserService(new DynamoDBUserRepository()));
   }
 
   public PharmacyHandler(PharmacyService pharmacyService) {
+    this(pharmacyService, new UserService(new DynamoDBUserRepository()));
+  }
+
+  public PharmacyHandler(PharmacyService pharmacyService, UserService userService) {
     this.pharmacyService = Objects.requireNonNull(pharmacyService, "pharmacyService is required");
+    this.userService = Objects.requireNonNull(userService, "userService is required");
   }
 
   @Override
@@ -42,20 +56,23 @@ public class PharmacyHandler extends BaseHandler
       }
 
       if ("POST".equalsIgnoreCase(method) && path.equals("/pharmacies")) {
-        return registerPharmacy(parseBody(request.getBody()));
+        return registerPharmacy(request, parseBody(request.getBody()));
       }
 
       if ("GET".equalsIgnoreCase(method) && path.equals("/pharmacies/mine")) {
-        return getMyPharmacy(queryParam(request, "pharmacistId"));
+        return getMyPharmacy(request);
       }
 
       if ("GET".equalsIgnoreCase(method) && path.equals("/admin/pharmacies")) {
-        return listAllPharmacies();
+        return listAllPharmacies(request);
       }
 
       if ("POST".equalsIgnoreCase(method) && path.matches("/admin/pharmacies/.+/approve")) {
-        String pharmacyId = URLDecoder.decode(path.split("/")[3], StandardCharsets.UTF_8);
-        return approvePharmacy(pharmacyId, parseBody(request.getBody()));
+        return approvePharmacy(request, pathSegment(path, 3), parseBody(request.getBody()));
+      }
+
+      if ("GET".equalsIgnoreCase(method) && path.matches("/admin/pharmacies/.+")) {
+        return getAdminPharmacy(request, pathSegment(path, 3));
       }
 
       if ("GET".equalsIgnoreCase(method) && path.equals("/pharmacies/nearby")) {
@@ -66,7 +83,15 @@ public class PharmacyHandler extends BaseHandler
         return nearbyFromBody(parseBody(request.getBody()));
       }
 
+      if ("GET".equalsIgnoreCase(method) && path.matches("/pharmacies/.+")) {
+        return getPublicPharmacy(pathSegment(path, 2));
+      }
+
       return error(404, "Not found");
+    } catch (SecurityException error) {
+      return error(403, error.getMessage());
+    } catch (NoSuchElementException error) {
+      return error(404, error.getMessage());
     } catch (IllegalArgumentException error) {
       return error(400, error.getMessage());
     } catch (Exception error) {
@@ -77,11 +102,13 @@ public class PharmacyHandler extends BaseHandler
     }
   }
 
-  private APIGatewayProxyResponseEvent registerPharmacy(JsonNode body) {
+  private APIGatewayProxyResponseEvent registerPharmacy(
+      APIGatewayProxyRequestEvent request, JsonNode body) {
+    User requester = requester(request);
     Pharmacy pharmacy =
         new Pharmacy(
             body.path("pharmacyId").asText(""),
-            require(body, "pharmacistId"),
+            requester.userId(),
             require(body, "name"),
             require(body, "address"),
             require(body, "area"),
@@ -96,30 +123,47 @@ public class PharmacyHandler extends BaseHandler
             "");
 
     ObjectNode wrapper = MAPPER.createObjectNode();
-    wrapper.set("pharmacy", toPharmacyNode(pharmacyService.registerPharmacy(pharmacy)));
+    wrapper.set("pharmacy", toPharmacyNode(pharmacyService.registerPharmacy(requester, pharmacy)));
     return ok(wrapper);
   }
 
-  private APIGatewayProxyResponseEvent getMyPharmacy(String pharmacistId) {
+  private APIGatewayProxyResponseEvent getMyPharmacy(APIGatewayProxyRequestEvent request) {
     ObjectNode wrapper = MAPPER.createObjectNode();
     pharmacyService
-        .findByPharmacistId(pharmacistId)
+        .getMyPharmacy(requester(request))
         .ifPresentOrElse(
             pharmacy -> wrapper.set("pharmacy", toPharmacyNode(pharmacy)),
             () -> wrapper.putNull("pharmacy"));
     return ok(wrapper);
   }
 
-  private APIGatewayProxyResponseEvent listAllPharmacies() {
+  private APIGatewayProxyResponseEvent listAllPharmacies(APIGatewayProxyRequestEvent request) {
     ObjectNode wrapper = MAPPER.createObjectNode();
     ArrayNode pharmacies = wrapper.putArray("pharmacies");
-    pharmacyService.listAllPharmacies().forEach(pharmacy -> pharmacies.add(toPharmacyNode(pharmacy)));
+    pharmacyService
+        .listAllPharmacies(requester(request))
+        .forEach(pharmacy -> pharmacies.add(toPharmacyNode(pharmacy)));
     return ok(wrapper);
   }
 
-  private APIGatewayProxyResponseEvent approvePharmacy(String pharmacyId, JsonNode body) {
+  private APIGatewayProxyResponseEvent getAdminPharmacy(
+      APIGatewayProxyRequestEvent request, String pharmacyId) {
+    ObjectNode wrapper = MAPPER.createObjectNode();
+    wrapper.set(
+        "pharmacy", toPharmacyNode(pharmacyService.getAdminPharmacyById(requester(request), pharmacyId)));
+    return ok(wrapper);
+  }
+
+  private APIGatewayProxyResponseEvent getPublicPharmacy(String pharmacyId) {
+    ObjectNode wrapper = MAPPER.createObjectNode();
+    wrapper.set("pharmacy", toPublicPharmacyNode(pharmacyService.getPublicPharmacyById(pharmacyId)));
+    return ok(wrapper);
+  }
+
+  private APIGatewayProxyResponseEvent approvePharmacy(
+      APIGatewayProxyRequestEvent request, String pharmacyId, JsonNode body) {
     boolean approved = body.path("approved").asBoolean(true);
-    pharmacyService.setApproval(pharmacyId, approved);
+    pharmacyService.setApproval(requester(request), pharmacyId, approved);
 
     ObjectNode wrapper = MAPPER.createObjectNode();
     wrapper.put("success", true);
@@ -159,8 +203,24 @@ public class PharmacyHandler extends BaseHandler
   }
 
   private ObjectNode toNearbyPharmacyNode(NearbyPharmacy nearbyPharmacy) {
-    ObjectNode node = toPharmacyNode(nearbyPharmacy.pharmacy());
+    ObjectNode node = toPublicPharmacyNode(nearbyPharmacy.pharmacy());
     node.put("distanceMeters", nearbyPharmacy.distanceMeters());
+    return node;
+  }
+
+  private ObjectNode toPublicPharmacyNode(Pharmacy pharmacy) {
+    ObjectNode node = MAPPER.createObjectNode();
+    node.put("id", pharmacy.pharmacyId());
+    node.put("pharmacyId", pharmacy.pharmacyId());
+    node.put("name", pharmacy.name());
+    node.put("address", pharmacy.address());
+    node.put("area", pharmacy.area());
+    node.put("district", pharmacy.district());
+    node.put("phone", pharmacy.phone());
+    node.put("email", pharmacy.email());
+    node.putObject("location").put("lat", pharmacy.latitude()).put("lng", pharmacy.longitude());
+    node.put("latitude", pharmacy.latitude());
+    node.put("longitude", pharmacy.longitude());
     return node;
   }
 
@@ -183,6 +243,30 @@ public class PharmacyHandler extends BaseHandler
     node.put("createdAt", pharmacy.createdAt());
     node.put("updatedAt", pharmacy.updatedAt());
     return node;
+  }
+
+  private User requester(APIGatewayProxyRequestEvent request) {
+    return userService.getRequester(header(request, REQUESTER_HEADER));
+  }
+
+  private String header(APIGatewayProxyRequestEvent request, String name) {
+    if (request == null || request.getHeaders() == null) {
+      return "";
+    }
+
+    return request.getHeaders().entrySet().stream()
+        .filter(entry -> entry.getKey() != null && entry.getKey().equalsIgnoreCase(name))
+        .map(Map.Entry::getValue)
+        .findFirst()
+        .orElse("");
+  }
+
+  private String pathSegment(String path, int index) {
+    String[] parts = path.split("/");
+    if (parts.length <= index) {
+      throw new IllegalArgumentException("path is missing required id");
+    }
+    return URLDecoder.decode(parts[index], StandardCharsets.UTF_8);
   }
 
   private String queryParam(APIGatewayProxyRequestEvent request, String name) {

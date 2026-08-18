@@ -174,7 +174,7 @@ public class DynamoDBUserRepository implements UserRepository{
 
     private static User toUser(Map<String, AttributeValue> item) {
         return new User(
-            stringValue(item, "userId"),
+            firstStringValue(item, "userId", "id"),
             stringValue(item, "email"),
             stringValue(item, "name"),
             roleValue(item, "role"),
@@ -194,6 +194,12 @@ public class DynamoDBUserRepository implements UserRepository{
     private static String stringValue(Map<String, AttributeValue> item, String attributeName) {
         AttributeValue value = item.get(attributeName);
         return value == null || value.s() == null ? "" : value.s();
+    }
+
+    private static String firstStringValue(
+        Map<String, AttributeValue> item, String firstAttribute, String secondAttribute) {
+        String value = stringValue(item, firstAttribute);
+        return value.isEmpty() ? stringValue(item, secondAttribute) : value;
     }
 
     private static boolean booleanValue(
