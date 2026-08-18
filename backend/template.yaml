@@ -205,6 +205,62 @@ Resources:
             Path: /inventory/availability
             Method: get
 
+  InventoryCrudFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: .
+      Handler: com.dawaa.api.inventory.InventoryHandler::handleRequest
+      Description: Pharmacist inventory listing, create/update, and deletion.
+      Environment:
+        Variables:
+          INVENTORY_TABLE: !Ref InventoryTableName
+          PHARMACIES_TABLE: !Ref PharmaciesTableName
+          USERS_TABLE: !Ref UsersTableName
+          MEDICINES_TABLE: !Ref MedicinesTableName
+      Policies:
+        - AWSLambdaBasicExecutionRole
+        - Statement:
+            - Effect: Allow
+              Action:
+                - dynamodb:GetItem
+                - dynamodb:PutItem
+                - dynamodb:DeleteItem
+                - dynamodb:Query
+              Resource:
+                - !Sub "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${InventoryTableName}"
+            - Effect: Allow
+              Action:
+                - dynamodb:GetItem
+              Resource:
+                - !Sub "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${UsersTableName}"
+            - Effect: Allow
+              Action:
+                - dynamodb:Query
+              Resource:
+                - !Sub "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${PharmaciesTableName}/index/PharmacyOwnerIndex"
+            - Effect: Allow
+              Action:
+                - dynamodb:Query
+              Resource:
+                - !Sub "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${MedicinesTableName}"
+                - !Sub "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${MedicinesTableName}/index/BrandNameIndex"
+      Events:
+        ListInventory:
+          Type: Api
+          Properties:
+            Path: /inventory/{id}
+            Method: get
+        UpsertInventory:
+          Type: Api
+          Properties:
+            Path: /inventory
+            Method: post
+        DeleteInventory:
+          Type: Api
+          Properties:
+            Path: /inventory/{id}
+            Method: delete
+
   PharmacyFunction:
     Type: AWS::Serverless::Function
     Properties:

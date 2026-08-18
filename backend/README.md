@@ -13,10 +13,20 @@ GET  /medicines/search
 POST /auth/register
 POST /auth/login
 GET  /admin/users
+GET  /admin/users/{id}
+GET  /admin/users/by-email?email={email}
+DELETE /admin/users/{id}
+GET  /users/me
+POST /users/me/update
 GET  /inventory/availability?medicineId={medicineId}
+GET  /inventory/{pharmacistId}
+POST /inventory
+DELETE /inventory/{medicineId}
 POST /pharmacies
 GET  /pharmacies/mine
+GET  /pharmacies/{id}
 GET  /admin/pharmacies
+GET  /admin/pharmacies/{id}
 POST /admin/pharmacies/{id}/approve
 GET  /pharmacies/nearby?lat={latitude}&lng={longitude}
 POST /pharmacies/search
@@ -44,46 +54,82 @@ DAWAA_API_BASE_URL=https://your-api-gateway-url
 
 Until `DAWAA_API_BASE_URL` is set, the existing local Lovable connector fallback still runs.
 
+## MVP Requester Identity
+
+Protected MVP routes temporarily use this header:
+
+```text
+X-Dawaa-User-Id: USER#...
+```
+
+That header is not real authentication. It lets the service layer receive a requester while the
+project is still pre-Cognito. When Cognito is added, handlers should read the authenticated Cognito
+claims instead of trusting this frontend-provided header.
+
+## Admin Bootstrap
+
+Public signup intentionally allows only patients and pharmacists. To use the admin panel in the demo,
+create one admin row manually with:
+
+```powershell
+.\scripts\create-admin.ps1 -Email admin@dawaa.com -Password "choose-a-demo-password"
+```
+
+Optional parameters:
+
+```powershell
+.\scripts\create-admin.ps1 `
+  -TableName DawaaUsers `
+  -Region eu-north-1 `
+  -UserId "USER#ADMIN" `
+  -Email admin@dawaa.com `
+  -Password "choose-a-demo-password" `
+  -Name "Admin"
+```
+
+The script writes a user with:
+
+```text
+userId, email, name, role=admin, passwordHash, active=true, createdAt, updatedAt
+```
+
+The password hash matches the temporary `AuthHandler` login format.
+
+## Inventory Shape
+
+The live `DawaaInventory` table uses:
+
+```text
+PK: pharmacyId
+SK: medicineId
+GSI: MedicineAvailabilityIndex
+  - availableMedicineId
+  - availableLocationKey
+```
+
+So pharmacist inventory CRUD is wired around the real table shape:
+
+```text
+GET    /inventory/{pharmacistId}
+POST   /inventory
+DELETE /inventory/{medicineId}
+```
+
+The path/body still says `pharmacistId` because the current frontend uses the logged-in user id for
+pharmacists. The backend resolves that user to their pharmacy, then reads/writes inventory by
+`pharmacyId + medicineId`.
+
+The older `pharmacistId-index` inventory design is not compatible with the current DynamoDB table.
+
 
 ## Before Handover
 
-- Refactor `GET /admin/users` out of `AuthHandler` into an admin/user handler.
------------------------
-Current:
-AuthHandler handles POST /auth/register
-AuthHandler handles POST /auth/login
-AuthHandler also handles GET /admin/users
-
-Target:
-AuthHandler handles only auth routes
-AdminUserHandler or UserAdminHandler handles GET /admin/users
-shared user lookup logic lives in UserService/UserRepository
------------------------
-
-- Modify structure to the following if possible:
----
-api/auth/AuthHandler.java
-  POST /auth/register
-  POST /auth/login
-
-api/admin/AdminUserHandler.java
-  GET /admin/users
-
-business/user/UserService.java
-domain/user/User.java
-domain/user/UserRole.java
-domain/user/UserRepository.java
-persistence/dynamodb/user/DynamoDbUserRepository.java
----
-
-- Add `User`, `UserRole`, `UserRepository`, `UserService`, and `DynamoDbUserRepository`. ---- HALFWAY THROUGH
 - Add role-based frontend landing tabs.
 - Add shared Settings tab for all roles.
-- Add real admin bootstrap strategy.
 - Add basic frontend/backend tests.
 
 ## Later Security Pass
 
 - Add AWS Cognito.
 - Replace localStorage trust with token-based auth.
-- Protect admin and pharmacist backend routes.
+- Replace temporary password hashing with production password/auth handling.
