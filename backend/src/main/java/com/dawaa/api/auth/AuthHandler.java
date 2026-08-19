@@ -1,4 +1,4 @@
-package com.dawaa.auth;
+package com.dawaa.api.auth;
 
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;

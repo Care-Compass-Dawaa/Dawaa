@@ -78,7 +78,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       CodeUri: .
-      Handler: com.dawaa.auth.AuthHandler::handleRequest
+      Handler: com.dawaa.api.auth.AuthHandler::handleRequest
       Description: User registration and login.
       Environment:
         Variables:

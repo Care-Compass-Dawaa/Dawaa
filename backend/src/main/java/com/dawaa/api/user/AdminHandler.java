@@ -50,7 +50,7 @@ public class AdminHandler extends BaseHandler
       }
 
       if ("GET".equalsIgnoreCase(method) && path.matches("/admin/users/.+")) {
-        return getUser(request, userIdFromPath(path));
+        return getUserById(request, userIdFromPath(path));
       }
 
       if ("DELETE".equalsIgnoreCase(method) && path.matches("/admin/users/.+")) {
@@ -80,7 +80,7 @@ public class AdminHandler extends BaseHandler
     return ok(wrapper);
   }
 
-  private APIGatewayProxyResponseEvent getUser(
+  private APIGatewayProxyResponseEvent getUserById(
       APIGatewayProxyRequestEvent request, String targetUserId) {
     User requester = requester(request);
     ObjectNode wrapper = MAPPER.createObjectNode();
