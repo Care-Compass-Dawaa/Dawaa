@@ -136,8 +136,7 @@ public class DynamoDbPharmacyRepository implements PharmacyRepository {
   private static Map<String, AttributeValue> toItem(Pharmacy pharmacy) {
     Map<String, AttributeValue> item = new HashMap<>();
     putString(item, "pharmacyId", pharmacy.pharmacyId());
-    putString(item, "pharmacistId", pharmacy.pharmacistId());
-    putString(item, "ownerUserId", pharmacy.pharmacistId());
+    putString(item, "ownerUserId", pharmacy.ownerUserId());
     putString(item, "name", pharmacy.name());
     putString(item, "address", pharmacy.address());
     putString(item, "area", pharmacy.area());

@@ -97,7 +97,7 @@ public class InventoryHandler extends BaseHandler
   private APIGatewayProxyResponseEvent upsertInventoryItem(
       APIGatewayProxyRequestEvent request, JsonNode body) {
     User requester = requester(request);
-    requireSameRequester(requester, body.path("pharmacistId").asText(""));
+    requireSameRequester(requester, body.path("requesterUserId").asText(""));
 
     InventoryItem saved =
         inventoryService.upsertMyInventoryItem(
@@ -116,7 +116,7 @@ public class InventoryHandler extends BaseHandler
   private APIGatewayProxyResponseEvent deleteInventoryItem(
       APIGatewayProxyRequestEvent request, String medicineId, JsonNode body) {
     User requester = requester(request);
-    requireSameRequester(requester, body.path("pharmacistId").asText(""));
+    requireSameRequester(requester, body.path("requesterUserId").asText(""));
     inventoryService.deleteMyInventoryItem(requester, medicineId);
 
     ObjectNode wrapper = MAPPER.createObjectNode();
@@ -130,7 +130,7 @@ public class InventoryHandler extends BaseHandler
 
   private void requireSameRequester(User requester, String claimedRequesterId) {
     if (claimedRequesterId == null || claimedRequesterId.isBlank()) {
-      throw new IllegalArgumentException("pharmacistId is required");
+      throw new IllegalArgumentException("requesterUserId is required");
     }
     if (!requester.userId().equals(claimedRequesterId.trim())) {
       throw new SecurityException("You can only manage your own inventory");

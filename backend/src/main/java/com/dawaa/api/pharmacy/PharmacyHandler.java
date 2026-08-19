@@ -228,7 +228,7 @@ public class PharmacyHandler extends BaseHandler
     ObjectNode node = MAPPER.createObjectNode();
     node.put("id", pharmacy.pharmacyId());
     node.put("pharmacyId", pharmacy.pharmacyId());
-    node.put("pharmacistId", pharmacy.pharmacistId());
+    node.put("ownerUserId", pharmacy.ownerUserId());
     node.put("name", pharmacy.name());
     node.put("address", pharmacy.address());
     node.put("area", pharmacy.area());

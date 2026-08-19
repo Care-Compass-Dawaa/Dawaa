@@ -198,7 +198,7 @@ function PharmacySetup({ user, onComplete }) {
     setError(null);
     try {
       const result = await registerPharmacyFn({
-        data: { pharmacistId: user.id, ...form },
+        data: { requesterUserId: user.id, ...form },
       });
       onComplete(result.pharmacy);
     } catch (err) {
@@ -358,7 +358,7 @@ function PharmacistDashboard({ user }) {
 
   // On mount, check if this pharmacist has a registered pharmacy
   useEffect(() => {
-    getMyPharmacyFn({ data: { pharmacistId: user.id } })
+    getMyPharmacyFn({ data: { requesterUserId: user.id } })
       .then((res) => setPharmacy(res.pharmacy))
       .catch(() => setPharmacy(null))
       .finally(() => setCheckingPharmacy(false));
@@ -373,7 +373,7 @@ function PharmacistDashboard({ user }) {
     setLoading(true);
     setError(null);
     try {
-      const result = await getInventoryFn({ data: { pharmacistId: user.id } });
+      const result = await getInventoryFn({ data: { requesterUserId: user.id } });
       setInventory(result.items);
     } catch (err) {
       setError(err?.message ?? "Failed to load inventory");
@@ -389,7 +389,7 @@ function PharmacistDashboard({ user }) {
     try {
       await upsertFn({
         data: {
-          pharmacistId: user.id,
+          requesterUserId: user.id,
           id: form.editId,
           medicineName: form.medicineName.trim(),
           quantity: Number(form.quantity) || 0,
@@ -408,7 +408,7 @@ function PharmacistDashboard({ user }) {
   async function handleDelete(id) {
     if (!window.confirm("Remove this medicine from your inventory?")) return;
     try {
-      await deleteFn({ data: { pharmacistId: user.id, id } });
+      await deleteFn({ data: { requesterUserId: user.id, id } });
       await loadInventory();
     } catch (err) {
       setError(err?.message ?? "Failed to delete");

@@ -19,7 +19,7 @@ DELETE /admin/users/{id}
 GET  /users/me
 POST /users/me/update
 GET  /inventory/availability?medicineId={medicineId}
-GET  /inventory/{pharmacistId}
+GET  /inventory/{requesterUserId}
 POST /inventory
 DELETE /inventory/{medicineId}
 POST /pharmacies
@@ -110,16 +110,17 @@ GSI: MedicineAvailabilityIndex
 So pharmacist inventory CRUD is wired around the real table shape:
 
 ```text
-GET    /inventory/{pharmacistId}
+GET    /inventory/{requesterUserId}
 POST   /inventory
 DELETE /inventory/{medicineId}
 ```
 
-The path/body still says `pharmacistId` because the current frontend uses the logged-in user id for
-pharmacists. The backend resolves that user to their pharmacy, then reads/writes inventory by
+The path/body uses `requesterUserId` because the current frontend sends the logged-in user id.
+The backend resolves that user to their pharmacy, then reads/writes inventory by
 `pharmacyId + medicineId`.
 
-The older `pharmacistId-index` inventory design is not compatible with the current DynamoDB table.
+The older inventory design that indexed directly by pharmacist/user id is not compatible with the
+current DynamoDB table.
 
 
 ## Before Handover

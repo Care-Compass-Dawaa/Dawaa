@@ -54,13 +54,6 @@ public class PharmacyService {
     return registerPharmacyForOwner(pharmacy, requester.userId());
   }
 
-  public Pharmacy registerPharmacy(Pharmacy pharmacy) {
-    if (!textPresent(pharmacy.pharmacistId())) {
-      throw new IllegalArgumentException("pharmacistId is required");
-    }
-    return registerPharmacyForOwner(pharmacy, pharmacy.pharmacistId());
-  }
-
   private Pharmacy registerPharmacyForOwner(Pharmacy pharmacy, String ownerUserId) {
     if (!textPresent(pharmacy.name())) {
       throw new IllegalArgumentException("name is required");
@@ -131,11 +124,11 @@ public class PharmacyService {
     return pharmacyRepository.findByOwnerUserId(requester.userId());
   }
 
-  public Optional<Pharmacy> findByPharmacistId(String pharmacistId) {
-    if (!textPresent(pharmacistId)) {
-        throw new IllegalArgumentException("pharmacistId is required");
+  public Optional<Pharmacy> findByOwnerUserId(String ownerUserId) {
+    if (!textPresent(ownerUserId)) {
+        throw new IllegalArgumentException("ownerUserId is required");
     }
-    return pharmacyRepository.findByOwnerUserId(pharmacistId.trim());
+    return pharmacyRepository.findByOwnerUserId(ownerUserId.trim());
   }
 
   public List<Pharmacy> listAllPharmacies(User requester) {
@@ -177,7 +170,7 @@ public class PharmacyService {
   }
 
   private static boolean isSearchable(Pharmacy pharmacy) {
-    return pharmacy.active() && pharmacy.approved();
+    return pharmacy != null && pharmacy.active() && pharmacy.approved();
   }
 
   private Pharmacy findExistingById(String pharmacyId) {

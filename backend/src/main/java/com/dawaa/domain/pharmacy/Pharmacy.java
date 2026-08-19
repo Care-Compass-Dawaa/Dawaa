@@ -2,7 +2,7 @@ package com.dawaa.domain.pharmacy;
 
 public record Pharmacy(
     String pharmacyId,
-    String pharmacistId,
+    String ownerUserId,
     String name,
     String address,
     String area,
