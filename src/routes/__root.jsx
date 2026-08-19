@@ -11,6 +11,7 @@ import { useEffect } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { ThemeToggle } from "../lib/theme-toggle";
 
 function NotFoundComponent() {
   return (
@@ -109,6 +110,11 @@ function RootShell({ children }) {
     <html lang="en">
       <head>
         <HeadContent />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem("dawaa-theme");if(t==="dark"||(!t&&window.matchMedia("(prefers-color-scheme: dark)").matches)){document.documentElement.classList.add("dark");}}catch(e){}})();`,
+          }}
+        />
       </head>
       <body>
         {children}
@@ -123,6 +129,9 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <div className="fixed right-4 top-4 z-50">
+        <ThemeToggle />
+      </div>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
     </QueryClientProvider>
