@@ -152,17 +152,6 @@ public class PharmacyService {
     pharmacyRepository.updateApproval(pharmacyId.trim(), approved);
   }
 
-  public List<Pharmacy> listAllPharmacies() {
-    return pharmacyRepository.findAll();
-  }
-
-  public void setApproval(String pharmacyId, boolean approved) {
-    if (!textPresent(pharmacyId)) {
-      throw new IllegalArgumentException("pharmacyId is required");
-    }
-    pharmacyRepository.updateApproval(pharmacyId.trim(), approved);
-  }
-
   public List<NearbyPharmacy> findNearbyPharmacies(
       double latitude, double longitude, int radiusMeters, int limit) {
     int normalizedRadius = Math.min(Math.max(radiusMeters, 500), 50_000);
