@@ -21,25 +21,25 @@ import software.amazon.awssdk.services.dynamodb.model.UpdateItemRequest;
 
 public class DynamoDbPharmacyRepository implements PharmacyRepository {
   private static final String DEFAULT_TABLE_NAME = "DawaaPharmacies";
-  private static final String DEFAULT_PHARMACIST_INDEX_NAME = "pharmacistId-index";
+  private static final String DEFAULT_OWNER_INDEX_NAME = "PharmacyOwnerIndex";
 
   private final DynamoDbClient dynamoDb;
   private final String tableName;
-  private final String pharmacistIndexName;
+  private final String ownerIndexName;
 
   public DynamoDbPharmacyRepository() {
     this(DynamoDbClient.builder().build());
   }
 
   public DynamoDbPharmacyRepository(DynamoDbClient dynamoDb) {
-    this(dynamoDb, configuredTableName(), DEFAULT_PHARMACIST_INDEX_NAME);
+    this(dynamoDb, configuredTableName(), DEFAULT_OWNER_INDEX_NAME);
   }
 
   public DynamoDbPharmacyRepository(
-      DynamoDbClient dynamoDb, String tableName, String pharmacistIndexName) {
+      DynamoDbClient dynamoDb, String tableName, String ownerIndexName) {
     this.dynamoDb = Objects.requireNonNull(dynamoDb, "dynamoDb is required");
     this.tableName = requireText(tableName, "tableName");
-    this.pharmacistIndexName = requireText(pharmacistIndexName, "pharmacistIndexName");
+    this.ownerIndexName = requireText(ownerIndexName, "ownerIndexName");
   }
 
   @Override
@@ -69,8 +69,8 @@ public class DynamoDbPharmacyRepository implements PharmacyRepository {
   }
 
   @Override
-  public Optional<Pharmacy> findByPharmacistId(String pharmacistId) {
-    if (pharmacistId == null || pharmacistId.isBlank()) {
+  public Optional<Pharmacy> findByOwnerUserId(String ownerUserId) {
+    if (ownerUserId == null || ownerUserId.isBlank()) {
       return Optional.empty();
     }
 
@@ -78,10 +78,10 @@ public class DynamoDbPharmacyRepository implements PharmacyRepository {
         dynamoDb.query(
             QueryRequest.builder()
                 .tableName(tableName)
-                .indexName(pharmacistIndexName)
-                .keyConditionExpression("pharmacistId = :pharmacistId")
+                .indexName(ownerIndexName)
+                .keyConditionExpression("ownerUserId = :ownerUserId")
                 .expressionAttributeValues(
-                    Map.of(":pharmacistId", AttributeValue.fromS(pharmacistId.trim())))
+                    Map.of(":ownerUserId", AttributeValue.fromS(ownerUserId.trim())))
                 .limit(1)
                 .build());
 
@@ -116,8 +116,11 @@ public class DynamoDbPharmacyRepository implements PharmacyRepository {
         UpdateItemRequest.builder()
             .tableName(tableName)
             .key(Map.of("pharmacyId", AttributeValue.fromS(pharmacyId)))
-            .updateExpression("SET approved = :approved")
-            .expressionAttributeValues(Map.of(":approved", AttributeValue.fromBool(approved)))
+            .updateExpression(
+                approved
+                    ? "SET approved = :approved, updatedAt = :updatedAt REMOVE pendingRegistrationStatus, pendingRegistrationCreatedAt"
+                    : "SET approved = :approved, updatedAt = :updatedAt, pendingRegistrationStatus = :pendingStatus, pendingRegistrationCreatedAt = :pendingCreatedAt")
+            .expressionAttributeValues(approvalValues(approved))
             .conditionExpression("attribute_exists(pharmacyId)")
             .build());
   }
@@ -133,7 +136,7 @@ public class DynamoDbPharmacyRepository implements PharmacyRepository {
   private static Map<String, AttributeValue> toItem(Pharmacy pharmacy) {
     Map<String, AttributeValue> item = new HashMap<>();
     putString(item, "pharmacyId", pharmacy.pharmacyId());
-    putString(item, "pharmacistId", pharmacy.pharmacistId());
+    putString(item, "ownerUserId", pharmacy.ownerUserId());
     putString(item, "name", pharmacy.name());
     putString(item, "address", pharmacy.address());
     putString(item, "area", pharmacy.area());
@@ -146,14 +149,19 @@ public class DynamoDbPharmacyRepository implements PharmacyRepository {
     item.put("active", AttributeValue.fromBool(pharmacy.active()));
     putString(item, "createdAt", pharmacy.createdAt());
     putString(item, "updatedAt", pharmacy.updatedAt());
+    if (!pharmacy.approved()) {
+      putString(item, "pendingRegistrationStatus", "pending");
+      putString(item, "pendingRegistrationCreatedAt", pharmacy.createdAt());
+    }
     return item;
   }
 
   private static Pharmacy toPharmacy(Map<String, AttributeValue> item) {
     String pharmacyId = firstStringValue(item, "pharmacyId", "id");
+    String ownerUserId = firstStringValue(item, "ownerUserId", "pharmacistId");
     return new Pharmacy(
         pharmacyId,
-        stringValue(item, "pharmacistId"),
+        ownerUserId,
         stringValue(item, "name"),
         stringValue(item, "address"),
         stringValue(item, "area"),
@@ -198,6 +206,20 @@ public class DynamoDbPharmacyRepository implements PharmacyRepository {
       Map<String, AttributeValue> item, String attributeName, boolean defaultValue) {
     AttributeValue value = item.get(attributeName);
     return value == null || value.bool() == null ? defaultValue : Boolean.TRUE.equals(value.bool());
+  }
+
+  private static Map<String, AttributeValue> approvalValues(boolean approved) {
+    String now = java.time.Instant.now().toString();
+    if (approved) {
+      return Map.of(
+          ":approved", AttributeValue.fromBool(true),
+          ":updatedAt", AttributeValue.fromS(now));
+    }
+    return Map.of(
+        ":approved", AttributeValue.fromBool(false),
+        ":updatedAt", AttributeValue.fromS(now),
+        ":pendingStatus", AttributeValue.fromS("pending"),
+        ":pendingCreatedAt", AttributeValue.fromS(now));
   }
 
   private static String requireText(String value, String name) {

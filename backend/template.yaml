@@ -12,7 +12,7 @@ Globals:
   Api:
     Cors:
       AllowMethods: "'GET,POST,DELETE,OPTIONS'"
-      AllowHeaders: "'Content-Type,Authorization'"
+      AllowHeaders: "'Content-Type,Authorization,X-Dawaa-User-Id'"
       AllowOrigin: "'*'"
   Function:
     Runtime: java21
@@ -79,7 +79,7 @@ Resources:
     Properties:
       CodeUri: .
       Handler: com.dawaa.auth.AuthHandler::handleRequest
-      Description: User registration, login, and admin user listing.
+      Description: User registration and login.
       Environment:
         Variables:
           USERS_TABLE: !Ref UsersTableName
@@ -89,10 +89,7 @@ Resources:
             - Effect: Allow
               Action:
                 - dynamodb:PutItem
-                - dynamodb:GetItem
-                - dynamodb:UpdateItem
                 - dynamodb:Query
-                - dynamodb:Scan
               Resource:
                 - !Sub "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${UsersTableName}"
                 - !Sub "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${UsersTableName}/index/email-index"
@@ -172,6 +169,11 @@ Resources:
           Properties:
             Path: /admin/users/{id}
             Method: get
+        AdminGetUserByEmail:
+          Type: Api
+          Properties:
+            Path: /admin/users/by-email
+            Method: get
         AdminDeactivateUser:
           Type: Api
           Properties:
@@ -203,6 +205,62 @@ Resources:
             Path: /inventory/availability
             Method: get
 
+  InventoryCrudFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: .
+      Handler: com.dawaa.api.inventory.InventoryHandler::handleRequest
+      Description: Pharmacist inventory listing, create/update, and deletion.
+      Environment:
+        Variables:
+          INVENTORY_TABLE: !Ref InventoryTableName
+          PHARMACIES_TABLE: !Ref PharmaciesTableName
+          USERS_TABLE: !Ref UsersTableName
+          MEDICINES_TABLE: !Ref MedicinesTableName
+      Policies:
+        - AWSLambdaBasicExecutionRole
+        - Statement:
+            - Effect: Allow
+              Action:
+                - dynamodb:GetItem
+                - dynamodb:PutItem
+                - dynamodb:DeleteItem
+                - dynamodb:Query
+              Resource:
+                - !Sub "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${InventoryTableName}"
+            - Effect: Allow
+              Action:
+                - dynamodb:GetItem
+              Resource:
+                - !Sub "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${UsersTableName}"
+            - Effect: Allow
+              Action:
+                - dynamodb:Query
+              Resource:
+                - !Sub "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${PharmaciesTableName}/index/PharmacyOwnerIndex"
+            - Effect: Allow
+              Action:
+                - dynamodb:Query
+              Resource:
+                - !Sub "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${MedicinesTableName}"
+                - !Sub "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${MedicinesTableName}/index/BrandNameIndex"
+      Events:
+        ListInventory:
+          Type: Api
+          Properties:
+            Path: /inventory/{id}
+            Method: get
+        UpsertInventory:
+          Type: Api
+          Properties:
+            Path: /inventory
+            Method: post
+        DeleteInventory:
+          Type: Api
+          Properties:
+            Path: /inventory/{id}
+            Method: delete
+
   PharmacyFunction:
     Type: AWS::Serverless::Function
     Properties:
@@ -212,6 +270,7 @@ Resources:
       Environment:
         Variables:
           PHARMACIES_TABLE: !Ref PharmaciesTableName
+          USERS_TABLE: !Ref UsersTableName
       Policies:
         - AWSLambdaBasicExecutionRole
         - Statement:
@@ -224,7 +283,12 @@ Resources:
                 - dynamodb:Scan
               Resource:
                 - !Sub "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${PharmaciesTableName}"
-                - !Sub "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${PharmaciesTableName}/index/pharmacistId-index"
+                - !Sub "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${PharmaciesTableName}/index/PharmacyOwnerIndex"
+            - Effect: Allow
+              Action:
+                - dynamodb:GetItem
+              Resource:
+                - !Sub "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${UsersTableName}"
       Events:
         RegisterPharmacy:
           Type: Api
@@ -236,10 +300,20 @@ Resources:
           Properties:
             Path: /pharmacies/mine
             Method: get
+        GetPublicPharmacy:
+          Type: Api
+          Properties:
+            Path: /pharmacies/{id}
+            Method: get
         AdminListPharmacies:
           Type: Api
           Properties:
             Path: /admin/pharmacies
+            Method: get
+        AdminGetPharmacy:
+          Type: Api
+          Properties:
+            Path: /admin/pharmacies/{id}
             Method: get
         AdminApprovePharmacy:
           Type: Api

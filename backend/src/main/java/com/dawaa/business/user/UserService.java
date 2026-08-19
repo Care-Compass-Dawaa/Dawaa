@@ -2,10 +2,11 @@ package com.dawaa.business.user;
 
 import com.dawaa.domain.user.*;
 import java.time.Instant;
+import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.UUID;
-import java.util.List;
 
 public class UserService {
     private final UserRepository userRepository;
@@ -24,24 +25,27 @@ public class UserService {
             throw new IllegalArgumentException("Requester user id is required");
         }
 
-        return userRepository.findById(requesterUserId.trim())
+        User requester = userRepository.findById(requesterUserId.trim())
             .orElseThrow(() -> new IllegalArgumentException("Requester not found"));
+        if (!requester.active()) {
+            throw new SecurityException("Requester account is inactive");
+        }
+        return requester;
     }
 
     public User registerUser(User user){
+        if (user == null) {
+            throw new IllegalArgumentException("User is required");
+        }
         if( isEmpty(user.email())||
             isEmpty(user.name())||
-            isEmpty(user.passwordHash())||
-            isEmpty(user.createdAt())||
-            isEmpty(user.updatedAt())||
-            user.role()==null)
-            //user.active()==null|| you don't check this because "boolean" is a primitive type and is guaranteed
-            //to either be true/false. but "Boolean" can be null (the upper case one cause it's the main class)
+            isEmpty(user.passwordHash()))
             {
-                throw new IllegalArgumentException("all User fields are required");
+                throw new IllegalArgumentException("email, name, and password are required");
             }
 
-        Optional<User> existingUser = userRepository.findByEmail(user.email());
+        String normalizedEmail = user.email().trim().toLowerCase();
+        Optional<User> existingUser = userRepository.findByEmail(normalizedEmail);
         if (existingUser.isPresent()) { //returns true if user already exists
             throw new IllegalArgumentException("An account with this email already exists");
         }
@@ -50,25 +54,55 @@ public class UserService {
         String userId = !isEmpty(user.userId())? user.userId().trim()
                 : "USER#" + UUID.randomUUID();
         //replaces user id if not found
+        UserRole role = user.role() == null ? UserRole.PATIENT : user.role();
 
         User newUser = new User(
             userId,
-            user.email().trim().toLowerCase(),
+            normalizedEmail,
             user.name().trim(),
-            user.role(),
+            role,
             user.passwordHash(),
             true,
-            now,
-            now
+            !isEmpty(user.createdAt()) ? user.createdAt().trim() : now,
+            !isEmpty(user.updatedAt()) ? user.updatedAt().trim() : now
         );
 
         return userRepository.save(newUser);
         //save user if no account with this email exists
     }
 
+    public User loginUser(String email, String passwordHash) {
+        if (isEmpty(email) || isEmpty(passwordHash)) {
+            throw new IllegalArgumentException("email and password are required");
+        }
+
+        User user =
+            userRepository.findByEmail(email.trim().toLowerCase())
+                .orElseThrow(() -> new SecurityException("Invalid email or password"));
+
+        if (!user.passwordHash().equals(passwordHash)) {
+            throw new SecurityException("Invalid email or password");
+        }
+        if (!user.active()) {
+            throw new SecurityException("Account is inactive");
+        }
+
+        return user;
+    }
+
+    public User getMyProfile(User requester) {
+        if (requester == null) {
+            throw new IllegalArgumentException("Requester is required");
+        }
+        return requester;
+    }
+
     public static void requireAdmin(User requester){
-        if (requester == null || requester.role()!=UserRole.ADMIN){
-            throw new IllegalArgumentException("Admin access is required.");
+        if (requester == null) {
+            throw new IllegalArgumentException("Requester is required");
+        }
+        if (requester.role()!=UserRole.ADMIN){
+            throw new SecurityException("Admin access is required.");
         }
     } 
 
@@ -78,7 +112,7 @@ public class UserService {
             throw new IllegalArgumentException("userId is required");
         }
         return userRepository.findById(userId.trim())
-            .orElseThrow(() -> new IllegalArgumentException("User not found"));
+            .orElseThrow(() -> new NoSuchElementException("User not found"));
     }
     
     public User getByEmail(User requester, String userEmail){
@@ -87,7 +121,7 @@ public class UserService {
             throw new IllegalArgumentException("userEmail is required");
         }
         return userRepository.findByEmail(userEmail.trim())
-            .orElseThrow(() -> new IllegalArgumentException("User not found"));
+            .orElseThrow(() -> new NoSuchElementException("User not found"));
     }
 
     public List<User> getAllUsers(User requester){
@@ -134,8 +168,11 @@ public class UserService {
             throw new IllegalArgumentException("userId is required");
         }
 
-        if (!userRepository.findById(userId.trim()).isPresent()) { //if user not present, throw exception
-            throw new IllegalArgumentException("User not found");
+        User target = userRepository.findById(userId.trim())
+            .orElseThrow(() -> new NoSuchElementException("User not found"));
+
+        if (target.role() == UserRole.ADMIN) {
+            throw new SecurityException("Admin accounts cannot be deactivated here");
         }
 
         userRepository.deactivate(userId.trim());

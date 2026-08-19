@@ -9,6 +9,7 @@ import com.dawaa.domain.user.UserRole;
 import java.time.Instant;
 import java.util.Comparator;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.UUID;
@@ -28,15 +29,32 @@ public class PharmacyService {
     }
 
   public static void requireAdmin(User requester){
-        if (requester == null || requester.role()!=UserRole.ADMIN){
-            throw new IllegalArgumentException("Admin access is required.");
+        if (requester == null) {
+            throw new IllegalArgumentException("Requester is required");
+        }
+        if (requester.role()!=UserRole.ADMIN){
+            throw new SecurityException("Admin access is required.");
         }
     }
 
-  public Pharmacy registerPharmacy(Pharmacy pharmacy) {
-    if (!textPresent(pharmacy.pharmacistId())) {
-      throw new IllegalArgumentException("pharmacistId is required");
+  public Pharmacy registerPharmacy(User requester, Pharmacy pharmacy) {
+    if (requester == null) {
+      throw new IllegalArgumentException("Requester is required");
     }
+    if (requester.role() != UserRole.PHARMACIST) {
+      throw new SecurityException("Only pharmacists can register a pharmacy");
+    }
+    if (!requester.active()) {
+      throw new SecurityException("Requester account is inactive");
+    }
+    if (pharmacy == null) {
+      throw new IllegalArgumentException("pharmacy is required");
+    }
+
+    return registerPharmacyForOwner(pharmacy, requester.userId());
+  }
+
+  private Pharmacy registerPharmacyForOwner(Pharmacy pharmacy, String ownerUserId) {
     if (!textPresent(pharmacy.name())) {
       throw new IllegalArgumentException("name is required");
     }
@@ -50,7 +68,7 @@ public class PharmacyService {
       throw new IllegalArgumentException("phone is required");
     }
 
-    Optional<Pharmacy> existing = pharmacyRepository.findByPharmacistId(pharmacy.pharmacistId());
+    Optional<Pharmacy> existing = pharmacyRepository.findByOwnerUserId(ownerUserId);
     if (existing.isPresent()) {
         throw new IllegalArgumentException("This pharmacist already has a registered pharmacy");
     }//throws an exception if a pharmacy already exists for this pharmacist
@@ -64,7 +82,7 @@ public class PharmacyService {
     return pharmacyRepository.save(
         new Pharmacy(
             pharmacyId,
-            pharmacy.pharmacistId().trim(),
+            ownerUserId.trim(),
             pharmacy.name().trim(),
             pharmacy.address().trim(),
             pharmacy.area().trim(),
@@ -79,37 +97,51 @@ public class PharmacyService {
             now));
   }
 
-  public Pharmacy getById(User requester, String pharmacyId){
-      requireAdmin(requester);
-      if (isEmpty(pharmacyId)){
-          throw new IllegalArgumentException("phasrmacyId is required.");
+  public Pharmacy getPublicPharmacyById(String pharmacyId) {
+      Pharmacy pharmacy = findExistingById(pharmacyId);
+      if (!isSearchable(pharmacy)) {
+          throw new NoSuchElementException("pharmacy not found.");
       }
-      return pharmacyRepository.findById(pharmacyId)
-          .orElseThrow(() -> new IllegalArgumentException("pharmacy not found."));
+      return pharmacy;
   }
 
-  public Optional<Pharmacy> findByPharmacistId(String pharmacistId) {
-    if (!textPresent(pharmacistId)) {
-        throw new IllegalArgumentException("pharmacistId is required");
-    }
-     Optional<Pharmacy> pharmacy =
-          pharmacyRepository.findByPharmacistId(pharmacistId.trim());
-
-    if (pharmacy.isEmpty()) {
-        throw new IllegalArgumentException("Pharmacy not found");
-    }
-
-    return pharmacy;
+  public Pharmacy getAdminPharmacyById(User requester, String pharmacyId){
+      requireAdmin(requester);
+      return findExistingById(pharmacyId);
   }
 
-  public List<Pharmacy> listAllPharmacies() {
+  public Optional<Pharmacy> getMyPharmacy(User requester) {
+    if (requester == null) {
+        throw new IllegalArgumentException("Requester is required");
+    }
+    if (requester.role() != UserRole.PHARMACIST) {
+        throw new SecurityException("Only pharmacists can have a pharmacy profile");
+    }
+    if (!requester.active()) {
+        throw new SecurityException("Requester account is inactive");
+    }
+
+    return pharmacyRepository.findByOwnerUserId(requester.userId());
+  }
+
+  public Optional<Pharmacy> findByOwnerUserId(String ownerUserId) {
+    if (!textPresent(ownerUserId)) {
+        throw new IllegalArgumentException("ownerUserId is required");
+    }
+    return pharmacyRepository.findByOwnerUserId(ownerUserId.trim());
+  }
+
+  public List<Pharmacy> listAllPharmacies(User requester) {
+    requireAdmin(requester);
     return pharmacyRepository.findAll();
   }
 
-  public void setApproval(String pharmacyId, boolean approved) {
+  public void setApproval(User requester, String pharmacyId, boolean approved) {
+    requireAdmin(requester);
     if (!textPresent(pharmacyId)) {
       throw new IllegalArgumentException("pharmacyId is required");
     }
+    findExistingById(pharmacyId);
     pharmacyRepository.updateApproval(pharmacyId.trim(), approved);
   }
 
@@ -138,7 +170,15 @@ public class PharmacyService {
   }
 
   private static boolean isSearchable(Pharmacy pharmacy) {
-    return pharmacy.active() && pharmacy.approved();
+    return pharmacy != null && pharmacy.active() && pharmacy.approved();
+  }
+
+  private Pharmacy findExistingById(String pharmacyId) {
+      if (isEmpty(pharmacyId)){
+          throw new IllegalArgumentException("pharmacyId is required.");
+      }
+      return pharmacyRepository.findById(pharmacyId.trim())
+          .orElseThrow(() -> new NoSuchElementException("pharmacy not found."));
   }
 
   private static boolean hasCoordinates(Pharmacy pharmacy) {

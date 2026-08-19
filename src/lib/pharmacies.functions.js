@@ -2,10 +2,11 @@ import { createServerFn } from "@tanstack/react-start";
 
 const GATEWAY_URL = "https://connector-gateway.lovable.dev/google_maps";
 const DAWAA_API_BASE_URL = process.env.DAWAA_API_BASE_URL;
+const REQUESTER_HEADER = "X-Dawaa-User-Id";
 
 // ─── In-memory stores (replace with DynamoDB when backend is wired up) ─────────
 const usersStore = new Map();
-const inventoryStore = new Map(); // key: pharmacistId, value: Map of itemId -> item
+const inventoryStore = new Map(); // key: requesterUserId, value: Map of itemId -> item
 const pharmaciesStore = new Map();
 
 // Simple hash — server-only, no Node crypto import needed in client bundle
@@ -115,25 +116,27 @@ export const loginUser = createServerFn({ method: "POST" })
 // ─── Pharmacist Inventory ──────────────────────────────────────────────────────
 export const getInventory = createServerFn({ method: "POST" })
   .validator((input) => {
-    if (!input?.pharmacistId) throw new Error("pharmacistId is required");
-    return { pharmacistId: input.pharmacistId };
+    if (!input?.requesterUserId) throw new Error("requesterUserId is required");
+    return { requesterUserId: input.requesterUserId };
   })
   .handler(async ({ data }) => {
     if (DAWAA_API_BASE_URL) {
-      const res = await fetch(`${DAWAA_API_BASE_URL.replace(/\/$/, "")}/inventory/${data.pharmacistId}`);
+      const res = await fetch(`${DAWAA_API_BASE_URL.replace(/\/$/, "")}/inventory/${encodeURIComponent(data.requesterUserId)}`, {
+        headers: { [REQUESTER_HEADER]: data.requesterUserId },
+      });
       if (!res.ok) throw new Error((await res.text()).slice(0, 200));
       return await res.json();
     }
 
-    const store = inventoryStore.get(data.pharmacistId) ?? new Map();
+    const store = inventoryStore.get(data.requesterUserId) ?? new Map();
     return { items: [...store.values()].sort((a, b) => a.medicineName.localeCompare(b.medicineName)) };
   });
 
 export const upsertInventoryItem = createServerFn({ method: "POST" })
   .validator((input) => {
-    if (!input?.pharmacistId || !input?.medicineName) throw new Error("pharmacistId and medicineName are required");
+    if (!input?.requesterUserId || !input?.medicineName) throw new Error("requesterUserId and medicineName are required");
     return {
-      pharmacistId: input.pharmacistId,
+      requesterUserId: input.requesterUserId,
       id: input.id ?? null,
       medicineName: input.medicineName.trim(),
       quantity: Math.max(0, Number(input.quantity) || 0),
@@ -143,14 +146,16 @@ export const upsertInventoryItem = createServerFn({ method: "POST" })
   .handler(async ({ data }) => {
     if (DAWAA_API_BASE_URL) {
       const res = await fetch(`${DAWAA_API_BASE_URL.replace(/\/$/, "")}/inventory`, {
-        method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data),
+        method: "POST",
+        headers: { "Content-Type": "application/json", [REQUESTER_HEADER]: data.requesterUserId },
+        body: JSON.stringify(data),
       });
       if (!res.ok) throw new Error((await res.text()).slice(0, 200));
       return await res.json();
     }
 
-    if (!inventoryStore.has(data.pharmacistId)) inventoryStore.set(data.pharmacistId, new Map());
-    const store = inventoryStore.get(data.pharmacistId);
+    if (!inventoryStore.has(data.requesterUserId)) inventoryStore.set(data.requesterUserId, new Map());
+    const store = inventoryStore.get(data.requesterUserId);
 
     const id = data.id ?? generateId();
     const now = new Date().toISOString();
@@ -158,7 +163,7 @@ export const upsertInventoryItem = createServerFn({ method: "POST" })
 
     store.set(id, {
       id,
-      pharmacistId: data.pharmacistId,
+      requesterUserId: data.requesterUserId,
       medicineName: data.medicineName,
       quantity: data.quantity,
       inStock: data.inStock,
@@ -171,20 +176,21 @@ export const upsertInventoryItem = createServerFn({ method: "POST" })
 
 export const deleteInventoryItem = createServerFn({ method: "POST" })
   .validator((input) => {
-    if (!input?.pharmacistId || !input?.id) throw new Error("pharmacistId and id are required");
-    return { pharmacistId: input.pharmacistId, id: input.id };
+    if (!input?.requesterUserId || !input?.id) throw new Error("requesterUserId and id are required");
+    return { requesterUserId: input.requesterUserId, id: input.id };
   })
   .handler(async ({ data }) => {
     if (DAWAA_API_BASE_URL) {
-      const res = await fetch(`${DAWAA_API_BASE_URL.replace(/\/$/, "")}/inventory/${data.id}`, {
-        method: "DELETE", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ pharmacistId: data.pharmacistId }),
+      const res = await fetch(`${DAWAA_API_BASE_URL.replace(/\/$/, "")}/inventory/${encodeURIComponent(data.id)}`, {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json", [REQUESTER_HEADER]: data.requesterUserId },
+        body: JSON.stringify({ requesterUserId: data.requesterUserId }),
       });
       if (!res.ok) throw new Error((await res.text()).slice(0, 200));
       return await res.json();
     }
 
-    const store = inventoryStore.get(data.pharmacistId);
+    const store = inventoryStore.get(data.requesterUserId);
     if (store) store.delete(data.id);
     return { success: true };
   });
@@ -192,11 +198,11 @@ export const deleteInventoryItem = createServerFn({ method: "POST" })
 // ─── Pharmacy Registration ────────────────────────────────────────────────────
 export const registerPharmacy = createServerFn({ method: "POST" })
   .validator((input) => {
-    if (!input?.pharmacistId || !input?.name || !input?.address || !input?.area || !input?.phone) {
+    if (!input?.requesterUserId || !input?.name || !input?.address || !input?.area || !input?.phone) {
       throw new Error("All pharmacy fields are required");
     }
     return {
-      pharmacistId: input.pharmacistId,
+      requesterUserId: input.requesterUserId,
       name: input.name.trim(),
       address: input.address.trim(),
       area: input.area.trim(),
@@ -206,18 +212,20 @@ export const registerPharmacy = createServerFn({ method: "POST" })
   .handler(async ({ data }) => {
     if (DAWAA_API_BASE_URL) {
       const res = await fetch(`${DAWAA_API_BASE_URL.replace(/\/$/, "")}/pharmacies`, {
-        method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data),
+        method: "POST",
+        headers: { "Content-Type": "application/json", [REQUESTER_HEADER]: data.requesterUserId },
+        body: JSON.stringify(data),
       });
       if (!res.ok) throw new Error((await res.text()).slice(0, 200));
       return await res.json();
     }
 
-    const existing = [...pharmaciesStore.values()].find((p) => p.pharmacistId === data.pharmacistId);
+    const existing = [...pharmaciesStore.values()].find((p) => p.ownerUserId === data.requesterUserId);
     if (existing) return { pharmacy: existing };
 
     const pharmacy = {
       id: generateId(),
-      pharmacistId: data.pharmacistId,
+      ownerUserId: data.requesterUserId,
       name: data.name,
       address: data.address,
       area: data.area,
@@ -231,26 +239,33 @@ export const registerPharmacy = createServerFn({ method: "POST" })
 
 export const getMyPharmacy = createServerFn({ method: "POST" })
   .validator((input) => {
-    if (!input?.pharmacistId) throw new Error("pharmacistId is required");
-    return { pharmacistId: input.pharmacistId };
+    if (!input?.requesterUserId) throw new Error("requesterUserId is required");
+    return { requesterUserId: input.requesterUserId };
   })
   .handler(async ({ data }) => {
     if (DAWAA_API_BASE_URL) {
-      const res = await fetch(`${DAWAA_API_BASE_URL.replace(/\/$/, "")}/pharmacies/mine?pharmacistId=${data.pharmacistId}`);
+      const res = await fetch(`${DAWAA_API_BASE_URL.replace(/\/$/, "")}/pharmacies/mine`, {
+        headers: { [REQUESTER_HEADER]: data.requesterUserId },
+      });
       if (!res.ok) throw new Error((await res.text()).slice(0, 200));
       return await res.json();
     }
 
-    const pharmacy = [...pharmaciesStore.values()].find((p) => p.pharmacistId === data.pharmacistId) ?? null;
+    const pharmacy = [...pharmaciesStore.values()].find((p) => p.ownerUserId === data.requesterUserId) ?? null;
     return { pharmacy };
   });
 
 // ─── Admin ─────────────────────────────────────────────────────────────────────
 export const getAllUsers = createServerFn({ method: "POST" })
-  .validator(() => ({}))
-  .handler(async () => {
+  .validator((input) => {
+    if (!input?.requesterUserId) throw new Error("requesterUserId is required");
+    return { requesterUserId: input.requesterUserId };
+  })
+  .handler(async ({ data }) => {
     if (DAWAA_API_BASE_URL) {
-      const res = await fetch(`${DAWAA_API_BASE_URL.replace(/\/$/, "")}/admin/users`);
+      const res = await fetch(`${DAWAA_API_BASE_URL.replace(/\/$/, "")}/admin/users`, {
+        headers: { [REQUESTER_HEADER]: data.requesterUserId },
+      });
       if (!res.ok) throw new Error((await res.text()).slice(0, 200));
       return await res.json();
     }
@@ -262,10 +277,15 @@ export const getAllUsers = createServerFn({ method: "POST" })
   });
 
 export const getAllPharmacies = createServerFn({ method: "POST" })
-  .validator(() => ({}))
-  .handler(async () => {
+  .validator((input) => {
+    if (!input?.requesterUserId) throw new Error("requesterUserId is required");
+    return { requesterUserId: input.requesterUserId };
+  })
+  .handler(async ({ data }) => {
     if (DAWAA_API_BASE_URL) {
-      const res = await fetch(`${DAWAA_API_BASE_URL.replace(/\/$/, "")}/admin/pharmacies`);
+      const res = await fetch(`${DAWAA_API_BASE_URL.replace(/\/$/, "")}/admin/pharmacies`, {
+        headers: { [REQUESTER_HEADER]: data.requesterUserId },
+      });
       if (!res.ok) throw new Error((await res.text()).slice(0, 200));
       return await res.json();
     }
@@ -275,14 +295,24 @@ export const getAllPharmacies = createServerFn({ method: "POST" })
 
 export const approvePharmacy = createServerFn({ method: "POST" })
   .validator((input) => {
-    if (!input?.pharmacyId) throw new Error("pharmacyId is required");
-    return { pharmacyId: input.pharmacyId, approved: input.approved !== false };
+    if (!input?.pharmacyId || !input?.requesterUserId) {
+      throw new Error("pharmacyId and requesterUserId are required");
+    }
+    return {
+      pharmacyId: input.pharmacyId,
+      requesterUserId: input.requesterUserId,
+      approved: input.approved !== false,
+    };
   })
   .handler(async ({ data }) => {
     if (DAWAA_API_BASE_URL) {
       const res = await fetch(
-        `${DAWAA_API_BASE_URL.replace(/\/$/, "")}/admin/pharmacies/${data.pharmacyId}/approve`,
-        { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ approved: data.approved }) },
+        `${DAWAA_API_BASE_URL.replace(/\/$/, "")}/admin/pharmacies/${encodeURIComponent(data.pharmacyId)}/approve`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json", [REQUESTER_HEADER]: data.requesterUserId },
+          body: JSON.stringify({ approved: data.approved }),
+        },
       );
       if (!res.ok) throw new Error((await res.text()).slice(0, 200));
       return await res.json();

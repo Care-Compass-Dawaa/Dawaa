@@ -8,7 +8,7 @@ public interface PharmacyRepository {
 
   Optional<Pharmacy> findById(String pharmacyId);
 
-  Optional<Pharmacy> findByPharmacistId(String pharmacistId);
+  Optional<Pharmacy> findByOwnerUserId(String ownerUserId);
 
   List<Pharmacy> findAll();
 
