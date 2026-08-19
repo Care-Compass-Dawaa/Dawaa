@@ -121,7 +121,7 @@ export const getInventory = createServerFn({ method: "POST" })
   })
   .handler(async ({ data }) => {
     if (DAWAA_API_BASE_URL) {
-      const res = await fetch(`${DAWAA_API_BASE_URL.replace(/\/$/, "")}/inventory/${data.pharmacistId}`, {
+      const res = await fetch(`${DAWAA_API_BASE_URL.replace(/\/$/, "")}/inventory/${encodeURIComponent(data.pharmacistId)}`, {
         headers: { [REQUESTER_HEADER]: data.pharmacistId },
       });
       if (!res.ok) throw new Error((await res.text()).slice(0, 200));
@@ -181,7 +181,7 @@ export const deleteInventoryItem = createServerFn({ method: "POST" })
   })
   .handler(async ({ data }) => {
     if (DAWAA_API_BASE_URL) {
-      const res = await fetch(`${DAWAA_API_BASE_URL.replace(/\/$/, "")}/inventory/${data.id}`, {
+      const res = await fetch(`${DAWAA_API_BASE_URL.replace(/\/$/, "")}/inventory/${encodeURIComponent(data.id)}`, {
         method: "DELETE",
         headers: { "Content-Type": "application/json", [REQUESTER_HEADER]: data.pharmacistId },
         body: JSON.stringify({ pharmacistId: data.pharmacistId }),
@@ -307,7 +307,7 @@ export const approvePharmacy = createServerFn({ method: "POST" })
   .handler(async ({ data }) => {
     if (DAWAA_API_BASE_URL) {
       const res = await fetch(
-        `${DAWAA_API_BASE_URL.replace(/\/$/, "")}/admin/pharmacies/${data.pharmacyId}/approve`,
+        `${DAWAA_API_BASE_URL.replace(/\/$/, "")}/admin/pharmacies/${encodeURIComponent(data.pharmacyId)}/approve`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json", [REQUESTER_HEADER]: data.requesterUserId },
