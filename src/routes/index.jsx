@@ -1,7 +1,18 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
-import { MapPin, Navigation, Search } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
+import {
+  ArrowLeft,
+  ChevronDown,
+  ChevronRight,
+  List as ListIcon,
+  Mail,
+  MapPin,
+  MapPinCheck,
+  Phone,
+  Pill,
+  Search,
+} from "lucide-react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   loginUser,
   registerUser,
@@ -79,7 +90,7 @@ function AuthModal({ onClose, onLogin }) {
 
   return (
     <div
-      className="fixed inset-0 z-50 bg-black/40 flex items-center justify-center p-4"
+      className="fixed inset-0 z-[2000] bg-black/40 flex items-center justify-center p-4"
       onClick={onClose}
     >
       <div
@@ -198,7 +209,7 @@ function PharmacySetup({ user, onComplete }) {
     setError(null);
     try {
       const result = await registerPharmacyFn({
-        data: { requesterUserId: user.id, ...form },
+        data: { pharmacistId: user.id, ...form },
       });
       onComplete(result.pharmacy);
     } catch (err) {
@@ -358,7 +369,7 @@ function PharmacistDashboard({ user }) {
 
   // On mount, check if this pharmacist has a registered pharmacy
   useEffect(() => {
-    getMyPharmacyFn({ data: { requesterUserId: user.id } })
+    getMyPharmacyFn({ data: { pharmacistId: user.id } })
       .then((res) => setPharmacy(res.pharmacy))
       .catch(() => setPharmacy(null))
       .finally(() => setCheckingPharmacy(false));
@@ -373,7 +384,7 @@ function PharmacistDashboard({ user }) {
     setLoading(true);
     setError(null);
     try {
-      const result = await getInventoryFn({ data: { requesterUserId: user.id } });
+      const result = await getInventoryFn({ data: { pharmacistId: user.id } });
       setInventory(result.items);
     } catch (err) {
       setError(err?.message ?? "Failed to load inventory");
@@ -389,7 +400,7 @@ function PharmacistDashboard({ user }) {
     try {
       await upsertFn({
         data: {
-          requesterUserId: user.id,
+          pharmacistId: user.id,
           id: form.editId,
           medicineName: form.medicineName.trim(),
           quantity: Number(form.quantity) || 0,
@@ -408,7 +419,7 @@ function PharmacistDashboard({ user }) {
   async function handleDelete(id) {
     if (!window.confirm("Remove this medicine from your inventory?")) return;
     try {
-      await deleteFn({ data: { requesterUserId: user.id, id } });
+      await deleteFn({ data: { pharmacistId: user.id, id } });
       await loadInventory();
     } catch (err) {
       setError(err?.message ?? "Failed to delete");
@@ -563,7 +574,7 @@ function PharmacistDashboard({ user }) {
 }
 
 // ─── Admin Panel ───────────────────────────────────────────────────────────────
-function AdminPanel({ user }) {
+function AdminPanel() {
   const [users, setUsers] = useState([]);
   const [pharmacies, setPharmacies] = useState([]);
   const [tab, setTab] = useState("users");
@@ -583,8 +594,8 @@ function AdminPanel({ user }) {
     setError(null);
     try {
       const [uRes, pRes] = await Promise.all([
-        getUsersFn({ data: { requesterUserId: user.id } }),
-        getPharmaciesFn({ data: { requesterUserId: user.id } }),
+        getUsersFn({ data: {} }),
+        getPharmaciesFn({ data: {} }),
       ]);
       setUsers(uRes.users);
       setPharmacies(pRes.pharmacies);
@@ -597,7 +608,7 @@ function AdminPanel({ user }) {
 
   async function handleApprove(pharmacyId, approved) {
     try {
-      await approveFn({ data: { pharmacyId, requesterUserId: user.id, approved } });
+      await approveFn({ data: { pharmacyId, approved } });
       await loadData();
     } catch (err) {
       setError(err?.message ?? "Failed to update pharmacy");
@@ -695,24 +706,700 @@ function AdminPanel({ user }) {
   );
 }
 
-// ─── Patient Search View ───────────────────────────────────────────────────────
+// ─── Shared helpers ─────────────────────────────────────────────────────────────
+function closestDistance(pharmacy) {
+  return pharmacy?.distanceMeters ?? pharmacy?.distance ?? 0;
+}
+
+function formatDistance(distanceMeters) {
+  if (!Number.isFinite(distanceMeters)) {
+    return "Distance unavailable";
+  }
+  if (distanceMeters < 1000) {
+    return `${Math.max(0, Math.round(distanceMeters))} m`;
+  }
+  return `${(distanceMeters / 1000).toFixed(1)} km`;
+}
+
+function pharmacyLatLng(pharmacy) {
+  if (pharmacy?.location && Number.isFinite(pharmacy.location.lat) && Number.isFinite(pharmacy.location.lng)) {
+    return { lat: pharmacy.location.lat, lng: pharmacy.location.lng };
+  }
+  if (Number.isFinite(pharmacy?.latitude) && Number.isFinite(pharmacy?.longitude)) {
+    return { lat: pharmacy.latitude, lng: pharmacy.longitude };
+  }
+  return null;
+}
+
+// ─── Leaflet (OpenStreetMap) loader — loaded on demand, client-side only ───────
+let leafletPromise = null;
+function loadLeaflet() {
+  if (typeof window === "undefined") return Promise.reject(new Error("no window"));
+  if (window.L) return Promise.resolve(window.L);
+  if (leafletPromise) return leafletPromise;
+
+  leafletPromise = new Promise((resolve, reject) => {
+    const cssHref = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css";
+    if (!document.querySelector(`link[href="${cssHref}"]`)) {
+      const link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = cssHref;
+      document.head.appendChild(link);
+    }
+
+    const src = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js";
+    const existing = document.querySelector(`script[src="${src}"]`);
+    if (existing) {
+      if (window.L) return resolve(window.L);
+      existing.addEventListener("load", () => resolve(window.L));
+      existing.addEventListener("error", () => reject(new Error("Failed to load map")));
+      return;
+    }
+
+    const script = document.createElement("script");
+    script.src = src;
+    script.async = true;
+    script.onload = () => resolve(window.L);
+    script.onerror = () => reject(new Error("Failed to load map"));
+    document.head.appendChild(script);
+  });
+
+  return leafletPromise;
+}
+
+// ─── Pharmacy map (OpenStreetMap via Leaflet) ──────────────────────────────────
+function PharmacyMap({
+  userLocation,
+  pharmacies,
+  selectedId,
+  onSelect,
+  className = "",
+  showLegend = true,
+}) {
+  const containerRef = useRef(null);
+  const mapRef = useRef(null);
+  const markersRef = useRef([]);
+  const [ready, setReady] = useState(false);
+  const [failed, setFailed] = useState(false);
+
+  useEffect(() => {
+    let cancelled = false;
+    loadLeaflet()
+      .then((L) => {
+        if (cancelled || !containerRef.current || mapRef.current) return;
+        const map = L.map(containerRef.current, {
+          zoomControl: true,
+          attributionControl: true,
+        }).setView([33.8938, 35.5018], 8); // Beirut, Lebanon default
+
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          maxZoom: 19,
+          attribution: "&copy; OpenStreetMap contributors",
+        }).addTo(map);
+
+        mapRef.current = map;
+        setReady(true);
+      })
+      .catch(() => {
+        if (!cancelled) setFailed(true);
+      });
+
+    return () => {
+      cancelled = true;
+      if (mapRef.current) {
+        mapRef.current.remove();
+        mapRef.current = null;
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!ready || !mapRef.current || !window.L) return;
+    const L = window.L;
+    const map = mapRef.current;
+
+    markersRef.current.forEach((m) => map.removeLayer(m));
+    markersRef.current = [];
+
+    const bounds = [];
+
+    if (userLocation) {
+      const icon = L.divIcon({
+        className: "",
+        html:
+          '<div style="width:16px;height:16px;border-radius:9999px;background:#7c3aed;' +
+          'border:3px solid white;box-shadow:0 1px 4px rgba(0,0,0,.35)"></div>',
+        iconSize: [16, 16],
+        iconAnchor: [8, 8],
+      });
+      const marker = L.marker([userLocation.lat, userLocation.lng], { icon, zIndexOffset: 500 }).addTo(map);
+      markersRef.current.push(marker);
+      bounds.push([userLocation.lat, userLocation.lng]);
+    }
+
+    pharmacies.forEach((pharmacy, idx) => {
+      const loc = pharmacyLatLng(pharmacy);
+      if (!loc) return;
+      const isNearest = idx === 0;
+      const isSelected = pharmacy.id === selectedId;
+      const bg = isNearest ? "#f97316" : "#7c3aed";
+      const ring = isSelected ? "0 0 0 4px rgba(124,58,237,0.30), " : "";
+      const icon = L.divIcon({
+        className: "",
+        html:
+          `<div style="width:28px;height:28px;border-radius:9999px;background:${bg};color:#fff;` +
+          `display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;` +
+          `border:2px solid white;box-shadow:${ring}0 2px 6px rgba(0,0,0,.3)">${idx + 1}</div>`,
+        iconSize: [28, 28],
+        iconAnchor: [14, 14],
+      });
+      const marker = L.marker([loc.lat, loc.lng], { icon }).addTo(map);
+      marker.on("click", () => onSelect?.(pharmacy.id));
+      markersRef.current.push(marker);
+      bounds.push([loc.lat, loc.lng]);
+    });
+
+    if (bounds.length === 1) {
+      map.setView(bounds[0], 14);
+    } else if (bounds.length > 1) {
+      map.fitBounds(bounds, { padding: [48, 48] });
+    }
+  }, [ready, userLocation, pharmacies, selectedId, onSelect]);
+
+  return (
+    <div className={`relative isolate overflow-hidden rounded-2xl border bg-muted ${className}`}>
+      <div ref={containerRef} className="h-full w-full" />
+      {!ready && !failed && (
+        <div className="absolute inset-0 grid place-items-center bg-muted text-sm text-muted-foreground">
+          Loading map…
+        </div>
+      )}
+      {failed && (
+        <div className="absolute inset-0 grid place-items-center bg-muted px-6 text-center text-sm text-muted-foreground">
+          Couldn't load the map. Check your connection and try again.
+        </div>
+      )}
+      {ready && showLegend && (
+        <div className="pointer-events-none absolute bottom-2 left-2 flex flex-wrap items-center gap-x-3 gap-y-1 rounded-lg bg-card/90 px-3 py-1.5 text-[11px] shadow-soft backdrop-blur">
+          <LegendDot color="#7c3aed" label="Your location" />
+          <LegendDot color="#f97316" label="Nearest" />
+          <LegendDot color="#7c3aed" label="Pharmacy" outline />
+        </div>
+      )}
+    </div>
+  );
+}
+
+function LegendDot({ color, label, outline = false }) {
+  return (
+    <span className="flex items-center gap-1 text-muted-foreground">
+      <span
+        className="h-2 w-2 rounded-full"
+        style={{
+          backgroundColor: outline ? "transparent" : color,
+          border: outline ? `1.5px solid ${color}` : "none",
+        }}
+      />
+      {label}
+    </span>
+  );
+}
+
+// ─── Pharmacy list row ──────────────────────────────────────────────────────────
+function PharmacyListItem({ pharmacy, rank, active, onClick }) {
+  const hasQty = pharmacy.hasAvailabilityData && Number.isFinite(pharmacy.availableQuantity);
+
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className={`flex w-full items-start gap-3 px-4 py-3 text-left transition hover:bg-accent/60 ${active ? "bg-accent/70" : ""}`}
+    >
+      <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-[11px] font-semibold text-primary-foreground">
+        {rank}
+      </span>
+      <span className="min-w-0 flex-1">
+        <span className="flex items-start justify-between gap-2">
+          <span className="min-w-0">
+            <span className="block truncate text-sm font-semibold">{pharmacy.name}</span>
+            <span className="block truncate text-xs text-muted-foreground">
+              {pharmacy.area || pharmacy.address || "Lebanon"}
+            </span>
+          </span>
+          <span className="shrink-0 text-sm font-semibold">
+            {formatDistance(closestDistance(pharmacy))}
+          </span>
+        </span>
+        <span className="mt-1.5 flex flex-wrap items-center gap-2">
+          {hasQty ? (
+            <span className="rounded-full bg-green-100 px-2 py-0.5 text-[11px] font-medium text-green-700">
+              {pharmacy.availableQuantity} available
+            </span>
+          ) : (
+            <span className="rounded-full bg-muted px-2 py-0.5 text-[11px] font-medium text-muted-foreground">
+              Availability unknown
+            </span>
+          )}
+          <span className="text-[11px] text-muted-foreground">
+            {pharmacy.availabilityUpdatedAt
+              ? `Updated ${new Date(pharmacy.availabilityUpdatedAt).toLocaleDateString()}`
+              : "Updated today"}
+          </span>
+        </span>
+      </span>
+      <ChevronRight className="mt-1 h-4 w-4 shrink-0 text-muted-foreground" aria-hidden="true" />
+    </button>
+  );
+}
+
+// ─── Pharmacy detail page ──────────────────────────────────────────────────────
+function DetailRow({ icon: Icon, label, value }) {
+  return (
+    <div className="flex items-start gap-3">
+      <span className="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-accent text-primary">
+        <Icon className="h-4 w-4" aria-hidden="true" />
+      </span>
+      <div className="min-w-0">
+        <div className="text-xs text-muted-foreground">{label}</div>
+        <div className="break-words text-sm font-medium">{value}</div>
+      </div>
+    </div>
+  );
+}
+
+function PharmacyDetailPage({ pharmacy, medicine }) {
+  const loc = pharmacyLatLng(pharmacy);
+  const hasQty = pharmacy.hasAvailabilityData && Number.isFinite(pharmacy.availableQuantity);
+
+  return (
+    <div className="overflow-hidden rounded-2xl border bg-card shadow-soft">
+      <div className="flex items-start justify-between gap-4 border-b px-5 py-4">
+        <div className="min-w-0">
+          <h1 className="text-xl font-bold">{pharmacy.name}</h1>
+          <p className="mt-0.5 text-sm text-muted-foreground">
+            {pharmacy.area || pharmacy.address || "Lebanon"}
+          </p>
+        </div>
+        {Number.isFinite(closestDistance(pharmacy)) && closestDistance(pharmacy) > 0 && (
+          <span className="shrink-0 text-sm font-semibold text-primary">
+            {formatDistance(closestDistance(pharmacy))}
+          </span>
+        )}
+      </div>
+
+      <div className="space-y-5 p-5">
+        {medicine && (
+          <div className="flex items-center justify-between gap-3 rounded-xl bg-accent px-4 py-3">
+            <div className="min-w-0">
+              <div className="text-xs text-muted-foreground">
+                Availability for {medicine.brandName}
+              </div>
+              <div
+                className={`text-sm font-semibold ${hasQty ? "text-green-700" : "text-muted-foreground"}`}
+              >
+                {hasQty ? `${pharmacy.availableQuantity} in stock` : "Not confirmed"}
+              </div>
+            </div>
+            {hasQty ? (
+              <span className="shrink-0 rounded-full bg-green-100 px-2.5 py-1 text-xs font-medium text-green-700">
+                In stock
+              </span>
+            ) : (
+              <span className="shrink-0 rounded-full bg-muted px-2.5 py-1 text-xs font-medium text-muted-foreground">
+                Unconfirmed
+              </span>
+            )}
+          </div>
+        )}
+
+        <dl className="grid gap-4 sm:grid-cols-2">
+          <DetailRow icon={MapPin} label="Address" value={pharmacy.address || "Not provided"} />
+          <DetailRow
+            icon={Phone}
+            label="Phone"
+            value={
+              pharmacy.phone ? (
+                <a href={`tel:${pharmacy.phone}`} className="text-primary hover:underline">
+                  {pharmacy.phone}
+                </a>
+              ) : (
+                "Not provided"
+              )
+            }
+          />
+          <DetailRow
+            icon={Mail}
+            label="Email"
+            value={
+              pharmacy.email ? (
+                <a href={`mailto:${pharmacy.email}`} className="text-primary hover:underline">
+                  {pharmacy.email}
+                </a>
+              ) : (
+                "Not provided"
+              )
+            }
+          />
+          <DetailRow
+            icon={ListIcon}
+            label="District"
+            value={pharmacy.district || pharmacy.area || "Not provided"}
+          />
+        </dl>
+
+        {pharmacy.phone && (
+          <a
+            href={`tel:${pharmacy.phone}`}
+            className="inline-flex h-10 items-center justify-center gap-2 rounded-xl bg-primary px-4 text-sm font-medium text-primary-foreground transition hover:opacity-95"
+          >
+            <Phone className="h-4 w-4" aria-hidden="true" />
+            Call pharmacy
+          </a>
+        )}
+      </div>
+
+      {loc && (
+        <PharmacyMap
+          className="h-[260px] rounded-none border-x-0 border-b-0"
+          userLocation={null}
+          pharmacies={[pharmacy]}
+          showLegend={false}
+        />
+      )}
+    </div>
+  );
+}
+
+function segmentClass(active) {
+  return `inline-flex items-center gap-1.5 rounded-lg px-3.5 py-1.5 text-sm font-medium transition ${
+    active
+      ? "bg-card text-primary shadow-sm ring-1 ring-primary/10"
+      : "text-muted-foreground hover:text-foreground"
+  }`;
+}
+
+// ─── Landing / hero search ──────────────────────────────────────────────────────
+function SearchHero({
+  query,
+  onQueryChange,
+  suggestions,
+  showSuggestions,
+  setShowSuggestions,
+  onSearch,
+  loading,
+  onUseLocation,
+  locationStatus,
+  locationMessage,
+}) {
+  return (
+    <div className="mx-auto max-w-3xl">
+      <div className="rounded-3xl border bg-gradient-to-b from-accent/70 to-accent/15 px-6 py-14 text-center shadow-soft sm:px-14 sm:py-20">
+        <div className="mx-auto mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-soft sm:hidden">
+          <Pill className="h-5 w-5" aria-hidden="true" />
+        </div>
+
+        <h1 className="text-3xl font-extrabold tracking-tight text-primary sm:text-4xl">
+          Find medicines.
+        </h1>
+        <p className="mt-1 text-2xl font-extrabold tracking-tight sm:text-3xl">
+          <span className="text-primary">Near you</span>
+          <span className="text-foreground">, when you need them.</span>
+        </p>
+        <p className="mt-3 text-sm text-muted-foreground">
+          Search for your medicine and find it in nearby pharmacies.
+        </p>
+
+        <div className="relative mx-auto mt-8 max-w-xl">
+          <div className="flex items-center gap-2 rounded-2xl border bg-card p-1.5 shadow-soft">
+            <input
+              value={query}
+              onChange={(e) => {
+                onQueryChange(e.target.value);
+                setShowSuggestions(true);
+              }}
+              onFocus={() => setShowSuggestions(true)}
+              onBlur={() => setTimeout(() => setShowSuggestions(false), 150)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" && query.trim()) onSearch(query.trim());
+              }}
+              placeholder="Search for a medicine (e.g., Panadol)"
+              aria-label="Medication name"
+              className="h-11 flex-1 rounded-xl bg-transparent px-4 text-sm outline-none placeholder:text-muted-foreground"
+            />
+            <button
+              type="button"
+              disabled={!query.trim() || loading}
+              onClick={() => onSearch(query.trim())}
+              aria-label="Search medicine"
+              className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-primary text-primary-foreground transition hover:opacity-95 disabled:opacity-50"
+            >
+              <Search className="h-4 w-4" aria-hidden="true" />
+            </button>
+          </div>
+
+          {showSuggestions && suggestions.length > 0 && (
+            <ul className="absolute z-20 mt-2 w-full overflow-hidden rounded-xl border bg-card text-left shadow-soft">
+              {suggestions.map((s) => (
+                <li key={s.name}>
+                  <button
+                    type="button"
+                    onMouseDown={(e) => e.preventDefault()}
+                    onClick={() => {
+                      onQueryChange(s.name);
+                      onSearch(s.name);
+                    }}
+                    className="w-full px-4 py-2 text-left text-sm capitalize hover:bg-accent hover:text-accent-foreground"
+                  >
+                    {s.name.toLowerCase()}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+
+        <button
+          type="button"
+          onClick={onUseLocation}
+          disabled={locationStatus === "loading"}
+          aria-pressed={locationStatus === "success"}
+          className={`mt-5 inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition disabled:opacity-50 ${
+            locationStatus === "success"
+              ? "border-primary bg-primary/15 text-primary hover:bg-primary/20"
+              : "border-border bg-card text-primary hover:bg-accent"
+          }`}
+        >
+          {locationStatus === "success" ? (
+            <MapPinCheck className="h-4 w-4" aria-hidden="true" />
+          ) : (
+            <MapPin className="h-4 w-4" aria-hidden="true" />
+          )}
+          {locationStatus === "loading"
+            ? "Getting your location…"
+            : locationStatus === "success"
+              ? "Location enabled"
+              : "Use my location"}
+          {locationStatus === "success" && (
+            <ChevronDown className="h-3.5 w-3.5 opacity-70" aria-hidden="true" />
+          )}
+        </button>
+        <p className="mt-2 text-xs text-muted-foreground">
+          {locationStatus === "success"
+            ? "Using your location · Pharmacies ranked by distance"
+            : locationStatus === "error"
+              ? locationMessage
+              : "We'll show you pharmacies near your current location."}
+        </p>
+      </div>
+    </div>
+  );
+}
+
+// ─── Results view ───────────────────────────────────────────────────────────────
+function SearchResults({
+  status,
+  message,
+  medicine,
+  pharmacyResults,
+  nearbyStatus,
+  nearbyMessage,
+  userLocation,
+  onUseLocation,
+  locationStatus,
+  onBack,
+}) {
+  const [viewMode, setViewMode] = useState("map"); // "list" | "map"
+  const [detailPharmacy, setDetailPharmacy] = useState(null);
+
+  function openDetail(pharmacy) {
+    setDetailPharmacy(pharmacy);
+  }
+
+  function handleBackClick() {
+    if (detailPharmacy) {
+      setDetailPharmacy(null);
+    } else {
+      onBack();
+    }
+  }
+
+  return (
+    <div className="space-y-5">
+      <button
+        type="button"
+        onClick={handleBackClick}
+        className="inline-flex items-center gap-1.5 text-sm text-muted-foreground transition hover:text-foreground"
+      >
+        <ArrowLeft className="h-4 w-4" aria-hidden="true" />
+        {detailPharmacy ? "Back to results" : "Back to search"}
+      </button>
+
+      {detailPharmacy && <PharmacyDetailPage pharmacy={detailPharmacy} medicine={medicine} />}
+
+      {!detailPharmacy && status === "loading" && (
+        <p className="rounded-xl border bg-accent px-4 py-3 text-sm">
+          Searching the medicine catalog...
+        </p>
+      )}
+
+      {!detailPharmacy && status === "not-found" && (
+        <p className="rounded-xl border bg-accent px-4 py-3 text-sm">{message}</p>
+      )}
+
+      {!detailPharmacy && status === "error" && (
+        <p className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-500">
+          {message}
+        </p>
+      )}
+
+      {!detailPharmacy && status === "success" && medicine && (
+        <>
+          <div>
+            <h1 className="text-2xl font-bold">{medicine.brandName}</h1>
+            <p className="text-sm text-muted-foreground">
+              {[medicine.genericName, medicine.strength, medicine.dosageForm]
+                .filter(Boolean)
+                .join(" · ")}
+            </p>
+          </div>
+
+          <div className="inline-flex rounded-xl border bg-muted p-1">
+            <button
+              type="button"
+              onClick={() => setViewMode("list")}
+              className={segmentClass(viewMode === "list")}
+            >
+              <ListIcon className="h-3.5 w-3.5" aria-hidden="true" />
+              List view
+            </button>
+            <button
+              type="button"
+              onClick={() => setViewMode("map")}
+              className={segmentClass(viewMode === "map")}
+            >
+              <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
+              Map view
+            </button>
+          </div>
+
+          {!userLocation && (
+            <div className="flex flex-col items-start gap-3 rounded-xl border bg-accent px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
+              <p className="text-sm">Use your location to rank pharmacies by distance.</p>
+              <button
+                type="button"
+                onClick={onUseLocation}
+                disabled={locationStatus === "loading"}
+                className="inline-flex h-9 shrink-0 items-center justify-center gap-2 rounded-xl bg-primary px-4 text-sm font-medium text-primary-foreground transition hover:opacity-95 disabled:opacity-50"
+              >
+                <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
+                {locationStatus === "loading" ? "Locating…" : "Use my location"}
+              </button>
+            </div>
+          )}
+
+          {nearbyStatus === "loading" && (
+            <p className="rounded-xl border bg-accent px-4 py-3 text-sm">
+              Checking nearby pharmacies...
+            </p>
+          )}
+          {nearbyStatus === "error" && (
+            <p className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-500">
+              {nearbyMessage}
+            </p>
+          )}
+          {nearbyStatus === "empty" && (
+            <p className="rounded-xl border bg-accent px-4 py-3 text-sm">
+              No registered pharmacies found nearby yet.
+            </p>
+          )}
+
+          {userLocation && pharmacyResults.length > 0 && viewMode === "map" && (
+            <div className="grid gap-4 lg:grid-cols-[1fr_360px]">
+              <PharmacyMap
+                className="h-[320px] sm:h-[440px]"
+                userLocation={userLocation}
+                pharmacies={pharmacyResults}
+                onSelect={(id) => {
+                  const found = pharmacyResults.find((p) => p.id === id);
+                  if (found) openDetail(found);
+                }}
+              />
+              <div className="overflow-hidden rounded-2xl border bg-card shadow-soft">
+                <div className="flex items-center justify-between border-b px-4 py-3">
+                  <span className="text-sm font-semibold">Nearby pharmacies</span>
+                  <span className="text-xs text-muted-foreground">
+                    {pharmacyResults.length} nearby
+                  </span>
+                </div>
+                <div className="max-h-[380px] divide-y overflow-y-auto">
+                  {pharmacyResults.map((p, idx) => (
+                    <PharmacyListItem
+                      key={p.id}
+                      pharmacy={p}
+                      rank={idx + 1}
+                      onClick={() => openDetail(p)}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {userLocation && pharmacyResults.length > 0 && viewMode === "list" && (
+            <div className="overflow-hidden rounded-2xl border bg-card shadow-soft">
+              <div className="flex items-center justify-between border-b px-4 py-3">
+                <span className="text-sm font-semibold">Nearby pharmacies</span>
+                <span className="text-xs text-muted-foreground">
+                  {pharmacyResults.length} nearby
+                </span>
+              </div>
+              <div className="divide-y">
+                {pharmacyResults.map((p, idx) => (
+                  <PharmacyListItem
+                    key={p.id}
+                    pharmacy={p}
+                    rank={idx + 1}
+                    onClick={() => openDetail(p)}
+                  />
+                ))}
+              </div>
+              <div className="border-t px-4 py-3 text-center">
+                <button
+                  type="button"
+                  onClick={() => setViewMode("map")}
+                  className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
+                >
+                  <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
+                  View on map
+                </button>
+              </div>
+            </div>
+          )}
+        </>
+      )}
+
+      <p className="text-center text-xs text-muted-foreground">
+        Medication suggestions may come from the U.S. National Library of Medicine (RxNorm).
+      </p>
+    </div>
+  );
+}
+
+// ─── Patient Search (data + orchestration) ─────────────────────────────────────
 const DAWAA_API_BASE_URL = import.meta.env.VITE_DAWAA_API_BASE_URL;
 
-function PatientSearch() {
+function PatientSearch({ view, onViewChange }) {
   const searchPharmaciesFn = useServerFn(searchPharmacies);
   const [query, setQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
-  const [searchedName, setSearchedName] = useState("");
   const [medicine, setMedicine] = useState(null);
   const [availability, setAvailability] = useState([]);
   const [availabilityStatus, setAvailabilityStatus] = useState("idle");
-  const [availabilityMessage, setAvailabilityMessage] = useState("");
   const [userLocation, setUserLocation] = useState(null);
   const [locationStatus, setLocationStatus] = useState("idle");
   const [locationMessage, setLocationMessage] = useState("");
   const [nearbyPharmacies, setNearbyPharmacies] = useState([]);
-  const [nearestPharmacy, setNearestPharmacy] = useState(null);
   const [nearbyStatus, setNearbyStatus] = useState("idle");
   const [nearbyMessage, setNearbyMessage] = useState("");
   const [status, setStatus] = useState("idle");
@@ -758,30 +1445,20 @@ function PatientSearch() {
 
   async function runSearch(name) {
     const trimmedName = name.trim();
-    if (!trimmedName) {
-      setMedicine(null);
-      setAvailability([]);
-      setAvailabilityStatus("idle");
-      setAvailabilityMessage("");
-      resetNearbyResults();
-      setStatus("error");
-      setMessage("Enter a medicine name to search.");
-      return;
-    }
+    if (!trimmedName) return;
+
+    onViewChange("results");
+
     if (!DAWAA_API_BASE_URL) {
       setMedicine(null);
       setAvailability([]);
       setAvailabilityStatus("idle");
-      setAvailabilityMessage("");
       resetNearbyResults();
       setStatus("error");
-      setMessage(
-        "Medicine lookup is not configured. Set VITE_DAWAA_API_BASE_URL in your .env file.",
-      );
+      setMessage("Medicine lookup is not configured. Set VITE_DAWAA_API_BASE_URL in your .env file.");
       return;
     }
 
-    setSearchedName(trimmedName);
     setShowSuggestions(false);
     setLoading(true);
     setStatus("loading");
@@ -789,7 +1466,6 @@ function PatientSearch() {
     setMedicine(null);
     setAvailability([]);
     setAvailabilityStatus("idle");
-    setAvailabilityMessage("");
     resetNearbyResults();
 
     let medicineLookupComplete = false;
@@ -818,7 +1494,6 @@ function PatientSearch() {
 
       if (!foundMedicine?.medicineId) {
         setAvailabilityStatus("error");
-        setAvailabilityMessage("Medicine found, but it does not have an inventory lookup id.");
         return;
       }
 
@@ -847,9 +1522,6 @@ function PatientSearch() {
     } catch (error) {
       if (medicineLookupComplete) {
         setAvailabilityStatus("error");
-        setAvailabilityMessage(
-          error?.message ?? "Inventory availability lookup failed. Please try again.",
-        );
       } else {
         setStatus("error");
         setMessage(error?.message ?? "Medicine lookup failed. Please try again.");
@@ -860,6 +1532,13 @@ function PatientSearch() {
   }
 
   async function requestLocation() {
+    if (locationStatus === "success") {
+      setUserLocation(null);
+      setLocationStatus("idle");
+      setLocationMessage("");
+      return;
+    }
+
     if (!navigator.geolocation) {
       setLocationStatus("error");
       setLocationMessage("Location is not available in this browser.");
@@ -895,20 +1574,13 @@ function PatientSearch() {
     setNearbyStatus("loading");
     setNearbyMessage("");
     setNearbyPharmacies([]);
-    setNearestPharmacy(null);
 
     try {
       const result = await searchPharmaciesFn({
-        data: {
-          lat: location.lat,
-          lng: location.lng,
-          radius: 50000,
-          limit: 10,
-        },
+        data: { lat: location.lat, lng: location.lng, radius: 50000, limit: 10 },
       });
       const pharmacies = Array.isArray(result.pharmacies) ? result.pharmacies : [];
       setNearbyPharmacies(pharmacies);
-      setNearestPharmacy(result.nearestPharmacy ?? pharmacies[0] ?? null);
       setNearbyStatus(pharmacies.length > 0 ? "success" : "empty");
     } catch (error) {
       setNearbyStatus("error");
@@ -918,399 +1590,205 @@ function PatientSearch() {
 
   function resetNearbyResults() {
     setNearbyPharmacies([]);
-    setNearestPharmacy(null);
-    setNearbyStatus(userLocation ? "idle" : "idle");
+    setNearbyStatus("idle");
     setNearbyMessage("");
   }
 
-  const canSearch = useMemo(() => query.trim().length > 0, [query]);
+  function handleBack() {
+    onViewChange("landing");
+  }
+
+  // Merge live location-based pharmacy results with medicine availability data
+  const pharmacyResults = useMemo(() => {
+    const availByPharmacy = new Map();
+    for (const item of availability) {
+      if (item?.pharmacyId) availByPharmacy.set(item.pharmacyId, item);
+    }
+    return nearbyPharmacies
+      .map((p) => {
+        const key = p.pharmacyId || p.id;
+        const avail = availByPharmacy.get(key);
+        return {
+          ...p,
+          id: key,
+          hasAvailabilityData: !!avail,
+          availableQuantity: avail?.quantity,
+          availabilityUpdatedAt: avail?.updatedAt,
+        };
+      })
+      .sort((a, b) => closestDistance(a) - closestDistance(b));
+  }, [nearbyPharmacies, availability]);
+
+  if (view === "results") {
+    return (
+      <SearchResults
+        status={status}
+        message={message}
+        medicine={medicine}
+        pharmacyResults={pharmacyResults}
+        nearbyStatus={nearbyStatus}
+        nearbyMessage={nearbyMessage}
+        userLocation={userLocation}
+        onUseLocation={requestLocation}
+        locationStatus={locationStatus}
+        onBack={handleBack}
+      />
+    );
+  }
 
   return (
-    <div className="space-y-6">
-      {/* Search bar */}
-      <section className="bg-card rounded-2xl border shadow-soft p-4 sm:p-6">
-        <div className="flex flex-col sm:flex-row gap-3">
-          <div className="relative flex-1">
-            <input
-              value={query}
-              onChange={(e) => {
-                setQuery(e.target.value);
-                setShowSuggestions(true);
-              }}
-              onFocus={() => setShowSuggestions(true)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" && query.trim()) runSearch(query.trim());
-              }}
-              placeholder="Search a medication (e.g. Panadol)"
-              className="w-full h-12 rounded-xl border bg-background px-4 pr-10 outline-none focus:ring-2 focus:ring-ring transition"
-              aria-label="Medication name"
-            />
-            <Search
-              className="absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground"
-              aria-hidden="true"
-            />
-            {showSuggestions && suggestions.length > 0 && (
-              <ul className="absolute z-20 mt-1 w-full bg-card border rounded-xl shadow-soft overflow-hidden">
-                {suggestions.map((s) => (
-                  <li key={s.name}>
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setQuery(s.name);
-                        runSearch(s.name);
-                      }}
-                      className="w-full text-left px-4 py-2 hover:bg-accent hover:text-accent-foreground text-sm capitalize"
-                    >
-                      {s.name.toLowerCase()}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
-          <button
-            type="button"
-            disabled={!canSearch || loading}
-            onClick={() => runSearch(query.trim())}
-            className="h-12 rounded-xl px-6 bg-primary text-primary-foreground font-medium disabled:opacity-50 hover:opacity-95 transition"
-          >
-            {loading ? "Searching..." : "Search medicine"}
-          </button>
-        </div>
-        <div className="mt-3 flex flex-col sm:flex-row sm:items-center gap-2">
-          <button
-            type="button"
-            onClick={requestLocation}
-            disabled={locationStatus === "loading"}
-            className="inline-flex h-10 items-center justify-center gap-2 rounded-xl border bg-background px-4 text-sm font-medium hover:bg-accent disabled:opacity-50 transition"
-          >
-            <MapPin className="h-4 w-4" aria-hidden="true" />
-            {locationStatus === "loading" ? "Getting location..." : "Use my location"}
-          </button>
-          {locationStatus === "success" && (
-            <span className="text-sm text-muted-foreground">
-              Location ready for nearby pharmacy results.
-            </span>
-          )}
-          {locationStatus === "error" && (
-            <span className="text-sm text-red-500">{locationMessage}</span>
-          )}
-        </div>
-        {searchedName && status !== "loading" && (
-          <p className="mt-3 text-sm text-muted-foreground">
-            Showing medicine lookup for{" "}
-            <span className="font-medium text-foreground">{searchedName}</span>.
-          </p>
-        )}
-        {status === "loading" && (
-          <p className="mt-3 text-sm bg-accent border border-border rounded-lg px-3 py-2">
-            Searching the medicine catalog...
-          </p>
-        )}
-        {status === "not-found" && (
-          <p className="mt-3 text-sm bg-accent border border-border rounded-lg px-3 py-2">
-            {message}
-          </p>
-        )}
-        {status === "error" && (
-          <p className="mt-3 text-sm text-red-500 bg-red-50 border border-red-200 rounded-lg px-3 py-2">
-            {message}
-          </p>
-        )}
-      </section>
-
-      {/* Results */}
-      {status === "success" && medicine && (
-        <section className="bg-card rounded-2xl border shadow-soft overflow-hidden">
-          <div className="px-4 py-3 border-b">
-            <h2 className="font-semibold">Medicine found</h2>
-          </div>
-          <div className="px-4 py-4">
-            <div className="flex items-start justify-between gap-4">
-              <div className="min-w-0">
-                <div className="font-semibold text-lg">{medicine.brandName}</div>
-                <div className="text-sm text-muted-foreground">{medicine.genericName}</div>
-              </div>
-              <span className="text-xs px-2 py-1 rounded-full font-medium bg-green-100 text-green-700 shrink-0">
-                Active
-              </span>
-            </div>
-            <dl className="mt-4 grid gap-3 sm:grid-cols-2">
-              <div>
-                <dt className="text-xs text-muted-foreground">Medicine ID</dt>
-                <dd className="text-sm font-medium">{medicine.medicineId}</dd>
-              </div>
-              <div>
-                <dt className="text-xs text-muted-foreground">Strength</dt>
-                <dd className="text-sm font-medium">{medicine.strength}</dd>
-              </div>
-              <div>
-                <dt className="text-xs text-muted-foreground">Dosage form</dt>
-                <dd className="text-sm font-medium">{medicine.dosageForm}</dd>
-              </div>
-              <div>
-                <dt className="text-xs text-muted-foreground">Manufacturer</dt>
-                <dd className="text-sm font-medium">{medicine.manufacturer}</dd>
-              </div>
-              <div>
-                <dt className="text-xs text-muted-foreground">Normalized brand</dt>
-                <dd className="text-sm font-medium">{medicine.normalizedBrandName}</dd>
-              </div>
-              <div>
-                <dt className="text-xs text-muted-foreground">Normalized generic</dt>
-                <dd className="text-sm font-medium">{medicine.normalizedGenericName}</dd>
-              </div>
-            </dl>
-          </div>
-        </section>
-      )}
-
-      {status === "success" && medicine && (
-        <section className="bg-card rounded-2xl border shadow-soft overflow-hidden">
-          <div className="px-4 py-3 border-b flex items-center justify-between gap-3">
-            <h2 className="font-semibold">Nearest pharmacy</h2>
-            {nearbyStatus === "success" && (
-              <span className="text-xs text-muted-foreground">
-                {nearbyPharmacies.length} nearby
-              </span>
-            )}
-          </div>
-          <div className="px-4 py-4">
-            {!userLocation && (
-              <div className="flex flex-col sm:flex-row sm:items-center gap-3 rounded-lg border bg-accent px-3 py-3">
-                <p className="text-sm flex-1">Use your location to rank registered pharmacies.</p>
-                <button
-                  type="button"
-                  onClick={requestLocation}
-                  className="inline-flex h-10 items-center justify-center gap-2 rounded-xl bg-primary px-4 text-sm font-medium text-primary-foreground hover:opacity-95 transition"
-                >
-                  <Navigation className="h-4 w-4" aria-hidden="true" />
-                  Use location
-                </button>
-              </div>
-            )}
-            {userLocation && nearbyStatus === "idle" && (
-              <button
-                type="button"
-                onClick={() => loadNearbyPharmacies(userLocation)}
-                className="inline-flex h-10 items-center justify-center gap-2 rounded-xl border bg-background px-4 text-sm font-medium hover:bg-accent transition"
-              >
-                <Navigation className="h-4 w-4" aria-hidden="true" />
-                Find nearest pharmacy
-              </button>
-            )}
-            {nearbyStatus === "loading" && (
-              <p className="text-sm bg-accent border border-border rounded-lg px-3 py-2">
-                Checking nearby pharmacies...
-              </p>
-            )}
-            {nearbyStatus === "empty" && (
-              <p className="text-sm bg-accent border border-border rounded-lg px-3 py-2">
-                No registered pharmacies found within 50 km.
-              </p>
-            )}
-            {nearbyStatus === "error" && (
-              <p className="text-sm text-red-500 bg-red-50 border border-red-200 rounded-lg px-3 py-2">
-                {nearbyMessage}
-              </p>
-            )}
-            {nearbyStatus === "success" && nearestPharmacy && (
-              <div className="space-y-3">
-                <div className="rounded-lg border bg-accent px-4 py-3">
-                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
-                    <div className="min-w-0">
-                      <div className="text-xs font-medium text-muted-foreground">Closest match</div>
-                      <div className="font-semibold truncate">{nearestPharmacy.name}</div>
-                      <div className="text-sm text-muted-foreground">
-                        {nearestPharmacy.address || nearestPharmacy.area || "Address unavailable"}
-                      </div>
-                    </div>
-                    <span className="text-sm font-semibold shrink-0">
-                      {formatDistance(closestDistance(nearestPharmacy))}
-                    </span>
-                  </div>
-                </div>
-                {nearbyPharmacies.length > 1 && (
-                  <ul className="divide-y">
-                    {nearbyPharmacies.slice(1, 4).map((pharmacy) => (
-                      <li
-                        key={pharmacy.pharmacyId || pharmacy.id}
-                        className="py-3 flex items-center justify-between gap-4"
-                      >
-                        <div className="min-w-0">
-                          <div className="font-medium truncate">{pharmacy.name}</div>
-                          <div className="text-xs text-muted-foreground truncate">
-                            {pharmacy.area || pharmacy.address || "Address unavailable"}
-                          </div>
-                        </div>
-                        <div className="text-sm font-semibold shrink-0">
-                          {formatDistance(closestDistance(pharmacy))}
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-            )}
-          </div>
-        </section>
-      )}
-
-      {status === "success" && medicine && (
-        <section className="bg-card rounded-2xl border shadow-soft overflow-hidden">
-          <div className="px-4 py-3 border-b flex items-center justify-between gap-3">
-            <h2 className="font-semibold">Pharmacy availability</h2>
-            {availabilityStatus === "success" && (
-              <span className="text-xs text-muted-foreground">
-                {availability.length} location{availability.length === 1 ? "" : "s"}
-              </span>
-            )}
-          </div>
-          <div className="px-4 py-4">
-            {availabilityStatus === "loading" && (
-              <p className="text-sm bg-accent border border-border rounded-lg px-3 py-2">
-                Checking pharmacy inventory...
-              </p>
-            )}
-            {availabilityStatus === "empty" && (
-              <p className="text-sm bg-accent border border-border rounded-lg px-3 py-2">
-                No pharmacies currently report this medicine as in stock.
-              </p>
-            )}
-            {availabilityStatus === "error" && (
-              <p className="text-sm text-red-500 bg-red-50 border border-red-200 rounded-lg px-3 py-2">
-                {availabilityMessage}
-              </p>
-            )}
-            {availabilityStatus === "success" && (
-              <ul className="divide-y">
-                {availability.map((item) => (
-                  <li
-                    key={`${item.pharmacyId}-${item.availableLocationKey || item.availableMedicineId}`}
-                    className="py-3 flex items-center justify-between gap-4"
-                  >
-                    <div className="min-w-0">
-                      <div className="font-medium truncate">
-                        Pharmacy {item.pharmacyId || "unknown"}
-                      </div>
-                      <div className="text-xs text-muted-foreground truncate">
-                        Location key: {item.availableLocationKey || "not provided"}
-                      </div>
-                    </div>
-                    <div className="text-right shrink-0">
-                      <div className="text-sm font-semibold">{item.quantity ?? 0} available</div>
-                      <div className="text-xs text-muted-foreground">
-                        {item.updatedAt
-                          ? `Updated ${new Date(item.updatedAt).toLocaleDateString()}`
-                          : "Updated date unavailable"}
-                      </div>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
-        </section>
-      )}
-
-      <p className="text-xs text-muted-foreground text-center">
-        Medication suggestions may come from the U.S. National Library of Medicine (RxNorm).
-      </p>
-    </div>
+    <SearchHero
+      query={query}
+      onQueryChange={setQuery}
+      suggestions={suggestions}
+      showSuggestions={showSuggestions}
+      setShowSuggestions={setShowSuggestions}
+      onSearch={runSearch}
+      loading={loading}
+      onUseLocation={requestLocation}
+      locationStatus={locationStatus}
+      locationMessage={locationMessage}
+    />
   );
 }
 
-function closestDistance(pharmacy) {
-  return pharmacy?.distanceMeters ?? pharmacy?.distance ?? 0;
+// ─── Header / navigation ────────────────────────────────────────────────────────
+function NavLink({ label, active, onClick }) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className={`relative pb-1 text-sm font-medium transition ${active ? "text-primary" : "text-foreground/70 hover:text-foreground"}`}
+    >
+      {label}
+      {active && <span className="absolute -bottom-px left-0 right-0 h-0.5 rounded-full bg-primary" />}
+    </button>
+  );
 }
 
-function formatDistance(distanceMeters) {
-  if (!Number.isFinite(distanceMeters)) {
-    return "Distance unavailable";
-  }
-  if (distanceMeters < 1000) {
-    return `${Math.max(0, Math.round(distanceMeters))} m`;
-  }
-  return `${(distanceMeters / 1000).toFixed(1)} km`;
+function Header({ user, onSignIn, onSignOut, tabs, activeTab, onTabChange }) {
+  return (
+    <header className="sticky top-0 z-40 border-b bg-card/95 backdrop-blur">
+      <div className="mx-auto grid max-w-6xl grid-cols-2 items-center gap-4 px-4 py-3.5 sm:grid-cols-[1fr_auto_1fr] sm:px-6">
+        <div className="flex items-center gap-2">
+          <span className="grid h-9 w-9 place-items-center rounded-xl bg-primary text-primary-foreground">
+            <Pill className="h-4 w-4" aria-hidden="true" />
+          </span>
+          <span className="text-lg font-bold text-primary">Dawaa</span>
+        </div>
+
+        <nav className="hidden items-center gap-8 sm:flex">
+          {tabs.map((t) => (
+            <NavLink
+              key={t.id}
+              label={t.label}
+              active={activeTab === t.id}
+              onClick={() => onTabChange(t.id)}
+            />
+          ))}
+        </nav>
+
+        <div className="flex items-center justify-end gap-2">
+          {user ? (
+            <>
+              <span className="hidden text-sm text-muted-foreground sm:inline">
+                {user.name}{" "}
+                <span className="ml-1 rounded bg-muted px-1.5 py-0.5 text-xs capitalize">
+                  {user.role}
+                </span>
+              </span>
+              <button
+                onClick={onSignOut}
+                className="h-9 rounded-full border px-4 text-sm font-medium transition hover:bg-accent"
+              >
+                Sign out
+              </button>
+            </>
+          ) : (
+            <button
+              onClick={onSignIn}
+              className="h-9 rounded-full border px-4 text-sm font-medium text-primary transition hover:bg-accent"
+            >
+              Sign in
+            </button>
+          )}
+        </div>
+      </div>
+
+      {/* Mobile nav */}
+      {tabs.length > 1 && (
+        <div className="flex gap-1 overflow-x-auto px-4 pb-2.5 sm:hidden">
+          {tabs.map((t) => (
+            <button
+              key={t.id}
+              onClick={() => onTabChange(t.id)}
+              className={`shrink-0 rounded-lg px-3.5 py-1.5 text-sm font-medium transition ${activeTab === t.id ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:bg-accent"}`}
+            >
+              {t.label}
+            </button>
+          ))}
+        </div>
+      )}
+    </header>
+  );
 }
 
+// ─── Home (root page) ───────────────────────────────────────────────────────────
 function Home() {
   const { user, login, logout } = useAuth();
   const [showAuth, setShowAuth] = useState(false);
   const [activeTab, setActiveTab] = useState("search");
+  const [searchView, setSearchView] = useState("landing"); // "landing" | "results"
 
-  // Determine what tabs to show based on role
   const tabs = [
-    { id: "search", label: "Find Medication", roles: ["*"] },
+    { id: "search", label: searchView === "results" ? "Find Medicine" : "Home", roles: ["*"] },
     { id: "dashboard", label: "My Inventory", roles: ["pharmacist"] },
     { id: "admin", label: "Admin Panel", roles: ["admin"] },
   ].filter((t) => t.roles.includes("*") || (user && t.roles.includes(user.role)));
 
+  // We show two entries for the patient-facing tab ("Home" and "Find Medicine") so both
+  // states of the search flow are directly reachable from the nav bar.
+  const navTabs = [
+    { id: "home", label: "Home" },
+    { id: "find", label: "Find Medicine" },
+    ...tabs.filter((t) => t.id !== "search"),
+  ];
+
+  function handleTabChange(id) {
+    if (id === "home") {
+      setActiveTab("search");
+      setSearchView("landing");
+      return;
+    }
+    if (id === "find") {
+      setActiveTab("search");
+      return;
+    }
+    setActiveTab(id);
+  }
+
+  const activeNavId =
+    activeTab === "search" ? (searchView === "results" ? "find" : "home") : activeTab;
+
   return (
-    <div className="min-h-screen flex flex-col">
-      {/* Header */}
-      <header className="border-b bg-card sticky top-0 z-40">
-        <div className="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <div className="h-9 w-9 rounded-lg bg-primary text-primary-foreground grid place-items-center font-bold text-lg">
-              د
-            </div>
-            <div>
-              <h1 className="text-lg font-semibold leading-tight">Dawaa</h1>
-              <p className="text-xs text-muted-foreground hidden sm:block">
-                دواء · Your medication finder in Lebanon
-              </p>
-            </div>
-          </div>
-          <div className="flex items-center gap-2">
-            {user ? (
-              <>
-                <span className="text-sm text-muted-foreground hidden sm:inline">
-                  {user.name}{" "}
-                  <span className="bg-muted px-1.5 py-0.5 rounded text-xs capitalize ml-1">
-                    {user.role}
-                  </span>
-                </span>
-                <button
-                  onClick={logout}
-                  className="h-9 rounded-xl px-4 border text-sm font-medium hover:bg-accent transition"
-                >
-                  Sign out
-                </button>
-              </>
-            ) : (
-              <button
-                onClick={() => setShowAuth(true)}
-                className="h-9 rounded-xl px-4 bg-primary text-primary-foreground text-sm font-medium hover:opacity-95 transition"
-              >
-                Sign in
-              </button>
-            )}
-          </div>
-        </div>
+    <div className="flex min-h-screen flex-col bg-background">
+      <Header
+        user={user}
+        onSignIn={() => setShowAuth(true)}
+        onSignOut={logout}
+        tabs={navTabs}
+        activeTab={activeNavId}
+        onTabChange={handleTabChange}
+      />
 
-        {/* Tab navigation */}
-        {tabs.length > 1 && (
-          <div className="mx-auto max-w-7xl px-4 flex gap-1 pb-2">
-            {tabs.map((t) => (
-              <button
-                key={t.id}
-                onClick={() => setActiveTab(t.id)}
-                className={`px-4 py-1.5 rounded-lg text-sm font-medium transition ${activeTab === t.id ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:bg-accent"}`}
-              >
-                {t.label}
-              </button>
-            ))}
-          </div>
+      <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8 sm:px-6">
+        {activeTab === "search" && (
+          <PatientSearch view={searchView} onViewChange={setSearchView} />
         )}
-      </header>
-
-      <main className="flex-1 mx-auto w-full max-w-7xl px-4 py-6">
-        {activeTab === "search" && <PatientSearch />}
         {activeTab === "dashboard" && user?.role === "pharmacist" && (
           <PharmacistDashboard user={user} />
         )}
-        {activeTab === "admin" && user?.role === "admin" && <AdminPanel user={user} />}
+        {activeTab === "admin" && user?.role === "admin" && <AdminPanel />}
       </main>
 
       {showAuth && <AuthModal onClose={() => setShowAuth(false)} onLogin={login} />}
