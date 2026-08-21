@@ -179,6 +179,7 @@ function PharmacySetup({ user, onComplete }) {
   const [form, setForm] = useState({ name: "", address: "", area: "", phone: "" });
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState(null);
+  const requesterUserId = user?.userId ?? user?.id;
 
   const registerPharmacyFn = useServerFn(registerPharmacy);
 
@@ -209,7 +210,7 @@ function PharmacySetup({ user, onComplete }) {
     setError(null);
     try {
       const result = await registerPharmacyFn({
-        data: { pharmacistId: user.id, ...form },
+        data: { requesterUserId, ...form },
       });
       onComplete(result.pharmacy);
     } catch (err) {
@@ -366,14 +367,15 @@ function PharmacistDashboard({ user }) {
   const getInventoryFn = useServerFn(getInventory);
   const upsertFn = useServerFn(upsertInventoryItem);
   const deleteFn = useServerFn(deleteInventoryItem);
+  const requesterUserId = user?.userId ?? user?.id;
 
   // On mount, check if this pharmacist has a registered pharmacy
   useEffect(() => {
-    getMyPharmacyFn({ data: { pharmacistId: user.id } })
+    getMyPharmacyFn({ data: { requesterUserId } })
       .then((res) => setPharmacy(res.pharmacy))
       .catch(() => setPharmacy(null))
       .finally(() => setCheckingPharmacy(false));
-  }, []);
+  }, [requesterUserId]);
 
   // Load inventory once pharmacy is confirmed
   useEffect(() => {
@@ -384,7 +386,7 @@ function PharmacistDashboard({ user }) {
     setLoading(true);
     setError(null);
     try {
-      const result = await getInventoryFn({ data: { pharmacistId: user.id } });
+      const result = await getInventoryFn({ data: { requesterUserId } });
       setInventory(result.items);
     } catch (err) {
       setError(err?.message ?? "Failed to load inventory");
@@ -400,7 +402,7 @@ function PharmacistDashboard({ user }) {
     try {
       await upsertFn({
         data: {
-          pharmacistId: user.id,
+          requesterUserId,
           id: form.editId,
           medicineName: form.medicineName.trim(),
           quantity: Number(form.quantity) || 0,
@@ -419,7 +421,7 @@ function PharmacistDashboard({ user }) {
   async function handleDelete(id) {
     if (!window.confirm("Remove this medicine from your inventory?")) return;
     try {
-      await deleteFn({ data: { pharmacistId: user.id, id } });
+      await deleteFn({ data: { requesterUserId, id } });
       await loadInventory();
     } catch (err) {
       setError(err?.message ?? "Failed to delete");
@@ -574,12 +576,13 @@ function PharmacistDashboard({ user }) {
 }
 
 // ─── Admin Panel ───────────────────────────────────────────────────────────────
-function AdminPanel() {
+function AdminPanel({ user }) {
   const [users, setUsers] = useState([]);
   const [pharmacies, setPharmacies] = useState([]);
   const [tab, setTab] = useState("users");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const requesterUserId = user?.userId ?? user?.id;
 
   const getUsersFn = useServerFn(getAllUsers);
   const getPharmaciesFn = useServerFn(getAllPharmacies);
@@ -594,8 +597,8 @@ function AdminPanel() {
     setError(null);
     try {
       const [uRes, pRes] = await Promise.all([
-        getUsersFn({ data: {} }),
-        getPharmaciesFn({ data: {} }),
+        getUsersFn({ data: { requesterUserId } }),
+        getPharmaciesFn({ data: { requesterUserId } }),
       ]);
       setUsers(uRes.users);
       setPharmacies(pRes.pharmacies);
@@ -608,7 +611,7 @@ function AdminPanel() {
 
   async function handleApprove(pharmacyId, approved) {
     try {
-      await approveFn({ data: { pharmacyId, approved } });
+      await approveFn({ data: { pharmacyId, requesterUserId, approved } });
       await loadData();
     } catch (err) {
       setError(err?.message ?? "Failed to update pharmacy");
@@ -1788,7 +1791,7 @@ function Home() {
         {activeTab === "dashboard" && user?.role === "pharmacist" && (
           <PharmacistDashboard user={user} />
         )}
-        {activeTab === "admin" && user?.role === "admin" && <AdminPanel />}
+        {activeTab === "admin" && user?.role === "admin" && <AdminPanel user={user} />}
       </main>
 
       {showAuth && <AuthModal onClose={() => setShowAuth(false)} onLogin={login} />}
