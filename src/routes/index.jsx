@@ -1843,6 +1843,9 @@ function PatientSearch({ view, onViewChange }) {
     for (const item of availability) {
       if (item?.pharmacyId) availByPharmacy.set(item.pharmacyId, item);
     }
+    const shouldRequireAvailability =
+      !!medicine?.medicineId && ["success", "empty"].includes(availabilityStatus);
+
     return nearbyPharmacies
       .map((p) => {
         const key = p.pharmacyId || p.id;
@@ -1855,8 +1858,9 @@ function PatientSearch({ view, onViewChange }) {
           availabilityUpdatedAt: avail?.updatedAt ?? p.availabilityUpdatedAt,
         };
       })
+      .filter((pharmacy) => !shouldRequireAvailability || pharmacy.hasAvailabilityData)
       .sort((a, b) => closestDistance(a) - closestDistance(b));
-  }, [nearbyPharmacies, availability]);
+  }, [nearbyPharmacies, availability, availabilityStatus, medicine?.medicineId]);
 
   if (view === "choose-medicine") {
     return (
