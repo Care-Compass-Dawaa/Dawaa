@@ -111,7 +111,7 @@ Resources:
     Properties:
       CodeUri: .
       Handler: com.dawaa.api.user.UserHandler::handleRequest
-      Description: Current user profile lookup and update.
+      Description: Current user profile lookup, update, and self-deactivation.
       Environment:
         Variables:
           USERS_TABLE: !Ref UsersTableName
@@ -123,6 +123,7 @@ Resources:
                 - dynamodb:GetItem
                 - dynamodb:PutItem
                 - dynamodb:Query
+                - dynamodb:UpdateItem
               Resource:
                 - !Sub "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${UsersTableName}"
                 - !Sub "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${UsersTableName}/index/email-index"
@@ -137,6 +138,11 @@ Resources:
           Properties:
             Path: /users/me/update
             Method: post
+        DeactivateMe:
+          Type: Api
+          Properties:
+            Path: /users/me
+            Method: delete
 
   AdminUserFunction:
     Type: AWS::Serverless::Function

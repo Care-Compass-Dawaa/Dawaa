@@ -161,6 +161,16 @@ public class UserService {
         return userRepository.update(updatedUser);
     }
 
+    public void deactivateMyAccount(User requester){
+        if (requester == null) {
+            throw new IllegalArgumentException("Requester is required");
+        }
+        if (requester.role() == UserRole.ADMIN) {
+            throw new SecurityException("Admin accounts cannot self-deactivate");
+        }
+        userRepository.deactivate(requester.userId());
+    }
+
     public void deactivateUser(User requester, String userId){
         requireAdmin(requester);//person should be an admin to deactivate someone
         

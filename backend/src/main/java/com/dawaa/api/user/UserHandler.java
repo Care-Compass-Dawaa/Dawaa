@@ -51,6 +51,10 @@ public class UserHandler extends BaseHandler
         return updateMe(request);
       }
 
+      if ("DELETE".equalsIgnoreCase(method) && path.equals("/users/me")) {
+        return deactivateMe(request);
+      }
+
       return error(404, "Not found");
     } catch (SecurityException error) {
       return error(403, error.getMessage());
@@ -81,6 +85,14 @@ public class UserHandler extends BaseHandler
 
     ObjectNode wrapper = MAPPER.createObjectNode();
     wrapper.set("user", toUserNode(updatedUser));
+    return ok(wrapper);
+  }
+
+  private APIGatewayProxyResponseEvent deactivateMe(APIGatewayProxyRequestEvent request) {
+    userService.deactivateMyAccount(requester(request));
+
+    ObjectNode wrapper = MAPPER.createObjectNode();
+    wrapper.put("success", true);
     return ok(wrapper);
   }
 
