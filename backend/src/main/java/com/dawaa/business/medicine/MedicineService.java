@@ -27,6 +27,12 @@ public class MedicineService {
         .filter(Medicine::active);
   }
 
+  public Optional<Medicine> findActiveMedicineById(String medicineId) {
+    String normalizedMedicineId = requireText(medicineId, "medicineId");
+
+    return medicineRepository.findById(normalizedMedicineId).filter(Medicine::active);
+  }
+
   public Optional<Medicine> findActiveMedicineByGenericName(String genericName) {
     String normalizedGenericName = normalizeRequired(genericName, "genericName");
 
@@ -89,12 +95,17 @@ public class MedicineService {
   }
 
   private static String normalizeRequired(String value, String name) {
-    if (value == null || value.isBlank()) {
-      throw new IllegalArgumentException(name + " is required");
-    }
+    requireText(value, name);
     return Normalizer.normalize(value.trim().toLowerCase(Locale.ROOT), Normalizer.Form.NFKD)
         .replaceAll("\\p{M}", "")
         .replaceAll("[^\\p{L}\\p{N}]+", " ")
         .trim();
+  }
+
+  private static String requireText(String value, String name) {
+    if (value == null || value.isBlank()) {
+      throw new IllegalArgumentException(name + " is required");
+    }
+    return value.trim();
   }
 }

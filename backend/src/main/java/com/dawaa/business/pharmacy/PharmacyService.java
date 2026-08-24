@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.Set;
 import java.util.UUID;
 
 public class PharmacyService {
@@ -147,12 +148,18 @@ public class PharmacyService {
 
   public List<NearbyPharmacy> findNearbyPharmacies(
       double latitude, double longitude, int radiusMeters, int limit) {
+    return findNearbyPharmacies(latitude, longitude, radiusMeters, limit, null);
+  }
+
+  public List<NearbyPharmacy> findNearbyPharmacies(
+      double latitude, double longitude, int radiusMeters, int limit, Set<String> pharmacyIds) {
     int normalizedRadius = Math.min(Math.max(radiusMeters, 500), 50_000);
     int normalizedLimit = Math.min(Math.max(limit, 1), 50);
 
     return pharmacyRepository.findAll().stream()
         .filter(PharmacyService::isSearchable)
         .filter(PharmacyService::hasCoordinates)
+        .filter(pharmacy -> pharmacyIds == null || pharmacyIds.contains(pharmacy.pharmacyId()))
         .map(
             pharmacy ->
                 new NearbyPharmacy(

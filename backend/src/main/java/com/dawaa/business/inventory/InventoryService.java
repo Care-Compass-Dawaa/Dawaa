@@ -39,14 +39,13 @@ public class InventoryService {
   public InventoryItem upsertMyInventoryItem(
       User requester,
       String existingMedicineId,
+      String selectedMedicineId,
       String medicineName,
       int quantity,
       boolean inStock) {
     Pharmacy pharmacy = requireOwnedPharmacy(requester);
     Medicine medicine =
-        medicineService
-            .findActiveMedicineByName(medicineName)
-            .orElseThrow(() -> new NoSuchElementException("Medicine not found in catalog"));
+        findSelectedMedicine(selectedMedicineId, medicineName);
 
     String now = Instant.now().toString();
     String oldMedicineId = trimToEmpty(existingMedicineId);
@@ -78,6 +77,17 @@ public class InventoryService {
     }
 
     return saved;
+  }
+
+  private Medicine findSelectedMedicine(String medicineId, String medicineName) {
+    if (medicineId != null && !medicineId.isBlank()) {
+      return medicineService
+          .findActiveMedicineById(medicineId)
+          .orElseThrow(() -> new NoSuchElementException("Medicine not found in catalog"));
+    }
+    return medicineService
+        .findActiveMedicineByName(medicineName)
+        .orElseThrow(() -> new NoSuchElementException("Medicine not found in catalog"));
   }
 
   public void deleteMyInventoryItem(User requester, String medicineId) {

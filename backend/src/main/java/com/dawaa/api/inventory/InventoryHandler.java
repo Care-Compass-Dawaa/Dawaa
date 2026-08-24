@@ -103,6 +103,7 @@ public class InventoryHandler extends BaseHandler
         inventoryService.upsertMyInventoryItem(
             requester,
             body.path("id").asText(""),
+            body.path("medicineId").asText(""),
             require(body, "medicineName"),
             Math.max(0, body.path("quantity").asInt(0)),
             body.path("inStock").asBoolean(true));

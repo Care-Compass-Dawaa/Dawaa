@@ -138,6 +138,7 @@ export const upsertInventoryItem = createServerFn({ method: "POST" })
     return {
       requesterUserId: input.requesterUserId,
       id: input.id ?? null,
+      medicineId: input.medicineId?.trim() || "",
       medicineName: input.medicineName.trim(),
       quantity: Math.max(0, Number(input.quantity) || 0),
       inStock: input.inStock !== false,
@@ -201,12 +202,24 @@ export const registerPharmacy = createServerFn({ method: "POST" })
     if (!input?.requesterUserId || !input?.name || !input?.address || !input?.area || !input?.phone) {
       throw new Error("All pharmacy fields are required");
     }
+    if (
+      input.latitude === undefined ||
+      input.longitude === undefined ||
+      !Number.isFinite(Number(input.latitude)) ||
+      !Number.isFinite(Number(input.longitude))
+    ) {
+      throw new Error("Latitude and longitude are required");
+    }
     return {
       requesterUserId: input.requesterUserId,
       name: input.name.trim(),
       address: input.address.trim(),
       area: input.area.trim(),
+      district: input.district?.trim() || "",
       phone: input.phone.trim(),
+      email: input.email?.trim() || "",
+      latitude: Number(input.latitude) || 0,
+      longitude: Number(input.longitude) || 0,
     };
   })
   .handler(async ({ data }) => {
@@ -229,7 +242,11 @@ export const registerPharmacy = createServerFn({ method: "POST" })
       name: data.name,
       address: data.address,
       area: data.area,
+      district: data.district,
       phone: data.phone,
+      email: data.email,
+      latitude: data.latitude,
+      longitude: data.longitude,
       approved: false,
       createdAt: new Date().toISOString(),
     };
@@ -336,6 +353,7 @@ export const searchPharmacies = createServerFn({ method: "POST" })
       radius,
       keyword: input.keyword?.trim() || "",
       location: input.location?.trim() || "",
+      medicineId: input.medicineId?.trim() || "",
     };
   })
   .handler(async ({ data }) => {

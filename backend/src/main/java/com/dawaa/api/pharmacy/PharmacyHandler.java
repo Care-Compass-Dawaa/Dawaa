@@ -5,42 +5,70 @@ import com.amazonaws.services.lambda.runtime.RequestHandler;
 import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent;
 import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyResponseEvent;
 import com.dawaa.business.pharmacy.PharmacyService;
+import com.dawaa.business.inventory.InventoryAvailabilityService;
 import com.dawaa.business.user.UserService;
 import com.dawaa.common.BaseHandler;
+import com.dawaa.domain.inventory.InventoryAvailability;
 import com.dawaa.domain.pharmacy.NearbyPharmacy;
 import com.dawaa.domain.pharmacy.Pharmacy;
 import com.dawaa.domain.user.User;
+import com.dawaa.persistence.dynamodb.inventory.DynamoDbInventoryAvailabilityRepository;
 import com.dawaa.persistence.dynamodb.pharmacy.DynamoDbPharmacyRepository;
 import com.dawaa.persistence.dynamodb.user.DynamoDBUserRepository;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import java.net.URI;
 import java.net.URLDecoder;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
+import java.time.Duration;
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Objects;
+import java.util.Set;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class PharmacyHandler extends BaseHandler
     implements RequestHandler<APIGatewayProxyRequestEvent, APIGatewayProxyResponseEvent> {
   private static final String REQUESTER_HEADER = "X-Dawaa-User-Id";
+  private static final String ORS_BASE_URL = "https://api.openrouteservice.org/v2/matrix/";
+  private static final String ORS_DEFAULT_PROFILE = "driving-car";
+  private static final int ORS_MAX_DESTINATIONS = 24;
 
   private final PharmacyService pharmacyService;
+  private final InventoryAvailabilityService inventoryAvailabilityService;
   private final UserService userService;
+  private final HttpClient httpClient = HttpClient.newHttpClient();
 
   public PharmacyHandler() {
     this(
         new PharmacyService(new DynamoDbPharmacyRepository()),
+        new InventoryAvailabilityService(new DynamoDbInventoryAvailabilityRepository()),
         new UserService(new DynamoDBUserRepository()));
   }
 
   public PharmacyHandler(PharmacyService pharmacyService) {
-    this(pharmacyService, new UserService(new DynamoDBUserRepository()));
+    this(
+        pharmacyService,
+        new InventoryAvailabilityService(new DynamoDbInventoryAvailabilityRepository()),
+        new UserService(new DynamoDBUserRepository()));
   }
 
-  public PharmacyHandler(PharmacyService pharmacyService, UserService userService) {
+  public PharmacyHandler(
+      PharmacyService pharmacyService,
+      InventoryAvailabilityService inventoryAvailabilityService,
+      UserService userService) {
     this.pharmacyService = Objects.requireNonNull(pharmacyService, "pharmacyService is required");
+    this.inventoryAvailabilityService =
+        Objects.requireNonNull(
+            inventoryAvailabilityService, "inventoryAvailabilityService is required");
     this.userService = Objects.requireNonNull(userService, "userService is required");
   }
 
@@ -185,17 +213,57 @@ public class PharmacyHandler extends BaseHandler
 
     int radius = body.path("radius").asInt(5_000);
     int limit = body.path("limit").asInt(10);
+    String medicineId = body.path("medicineId").asText("");
+    if (medicineId == null || medicineId.isBlank()) {
+      return nearbyResponse(
+          pharmacyService.findNearbyPharmacies(
+              body.path("lat").asDouble(), body.path("lng").asDouble(), radius, limit));
+    }
+
+    List<InventoryAvailability> availability =
+        inventoryAvailabilityService.findAvailableInventoryByMedicineId(medicineId);
+    Map<String, InventoryAvailability> availabilityByPharmacy =
+        availability.stream()
+            .filter(item -> item.pharmacyId() != null && !item.pharmacyId().isBlank())
+            .collect(
+                Collectors.toMap(
+                    InventoryAvailability::pharmacyId,
+                    Function.identity(),
+                    (first, second) -> first.quantity() >= second.quantity() ? first : second));
+    Set<String> stockedPharmacyIds = availabilityByPharmacy.keySet();
+
+    double lat = body.path("lat").asDouble();
+    double lng = body.path("lng").asDouble();
+    List<NearbyPharmacy> nearbyPharmacies =
+        pharmacyService.findNearbyPharmacies(lat, lng, radius, limit, stockedPharmacyIds);
+
     return nearbyResponse(
-        pharmacyService.findNearbyPharmacies(
-            body.path("lat").asDouble(), body.path("lng").asDouble(), radius, limit));
+        rankByRouteIfConfigured(lat, lng, nearbyPharmacies),
+        availabilityByPharmacy);
   }
 
   private APIGatewayProxyResponseEvent nearbyResponse(List<NearbyPharmacy> nearbyPharmacies) {
+    return nearbyResponse(nearbyPharmacies, Map.of());
+  }
+
+  private APIGatewayProxyResponseEvent nearbyResponse(
+      List<NearbyPharmacy> nearbyPharmacies,
+      Map<String, InventoryAvailability> availabilityByPharmacy) {
     ObjectNode wrapper = MAPPER.createObjectNode();
     ArrayNode pharmacies = wrapper.putArray("pharmacies");
-    nearbyPharmacies.forEach(result -> pharmacies.add(toNearbyPharmacyNode(result)));
+    nearbyPharmacies.forEach(
+        result ->
+            pharmacies.add(
+                toNearbyPharmacyNode(
+                    result,
+                    availabilityByPharmacy.get(result.pharmacy().pharmacyId()))));
     if (!nearbyPharmacies.isEmpty()) {
-      wrapper.set("nearestPharmacy", toNearbyPharmacyNode(nearbyPharmacies.get(0)));
+      NearbyPharmacy nearest = nearbyPharmacies.get(0);
+      wrapper.set(
+          "nearestPharmacy",
+          toNearbyPharmacyNode(
+              nearest,
+              availabilityByPharmacy.get(nearest.pharmacy().pharmacyId())));
     } else {
       wrapper.putNull("nearestPharmacy");
     }
@@ -203,9 +271,107 @@ public class PharmacyHandler extends BaseHandler
   }
 
   private ObjectNode toNearbyPharmacyNode(NearbyPharmacy nearbyPharmacy) {
+    return toNearbyPharmacyNode(nearbyPharmacy, null);
+  }
+
+  private ObjectNode toNearbyPharmacyNode(
+      NearbyPharmacy nearbyPharmacy, InventoryAvailability availability) {
     ObjectNode node = toPublicPharmacyNode(nearbyPharmacy.pharmacy());
     node.put("distanceMeters", nearbyPharmacy.distanceMeters());
+    if (availability != null) {
+      node.put("hasAvailabilityData", true);
+      node.put("availableQuantity", availability.quantity());
+      node.put("availabilityUpdatedAt", availability.updatedAt());
+    }
     return node;
+  }
+
+  private List<NearbyPharmacy> rankByRouteIfConfigured(
+      double sourceLat, double sourceLng, List<NearbyPharmacy> nearbyPharmacies) {
+    String apiKey = System.getenv("OPENROUTESERVICE_API_KEY");
+    if (apiKey == null || apiKey.isBlank() || nearbyPharmacies.isEmpty()) {
+      return nearbyPharmacies;
+    }
+
+    try {
+      List<NearbyPharmacy> candidates =
+          nearbyPharmacies.stream().limit(ORS_MAX_DESTINATIONS).toList();
+      ObjectNode requestBody = MAPPER.createObjectNode();
+      ArrayNode locations = requestBody.putArray("locations");
+      locations.addArray().add(sourceLng).add(sourceLat);
+      for (NearbyPharmacy nearbyPharmacy : candidates) {
+        locations
+            .addArray()
+            .add(nearbyPharmacy.pharmacy().longitude())
+            .add(nearbyPharmacy.pharmacy().latitude());
+      }
+
+      requestBody.putArray("sources").add("0");
+      ArrayNode destinations = requestBody.putArray("destinations");
+      for (int index = 1; index <= candidates.size(); index++) {
+        destinations.add(Integer.toString(index));
+      }
+      requestBody.putArray("metrics").add("distance").add("duration");
+      requestBody.put("units", "m");
+
+      String profile = configuredRouteProfile();
+      HttpRequest request =
+          HttpRequest.newBuilder()
+              .uri(URI.create(ORS_BASE_URL + profile))
+              .timeout(Duration.ofSeconds(5))
+              .header("Authorization", apiKey)
+              .header("Content-Type", "application/json")
+              .header("Accept", "application/json")
+              .POST(HttpRequest.BodyPublishers.ofString(MAPPER.writeValueAsString(requestBody)))
+              .build();
+
+      HttpResponse<String> response =
+          httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+      if (response.statusCode() < 200 || response.statusCode() >= 300) {
+        return nearbyPharmacies;
+      }
+
+      JsonNode routeResponse = MAPPER.readTree(response.body());
+      JsonNode durations = routeResponse.path("durations").path(0);
+      JsonNode distances = routeResponse.path("distances").path(0);
+      List<NearbyPharmacy> ranked = new ArrayList<>();
+      for (int index = 0; index < candidates.size(); index++) {
+        NearbyPharmacy original = candidates.get(index);
+        JsonNode duration = durations.path(index);
+        JsonNode distance = distances.path(index);
+        if (duration.isNumber()) {
+          Pharmacy pharmacy = original.pharmacy();
+          ranked.add(
+              new NearbyPharmacy(
+                  new Pharmacy(
+                      pharmacy.pharmacyId(),
+                      pharmacy.ownerUserId(),
+                      pharmacy.name(),
+                      pharmacy.address(),
+                      pharmacy.area(),
+                      pharmacy.district(),
+                      pharmacy.phone(),
+                      pharmacy.email(),
+                      pharmacy.latitude(),
+                      pharmacy.longitude(),
+                      pharmacy.approved(),
+                      pharmacy.active(),
+                      pharmacy.createdAt(),
+                      pharmacy.updatedAt()),
+                  Math.round(distance.isNumber() ? distance.asDouble() : original.distanceMeters())));
+        } else {
+          ranked.add(original);
+        }
+      }
+      return ranked.stream().sorted(Comparator.comparingLong(NearbyPharmacy::distanceMeters)).toList();
+    } catch (Exception error) {
+      return nearbyPharmacies;
+    }
+  }
+
+  private String configuredRouteProfile() {
+    String profile = System.getenv("OPENROUTESERVICE_PROFILE");
+    return profile == null || profile.isBlank() ? ORS_DEFAULT_PROFILE : profile.trim();
   }
 
   private ObjectNode toPublicPharmacyNode(Pharmacy pharmacy) {

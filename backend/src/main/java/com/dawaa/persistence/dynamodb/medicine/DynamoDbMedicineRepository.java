@@ -11,6 +11,8 @@ import java.util.Objects;
 import java.util.Optional;
 import software.amazon.awssdk.services.dynamodb.DynamoDbClient;
 import software.amazon.awssdk.services.dynamodb.model.AttributeValue;
+import software.amazon.awssdk.services.dynamodb.model.GetItemRequest;
+import software.amazon.awssdk.services.dynamodb.model.GetItemResponse;
 import software.amazon.awssdk.services.dynamodb.model.QueryRequest;
 import software.amazon.awssdk.services.dynamodb.model.QueryResponse;
 import software.amazon.awssdk.services.dynamodb.model.ScanRequest;
@@ -45,6 +47,25 @@ public class DynamoDbMedicineRepository implements MedicineRepository {
     this.tableName = requireText(tableName, "tableName");
     this.brandIndexName = requireText(brandIndexName, "brandIndexName");
     this.genericIndexName = requireText(genericIndexName, "genericIndexName");
+  }
+
+  @Override
+  public Optional<Medicine> findById(String medicineId) {
+    if (medicineId == null || medicineId.isBlank()) {
+      return Optional.empty();
+    }
+
+    GetItemResponse response =
+        dynamoDb.getItem(
+            GetItemRequest.builder()
+                .tableName(tableName)
+                .key(Map.of("medicineId", AttributeValue.fromS(medicineId.trim())))
+                .build());
+
+    if (!response.hasItem()) {
+      return Optional.empty();
+    }
+    return Optional.of(toMedicine(response.item()));
   }
 
   @Override

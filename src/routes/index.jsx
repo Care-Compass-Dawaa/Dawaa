@@ -26,6 +26,7 @@ import {
   getMyPharmacy,
   searchPharmacies,
 } from "@/lib/pharmacies.functions";
+import { MedicineSelectionPage } from "@/pages/MedicineSelectionPage";
 
 export const Route = createFileRoute("/")({
   component: Home,
@@ -176,9 +177,19 @@ function AuthModal({ onClose, onLogin }) {
 
 // ─── Pharmacy Setup Screen ─────────────────────────────────────────────────────
 function PharmacySetup({ user, onComplete }) {
-  const [form, setForm] = useState({ name: "", address: "", area: "", phone: "" });
+  const [form, setForm] = useState({
+    name: "",
+    address: "",
+    area: "",
+    district: "",
+    phone: "",
+    email: "",
+    latitude: "",
+    longitude: "",
+  });
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState(null);
+  const [locationStatus, setLocationStatus] = useState("idle");
   const requesterUserId = user?.userId ?? user?.id;
 
   const registerPharmacyFn = useServerFn(registerPharmacy);
@@ -206,6 +217,15 @@ function PharmacySetup({ user, onComplete }) {
 
   async function handleSubmit(e) {
     e.preventDefault();
+    if (
+      form.latitude === "" ||
+      form.longitude === "" ||
+      !Number.isFinite(Number(form.latitude)) ||
+      !Number.isFinite(Number(form.longitude))
+    ) {
+      setError("Latitude and longitude are required for nearby pharmacy search.");
+      return;
+    }
     setSaving(true);
     setError(null);
     try {
@@ -222,6 +242,31 @@ function PharmacySetup({ user, onComplete }) {
 
   function field(key) {
     return (e) => setForm((f) => ({ ...f, [key]: e.target.value }));
+  }
+
+  function useCurrentLocation() {
+    if (!navigator.geolocation) {
+      setError("Location is not available in this browser.");
+      return;
+    }
+
+    setLocationStatus("loading");
+    setError(null);
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        setForm((f) => ({
+          ...f,
+          latitude: position.coords.latitude.toFixed(6),
+          longitude: position.coords.longitude.toFixed(6),
+        }));
+        setLocationStatus("success");
+      },
+      (err) => {
+        setError(err?.message || "Could not get this device location.");
+        setLocationStatus("error");
+      },
+      { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 },
+    );
   }
 
   return (
@@ -296,6 +341,16 @@ function PharmacySetup({ user, onComplete }) {
 
           {/* Street address */}
           <div className="flex flex-col gap-1.5">
+            <label className="text-sm font-medium">District</label>
+            <input
+              value={form.district}
+              onChange={field("district")}
+              placeholder="e.g. Beirut"
+              className="h-11 rounded-xl border bg-background px-4 outline-none focus:ring-2 focus:ring-ring text-sm"
+            />
+          </div>
+
+          <div className="flex flex-col gap-1.5">
             <label className="text-sm font-medium">
               Street address <span className="text-red-500">*</span>
             </label>
@@ -321,6 +376,57 @@ function PharmacySetup({ user, onComplete }) {
               placeholder="e.g. +961 1 234 567"
               className="h-11 rounded-xl border bg-background px-4 outline-none focus:ring-2 focus:ring-ring text-sm"
             />
+          </div>
+
+          <div className="flex flex-col gap-1.5">
+            <label className="text-sm font-medium">Email</label>
+            <input
+              type="email"
+              value={form.email}
+              onChange={field("email")}
+              placeholder="pharmacy@example.com"
+              className="h-11 rounded-xl border bg-background px-4 outline-none focus:ring-2 focus:ring-ring text-sm"
+            />
+          </div>
+
+          <div className="rounded-xl border bg-muted/40 p-4">
+            <div className="mb-3 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <label className="text-sm font-medium">
+                  Pharmacy coordinates <span className="text-red-500">*</span>
+                </label>
+                <p className="mt-0.5 text-xs text-muted-foreground">
+                  These are required for nearby search and distance ranking.
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={useCurrentLocation}
+                disabled={locationStatus === "loading"}
+                className="inline-flex h-9 shrink-0 items-center justify-center gap-2 rounded-xl border bg-background px-3 text-sm font-medium transition hover:bg-accent disabled:opacity-50"
+              >
+                <MapPinCheck className="h-3.5 w-3.5" aria-hidden="true" />
+                {locationStatus === "loading" ? "Locating..." : "Use current location"}
+              </button>
+            </div>
+            <div className="grid gap-3 sm:grid-cols-2">
+              <input
+                required
+                inputMode="decimal"
+                value={form.latitude}
+                onChange={field("latitude")}
+                placeholder="Latitude"
+                className="h-11 rounded-xl border bg-background px-4 outline-none focus:ring-2 focus:ring-ring text-sm"
+              />
+              <input
+                required
+                inputMode="decimal"
+                value={form.longitude}
+                onChange={field("longitude")}
+                placeholder="Longitude"
+                className="h-11 rounded-xl border bg-background px-4 outline-none focus:ring-2 focus:ring-ring text-sm"
+              />
+            </div>
           </div>
 
           {error && (
@@ -360,7 +466,15 @@ function PharmacistDashboard({ user }) {
   const [inventory, setInventory] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [form, setForm] = useState({ medicineName: "", quantity: "", inStock: true, editId: null });
+  const [form, setForm] = useState({
+    medicineId: "",
+    medicineName: "",
+    quantity: "",
+    inStock: true,
+    editId: null,
+  });
+  const [medicineMatches, setMedicineMatches] = useState([]);
+  const [medicineSearchStatus, setMedicineSearchStatus] = useState("idle");
   const [saving, setSaving] = useState(false);
 
   const getMyPharmacyFn = useServerFn(getMyPharmacy);
@@ -382,6 +496,42 @@ function PharmacistDashboard({ user }) {
     if (pharmacy) loadInventory();
   }, [pharmacy]);
 
+  useEffect(() => {
+    const q = form.medicineName.trim();
+    if (!DAWAA_API_BASE_URL || form.medicineId || q.length < 2) {
+      setMedicineMatches([]);
+      setMedicineSearchStatus("idle");
+      return;
+    }
+
+    const ctrl = new AbortController();
+    const t = setTimeout(async () => {
+      setMedicineSearchStatus("loading");
+      try {
+        const baseUrl = DAWAA_API_BASE_URL.replace(/\/$/, "");
+        const res = await fetch(
+          `${baseUrl}/medicines/suggestions?q=${encodeURIComponent(q)}&limit=8`,
+          { signal: ctrl.signal },
+        );
+        if (!res.ok) throw new Error("Medicine search failed");
+        const json = await res.json();
+        const matches = Array.isArray(json.suggestions) ? json.suggestions : [];
+        setMedicineMatches(matches);
+        setMedicineSearchStatus(matches.length > 0 ? "success" : "empty");
+      } catch (err) {
+        if (err?.name !== "AbortError") {
+          setMedicineMatches([]);
+          setMedicineSearchStatus("error");
+        }
+      }
+    }, 250);
+
+    return () => {
+      ctrl.abort();
+      clearTimeout(t);
+    };
+  }, [form.medicineName, form.medicineId]);
+
   async function loadInventory() {
     setLoading(true);
     setError(null);
@@ -398,18 +548,24 @@ function PharmacistDashboard({ user }) {
   async function handleSave(e) {
     e.preventDefault();
     if (!form.medicineName.trim()) return;
+    if (!form.medicineId) {
+      setError("Choose a medicine from the catalog before saving inventory.");
+      return;
+    }
     setSaving(true);
     try {
       await upsertFn({
         data: {
           requesterUserId,
           id: form.editId,
+          medicineId: form.medicineId,
           medicineName: form.medicineName.trim(),
           quantity: Number(form.quantity) || 0,
           inStock: form.inStock,
         },
       });
-      setForm({ medicineName: "", quantity: "", inStock: true, editId: null });
+      setForm({ medicineId: "", medicineName: "", quantity: "", inStock: true, editId: null });
+      setMedicineMatches([]);
       await loadInventory();
     } catch (err) {
       setError(err?.message ?? "Failed to save");
@@ -430,11 +586,27 @@ function PharmacistDashboard({ user }) {
 
   function startEdit(item) {
     setForm({
+      medicineId: item.medicineId || item.id,
       medicineName: item.medicineName,
       quantity: item.quantity,
       inStock: item.inStock,
       editId: item.id,
     });
+    setMedicineMatches([]);
+  }
+
+  function selectInventoryMedicine(medicine) {
+    setForm((f) => ({
+      ...f,
+      medicineId: medicine.medicineId,
+      medicineName: medicine.brandName,
+    }));
+    setMedicineMatches([]);
+    setMedicineSearchStatus("idle");
+  }
+
+  function inventoryMedicineLabel(medicine) {
+    return [medicine.genericName, medicine.strength, medicine.dosageForm].filter(Boolean).join(" - ");
   }
 
   // Still loading pharmacy check
@@ -483,13 +655,40 @@ function PharmacistDashboard({ user }) {
       <div className="bg-card rounded-2xl border shadow-soft p-5 mb-6">
         <h3 className="font-medium mb-3">{form.editId ? "Edit medicine" : "Add medicine"}</h3>
         <form onSubmit={handleSave} className="flex flex-col sm:flex-row gap-3">
-          <input
-            required
-            value={form.medicineName}
-            onChange={(e) => setForm((f) => ({ ...f, medicineName: e.target.value }))}
-            placeholder="Medicine name (brand or generic)"
-            className="flex-1 h-11 rounded-xl border bg-background px-4 outline-none focus:ring-2 focus:ring-ring text-sm"
-          />
+          <div className="relative flex-1">
+            <input
+              required
+              value={form.medicineName}
+              onChange={(e) =>
+                setForm((f) => ({ ...f, medicineId: "", medicineName: e.target.value }))
+              }
+              placeholder="Search medicine catalog"
+              className="h-11 w-full rounded-xl border bg-background px-4 outline-none focus:ring-2 focus:ring-ring text-sm"
+            />
+            {form.medicineId && (
+              <p className="mt-1 text-xs text-green-700">Catalog medicine selected</p>
+            )}
+            {!form.medicineId && medicineSearchStatus === "empty" && (
+              <p className="mt-1 text-xs text-muted-foreground">No catalog matches yet.</p>
+            )}
+            {!form.medicineId && medicineMatches.length > 0 && (
+              <div className="absolute left-0 right-0 top-12 z-20 overflow-hidden rounded-xl border bg-card shadow-soft">
+                {medicineMatches.map((medicine) => (
+                  <button
+                    key={medicine.medicineId}
+                    type="button"
+                    onClick={() => selectInventoryMedicine(medicine)}
+                    className="block w-full px-4 py-2 text-left text-sm hover:bg-accent"
+                  >
+                    <span className="block font-medium">{medicine.brandName}</span>
+                    <span className="block truncate text-xs text-muted-foreground">
+                      {inventoryMedicineLabel(medicine) || "Medicine catalog match"}
+                    </span>
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
           <input
             type="number"
             min="0"
@@ -518,7 +717,13 @@ function PharmacistDashboard({ user }) {
             <button
               type="button"
               onClick={() =>
-                setForm({ medicineName: "", quantity: "", inStock: true, editId: null })
+                setForm({
+                  medicineId: "",
+                  medicineName: "",
+                  quantity: "",
+                  inStock: true,
+                  editId: null,
+                })
               }
               className="h-11 rounded-xl px-4 border text-sm hover:bg-accent transition"
             >
@@ -1312,7 +1517,7 @@ function SearchResults({
           )}
           {nearbyStatus === "empty" && (
             <p className="rounded-xl border bg-accent px-4 py-3 text-sm">
-              No registered pharmacies found nearby yet.
+              No nearby pharmacies currently report this medicine in stock.
             </p>
           )}
 
@@ -1395,6 +1600,7 @@ function PatientSearch({ view, onViewChange }) {
   const searchPharmaciesFn = useServerFn(searchPharmacies);
   const [query, setQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
+  const [medicineOptions, setMedicineOptions] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [medicine, setMedicine] = useState(null);
   const [availability, setAvailability] = useState([]);
@@ -1450,7 +1656,7 @@ function PatientSearch({ view, onViewChange }) {
     const trimmedName = name.trim();
     if (!trimmedName) return;
 
-    onViewChange("results");
+    onViewChange("choose-medicine");
 
     if (!DAWAA_API_BASE_URL) {
       setMedicine(null);
@@ -1467,6 +1673,7 @@ function PatientSearch({ view, onViewChange }) {
     setStatus("loading");
     setMessage("");
     setMedicine(null);
+    setMedicineOptions([]);
     setAvailability([]);
     setAvailabilityStatus("idle");
     resetNearbyResults();
@@ -1490,17 +1697,49 @@ function PatientSearch({ view, onViewChange }) {
       }
 
       const result = await response.json();
-      const foundMedicine = result.medicine;
-      setMedicine(foundMedicine);
-      setStatus("success");
-      medicineLookupComplete = true;
-
-      if (!foundMedicine?.medicineId) {
-        setAvailabilityStatus("error");
-        return;
+      const foundMedicines = Array.isArray(result.medicines)
+        ? result.medicines
+        : result.medicine
+          ? [result.medicine]
+          : [];
+      setMedicineOptions(foundMedicines);
+      if (foundMedicines.length === 0) {
+        setMessage(`No active medicine found for "${trimmedName}".`);
       }
+      setStatus("choose");
+      medicineLookupComplete = true;
+    } catch (error) {
+      if (medicineLookupComplete) {
+        setAvailabilityStatus("error");
+      } else {
+        setStatus("error");
+        setMessage(error?.message ?? "Medicine lookup failed. Please try again.");
+      }
+    } finally {
+      setLoading(false);
+    }
+  }
 
-      setAvailabilityStatus("loading");
+  async function selectMedicine(foundMedicine) {
+    if (!foundMedicine?.medicineId) {
+      setAvailabilityStatus("error");
+      setMessage("Selected medicine is missing a catalog ID.");
+      return;
+    }
+
+    setMedicine(foundMedicine);
+    setStatus("success");
+    setMessage("");
+    setAvailability([]);
+    resetNearbyResults();
+    onViewChange("results");
+
+    if (!DAWAA_API_BASE_URL) return;
+
+    setLoading(true);
+    setAvailabilityStatus("loading");
+    try {
+      const baseUrl = DAWAA_API_BASE_URL.replace(/\/$/, "");
       const availabilityResponse = await fetch(
         `${baseUrl}/inventory/availability?medicineId=${encodeURIComponent(foundMedicine.medicineId)}`,
       );
@@ -1520,15 +1759,12 @@ function PatientSearch({ view, onViewChange }) {
       setAvailabilityStatus(availableItems.length > 0 ? "success" : "empty");
 
       if (userLocation) {
-        await loadNearbyPharmacies(userLocation);
+        await loadNearbyPharmacies(userLocation, foundMedicine.medicineId);
       }
     } catch (error) {
-      if (medicineLookupComplete) {
-        setAvailabilityStatus("error");
-      } else {
-        setStatus("error");
-        setMessage(error?.message ?? "Medicine lookup failed. Please try again.");
-      }
+      setAvailabilityStatus("error");
+      setNearbyStatus("error");
+      setNearbyMessage(error?.message ?? "Medicine availability lookup failed.");
     } finally {
       setLoading(false);
     }
@@ -1562,7 +1798,7 @@ function PatientSearch({ view, onViewChange }) {
         setLocationMessage("Location ready.");
 
         if (status === "success") {
-          await loadNearbyPharmacies(nextLocation);
+          await loadNearbyPharmacies(nextLocation, medicine?.medicineId);
         }
       },
       (error) => {
@@ -1573,14 +1809,14 @@ function PatientSearch({ view, onViewChange }) {
     );
   }
 
-  async function loadNearbyPharmacies(location) {
+  async function loadNearbyPharmacies(location, medicineId = medicine?.medicineId) {
     setNearbyStatus("loading");
     setNearbyMessage("");
     setNearbyPharmacies([]);
 
     try {
       const result = await searchPharmaciesFn({
-        data: { lat: location.lat, lng: location.lng, radius: 50000, limit: 10 },
+        data: { lat: location.lat, lng: location.lng, radius: 50000, limit: 10, medicineId },
       });
       const pharmacies = Array.isArray(result.pharmacies) ? result.pharmacies : [];
       setNearbyPharmacies(pharmacies);
@@ -1614,13 +1850,26 @@ function PatientSearch({ view, onViewChange }) {
         return {
           ...p,
           id: key,
-          hasAvailabilityData: !!avail,
-          availableQuantity: avail?.quantity,
-          availabilityUpdatedAt: avail?.updatedAt,
+          hasAvailabilityData: !!avail || p.hasAvailabilityData,
+          availableQuantity: avail?.quantity ?? p.availableQuantity,
+          availabilityUpdatedAt: avail?.updatedAt ?? p.availabilityUpdatedAt,
         };
       })
       .sort((a, b) => closestDistance(a) - closestDistance(b));
   }, [nearbyPharmacies, availability]);
+
+  if (view === "choose-medicine") {
+    return (
+      <MedicineSelectionPage
+        query={query}
+        medicines={medicineOptions}
+        loading={loading && status === "loading"}
+        message={message}
+        onBack={handleBack}
+        onSelect={selectMedicine}
+      />
+    );
+  }
 
   if (view === "results") {
     return (

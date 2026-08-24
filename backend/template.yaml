@@ -42,6 +42,12 @@ Parameters:
     Default: DawaaMedicines
     Description: Existing DynamoDB medicines table name used for medicine lookup.
 
+  OpenRouteServiceApiKey:
+    Type: String
+    Default: ""
+    NoEcho: true
+    Description: Optional OpenRouteService API key used for route-aware pharmacy ranking.
+
 Resources:
   MedicineLookupFunction:
     Type: AWS::Serverless::Function
@@ -247,6 +253,7 @@ Resources:
                 - !Sub "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${PharmaciesTableName}/index/PharmacyOwnerIndex"
             - Effect: Allow
               Action:
+                - dynamodb:GetItem
                 - dynamodb:Query
               Resource:
                 - !Sub "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${MedicinesTableName}"
@@ -279,6 +286,9 @@ Resources:
         Variables:
           PHARMACIES_TABLE: !Ref PharmaciesTableName
           USERS_TABLE: !Ref UsersTableName
+          INVENTORY_TABLE: !Ref InventoryTableName
+          OPENROUTESERVICE_API_KEY: !Ref OpenRouteServiceApiKey
+          OPENROUTESERVICE_PROFILE: driving-car
       Policies:
         - AWSLambdaBasicExecutionRole
         - Statement:
@@ -297,6 +307,12 @@ Resources:
                 - dynamodb:GetItem
               Resource:
                 - !Sub "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${UsersTableName}"
+            - Effect: Allow
+              Action:
+                - dynamodb:Query
+              Resource:
+                - !Sub "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${InventoryTableName}"
+                - !Sub "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${InventoryTableName}/index/MedicineAvailabilityIndex"
       Events:
         RegisterPharmacy:
           Type: Api
