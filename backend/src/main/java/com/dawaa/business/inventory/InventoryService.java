@@ -45,7 +45,7 @@ public class InventoryService {
     Pharmacy pharmacy = requireOwnedPharmacy(requester);
     Medicine medicine =
         medicineService
-            .findActiveMedicineByBrandName(medicineName)
+            .findActiveMedicineByName(medicineName)
             .orElseThrow(() -> new NoSuchElementException("Medicine not found in catalog"));
 
     String now = Instant.now().toString();

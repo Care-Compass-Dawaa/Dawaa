@@ -2,9 +2,12 @@ package com.dawaa.business.medicine;
 
 import com.dawaa.domain.medicine.Medicine;
 import com.dawaa.domain.medicine.MedicineRepository;
+import java.text.Normalizer;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
-import java.text.Normalizer;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 
@@ -17,24 +20,77 @@ public class MedicineService {
   }
 
   public Optional<Medicine> findActiveMedicineByBrandName(String brandName) {
-    String normalizedBrandName = normalizeRequired(brandName);
+    String normalizedBrandName = normalizeRequired(brandName, "brandName");
 
     return medicineRepository
         .findByNormalizedBrandName(normalizedBrandName)
         .filter(Medicine::active);
   }
 
+  public Optional<Medicine> findActiveMedicineByGenericName(String genericName) {
+    String normalizedGenericName = normalizeRequired(genericName, "genericName");
+
+    return medicineRepository
+        .findByNormalizedGenericName(normalizedGenericName)
+        .filter(Medicine::active);
+  }
+
+  public Optional<Medicine> findActiveMedicineByName(String name) {
+    String normalizedName = normalizeRequired(name, "medicine name");
+
+    return medicineRepository
+        .findByNormalizedBrandName(normalizedName)
+        .filter(Medicine::active)
+        .or(
+            () ->
+                medicineRepository
+                    .findByNormalizedGenericName(normalizedName)
+                    .filter(Medicine::active));
+  }
+
   public List<Medicine> suggestActiveMedicinesByBrandName(String brandName, int limit) {
-    String normalizedBrandName = normalizeRequired(brandName);
+    String normalizedBrandName = normalizeRequired(brandName, "brandName");
 
     return medicineRepository.searchByNormalizedBrandName(normalizedBrandName, limit).stream()
         .filter(Medicine::active)
         .toList();
   }
 
-  private static String normalizeRequired(String value) {
+  public List<Medicine> suggestActiveMedicinesByGenericName(String genericName, int limit) {
+    String normalizedGenericName = normalizeRequired(genericName, "genericName");
+
+    return medicineRepository.searchByNormalizedGenericName(normalizedGenericName, limit).stream()
+        .filter(Medicine::active)
+        .toList();
+  }
+
+  public List<Medicine> suggestActiveMedicinesByName(String name, int limit) {
+    String normalizedName = normalizeRequired(name, "medicine name");
+    int safeLimit = Math.min(Math.max(limit, 1), 100);
+    Map<String, Medicine> matchesById = new LinkedHashMap<>();
+
+    List<Medicine> brandMatches =
+        medicineRepository.searchByNormalizedBrandName(normalizedName, safeLimit);
+    List<Medicine> genericMatches =
+        medicineRepository.searchByNormalizedGenericName(normalizedName, safeLimit);
+
+    addActiveMatches(matchesById, brandMatches);
+    addActiveMatches(matchesById, genericMatches);
+
+    return new ArrayList<>(matchesById.values()).stream().limit(safeLimit).toList();
+  }
+
+  private static void addActiveMatches(Map<String, Medicine> matchesById, List<Medicine> medicines) {
+    for (Medicine medicine : medicines) {
+      if (medicine.active()) {
+        matchesById.putIfAbsent(medicine.medicineId(), medicine);
+      }
+    }
+  }
+
+  private static String normalizeRequired(String value, String name) {
     if (value == null || value.isBlank()) {
-      throw new IllegalArgumentException("brandName is required");
+      throw new IllegalArgumentException(name + " is required");
     }
     return Normalizer.normalize(value.trim().toLowerCase(Locale.ROOT), Normalizer.Form.NFKD)
         .replaceAll("\\p{M}", "")

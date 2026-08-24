@@ -18,29 +18,62 @@ import software.amazon.awssdk.services.dynamodb.model.ScanResponse;
 
 public class DynamoDbMedicineRepository implements MedicineRepository {
   private static final String DEFAULT_TABLE_NAME = "DawaaMedicines";
-  private static final String DEFAULT_INDEX_NAME = "BrandNameIndex";
+  private static final String DEFAULT_BRAND_INDEX_NAME = "BrandNameIndex";
+  private static final String DEFAULT_GENERIC_INDEX_NAME = "GenericNameIndex";
 
   private final DynamoDbClient dynamoDb;
   private final String tableName;
-  private final String indexName;
+  private final String brandIndexName;
+  private final String genericIndexName;
 
   public DynamoDbMedicineRepository() {
     this(DynamoDbClient.builder().build());
   }
 
   public DynamoDbMedicineRepository(DynamoDbClient dynamoDb) {
-    this(dynamoDb, configuredTableName(), DEFAULT_INDEX_NAME);
+    this(dynamoDb, configuredTableName(), DEFAULT_BRAND_INDEX_NAME, DEFAULT_GENERIC_INDEX_NAME);
   }
 
-  public DynamoDbMedicineRepository(DynamoDbClient dynamoDb, String tableName, String indexName) {
+  public DynamoDbMedicineRepository(
+      DynamoDbClient dynamoDb, String tableName, String brandIndexName) {
+    this(dynamoDb, tableName, brandIndexName, DEFAULT_GENERIC_INDEX_NAME);
+  }
+
+  public DynamoDbMedicineRepository(
+      DynamoDbClient dynamoDb, String tableName, String brandIndexName, String genericIndexName) {
     this.dynamoDb = Objects.requireNonNull(dynamoDb, "dynamoDb is required");
     this.tableName = requireText(tableName, "tableName");
-    this.indexName = requireText(indexName, "indexName");
+    this.brandIndexName = requireText(brandIndexName, "brandIndexName");
+    this.genericIndexName = requireText(genericIndexName, "genericIndexName");
   }
 
   @Override
   public Optional<Medicine> findByNormalizedBrandName(String normalizedBrandName) {
-    String normalized = normalize(normalizedBrandName);
+    return findByNormalizedAttribute(
+        brandIndexName, "normalizedBrandName", ":brandName", normalizedBrandName);
+  }
+
+  @Override
+  public Optional<Medicine> findByNormalizedGenericName(String normalizedGenericName) {
+    return findByNormalizedAttribute(
+        genericIndexName, "normalizedGenericName", ":genericName", normalizedGenericName);
+  }
+
+  @Override
+  public List<Medicine> searchByNormalizedBrandName(String normalizedBrandName, int limit) {
+    return searchByNormalizedAttribute(
+        "normalizedBrandName", ":brandName", normalizedBrandName, limit);
+  }
+
+  @Override
+  public List<Medicine> searchByNormalizedGenericName(String normalizedGenericName, int limit) {
+    return searchByNormalizedAttribute(
+        "normalizedGenericName", ":genericName", normalizedGenericName, limit);
+  }
+
+  private Optional<Medicine> findByNormalizedAttribute(
+      String indexName, String attributeName, String valueToken, String value) {
+    String normalized = normalize(value);
     if (normalized.isEmpty()) {
       return Optional.empty();
     }
@@ -50,8 +83,8 @@ public class DynamoDbMedicineRepository implements MedicineRepository {
             QueryRequest.builder()
                 .tableName(tableName)
                 .indexName(indexName)
-                .keyConditionExpression("normalizedBrandName = :brandName")
-                .expressionAttributeValues(Map.of(":brandName", AttributeValue.fromS(normalized)))
+                .keyConditionExpression(attributeName + " = " + valueToken)
+                .expressionAttributeValues(Map.of(valueToken, AttributeValue.fromS(normalized)))
                 .limit(1)
                 .build());
 
@@ -62,9 +95,9 @@ public class DynamoDbMedicineRepository implements MedicineRepository {
     return Optional.of(toMedicine(response.items().get(0)));
   }
 
-  @Override
-  public List<Medicine> searchByNormalizedBrandName(String normalizedBrandName, int limit) {
-    String normalized = normalize(normalizedBrandName);
+  private List<Medicine> searchByNormalizedAttribute(
+      String attributeName, String valueToken, String value, int limit) {
+    String normalized = normalize(value);
     if (normalized.isEmpty()) {
       return List.of();
     }
@@ -77,11 +110,12 @@ public class DynamoDbMedicineRepository implements MedicineRepository {
       ScanRequest.Builder request =
           ScanRequest.builder()
               .tableName(tableName)
-              .filterExpression("active = :active AND contains(normalizedBrandName, :brandName)")
+              .filterExpression(
+                  "active = :active AND contains(" + attributeName + ", " + valueToken + ")")
               .expressionAttributeValues(
                   Map.of(
                       ":active", AttributeValue.fromBool(true),
-                      ":brandName", AttributeValue.fromS(normalized)));
+                      valueToken, AttributeValue.fromS(normalized)));
 
       if (lastEvaluatedKey != null && !lastEvaluatedKey.isEmpty()) {
         request.exclusiveStartKey(lastEvaluatedKey);
@@ -98,11 +132,19 @@ public class DynamoDbMedicineRepository implements MedicineRepository {
         .sorted(
             Comparator.comparing(
                     (Medicine medicine) ->
-                        medicine.normalizedBrandName().startsWith(normalized) ? 0 : 1)
-                .thenComparing(Medicine::normalizedBrandName)
+                        normalizedAttribute(medicine, attributeName).startsWith(normalized) ? 0 : 1)
+                .thenComparing(medicine -> normalizedAttribute(medicine, attributeName))
                 .thenComparing(Medicine::medicineId))
         .limit(safeLimit)
         .toList();
+  }
+
+  private static String normalizedAttribute(Medicine medicine, String attributeName) {
+    return switch (attributeName) {
+      case "normalizedGenericName" -> medicine.normalizedGenericName();
+      case "normalizedBrandName" -> medicine.normalizedBrandName();
+      default -> "";
+    };
   }
 
   private static String configuredTableName() {

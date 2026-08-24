@@ -40,8 +40,8 @@ public class MedicineLookupHandler extends BaseHandler
         return error(400, "name is required");
       }
 
-      Optional<Medicine> medicine = medicineService.findActiveMedicineByBrandName(name);
-      List<Medicine> medicines = medicineService.suggestActiveMedicinesByBrandName(name, limit(request, 50));
+      Optional<Medicine> medicine = medicineService.findActiveMedicineByName(name);
+      List<Medicine> medicines = medicineService.suggestActiveMedicinesByName(name, limit(request, 50));
       if (medicine.isPresent()
           && medicines.stream().noneMatch((item) -> item.medicineId().equals(medicine.get().medicineId()))) {
         medicines = new java.util.ArrayList<>(medicines);
@@ -79,7 +79,7 @@ public class MedicineLookupHandler extends BaseHandler
       return error(400, "q is required");
     }
 
-    List<Medicine> medicines = medicineService.suggestActiveMedicinesByBrandName(query, limit(request, 8));
+    List<Medicine> medicines = medicineService.suggestActiveMedicinesByName(query, limit(request, 8));
     ObjectNode wrapper = MAPPER.createObjectNode();
     ArrayNode suggestions = wrapper.putArray("suggestions");
     for (Medicine medicine : medicines) {

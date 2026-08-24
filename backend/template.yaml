@@ -48,7 +48,7 @@ Resources:
     Properties:
       CodeUri: .
       Handler: com.dawaa.api.medicine.MedicineLookupHandler::handleRequest
-      Description: Looks up active medicines by brand name.
+      Description: Looks up active medicines by brand or generic name.
       Environment:
         Variables:
           MEDICINES_TABLE: !Ref MedicinesTableName
@@ -62,6 +62,7 @@ Resources:
               Resource:
                 - !Sub "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${MedicinesTableName}"
                 - !Sub "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${MedicinesTableName}/index/BrandNameIndex"
+                - !Sub "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${MedicinesTableName}/index/GenericNameIndex"
       Events:
         SearchMedicines:
           Type: Api
@@ -244,6 +245,7 @@ Resources:
               Resource:
                 - !Sub "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${MedicinesTableName}"
                 - !Sub "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${MedicinesTableName}/index/BrandNameIndex"
+                - !Sub "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${MedicinesTableName}/index/GenericNameIndex"
       Events:
         ListInventory:
           Type: Api
