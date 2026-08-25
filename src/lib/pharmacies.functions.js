@@ -314,6 +314,37 @@ export const getAllUsers = createServerFn({ method: "POST" })
     return { users };
   });
 
+export const deactivateUserAsAdmin = createServerFn({ method: "POST" })
+  .validator((input) => {
+    if (!input?.requesterUserId || !input?.targetUserId) {
+      throw new Error("requesterUserId and targetUserId are required");
+    }
+    return {
+      requesterUserId: input.requesterUserId,
+      targetUserId: input.targetUserId,
+    };
+  })
+  .handler(async ({ data }) => {
+    if (DAWAA_API_BASE_URL) {
+      const res = await fetch(
+        `${DAWAA_API_BASE_URL.replace(/\/$/, "")}/admin/users/${encodeURIComponent(data.targetUserId)}`,
+        {
+          method: "DELETE",
+          headers: { [REQUESTER_HEADER]: data.requesterUserId },
+        },
+      );
+      if (!res.ok) throw new Error((await res.text()).slice(0, 200));
+      return await res.json();
+    }
+
+    const requester = usersStore.get(data.requesterUserId);
+    const target = usersStore.get(data.targetUserId);
+    if (requester?.role !== "admin") throw new Error("Admin access is required");
+    if (target?.role === "admin") throw new Error("Admin accounts cannot be deactivated here");
+    if (target) usersStore.set(data.targetUserId, { ...target, active: false });
+    return { success: true };
+  });
+
 export const getAllPharmacies = createServerFn({ method: "POST" })
   .validator((input) => {
     if (!input?.requesterUserId) throw new Error("requesterUserId is required");

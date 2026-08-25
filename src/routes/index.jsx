@@ -21,6 +21,7 @@ import {
   upsertInventoryItem,
   deleteInventoryItem,
   getAllUsers,
+  deactivateUserAsAdmin,
   getAllPharmacies,
   approvePharmacy,
   registerPharmacy,
@@ -791,6 +792,7 @@ function AdminPanel({ user }) {
   const requesterUserId = user?.userId ?? user?.id;
 
   const getUsersFn = useServerFn(getAllUsers);
+  const deactivateUserFn = useServerFn(deactivateUserAsAdmin);
   const getPharmaciesFn = useServerFn(getAllPharmacies);
   const approveFn = useServerFn(approvePharmacy);
 
@@ -821,6 +823,21 @@ function AdminPanel({ user }) {
       await loadData();
     } catch (err) {
       setError(err?.message ?? "Failed to update pharmacy");
+    }
+  }
+
+  async function handleDeactivateUser(targetUser) {
+    const targetUserId = targetUser?.userId ?? targetUser?.id;
+    if (!targetUserId) return;
+
+    const confirmed = window.confirm(`Deactivate ${targetUser.name || targetUser.email}?`);
+    if (!confirmed) return;
+
+    try {
+      await deactivateUserFn({ data: { requesterUserId, targetUserId } });
+      await loadData();
+    } catch (err) {
+      setError(err?.message ?? "Failed to deactivate user");
     }
   }
 
@@ -859,9 +876,27 @@ function AdminPanel({ user }) {
                   <span className="text-xs px-2 py-1 rounded-full bg-muted text-muted-foreground capitalize">
                     {u.role}
                   </span>
+                  <span
+                    className={`text-xs px-2 py-1 rounded-full font-medium ${
+                      u.active === false
+                        ? "bg-red-50 text-red-600"
+                        : "bg-green-50 text-green-700"
+                    }`}
+                  >
+                    {u.active === false ? "Inactive" : "Active"}
+                  </span>
                   <span className="text-xs text-muted-foreground">
                     Joined {new Date(u.createdAt).toLocaleDateString()}
                   </span>
+                  {u.role !== "admin" && u.active !== false && (
+                    <button
+                      type="button"
+                      onClick={() => handleDeactivateUser(u)}
+                      className="text-xs font-medium text-red-500 hover:underline"
+                    >
+                      Deactivate
+                    </button>
+                  )}
                 </li>
               ))}
             </ul>
