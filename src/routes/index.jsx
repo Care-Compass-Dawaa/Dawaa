@@ -2042,6 +2042,16 @@ function Home() {
   const [searchView, setSearchView] = useState("landing"); // "landing" | "results"
   const [accountError, setAccountError] = useState(null);
   const deactivateUserFn = useServerFn(deactivateCurrentUser);
+  const currentUserKey = user?.userId ?? user?.id ?? user?.email ?? "guest";
+
+  useEffect(() => {
+    setActiveTab("search");
+    setSearchView("landing");
+    setShowAuth(false);
+    setShowAccount(false);
+    setShowDeactivateConfirm(false);
+    setAccountError(null);
+  }, [currentUserKey]);
 
   const tabs = [
     { id: "search", label: searchView === "results" ? "Find Medicine" : "Home", roles: ["*"] },
@@ -2106,12 +2116,18 @@ function Home() {
           </p>
         )}
         {activeTab === "search" && (
-          <PatientSearch view={searchView} onViewChange={setSearchView} />
+          <PatientSearch
+            key={`search-${currentUserKey}`}
+            view={searchView}
+            onViewChange={setSearchView}
+          />
         )}
         {activeTab === "dashboard" && user?.role === "pharmacist" && (
-          <PharmacistDashboard user={user} />
+          <PharmacistDashboard key={`dashboard-${currentUserKey}`} user={user} />
         )}
-        {activeTab === "admin" && user?.role === "admin" && <AdminPanel user={user} />}
+        {activeTab === "admin" && user?.role === "admin" && (
+          <AdminPanel key={`admin-${currentUserKey}`} user={user} />
+        )}
       </main>
 
       {showAuth && <AuthModal onClose={() => setShowAuth(false)} onLogin={login} />}
