@@ -50,7 +50,7 @@ public class OpenRouteServiceClient {
               .timeout(Duration.ofSeconds(8))
               .header("Authorization", apiKey)
               .header("Content-Type", "application/json")
-              .header("Accept", "application/json")
+              .header("Accept", "application/json, application/geo+json, application/gpx+xml, */*")
               .POST(HttpRequest.BodyPublishers.ofString(MAPPER.writeValueAsString(body)))
               .build();
 
