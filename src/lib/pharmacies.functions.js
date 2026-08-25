@@ -97,6 +97,27 @@ export const loginUser = createServerFn({ method: "POST" })
     return { user: safeUser };
   });
 
+export const deactivateCurrentUser = createServerFn({ method: "POST" })
+  .validator((input) => {
+    if (!input?.requesterUserId) throw new Error("requesterUserId is required");
+    return { requesterUserId: input.requesterUserId };
+  })
+  .handler(async ({ data }) => {
+    if (DAWAA_API_BASE_URL) {
+      const res = await fetch(`${DAWAA_API_BASE_URL.replace(/\/$/, "")}/users/me`, {
+        method: "DELETE",
+        headers: { [REQUESTER_HEADER]: data.requesterUserId },
+      });
+      if (!res.ok) throw new Error((await res.text()).slice(0, 200));
+      return await res.json();
+    }
+
+    const user = usersStore.get(data.requesterUserId);
+    if (user?.role === "admin") throw new Error("Admin accounts cannot self-deactivate");
+    if (user) usersStore.set(data.requesterUserId, { ...user, active: false });
+    return { success: true };
+  });
+
 // Seed default admin on first server load (in-memory only)
 (function seedAdmin() {
   const ADMIN_EMAIL = "admin@dawaa.com";

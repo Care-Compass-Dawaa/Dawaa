@@ -16,6 +16,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import {
   loginUser,
   registerUser,
+  deactivateCurrentUser,
   getInventory,
   upsertInventoryItem,
   deleteInventoryItem,
@@ -1922,7 +1923,7 @@ function NavLink({ label, active, onClick }) {
   );
 }
 
-function Header({ user, onSignIn, onSignOut, tabs, activeTab, onTabChange }) {
+function Header({ user, onSignIn, onSignOut, onOpenAccount, tabs, activeTab, onTabChange }) {
   return (
     <header className="sticky top-0 z-40 border-b bg-card/95 backdrop-blur">
       <div className="mx-auto grid max-w-6xl grid-cols-2 items-center gap-4 px-4 py-3.5 sm:grid-cols-[1fr_auto_1fr] sm:px-6">
@@ -1947,15 +1948,22 @@ function Header({ user, onSignIn, onSignOut, tabs, activeTab, onTabChange }) {
         <div className="flex items-center justify-end gap-2">
           {user ? (
             <>
-              <span className="hidden text-sm text-muted-foreground sm:inline">
-                {user.name}{" "}
-                <span className="ml-1 rounded bg-muted px-1.5 py-0.5 text-xs capitalize">
-                  {user.role}
-                </span>
-              </span>
+              <div className="relative">
+                <button
+                  type="button"
+                  onClick={onOpenAccount}
+                  className="hidden items-center gap-1.5 rounded-full px-2.5 py-1.5 text-sm text-muted-foreground transition hover:bg-accent hover:text-foreground sm:inline-flex"
+                >
+                  <span>{user.name}</span>
+                  <span className="rounded bg-muted px-1.5 py-0.5 text-xs capitalize">
+                    {user.role}
+                  </span>
+                  <ChevronDown className="h-3.5 w-3.5" aria-hidden="true" />
+                </button>
+              </div>
               <button
                 onClick={onSignOut}
-                className="h-9 rounded-full border px-4 text-sm font-medium transition hover:bg-accent"
+                className="h-9 rounded-full border px-4 text-sm font-medium transition hover:bg-accent sm:hidden"
               >
                 Sign out
               </button>
@@ -1993,8 +2001,12 @@ function Header({ user, onSignIn, onSignOut, tabs, activeTab, onTabChange }) {
 function Home() {
   const { user, login, logout } = useAuth();
   const [showAuth, setShowAuth] = useState(false);
+  const [showAccount, setShowAccount] = useState(false);
+  const [showDeactivateConfirm, setShowDeactivateConfirm] = useState(false);
   const [activeTab, setActiveTab] = useState("search");
   const [searchView, setSearchView] = useState("landing"); // "landing" | "results"
+  const [accountError, setAccountError] = useState(null);
+  const deactivateUserFn = useServerFn(deactivateCurrentUser);
 
   const tabs = [
     { id: "search", label: searchView === "results" ? "Find Medicine" : "Home", roles: ["*"] },
@@ -2026,18 +2038,38 @@ function Home() {
   const activeNavId =
     activeTab === "search" ? (searchView === "results" ? "find" : "home") : activeTab;
 
+  async function handleDeactivateAccount() {
+    if (!user) return;
+
+    setAccountError(null);
+    try {
+      await deactivateUserFn({ data: { requesterUserId: user.userId ?? user.id } });
+      logout();
+      setActiveTab("search");
+      setSearchView("landing");
+    } catch (err) {
+      setAccountError(err?.message ?? "Could not deactivate account.");
+    }
+  }
+
   return (
     <div className="flex min-h-screen flex-col bg-background">
       <Header
         user={user}
         onSignIn={() => setShowAuth(true)}
         onSignOut={logout}
+        onOpenAccount={() => setShowAccount(true)}
         tabs={navTabs}
         activeTab={activeNavId}
         onTabChange={handleTabChange}
       />
 
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8 sm:px-6">
+        {accountError && (
+          <p className="mb-4 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-600">
+            {accountError}
+          </p>
+        )}
         {activeTab === "search" && (
           <PatientSearch view={searchView} onViewChange={setSearchView} />
         )}
@@ -2048,6 +2080,81 @@ function Home() {
       </main>
 
       {showAuth && <AuthModal onClose={() => setShowAuth(false)} onLogin={login} />}
+      {showAccount && user && (
+        <div
+          className="fixed inset-0 z-[2000] flex items-center justify-center bg-black/40 p-4"
+          onClick={() => setShowAccount(false)}
+        >
+          <div
+            className="w-full max-w-sm rounded-2xl border bg-card p-4 shadow-soft"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="border-b pb-3">
+              <div className="truncate text-sm font-semibold">{user.name}</div>
+              <div className="truncate text-xs text-muted-foreground">{user.email}</div>
+            </div>
+            <div className="mt-3 flex flex-col gap-2">
+              <button
+                type="button"
+                onClick={() => {
+                  setShowAccount(false);
+                  logout();
+                }}
+                className="h-10 rounded-xl border px-3 text-left text-sm font-medium transition hover:bg-accent"
+              >
+                Sign out
+              </button>
+              {user.role !== "admin" && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    setShowAccount(false);
+                    setShowDeactivateConfirm(true);
+                  }}
+                  className="h-10 rounded-xl border border-red-200 px-3 text-left text-sm font-medium text-red-600 transition hover:bg-red-50"
+                >
+                  Deactivate account
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+      {showDeactivateConfirm && (
+        <div
+          className="fixed inset-0 z-[2000] flex items-center justify-center bg-black/40 p-4"
+          onClick={() => setShowDeactivateConfirm(false)}
+        >
+          <div
+            className="w-full max-w-md rounded-2xl border bg-card p-6 shadow-soft"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <h2 className="text-lg font-semibold">Deactivate account</h2>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Are you sure you want to deactivate your account?
+            </p>
+            <div className="mt-5 flex justify-end gap-2">
+              <button
+                type="button"
+                onClick={() => setShowDeactivateConfirm(false)}
+                className="h-10 rounded-xl border px-4 text-sm font-medium transition hover:bg-accent"
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setShowDeactivateConfirm(false);
+                  handleDeactivateAccount();
+                }}
+                className="h-10 rounded-xl bg-red-600 px-4 text-sm font-medium text-white transition hover:bg-red-700"
+              >
+                Deactivate
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
