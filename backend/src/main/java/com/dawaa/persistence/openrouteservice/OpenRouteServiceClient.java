@@ -57,7 +57,11 @@ public class OpenRouteServiceClient {
       HttpResponse<String> response =
           httpClient.send(request, HttpResponse.BodyHandlers.ofString());
       if (response.statusCode() < 200 || response.statusCode() >= 300) {
-        throw new IllegalStateException("OpenRouteService directions failed");
+        throw new IllegalStateException(
+            "OpenRouteService directions failed with status "
+                + response.statusCode()
+                + ": "
+                + safeBodySnippet(response.body()));
       }
 
       JsonNode route = MAPPER.readTree(response.body()).path("features").path(0);
@@ -89,5 +93,13 @@ public class OpenRouteServiceClient {
   private static String configuredProfile() {
     String value = System.getenv("OPENROUTESERVICE_PROFILE");
     return value == null || value.isBlank() ? DEFAULT_PROFILE : value;
+  }
+
+  private static String safeBodySnippet(String body) {
+    if (body == null || body.isBlank()) {
+      return "empty response";
+    }
+    String compact = body.replaceAll("\\s+", " ").trim();
+    return compact.length() <= 300 ? compact : compact.substring(0, 300);
   }
 }

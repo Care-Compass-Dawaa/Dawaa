@@ -45,6 +45,9 @@ public class RouteHandler extends BaseHandler
     } catch (IllegalArgumentException error) {
       return error(400, error.getMessage());
     } catch (IllegalStateException error) {
+      if (context != null) {
+        context.getLogger().log("RouteHandler route lookup failed: " + error.getMessage());
+      }
       return error(502, error.getMessage());
     } catch (Exception error) {
       if (context != null) {
