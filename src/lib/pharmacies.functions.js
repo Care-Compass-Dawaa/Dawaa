@@ -623,3 +623,40 @@ async function searchViaJavaBackend(data) {
 
   return await res.json();
 }
+
+export const getRouteDirections = createServerFn({ method: "POST" })
+  .validator((input) => {
+    const from = input?.from;
+    const to = input?.to;
+    if (
+      typeof from?.lat !== "number" ||
+      typeof from?.lng !== "number" ||
+      typeof to?.lat !== "number" ||
+      typeof to?.lng !== "number"
+    ) {
+      throw new Error("from and to coordinates are required");
+    }
+
+    return {
+      from: { lat: from.lat, lng: from.lng },
+      to: { lat: to.lat, lng: to.lng },
+    };
+  })
+  .handler(async ({ data }) => {
+    if (!DAWAA_API_BASE_URL) {
+      throw new Error("Directions backend not configured. Please set DAWAA_API_BASE_URL in your .env file.");
+    }
+
+    const res = await fetch(`${DAWAA_API_BASE_URL.replace(/\/$/, "")}/routes/directions`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+
+    if (!res.ok) {
+      const text = await res.text();
+      throw new Error(`Directions API error ${res.status}: ${text.slice(0, 200)}`);
+    }
+
+    return await res.json();
+  });

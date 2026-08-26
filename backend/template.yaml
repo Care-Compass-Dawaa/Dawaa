@@ -365,6 +365,25 @@ Resources:
             Path: /pharmacies/search
             Method: post
 
+  RouteFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: .
+      Handler: com.dawaa.api.route.RouteHandler::handleRequest
+      Description: Route directions lookup through OpenRouteService.
+      Environment:
+        Variables:
+          OPENROUTESERVICE_API_KEY: !Ref OpenRouteServiceApiKey
+          OPENROUTESERVICE_PROFILE: driving-car
+      Policies:
+        - AWSLambdaBasicExecutionRole
+      Events:
+        RouteDirections:
+          Type: Api
+          Properties:
+            Path: /routes/directions
+            Method: post
+
 Outputs:
   ApiBaseUrl:
     Description: API Gateway base URL - set this as DAWAA_API_BASE_URL in your frontend .env

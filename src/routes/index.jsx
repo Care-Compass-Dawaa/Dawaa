@@ -10,6 +10,7 @@ import {
   Mail,
   MapPin,
   MapPinCheck,
+  Navigation,
   Phone,
   Pill,
   Search,
@@ -31,6 +32,7 @@ import {
   registerPharmacy,
   getMyPharmacy,
   updateMyPharmacy,
+  getRouteDirections,
   searchPharmacies,
 } from "@/lib/pharmacies.functions";
 import { MedicineSelectionPage } from "@/pages/MedicineSelectionPage";
@@ -1227,6 +1229,19 @@ function formatDistance(distanceMeters) {
   return `${(distanceMeters / 1000).toFixed(1)} km`;
 }
 
+function formatDuration(durationSeconds) {
+  if (!Number.isFinite(durationSeconds)) {
+    return "Time unavailable";
+  }
+  const minutes = Math.max(1, Math.round(durationSeconds / 60));
+  if (minutes < 60) {
+    return `${minutes} min`;
+  }
+  const hours = Math.floor(minutes / 60);
+  const remainingMinutes = minutes % 60;
+  return remainingMinutes ? `${hours} hr ${remainingMinutes} min` : `${hours} hr`;
+}
+
 function pharmacyLatLng(pharmacy) {
   if (pharmacy?.location && Number.isFinite(pharmacy.location.lat) && Number.isFinite(pharmacy.location.lng)) {
     return { lat: pharmacy.location.lat, lng: pharmacy.location.lng };
@@ -1279,12 +1294,14 @@ function PharmacyMap({
   pharmacies,
   selectedId,
   onSelect,
+  routeCoordinates = [],
   className = "",
   showLegend = true,
 }) {
   const containerRef = useRef(null);
   const mapRef = useRef(null);
   const markersRef = useRef([]);
+  const routeRef = useRef(null);
   const [ready, setReady] = useState(false);
   const [failed, setFailed] = useState(false);
 
@@ -1326,8 +1343,25 @@ function PharmacyMap({
 
     markersRef.current.forEach((m) => map.removeLayer(m));
     markersRef.current = [];
+    if (routeRef.current) {
+      map.removeLayer(routeRef.current);
+      routeRef.current = null;
+    }
 
     const bounds = [];
+    const routeLatLngs = routeCoordinates
+      .filter((coordinate) => Array.isArray(coordinate) && coordinate.length >= 2)
+      .map(([lng, lat]) => [lat, lng])
+      .filter(([lat, lng]) => Number.isFinite(lat) && Number.isFinite(lng));
+
+    if (routeLatLngs.length > 1) {
+      routeRef.current = L.polyline(routeLatLngs, {
+        color: "#7c3aed",
+        weight: 5,
+        opacity: 0.85,
+      }).addTo(map);
+      bounds.push(...routeLatLngs);
+    }
 
     if (userLocation) {
       const icon = L.divIcon({
@@ -1370,7 +1404,7 @@ function PharmacyMap({
     } else if (bounds.length > 1) {
       map.fitBounds(bounds, { padding: [48, 48] });
     }
-  }, [ready, userLocation, pharmacies, selectedId, onSelect]);
+  }, [ready, userLocation, pharmacies, selectedId, onSelect, routeCoordinates]);
 
   return (
     <div className={`relative isolate overflow-hidden rounded-2xl border bg-muted ${className}`}>
@@ -1474,8 +1508,104 @@ function DetailRow({ icon: Icon, label, value }) {
 }
 
 function PharmacyDetailPage({ pharmacy, medicine, userLocation }) {
+  const getRouteDirectionsFn = useServerFn(getRouteDirections);
   const loc = pharmacyLatLng(pharmacy);
   const hasQty = pharmacy.hasAvailabilityData && Number.isFinite(pharmacy.availableQuantity);
+  const [navigating, setNavigating] = useState(false);
+  const [liveLocation, setLiveLocation] = useState(userLocation);
+  const [route, setRoute] = useState(null);
+  const [routeStatus, setRouteStatus] = useState("idle");
+  const [routeMessage, setRouteMessage] = useState("");
+
+  useEffect(() => {
+    setLiveLocation(userLocation);
+  }, [userLocation]);
+
+  useEffect(() => {
+    if (!navigating) return undefined;
+
+    if (!navigator.geolocation) {
+      setRouteStatus("error");
+      setRouteMessage("Live directions need browser location access.");
+      setNavigating(false);
+      return undefined;
+    }
+
+    const watcher = navigator.geolocation.watchPosition(
+      (position) => {
+        setLiveLocation({
+          lat: position.coords.latitude,
+          lng: position.coords.longitude,
+        });
+      },
+      () => {
+        setRouteStatus("error");
+        setRouteMessage("Could not update your live location.");
+      },
+      { enableHighAccuracy: true, maximumAge: 10000, timeout: 15000 },
+    );
+
+    return () => navigator.geolocation.clearWatch(watcher);
+  }, [navigating]);
+
+  useEffect(() => {
+    if (!navigating || !liveLocation || !loc) return undefined;
+
+    let cancelled = false;
+    const timeout = window.setTimeout(() => {
+      setRouteStatus("loading");
+      setRouteMessage("");
+
+      getRouteDirectionsFn({
+        data: {
+          from: liveLocation,
+          to: loc,
+        },
+      })
+        .then((directions) => {
+          if (cancelled) return;
+          setRoute(directions);
+          setRouteStatus("success");
+        })
+        .catch((err) => {
+          if (cancelled) return;
+          setRoute(null);
+          setRouteStatus("error");
+          setRouteMessage(err?.message ?? "Could not load route directions.");
+        });
+    }, 700);
+
+    return () => {
+      cancelled = true;
+      window.clearTimeout(timeout);
+    };
+  }, [
+    navigating,
+    liveLocation?.lat,
+    liveLocation?.lng,
+    loc?.lat,
+    loc?.lng,
+    getRouteDirectionsFn,
+  ]);
+
+  function toggleDirections() {
+    if (navigating) {
+      setNavigating(false);
+      setRoute(null);
+      setRouteStatus("idle");
+      setRouteMessage("");
+      return;
+    }
+
+    if (!userLocation) {
+      setRouteStatus("error");
+      setRouteMessage("Use your location before starting directions.");
+      return;
+    }
+
+    setLiveLocation(userLocation);
+    setNavigating(true);
+  }
 
   return (
     <div className="overflow-hidden rounded-2xl border bg-card shadow-soft">
@@ -1553,22 +1683,51 @@ function PharmacyDetailPage({ pharmacy, medicine, userLocation }) {
           />
         </dl>
 
-        {pharmacy.phone && (
-          <a
-            href={`tel:${pharmacy.phone}`}
-            className="inline-flex h-10 items-center justify-center gap-2 rounded-xl bg-primary px-4 text-sm font-medium text-primary-foreground transition hover:opacity-95"
+        <div className="flex flex-wrap gap-3">
+          {pharmacy.phone && (
+            <a
+              href={`tel:${pharmacy.phone}`}
+              className="inline-flex h-10 items-center justify-center gap-2 rounded-xl bg-primary px-4 text-sm font-medium text-primary-foreground transition hover:opacity-95"
+            >
+              <Phone className="h-4 w-4" aria-hidden="true" />
+              Call pharmacy
+            </a>
+          )}
+          {loc && (
+            <button
+              type="button"
+              onClick={toggleDirections}
+              className="inline-flex h-10 items-center justify-center gap-2 rounded-xl border bg-card px-4 text-sm font-medium transition hover:bg-accent"
+            >
+              <Navigation className="h-4 w-4" aria-hidden="true" />
+              {navigating ? "Stop directions" : "Start directions"}
+            </button>
+          )}
+        </div>
+
+        {(route || routeStatus === "loading" || routeStatus === "error") && (
+          <div
+            className={`rounded-xl border px-4 py-3 text-sm ${
+              routeStatus === "error" ? "border-red-200 bg-red-50 text-red-600" : "bg-accent"
+            }`}
           >
-            <Phone className="h-4 w-4" aria-hidden="true" />
-            Call pharmacy
-          </a>
+            {routeStatus === "loading" && "Loading route directions..."}
+            {routeStatus === "error" && routeMessage}
+            {routeStatus === "success" && route && (
+              <span>
+                {formatDuration(route.durationSeconds)} drive - {formatDistance(route.distanceMeters)} remaining
+              </span>
+            )}
+          </div>
         )}
       </div>
 
       {loc && (
         <PharmacyMap
           className="h-[260px] rounded-none border-x-0 border-b-0"
-          userLocation={userLocation}
+          userLocation={navigating ? liveLocation : userLocation}
           pharmacies={[pharmacy]}
+          routeCoordinates={route?.coordinates ?? []}
           showLegend={false}
         />
       )}
