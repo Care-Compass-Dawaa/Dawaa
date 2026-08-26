@@ -365,6 +365,7 @@ export const getMyPharmacy = createServerFn({ method: "POST" })
   });
 
 // ─── Admin ─────────────────────────────────────────────────────────────────────
+// Pharmacy profile update
 export const updateMyPharmacy = createServerFn({ method: "POST" })
   .validator((input) => {
     if (!input?.requesterUserId || !input?.phone) {
@@ -412,6 +413,7 @@ export const updateMyPharmacy = createServerFn({ method: "POST" })
     return { pharmacy: updated };
   });
 
+// Admin
 export const getAllUsers = createServerFn({ method: "POST" })
   .validator((input) => {
     if (!input?.requesterUserId) throw new Error("requesterUserId is required");
@@ -653,10 +655,7 @@ export const getRouteDirections = createServerFn({ method: "POST" })
       body: JSON.stringify(data),
     });
 
-    if (!res.ok) {
-      const text = await res.text();
-      throw new Error(`Directions API error ${res.status}: ${text.slice(0, 200)}`);
-    }
+    await requireOk(res, `Directions API error ${res.status}`);
 
     return await res.json();
   });
