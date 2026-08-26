@@ -19,6 +19,7 @@ import {
   loginUser,
   registerUser,
   deactivateCurrentUser,
+  updateCurrentUser,
   getInventory,
   upsertInventoryItem,
   deleteInventoryItem,
@@ -29,6 +30,7 @@ import {
   approvePharmacy,
   registerPharmacy,
   getMyPharmacy,
+  updateMyPharmacy,
   searchPharmacies,
 } from "@/lib/pharmacies.functions";
 import { MedicineSelectionPage } from "@/pages/MedicineSelectionPage";
@@ -58,7 +60,12 @@ function useAuth() {
     setUser(null);
   }
 
-  return { user, login, logout };
+  function updateUser(userData) {
+    localStorage.setItem("dawaa_user", JSON.stringify(userData));
+    setUser(userData);
+  }
+
+  return { user, login, logout, updateUser };
 }
 
 // ─── Auth Modal ────────────────────────────────────────────────────────────────
@@ -499,8 +506,18 @@ function PharmacistDashboard({ user }) {
   const [medicineMatches, setMedicineMatches] = useState([]);
   const [medicineSearchStatus, setMedicineSearchStatus] = useState("idle");
   const [saving, setSaving] = useState(false);
+  const [editingPharmacy, setEditingPharmacy] = useState(false);
+  const [pharmacySaving, setPharmacySaving] = useState(false);
+  const [pharmacyForm, setPharmacyForm] = useState({
+    email: "",
+    phone: "",
+    latitude: "",
+    longitude: "",
+  });
+  const [pharmacyLocationStatus, setPharmacyLocationStatus] = useState("idle");
 
   const getMyPharmacyFn = useServerFn(getMyPharmacy);
+  const updateMyPharmacyFn = useServerFn(updateMyPharmacy);
   const getInventoryFn = useServerFn(getInventory);
   const upsertFn = useServerFn(upsertInventoryItem);
   const deleteFn = useServerFn(deleteInventoryItem);
@@ -517,6 +534,16 @@ function PharmacistDashboard({ user }) {
   // Load inventory once pharmacy is confirmed
   useEffect(() => {
     if (pharmacy) loadInventory();
+  }, [pharmacy]);
+
+  useEffect(() => {
+    if (!pharmacy) return;
+    setPharmacyForm({
+      email: pharmacy.email || "",
+      phone: pharmacy.phone || "",
+      latitude: String(pharmacy.latitude ?? pharmacy.location?.lat ?? ""),
+      longitude: String(pharmacy.longitude ?? pharmacy.location?.lng ?? ""),
+    });
   }, [pharmacy]);
 
   useEffect(() => {
@@ -609,6 +636,54 @@ function PharmacistDashboard({ user }) {
     }
   }
 
+  async function handleUpdatePharmacy(e) {
+    e.preventDefault();
+    setPharmacySaving(true);
+    setError(null);
+    try {
+      const result = await updateMyPharmacyFn({
+        data: {
+          requesterUserId,
+          email: pharmacyForm.email,
+          phone: pharmacyForm.phone,
+          latitude: pharmacyForm.latitude,
+          longitude: pharmacyForm.longitude,
+        },
+      });
+      setPharmacy(result.pharmacy);
+      setEditingPharmacy(false);
+    } catch (err) {
+      setError(err?.message ?? "Failed to update pharmacy");
+    } finally {
+      setPharmacySaving(false);
+    }
+  }
+
+  function usePharmacyCurrentLocation() {
+    if (!navigator.geolocation) {
+      setError("Location is not available in this browser.");
+      return;
+    }
+
+    setPharmacyLocationStatus("loading");
+    setError(null);
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        setPharmacyForm((f) => ({
+          ...f,
+          latitude: position.coords.latitude.toFixed(6),
+          longitude: position.coords.longitude.toFixed(6),
+        }));
+        setPharmacyLocationStatus("success");
+      },
+      (err) => {
+        setError(err?.message || "Could not get this device location.");
+        setPharmacyLocationStatus("error");
+      },
+      { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 },
+    );
+  }
+
   function startEdit(item) {
     const quantity = Math.max(0, Number(item.quantity) || 0);
     setForm({
@@ -670,6 +745,90 @@ function PharmacistDashboard({ user }) {
         >
           {pharmacy.approved ? "Approved" : "Pending approval"}
         </span>
+      </div>
+
+      <div className="bg-card rounded-2xl border shadow-soft p-4 mb-6">
+        <div className="flex items-center justify-between gap-3">
+          <div>
+            <h2 className="text-sm font-semibold">Pharmacy details</h2>
+            <p className="mt-1 text-xs text-muted-foreground">
+              {pharmacy.email || "No email"} · {pharmacy.latitude ?? pharmacy.location?.lat},{" "}
+              {pharmacy.longitude ?? pharmacy.location?.lng}
+            </p>
+          </div>
+          <button
+            type="button"
+            onClick={() => setEditingPharmacy((value) => !value)}
+            className="h-9 shrink-0 rounded-xl border px-3 text-sm font-medium transition hover:bg-accent"
+          >
+            {editingPharmacy ? "Close" : "Edit"}
+          </button>
+        </div>
+
+        {editingPharmacy && (
+          <form onSubmit={handleUpdatePharmacy} className="mt-4 grid gap-3 border-t pt-4">
+            <div className="grid gap-3 sm:grid-cols-2">
+              <input
+                type="email"
+                value={pharmacyForm.email}
+                onChange={(e) => setPharmacyForm((f) => ({ ...f, email: e.target.value }))}
+                placeholder="Pharmacy email"
+                className="h-10 rounded-xl border bg-background px-3 text-sm outline-none focus:ring-2 focus:ring-ring"
+              />
+              <input
+                required
+                type="tel"
+                value={pharmacyForm.phone}
+                onChange={(e) => setPharmacyForm((f) => ({ ...f, phone: e.target.value }))}
+                placeholder="+961 76 123 456"
+                className="h-10 rounded-xl border bg-background px-3 text-sm outline-none focus:ring-2 focus:ring-ring"
+              />
+            </div>
+            <div className="grid gap-3 sm:grid-cols-[1fr_1fr_auto]">
+              <input
+                required
+                inputMode="decimal"
+                value={pharmacyForm.latitude}
+                onChange={(e) => setPharmacyForm((f) => ({ ...f, latitude: e.target.value }))}
+                placeholder="Latitude"
+                className="h-10 rounded-xl border bg-background px-3 text-sm outline-none focus:ring-2 focus:ring-ring"
+              />
+              <input
+                required
+                inputMode="decimal"
+                value={pharmacyForm.longitude}
+                onChange={(e) => setPharmacyForm((f) => ({ ...f, longitude: e.target.value }))}
+                placeholder="Longitude"
+                className="h-10 rounded-xl border bg-background px-3 text-sm outline-none focus:ring-2 focus:ring-ring"
+              />
+              <button
+                type="button"
+                onClick={usePharmacyCurrentLocation}
+                disabled={pharmacyLocationStatus === "loading"}
+                className="inline-flex h-10 items-center justify-center gap-2 rounded-xl border px-3 text-sm font-medium transition hover:bg-accent disabled:opacity-50"
+              >
+                <MapPinCheck className="h-4 w-4" aria-hidden="true" />
+                {pharmacyLocationStatus === "loading" ? "Locating..." : "Use location"}
+              </button>
+            </div>
+            <div className="flex justify-end gap-2">
+              <button
+                type="button"
+                onClick={() => setEditingPharmacy(false)}
+                className="h-10 rounded-xl border px-4 text-sm font-medium transition hover:bg-accent"
+              >
+                Cancel
+              </button>
+              <button
+                type="submit"
+                disabled={pharmacySaving}
+                className="h-10 rounded-xl bg-primary px-4 text-sm font-medium text-primary-foreground transition hover:opacity-95 disabled:opacity-50"
+              >
+                {pharmacySaving ? "Saving..." : "Save changes"}
+              </button>
+            </div>
+          </form>
+        )}
       </div>
 
       <h2 className="text-xl font-semibold mb-2">Pharmacy Inventory</h2>
@@ -2100,14 +2259,18 @@ function Header({ user, onSignIn, onSignOut, onOpenAccount, tabs, activeTab, onT
 
 // ─── Home (root page) ───────────────────────────────────────────────────────────
 function Home() {
-  const { user, login, logout } = useAuth();
+  const { user, login, logout, updateUser } = useAuth();
   const [showAuth, setShowAuth] = useState(false);
   const [showAccount, setShowAccount] = useState(false);
   const [showDeactivateConfirm, setShowDeactivateConfirm] = useState(false);
+  const [editingAccount, setEditingAccount] = useState(false);
+  const [accountSaving, setAccountSaving] = useState(false);
+  const [accountForm, setAccountForm] = useState({ name: "", email: "", password: "" });
   const [activeTab, setActiveTab] = useState("search");
   const [searchView, setSearchView] = useState("landing"); // "landing" | "results"
   const [accountError, setAccountError] = useState(null);
   const deactivateUserFn = useServerFn(deactivateCurrentUser);
+  const updateCurrentUserFn = useServerFn(updateCurrentUser);
   const currentUserKey = user?.userId ?? user?.id ?? user?.email ?? "guest";
 
   useEffect(() => {
@@ -2116,8 +2279,18 @@ function Home() {
     setShowAuth(false);
     setShowAccount(false);
     setShowDeactivateConfirm(false);
+    setEditingAccount(false);
     setAccountError(null);
   }, [currentUserKey]);
+
+  useEffect(() => {
+    if (!user) return;
+    setAccountForm({
+      name: user.name || "",
+      email: user.email || "",
+      password: "",
+    });
+  }, [user]);
 
   const tabs = [
     { id: "search", label: searchView === "results" ? "Find Medicine" : "Home", roles: ["*"] },
@@ -2160,6 +2333,31 @@ function Home() {
       setSearchView("landing");
     } catch (err) {
       setAccountError(err?.message ?? "Could not deactivate account.");
+    }
+  }
+
+  async function handleUpdateAccount(e) {
+    e.preventDefault();
+    if (!user) return;
+
+    setAccountSaving(true);
+    setAccountError(null);
+    try {
+      const result = await updateCurrentUserFn({
+        data: {
+          requesterUserId: user.userId ?? user.id,
+          name: accountForm.name,
+          email: accountForm.email,
+          password: accountForm.password,
+        },
+      });
+      updateUser(result.user);
+      setEditingAccount(false);
+      setAccountForm((form) => ({ ...form, password: "" }));
+    } catch (err) {
+      setAccountError(err?.message ?? "Could not update account.");
+    } finally {
+      setAccountSaving(false);
     }
   }
 
@@ -2210,7 +2408,70 @@ function Home() {
               <div className="truncate text-sm font-semibold">{user.name}</div>
               <div className="truncate text-xs text-muted-foreground">{user.email}</div>
             </div>
+            {accountError && (
+              <p className="mt-3 rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-600">
+                {accountError}
+              </p>
+            )}
+            {editingAccount && (
+              <form onSubmit={handleUpdateAccount} className="mt-3 flex flex-col gap-3">
+                <input
+                  required
+                  value={accountForm.name}
+                  onChange={(e) => setAccountForm((f) => ({ ...f, name: e.target.value }))}
+                  placeholder="Full name"
+                  className="h-10 rounded-xl border bg-background px-3 text-sm outline-none focus:ring-2 focus:ring-ring"
+                />
+                <input
+                  required
+                  type="email"
+                  value={accountForm.email}
+                  onChange={(e) => setAccountForm((f) => ({ ...f, email: e.target.value }))}
+                  placeholder="Email"
+                  className="h-10 rounded-xl border bg-background px-3 text-sm outline-none focus:ring-2 focus:ring-ring"
+                />
+                <input
+                  type="password"
+                  value={accountForm.password}
+                  onChange={(e) => setAccountForm((f) => ({ ...f, password: e.target.value }))}
+                  placeholder="New password"
+                  className="h-10 rounded-xl border bg-background px-3 text-sm outline-none focus:ring-2 focus:ring-ring"
+                />
+                <div className="flex justify-end gap-2">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setEditingAccount(false);
+                      setAccountForm({
+                        name: user.name || "",
+                        email: user.email || "",
+                        password: "",
+                      });
+                    }}
+                    className="h-9 rounded-xl border px-3 text-sm font-medium transition hover:bg-accent"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="submit"
+                    disabled={accountSaving}
+                    className="h-9 rounded-xl bg-primary px-3 text-sm font-medium text-primary-foreground transition hover:opacity-95 disabled:opacity-50"
+                  >
+                    {accountSaving ? "Saving..." : "Save"}
+                  </button>
+                </div>
+              </form>
+            )}
             <div className="mt-3 flex flex-col gap-2">
+              {!editingAccount && (
+                <button
+                  type="button"
+                  onClick={() => setEditingAccount(true)}
+                  className="h-10 rounded-xl border px-3 text-left text-sm font-medium transition hover:bg-accent"
+                >
+                  Edit account
+                </button>
+              )}
               <button
                 type="button"
                 onClick={() => {

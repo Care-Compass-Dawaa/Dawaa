@@ -91,6 +91,10 @@ public class PharmacyHandler extends BaseHandler
         return getMyPharmacy(request);
       }
 
+      if ("POST".equalsIgnoreCase(method) && path.equals("/pharmacies/mine/update")) {
+        return updateMyPharmacy(request, parseBody(request.getBody()));
+      }
+
       if ("GET".equalsIgnoreCase(method) && path.equals("/admin/pharmacies")) {
         return listAllPharmacies(request);
       }
@@ -162,6 +166,21 @@ public class PharmacyHandler extends BaseHandler
         .ifPresentOrElse(
             pharmacy -> wrapper.set("pharmacy", toPharmacyNode(pharmacy)),
             () -> wrapper.putNull("pharmacy"));
+    return ok(wrapper);
+  }
+
+  private APIGatewayProxyResponseEvent updateMyPharmacy(
+      APIGatewayProxyRequestEvent request, JsonNode body) {
+    ObjectNode wrapper = MAPPER.createObjectNode();
+    wrapper.set(
+        "pharmacy",
+        toPharmacyNode(
+            pharmacyService.updateMyPharmacy(
+                requester(request),
+                body.path("email").asText(""),
+                require(body, "phone"),
+                requiredBodyDouble(body, "latitude"),
+                requiredBodyDouble(body, "longitude"))));
     return ok(wrapper);
   }
 
@@ -451,6 +470,13 @@ public class PharmacyHandler extends BaseHandler
       throw new IllegalArgumentException(name + " is required");
     }
     return Double.parseDouble(value);
+  }
+
+  private double requiredBodyDouble(JsonNode body, String name) {
+    if (!body.path(name).isNumber()) {
+      throw new IllegalArgumentException(name + " is required");
+    }
+    return body.path(name).asDouble();
   }
 
   private int optionalInt(String value, int defaultValue) {

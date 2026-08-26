@@ -50,6 +50,17 @@ public class DynamoDbPharmacyRepository implements PharmacyRepository {
   }
 
   @Override
+  public Pharmacy update(Pharmacy pharmacy) {
+    dynamoDb.putItem(
+        PutItemRequest.builder()
+            .tableName(tableName)
+            .item(toItem(pharmacy))
+            .conditionExpression("attribute_exists(pharmacyId)")
+            .build());
+    return pharmacy;
+  }
+
+  @Override
   public Optional<Pharmacy> findById(String pharmacyId) {
     if (pharmacyId == null || pharmacyId.isBlank()) {
       return Optional.empty();

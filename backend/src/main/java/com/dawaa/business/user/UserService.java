@@ -134,8 +134,15 @@ public class UserService {
     }
 
     public User updateUser(User requester, String name, String email){
+        return updateUser(requester, name, email, "");
+    }
+
+    public User updateUser(User requester, String name, String email, String passwordHash){
         if (requester==null){
             throw new IllegalArgumentException("Requester is required");
+        }
+        if (!requester.active()) {
+            throw new SecurityException("Requester account is inactive");
         }
 
         if (isEmpty(name)){
@@ -157,7 +164,7 @@ public class UserService {
             normalizedEmail,
             name.trim(),
             requester.role(),
-            requester.passwordHash(),
+            isEmpty(passwordHash) ? requester.passwordHash() : passwordHash,
             requester.active(),
             requester.createdAt(),
             Instant.now().toString());

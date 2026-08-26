@@ -6,22 +6,17 @@ import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent;
 import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyResponseEvent;
 import com.dawaa.business.user.UserService;
 import com.dawaa.common.BaseHandler;
+import com.dawaa.common.PasswordHasher;
 import com.dawaa.domain.user.User;
 import com.dawaa.domain.user.UserRole;
 import com.dawaa.persistence.dynamodb.user.DynamoDBUserRepository;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.util.HexFormat;
 import java.util.Objects;
 
 /** Handles POST /auth/register and POST /auth/login. */
 public class AuthHandler extends BaseHandler
     implements RequestHandler<APIGatewayProxyRequestEvent, APIGatewayProxyResponseEvent> {
-
-  private static final String SALT = "dawaa_salt_2024";
 
   private final UserService userService;
 
@@ -115,12 +110,6 @@ public class AuthHandler extends BaseHandler
   }
 
   private String hash(String password) {
-    try {
-      MessageDigest digest = MessageDigest.getInstance("SHA-256");
-      byte[] bytes = digest.digest((password + SALT).getBytes(StandardCharsets.UTF_8));
-      return HexFormat.of().formatHex(bytes);
-    } catch (NoSuchAlgorithmException error) {
-      throw new IllegalStateException("SHA-256 not available", error);
-    }
+    return PasswordHasher.hash(password);
   }
 }

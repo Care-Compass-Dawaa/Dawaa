@@ -14,9 +14,12 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
 import java.util.UUID;
+import java.util.regex.Pattern;
 
 public class PharmacyService {
   private static final double EARTH_RADIUS_METERS = 6_371_000;
+  private static final Pattern EMAIL_PATTERN =
+      Pattern.compile("^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$");
 
   private final PharmacyRepository pharmacyRepository;
 
@@ -126,6 +129,44 @@ public class PharmacyService {
     return pharmacyRepository.findByOwnerUserId(requester.userId());
   }
 
+  public Pharmacy updateMyPharmacy(
+      User requester, String email, String phone, double latitude, double longitude) {
+    if (requester == null) {
+      throw new IllegalArgumentException("Requester is required");
+    }
+    if (requester.role() != UserRole.PHARMACIST) {
+      throw new SecurityException("Only pharmacists can update a pharmacy profile");
+    }
+    if (!requester.active()) {
+      throw new SecurityException("Requester account is inactive");
+    }
+    if (!Double.isFinite(latitude) || !Double.isFinite(longitude)) {
+      throw new IllegalArgumentException("valid latitude and longitude are required");
+    }
+
+    Pharmacy existing =
+        pharmacyRepository
+            .findByOwnerUserId(requester.userId())
+            .orElseThrow(() -> new NoSuchElementException("pharmacy not found."));
+
+    return pharmacyRepository.update(
+        new Pharmacy(
+            existing.pharmacyId(),
+            existing.ownerUserId(),
+            existing.name(),
+            existing.address(),
+            existing.area(),
+            existing.district(),
+            normalizeLebanesePhone(phone),
+            normalizeEmailOptional(email),
+            latitude,
+            longitude,
+            existing.approved(),
+            existing.active(),
+            existing.createdAt(),
+            Instant.now().toString()));
+  }
+
   public Optional<Pharmacy> findByOwnerUserId(String ownerUserId) {
     if (!textPresent(ownerUserId)) {
         throw new IllegalArgumentException("ownerUserId is required");
@@ -221,5 +262,16 @@ public class PharmacyService {
       throw new IllegalArgumentException("phone must contain 8 digits after +961");
     }
     return "+961" + digits;
+  }
+
+  private static String normalizeEmailOptional(String email) {
+    if (!textPresent(email)) {
+      return "";
+    }
+    String normalized = email.trim().toLowerCase();
+    if (!EMAIL_PATTERN.matcher(normalized).matches()) {
+      throw new IllegalArgumentException("email must be valid");
+    }
+    return normalized;
   }
 }

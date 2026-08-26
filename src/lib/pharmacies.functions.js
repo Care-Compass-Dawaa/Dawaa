@@ -145,6 +145,49 @@ export const deactivateCurrentUser = createServerFn({ method: "POST" })
     return { success: true };
   });
 
+export const updateCurrentUser = createServerFn({ method: "POST" })
+  .validator((input) => {
+    if (!input?.requesterUserId || !input?.name || !input?.email) {
+      throw new Error("requesterUserId, name, and email are required");
+    }
+
+    return {
+      requesterUserId: input.requesterUserId,
+      name: input.name.trim(),
+      email: input.email.toLowerCase().trim(),
+      password: input.password?.trim() || "",
+    };
+  })
+  .handler(async ({ data }) => {
+    if (DAWAA_API_BASE_URL) {
+      const res = await fetch(`${DAWAA_API_BASE_URL.replace(/\/$/, "")}/users/me/update`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", [REQUESTER_HEADER]: data.requesterUserId },
+        body: JSON.stringify(data),
+      });
+      await requireOk(res, "Failed to update account");
+      return await res.json();
+    }
+
+    const user = usersStore.get(data.requesterUserId);
+    if (!user) throw new Error("Requester not found");
+    const existing = [...usersStore.values()].find(
+      (u) => u.email === data.email && u.id !== data.requesterUserId,
+    );
+    if (existing) throw new Error("Email is already used by another account");
+
+    const updated = {
+      ...user,
+      name: data.name,
+      email: data.email,
+      passwordHash: data.password ? hashPassword(data.password) : user.passwordHash,
+      updatedAt: new Date().toISOString(),
+    };
+    usersStore.set(data.requesterUserId, updated);
+    const { passwordHash, ...safeUser } = updated;
+    return { user: safeUser };
+  });
+
 // Seed default admin on first server load (in-memory only)
 (function seedAdmin() {
   const ADMIN_EMAIL = "admin@dawaa.com";
@@ -322,6 +365,53 @@ export const getMyPharmacy = createServerFn({ method: "POST" })
   });
 
 // ─── Admin ─────────────────────────────────────────────────────────────────────
+export const updateMyPharmacy = createServerFn({ method: "POST" })
+  .validator((input) => {
+    if (!input?.requesterUserId || !input?.phone) {
+      throw new Error("requesterUserId and phone are required");
+    }
+    if (
+      input.latitude === undefined ||
+      input.longitude === undefined ||
+      !Number.isFinite(Number(input.latitude)) ||
+      !Number.isFinite(Number(input.longitude))
+    ) {
+      throw new Error("Latitude and longitude are required");
+    }
+
+    return {
+      requesterUserId: input.requesterUserId,
+      email: input.email?.trim() || "",
+      phone: normalizeLebanesePhone(input.phone),
+      latitude: Number(input.latitude),
+      longitude: Number(input.longitude),
+    };
+  })
+  .handler(async ({ data }) => {
+    if (DAWAA_API_BASE_URL) {
+      const res = await fetch(`${DAWAA_API_BASE_URL.replace(/\/$/, "")}/pharmacies/mine/update`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", [REQUESTER_HEADER]: data.requesterUserId },
+        body: JSON.stringify(data),
+      });
+      await requireOk(res, "Failed to update pharmacy");
+      return await res.json();
+    }
+
+    const pharmacy = [...pharmaciesStore.values()].find((p) => p.ownerUserId === data.requesterUserId);
+    if (!pharmacy) throw new Error("pharmacy not found.");
+    const updated = {
+      ...pharmacy,
+      email: data.email,
+      phone: data.phone,
+      latitude: data.latitude,
+      longitude: data.longitude,
+      updatedAt: new Date().toISOString(),
+    };
+    pharmaciesStore.set(pharmacy.id, updated);
+    return { pharmacy: updated };
+  });
+
 export const getAllUsers = createServerFn({ method: "POST" })
   .validator((input) => {
     if (!input?.requesterUserId) throw new Error("requesterUserId is required");
