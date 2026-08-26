@@ -494,6 +494,7 @@ function PharmacistDashboard({ user }) {
   const [pharmacy, setPharmacy] = useState(null);
   const [checkingPharmacy, setCheckingPharmacy] = useState(true);
   const [inventory, setInventory] = useState([]);
+  const [inventoryQuery, setInventoryQuery] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [form, setForm] = useState({
@@ -602,6 +603,14 @@ function PharmacistDashboard({ user }) {
       setError("Choose a medicine from the catalog before saving inventory.");
       return;
     }
+    const duplicate = inventory.find(
+      (item) => item.medicineId === form.medicineId && item.id !== form.editId,
+    );
+    if (duplicate) {
+      setError("Medicine is already in your inventory. Edit it from current inventory.");
+      setInventoryQuery(duplicate.medicineName || form.medicineName);
+      return;
+    }
     const quantity = Math.max(0, Number(form.quantity) || 0);
     const inStock = quantity > 0;
     setSaving(true);
@@ -697,11 +706,23 @@ function PharmacistDashboard({ user }) {
   }
 
   function selectInventoryMedicine(medicine) {
+    const duplicate = inventory.find(
+      (item) => item.medicineId === medicine.medicineId && item.id !== form.editId,
+    );
+    if (duplicate) {
+      setError("Medicine is already in your inventory. Edit it from current inventory.");
+      setInventoryQuery(duplicate.medicineName || medicine.brandName);
+      setMedicineMatches([]);
+      setMedicineSearchStatus("idle");
+      return;
+    }
+
     setForm((f) => ({
       ...f,
       medicineId: medicine.medicineId,
       medicineName: medicine.brandName,
     }));
+    setError(null);
     setMedicineMatches([]);
     setMedicineSearchStatus("idle");
   }
@@ -709,6 +730,15 @@ function PharmacistDashboard({ user }) {
   function inventoryMedicineLabel(medicine) {
     return [medicine.genericName, medicine.strength, medicine.dosageForm].filter(Boolean).join(" - ");
   }
+
+  const normalizedInventoryQuery = inventoryQuery.trim().toLowerCase();
+  const filteredInventory = normalizedInventoryQuery
+    ? inventory.filter((item) =>
+        [item.medicineName, item.medicineId]
+          .filter(Boolean)
+          .some((value) => value.toLowerCase().includes(normalizedInventoryQuery)),
+      )
+    : inventory;
 
   // Still loading pharmacy check
   if (checkingPharmacy) {
@@ -928,17 +958,30 @@ function PharmacistDashboard({ user }) {
       {error && <p className="text-sm text-red-500 mb-4">{error}</p>}
 
       <div className="bg-card rounded-2xl border shadow-soft overflow-hidden">
-        <div className="px-5 py-3 border-b flex items-center justify-between">
+        <div className="px-5 py-3 border-b">
           <span className="font-medium">Current inventory</span>
           {loading && <span className="text-xs text-muted-foreground">Loading…</span>}
+          <div className="relative mt-3">
+            <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+            <input
+              value={inventoryQuery}
+              onChange={(e) => setInventoryQuery(e.target.value)}
+              placeholder="Search current inventory"
+              className="h-10 w-full rounded-xl border bg-background pl-9 pr-3 text-sm outline-none focus:ring-2 focus:ring-ring"
+            />
+          </div>
         </div>
         {inventory.length === 0 && !loading ? (
           <p className="px-5 py-8 text-sm text-muted-foreground text-center">
             No medicines added yet.
           </p>
+        ) : filteredInventory.length === 0 && !loading ? (
+          <p className="px-5 py-8 text-sm text-muted-foreground text-center">
+            No medicines match your search.
+          </p>
         ) : (
           <ul className="divide-y">
-            {inventory.map((item) => (
+            {filteredInventory.map((item) => (
               <li key={item.id} className="px-5 py-3 flex items-center gap-3">
                 {(() => {
                   const itemInStock = Math.max(0, Number(item.quantity) || 0) > 0;

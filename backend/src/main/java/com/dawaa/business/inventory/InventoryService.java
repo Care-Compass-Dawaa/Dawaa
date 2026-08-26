@@ -56,6 +56,14 @@ public class InventoryService {
         inventoryRepository
             .findByPharmacyIdAndMedicineId(pharmacy.pharmacyId(), medicineId)
             .orElse(null);
+    if (existing != null && oldMedicineId.isBlank()) {
+      throw new IllegalArgumentException(
+          "Medicine is already in your inventory. Edit it from current inventory.");
+    }
+    if (existing != null && !oldMedicineId.equals(medicineId)) {
+      throw new IllegalArgumentException(
+          "Medicine is already in your inventory. Edit it from current inventory.");
+    }
 
     String createdAt = existing == null ? now : existing.createdAt();
     long version = existing == null ? 1 : existing.version() + 1;
