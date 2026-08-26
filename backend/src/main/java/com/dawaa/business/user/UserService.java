@@ -7,8 +7,12 @@ import java.util.NoSuchElementException;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.UUID;
+import java.util.regex.Pattern;
 
 public class UserService {
+    private static final Pattern EMAIL_PATTERN =
+        Pattern.compile("^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$");
+
     private final UserRepository userRepository;
 
     public UserService(UserRepository userRepository){
@@ -44,7 +48,7 @@ public class UserService {
                 throw new IllegalArgumentException("email, name, and password are required");
             }
 
-        String normalizedEmail = user.email().trim().toLowerCase();
+        String normalizedEmail = normalizeEmailRequired(user.email());
         Optional<User> existingUser = userRepository.findByEmail(normalizedEmail);
         if (existingUser.isPresent()) { //returns true if user already exists
             throw new IllegalArgumentException("An account with this email already exists");
@@ -77,7 +81,7 @@ public class UserService {
         }
 
         User user =
-            userRepository.findByEmail(email.trim().toLowerCase())
+            userRepository.findByEmail(normalizeEmailRequired(email))
                 .orElseThrow(() -> new SecurityException("Invalid email or password"));
 
         if (!user.passwordHash().equals(passwordHash)) {
@@ -142,7 +146,7 @@ public class UserService {
             throw new IllegalArgumentException("email is required");
         }
 
-        String normalizedEmail = email.trim().toLowerCase();
+        String normalizedEmail = normalizeEmailRequired(email);
         Optional<User> existingUser = userRepository.findByEmail(normalizedEmail);
         if (existingUser.isPresent() && !existingUser.get().userId().equals(requester.userId())){
             throw new IllegalArgumentException("Email is already used by another account");
@@ -171,6 +175,19 @@ public class UserService {
         userRepository.deactivate(requester.userId());
     }
 
+    public void activateUser(User requester, String userId){
+        requireAdmin(requester);
+
+        if (isEmpty(userId)) {
+            throw new IllegalArgumentException("userId is required");
+        }
+
+        userRepository.findById(userId.trim())
+            .orElseThrow(() -> new NoSuchElementException("User not found"));
+
+        userRepository.activate(userId.trim());
+    }
+
     public void deactivateUser(User requester, String userId){
         requireAdmin(requester);//person should be an admin to deactivate someone
         
@@ -188,5 +205,15 @@ public class UserService {
         userRepository.deactivate(userId.trim());
     }
 
+    private static String normalizeEmailRequired(String email) {
+        if (isEmpty(email)) {
+            throw new IllegalArgumentException("email is required");
+        }
+        String normalizedEmail = email.trim().toLowerCase();
+        if (!EMAIL_PATTERN.matcher(normalizedEmail).matches()) {
+            throw new IllegalArgumentException("email must be valid");
+        }
+        return normalizedEmail;
+    }
 
 }

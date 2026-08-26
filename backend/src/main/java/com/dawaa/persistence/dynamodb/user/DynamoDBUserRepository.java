@@ -159,6 +159,21 @@ public class DynamoDBUserRepository implements UserRepository{
                 .build());
     }
 
+    @Override
+    public void activate(String userId) {
+        dynamoDb.updateItem(
+            UpdateItemRequest.builder()
+                .tableName(tableName)
+                .key(Map.of("userId", AttributeValue.fromS(requireText(userId, "userId").trim())))
+                .updateExpression("SET active = :active, updatedAt = :updatedAt")
+                .expressionAttributeValues(
+                    Map.of(
+                        ":active", AttributeValue.fromBool(true),
+                        ":updatedAt", AttributeValue.fromS(Instant.now().toString())))
+                .conditionExpression("attribute_exists(userId)")
+                .build());
+    }
+
     private static Map<String, AttributeValue> toItem(User user) {
         Map<String, AttributeValue> item = new HashMap<>();
         putString(item, "userId", user.userId());

@@ -155,7 +155,7 @@ Resources:
     Properties:
       CodeUri: .
       Handler: com.dawaa.api.user.AdminHandler::handleRequest
-      Description: Admin user listing, lookup, and deactivation.
+      Description: Admin user listing, lookup, activation, and deactivation.
       Environment:
         Variables:
           USERS_TABLE: !Ref UsersTableName
@@ -192,6 +192,11 @@ Resources:
           Properties:
             Path: /admin/users/{id}
             Method: delete
+        AdminActivateUser:
+          Type: Api
+          Properties:
+            Path: /admin/users/{id}/activate
+            Method: post
 
   InventoryFunction:
     Type: AWS::Serverless::Function

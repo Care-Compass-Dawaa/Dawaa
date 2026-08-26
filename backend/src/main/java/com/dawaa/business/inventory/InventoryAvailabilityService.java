@@ -19,7 +19,7 @@ public class InventoryAvailabilityService {
     String normalizedMedicineId = requireText(medicineId, "medicineId");
 
     return inventoryAvailabilityRepository.findByMedicineId(normalizedMedicineId).stream()
-        .filter(InventoryAvailability::inStock)
+        .filter(item -> item.quantity() > 0)
         .toList();
   }
 

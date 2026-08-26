@@ -53,6 +53,10 @@ public class AdminHandler extends BaseHandler
         return getUserById(request, userIdFromPath(path));
       }
 
+      if ("POST".equalsIgnoreCase(method) && path.matches("/admin/users/.+/activate")) {
+        return activateUser(request, userIdFromPath(path));
+      }
+
       if ("DELETE".equalsIgnoreCase(method) && path.matches("/admin/users/.+")) {
         return deactivateUser(request, userIdFromPath(path));
       }
@@ -100,6 +104,16 @@ public class AdminHandler extends BaseHandler
       APIGatewayProxyRequestEvent request, String targetUserId) {
     User requester = requester(request);
     userService.deactivateUser(requester, targetUserId);
+
+    ObjectNode wrapper = MAPPER.createObjectNode();
+    wrapper.put("success", true);
+    return ok(wrapper);
+  }
+
+  private APIGatewayProxyResponseEvent activateUser(
+      APIGatewayProxyRequestEvent request, String targetUserId) {
+    User requester = requester(request);
+    userService.activateUser(requester, targetUserId);
 
     ObjectNode wrapper = MAPPER.createObjectNode();
     wrapper.put("success", true);

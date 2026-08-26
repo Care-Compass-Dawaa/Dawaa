@@ -50,6 +50,8 @@ public class InventoryService {
     String now = Instant.now().toString();
     String oldMedicineId = trimToEmpty(existingMedicineId);
     String medicineId = medicine.medicineId();
+    int normalizedQuantity = Math.max(0, quantity);
+    boolean normalizedInStock = normalizedQuantity > 0;
     InventoryItem existing =
         inventoryRepository
             .findByPharmacyIdAndMedicineId(pharmacy.pharmacyId(), medicineId)
@@ -66,8 +68,8 @@ public class InventoryService {
                 medicine.brandName(),
                 medicineId,
                 pharmacy.pharmacyId(),
-                Math.max(0, quantity),
-                inStock,
+                normalizedQuantity,
+                normalizedInStock,
                 createdAt,
                 now,
                 version));

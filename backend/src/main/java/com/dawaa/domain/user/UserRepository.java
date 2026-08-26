@@ -16,4 +16,6 @@ public interface UserRepository {
     User update(User user); //update information of a user
     
     void deactivate(String userId); //delete/deactivate user in table
+
+    void activate(String userId); //reactivate user in table
 }

@@ -68,6 +68,7 @@ public class PharmacyService {
     if (!textPresent(pharmacy.phone())) {
       throw new IllegalArgumentException("phone is required");
     }
+    String normalizedPhone = normalizeLebanesePhone(pharmacy.phone());
 
     Optional<Pharmacy> existing = pharmacyRepository.findByOwnerUserId(ownerUserId);
     if (existing.isPresent()) {
@@ -88,7 +89,7 @@ public class PharmacyService {
             pharmacy.address().trim(),
             pharmacy.area().trim(),
             trimToEmpty(pharmacy.district()),
-            pharmacy.phone().trim(),
+            normalizedPhone,
             trimToEmpty(pharmacy.email()),
             pharmacy.latitude(),
             pharmacy.longitude(),
@@ -209,5 +210,16 @@ public class PharmacyService {
 
   private static String trimToEmpty(String value) {
     return value == null ? "" : value.trim();
+  }
+
+  private static String normalizeLebanesePhone(String phone) {
+    String digits = phone == null ? "" : phone.replaceAll("\\D", "");
+    if (digits.startsWith("961")) {
+      digits = digits.substring(3);
+    }
+    if (digits.length() != 8) {
+      throw new IllegalArgumentException("phone must contain 8 digits after +961");
+    }
+    return "+961" + digits;
   }
 }

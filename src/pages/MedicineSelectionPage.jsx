@@ -6,7 +6,31 @@ function medicineSubtitle(medicine) {
     .join(" - ");
 }
 
+function medicineDisplayKey(medicine) {
+  return [
+    medicine.brandName,
+    medicine.genericName,
+    medicine.strength,
+    medicine.dosageForm,
+    medicine.manufacturer,
+  ]
+    .map((value) => (value ?? "").trim().toLowerCase())
+    .join("|");
+}
+
+function uniqueDisplayedMedicines(medicines) {
+  const seen = new Set();
+  return medicines.filter((medicine) => {
+    const key = medicineDisplayKey(medicine);
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
 export function MedicineSelectionPage({ query, medicines, loading, message, onBack, onSelect }) {
+  const visibleMedicines = uniqueDisplayedMedicines(medicines);
+
   return (
     <div className="mx-auto max-w-3xl space-y-5">
       <button
@@ -35,10 +59,10 @@ export function MedicineSelectionPage({ query, medicines, loading, message, onBa
         <p className="rounded-xl border bg-accent px-4 py-3 text-sm">{message}</p>
       )}
 
-      {!loading && medicines.length > 0 && (
+      {!loading && visibleMedicines.length > 0 && (
         <div className="overflow-hidden rounded-2xl border bg-card shadow-soft">
           <div className="divide-y">
-            {medicines.map((medicine) => (
+            {visibleMedicines.map((medicine) => (
               <button
                 key={medicine.medicineId}
                 type="button"

@@ -4,6 +4,8 @@ import {
   ArrowLeft,
   ChevronDown,
   ChevronRight,
+  Eye,
+  EyeOff,
   List as ListIcon,
   Mail,
   MapPin,
@@ -21,6 +23,7 @@ import {
   upsertInventoryItem,
   deleteInventoryItem,
   getAllUsers,
+  activateUserAsAdmin,
   deactivateUserAsAdmin,
   getAllPharmacies,
   approvePharmacy,
@@ -67,6 +70,7 @@ function AuthModal({ onClose, onLogin }) {
   const [role, setRole] = useState("patient");
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const loginFn = useServerFn(loginUser);
   const registerFn = useServerFn(registerUser);
@@ -94,11 +98,13 @@ function AuthModal({ onClose, onLogin }) {
   return (
     <div
       className="fixed inset-0 z-[2000] bg-black/40 flex items-center justify-center p-4"
-      onClick={onClose}
+      onMouseDown={(e) => {
+        if (e.target === e.currentTarget) onClose();
+      }}
     >
       <div
         className="bg-card rounded-2xl border shadow-soft w-full max-w-md p-6"
-        onClick={(e) => e.stopPropagation()}
+        onMouseDown={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between mb-5">
           <h2 className="text-lg font-semibold">
@@ -145,14 +151,29 @@ function AuthModal({ onClose, onLogin }) {
             placeholder="Email address"
             className="h-11 rounded-xl border bg-background px-4 outline-none focus:ring-2 focus:ring-ring text-sm"
           />
-          <input
-            required
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="Password"
-            className="h-11 rounded-xl border bg-background px-4 outline-none focus:ring-2 focus:ring-ring text-sm"
-          />
+          <div className="relative">
+            <input
+              required
+              type={showPassword ? "text" : "password"}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Password"
+              className="h-11 w-full rounded-xl border bg-background px-4 pr-11 text-sm outline-none focus:ring-2 focus:ring-ring"
+            />
+            <button
+              type="button"
+              aria-label={showPassword ? "Hide password" : "Show password"}
+              onMouseDown={(e) => e.preventDefault()}
+              onClick={() => setShowPassword((visible) => !visible)}
+              className="absolute right-2 top-1/2 grid h-8 w-8 -translate-y-1/2 place-items-center rounded-lg text-muted-foreground transition hover:bg-accent hover:text-foreground"
+            >
+              {showPassword ? (
+                <EyeOff className="h-4 w-4" aria-hidden="true" />
+              ) : (
+                <Eye className="h-4 w-4" aria-hidden="true" />
+              )}
+            </button>
+          </div>
           {mode === "register" && (
             <select
               value={role}
@@ -375,7 +396,7 @@ function PharmacySetup({ user, onComplete }) {
               type="tel"
               value={form.phone}
               onChange={field("phone")}
-              placeholder="e.g. +961 1 234 567"
+              placeholder="e.g. +961 76 123 456"
               className="h-11 rounded-xl border bg-background px-4 outline-none focus:ring-2 focus:ring-ring text-sm"
             />
           </div>
@@ -554,6 +575,8 @@ function PharmacistDashboard({ user }) {
       setError("Choose a medicine from the catalog before saving inventory.");
       return;
     }
+    const quantity = Math.max(0, Number(form.quantity) || 0);
+    const inStock = quantity > 0;
     setSaving(true);
     try {
       await upsertFn({
@@ -562,8 +585,8 @@ function PharmacistDashboard({ user }) {
           id: form.editId,
           medicineId: form.medicineId,
           medicineName: form.medicineName.trim(),
-          quantity: Number(form.quantity) || 0,
-          inStock: form.inStock,
+          quantity,
+          inStock,
         },
       });
       setForm({ medicineId: "", medicineName: "", quantity: "", inStock: true, editId: null });
@@ -587,11 +610,12 @@ function PharmacistDashboard({ user }) {
   }
 
   function startEdit(item) {
+    const quantity = Math.max(0, Number(item.quantity) || 0);
     setForm({
       medicineId: item.medicineId || item.id,
       medicineName: item.medicineName,
-      quantity: item.quantity,
-      inStock: item.inStock,
+      quantity,
+      inStock: quantity > 0,
       editId: item.id,
     });
     setMedicineMatches([]);
@@ -695,19 +719,26 @@ function PharmacistDashboard({ user }) {
             type="number"
             min="0"
             value={form.quantity}
-            onChange={(e) => setForm((f) => ({ ...f, quantity: e.target.value }))}
+            onChange={(e) => {
+              const nextQuantity = Math.max(0, Number(e.target.value) || 0);
+              setForm((f) => ({
+                ...f,
+                quantity: e.target.value,
+                inStock: nextQuantity > 0,
+              }));
+            }}
             placeholder="Qty"
             className="w-24 h-11 rounded-xl border bg-background px-4 outline-none focus:ring-2 focus:ring-ring text-sm"
           />
-          <label className="flex items-center gap-2 text-sm cursor-pointer">
-            <input
-              type="checkbox"
-              checked={form.inStock}
-              onChange={(e) => setForm((f) => ({ ...f, inStock: e.target.checked }))}
-              className="rounded"
-            />
-            In stock
-          </label>
+          <span
+            className={`inline-flex h-11 items-center rounded-xl px-3 text-sm font-medium ${
+              Math.max(0, Number(form.quantity) || 0) > 0
+                ? "bg-green-100 text-green-700"
+                : "bg-muted text-muted-foreground"
+            }`}
+          >
+            {Math.max(0, Number(form.quantity) || 0) > 0 ? "In stock" : "Out of stock"}
+          </span>
           <button
             type="submit"
             disabled={saving}
@@ -750,6 +781,10 @@ function PharmacistDashboard({ user }) {
           <ul className="divide-y">
             {inventory.map((item) => (
               <li key={item.id} className="px-5 py-3 flex items-center gap-3">
+                {(() => {
+                  const itemInStock = Math.max(0, Number(item.quantity) || 0) > 0;
+                  return (
+                    <>
                 <div className="flex-1 min-w-0">
                   <div className="font-medium truncate">{item.medicineName}</div>
                   <div className="text-xs text-muted-foreground">
@@ -757,9 +792,9 @@ function PharmacistDashboard({ user }) {
                   </div>
                 </div>
                 <span
-                  className={`text-xs px-2 py-1 rounded-full font-medium ${item.inStock ? "bg-green-100 text-green-700" : "bg-muted text-muted-foreground"}`}
+                  className={`text-xs px-2 py-1 rounded-full font-medium ${itemInStock ? "bg-green-100 text-green-700" : "bg-muted text-muted-foreground"}`}
                 >
-                  {item.inStock ? "In stock" : "Out of stock"}
+                  {itemInStock ? "In stock" : "Out of stock"}
                 </span>
                 <button
                   onClick={() => startEdit(item)}
@@ -773,6 +808,9 @@ function PharmacistDashboard({ user }) {
                 >
                   Remove
                 </button>
+                    </>
+                  );
+                })()}
               </li>
             ))}
           </ul>
@@ -792,6 +830,7 @@ function AdminPanel({ user }) {
   const requesterUserId = user?.userId ?? user?.id;
 
   const getUsersFn = useServerFn(getAllUsers);
+  const activateUserFn = useServerFn(activateUserAsAdmin);
   const deactivateUserFn = useServerFn(deactivateUserAsAdmin);
   const getPharmaciesFn = useServerFn(getAllPharmacies);
   const approveFn = useServerFn(approvePharmacy);
@@ -838,6 +877,18 @@ function AdminPanel({ user }) {
       await loadData();
     } catch (err) {
       setError(err?.message ?? "Failed to deactivate user");
+    }
+  }
+
+  async function handleActivateUser(targetUser) {
+    const targetUserId = targetUser?.userId ?? targetUser?.id;
+    if (!targetUserId) return;
+
+    try {
+      await activateUserFn({ data: { requesterUserId, targetUserId } });
+      await loadData();
+    } catch (err) {
+      setError(err?.message ?? "Failed to activate user");
     }
   }
 
@@ -895,6 +946,15 @@ function AdminPanel({ user }) {
                       className="text-xs font-medium text-red-500 hover:underline"
                     >
                       Deactivate
+                    </button>
+                  )}
+                  {u.role !== "admin" && u.active === false && (
+                    <button
+                      type="button"
+                      onClick={() => handleActivateUser(u)}
+                      className="text-xs font-medium text-primary hover:underline"
+                    >
+                      Activate
                     </button>
                   )}
                 </li>
@@ -1211,7 +1271,7 @@ function DetailRow({ icon: Icon, label, value }) {
   );
 }
 
-function PharmacyDetailPage({ pharmacy, medicine }) {
+function PharmacyDetailPage({ pharmacy, medicine, userLocation }) {
   const loc = pharmacyLatLng(pharmacy);
   const hasQty = pharmacy.hasAvailabilityData && Number.isFinite(pharmacy.availableQuantity);
 
@@ -1305,7 +1365,7 @@ function PharmacyDetailPage({ pharmacy, medicine }) {
       {loc && (
         <PharmacyMap
           className="h-[260px] rounded-none border-x-0 border-b-0"
-          userLocation={null}
+          userLocation={userLocation}
           pharmacies={[pharmacy]}
           showLegend={false}
         />
@@ -1478,7 +1538,13 @@ function SearchResults({
         {detailPharmacy ? "Back to results" : "Back to search"}
       </button>
 
-      {detailPharmacy && <PharmacyDetailPage pharmacy={detailPharmacy} medicine={medicine} />}
+      {detailPharmacy && (
+        <PharmacyDetailPage
+          pharmacy={detailPharmacy}
+          medicine={medicine}
+          userLocation={userLocation}
+        />
+      )}
 
       {!detailPharmacy && status === "loading" && (
         <p className="rounded-xl border bg-accent px-4 py-3 text-sm">

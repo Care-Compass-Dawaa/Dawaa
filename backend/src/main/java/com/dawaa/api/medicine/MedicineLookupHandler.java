@@ -43,7 +43,7 @@ public class MedicineLookupHandler extends BaseHandler
       Optional<Medicine> medicine = medicineService.findActiveMedicineByName(name);
       List<Medicine> medicines = medicineService.suggestActiveMedicinesByName(name, limit(request, 50));
       if (medicine.isPresent()
-          && medicines.stream().noneMatch((item) -> item.medicineId().equals(medicine.get().medicineId()))) {
+          && medicines.stream().noneMatch((item) -> sameDisplayedMedicine(item, medicine.get()))) {
         medicines = new java.util.ArrayList<>(medicines);
         medicines.add(0, medicine.get());
       }
@@ -127,5 +127,17 @@ public class MedicineLookupHandler extends BaseHandler
     node.put("normalizedGenericName", medicine.normalizedGenericName());
     node.put("active", medicine.active());
     return node;
+  }
+
+  private boolean sameDisplayedMedicine(Medicine first, Medicine second) {
+    return normalizeDisplay(first.brandName()).equals(normalizeDisplay(second.brandName()))
+        && normalizeDisplay(first.genericName()).equals(normalizeDisplay(second.genericName()))
+        && normalizeDisplay(first.strength()).equals(normalizeDisplay(second.strength()))
+        && normalizeDisplay(first.dosageForm()).equals(normalizeDisplay(second.dosageForm()))
+        && normalizeDisplay(first.manufacturer()).equals(normalizeDisplay(second.manufacturer()));
+  }
+
+  private String normalizeDisplay(String value) {
+    return value == null ? "" : value.trim().toLowerCase();
   }
 }

@@ -1,7 +1,7 @@
 import { createServerFn } from "@tanstack/react-start";
 
 const GATEWAY_URL = "https://connector-gateway.lovable.dev/google_maps";
-const DAWAA_API_BASE_URL = process.env.DAWAA_API_BASE_URL;
+const DAWAA_API_BASE_URL = process.env.DAWAA_API_BASE_URL || process.env.VITE_DAWAA_API_BASE_URL;
 const REQUESTER_HEADER = "X-Dawaa-User-Id";
 
 // ─── In-memory stores (replace with DynamoDB when backend is wired up) ─────────
@@ -26,7 +26,34 @@ function generateId() {
   return Date.now().toString(36) + Math.random().toString(36).slice(2);
 }
 
+function normalizeLebanesePhone(phone) {
+  let digits = (phone ?? "").replace(/\D/g, "");
+  if (digits.startsWith("961")) digits = digits.slice(3);
+  if (digits.length !== 8) {
+    throw new Error("Phone must contain 8 digits after +961");
+  }
+  return `+961${digits}`;
+}
+
 // ─── Haversine distance ────────────────────────────────────────────────────────
+async function apiErrorMessage(res, fallback = "Request failed") {
+  const text = await res.text();
+  if (!text) return fallback;
+
+  try {
+    const json = JSON.parse(text);
+    return json?.message || json?.error || fallback;
+  } catch {
+    return text.slice(0, 200);
+  }
+}
+
+async function requireOk(res, fallback) {
+  if (!res.ok) {
+    throw new Error(await apiErrorMessage(res, fallback));
+  }
+}
+
 function haversine(a, b) {
   const R = 6371000;
   const toRad = (d) => (d * Math.PI) / 180;
@@ -52,7 +79,7 @@ export const registerUser = createServerFn({ method: "POST" })
       const res = await fetch(`${DAWAA_API_BASE_URL.replace(/\/$/, "")}/auth/register`, {
         method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data),
       });
-      if (!res.ok) throw new Error((await res.text()).slice(0, 200));
+      await requireOk(res, "Registration failed");
       return await res.json();
     }
 
@@ -84,7 +111,7 @@ export const loginUser = createServerFn({ method: "POST" })
       const res = await fetch(`${DAWAA_API_BASE_URL.replace(/\/$/, "")}/auth/login`, {
         method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data),
       });
-      if (!res.ok) throw new Error((await res.text()).slice(0, 200));
+      await requireOk(res, "Sign in failed");
       return await res.json();
     }
 
@@ -108,7 +135,7 @@ export const deactivateCurrentUser = createServerFn({ method: "POST" })
         method: "DELETE",
         headers: { [REQUESTER_HEADER]: data.requesterUserId },
       });
-      if (!res.ok) throw new Error((await res.text()).slice(0, 200));
+      await requireOk(res, "Failed to deactivate account");
       return await res.json();
     }
 
@@ -145,7 +172,7 @@ export const getInventory = createServerFn({ method: "POST" })
       const res = await fetch(`${DAWAA_API_BASE_URL.replace(/\/$/, "")}/inventory/${encodeURIComponent(data.requesterUserId)}`, {
         headers: { [REQUESTER_HEADER]: data.requesterUserId },
       });
-      if (!res.ok) throw new Error((await res.text()).slice(0, 200));
+      await requireOk(res, "Failed to load inventory");
       return await res.json();
     }
 
@@ -156,13 +183,14 @@ export const getInventory = createServerFn({ method: "POST" })
 export const upsertInventoryItem = createServerFn({ method: "POST" })
   .validator((input) => {
     if (!input?.requesterUserId || !input?.medicineName) throw new Error("requesterUserId and medicineName are required");
+    const quantity = Math.max(0, Number(input.quantity) || 0);
     return {
       requesterUserId: input.requesterUserId,
       id: input.id ?? null,
       medicineId: input.medicineId?.trim() || "",
       medicineName: input.medicineName.trim(),
-      quantity: Math.max(0, Number(input.quantity) || 0),
-      inStock: input.inStock !== false,
+      quantity,
+      inStock: quantity > 0,
     };
   })
   .handler(async ({ data }) => {
@@ -172,7 +200,7 @@ export const upsertInventoryItem = createServerFn({ method: "POST" })
         headers: { "Content-Type": "application/json", [REQUESTER_HEADER]: data.requesterUserId },
         body: JSON.stringify(data),
       });
-      if (!res.ok) throw new Error((await res.text()).slice(0, 200));
+      await requireOk(res, "Failed to save inventory item");
       return await res.json();
     }
 
@@ -208,7 +236,7 @@ export const deleteInventoryItem = createServerFn({ method: "POST" })
         headers: { "Content-Type": "application/json", [REQUESTER_HEADER]: data.requesterUserId },
         body: JSON.stringify({ requesterUserId: data.requesterUserId }),
       });
-      if (!res.ok) throw new Error((await res.text()).slice(0, 200));
+      await requireOk(res, "Failed to delete inventory item");
       return await res.json();
     }
 
@@ -237,7 +265,7 @@ export const registerPharmacy = createServerFn({ method: "POST" })
       address: input.address.trim(),
       area: input.area.trim(),
       district: input.district?.trim() || "",
-      phone: input.phone.trim(),
+      phone: normalizeLebanesePhone(input.phone),
       email: input.email?.trim() || "",
       latitude: Number(input.latitude) || 0,
       longitude: Number(input.longitude) || 0,
@@ -250,7 +278,7 @@ export const registerPharmacy = createServerFn({ method: "POST" })
         headers: { "Content-Type": "application/json", [REQUESTER_HEADER]: data.requesterUserId },
         body: JSON.stringify(data),
       });
-      if (!res.ok) throw new Error((await res.text()).slice(0, 200));
+      await requireOk(res, "Failed to register pharmacy");
       return await res.json();
     }
 
@@ -285,7 +313,7 @@ export const getMyPharmacy = createServerFn({ method: "POST" })
       const res = await fetch(`${DAWAA_API_BASE_URL.replace(/\/$/, "")}/pharmacies/mine`, {
         headers: { [REQUESTER_HEADER]: data.requesterUserId },
       });
-      if (!res.ok) throw new Error((await res.text()).slice(0, 200));
+      await requireOk(res, "Failed to load pharmacy");
       return await res.json();
     }
 
@@ -304,7 +332,7 @@ export const getAllUsers = createServerFn({ method: "POST" })
       const res = await fetch(`${DAWAA_API_BASE_URL.replace(/\/$/, "")}/admin/users`, {
         headers: { [REQUESTER_HEADER]: data.requesterUserId },
       });
-      if (!res.ok) throw new Error((await res.text()).slice(0, 200));
+      await requireOk(res, "Failed to load users");
       return await res.json();
     }
 
@@ -333,7 +361,7 @@ export const deactivateUserAsAdmin = createServerFn({ method: "POST" })
           headers: { [REQUESTER_HEADER]: data.requesterUserId },
         },
       );
-      if (!res.ok) throw new Error((await res.text()).slice(0, 200));
+      await requireOk(res, "Failed to deactivate user");
       return await res.json();
     }
 
@@ -342,6 +370,36 @@ export const deactivateUserAsAdmin = createServerFn({ method: "POST" })
     if (requester?.role !== "admin") throw new Error("Admin access is required");
     if (target?.role === "admin") throw new Error("Admin accounts cannot be deactivated here");
     if (target) usersStore.set(data.targetUserId, { ...target, active: false });
+    return { success: true };
+  });
+
+export const activateUserAsAdmin = createServerFn({ method: "POST" })
+  .validator((input) => {
+    if (!input?.requesterUserId || !input?.targetUserId) {
+      throw new Error("requesterUserId and targetUserId are required");
+    }
+    return {
+      requesterUserId: input.requesterUserId,
+      targetUserId: input.targetUserId,
+    };
+  })
+  .handler(async ({ data }) => {
+    if (DAWAA_API_BASE_URL) {
+      const res = await fetch(
+        `${DAWAA_API_BASE_URL.replace(/\/$/, "")}/admin/users/${encodeURIComponent(data.targetUserId)}/activate`,
+        {
+          method: "POST",
+          headers: { [REQUESTER_HEADER]: data.requesterUserId },
+        },
+      );
+      await requireOk(res, "Failed to activate user");
+      return await res.json();
+    }
+
+    const requester = usersStore.get(data.requesterUserId);
+    const target = usersStore.get(data.targetUserId);
+    if (requester?.role !== "admin") throw new Error("Admin access is required");
+    if (target) usersStore.set(data.targetUserId, { ...target, active: true });
     return { success: true };
   });
 
@@ -355,7 +413,7 @@ export const getAllPharmacies = createServerFn({ method: "POST" })
       const res = await fetch(`${DAWAA_API_BASE_URL.replace(/\/$/, "")}/admin/pharmacies`, {
         headers: { [REQUESTER_HEADER]: data.requesterUserId },
       });
-      if (!res.ok) throw new Error((await res.text()).slice(0, 200));
+      await requireOk(res, "Failed to load pharmacies");
       return await res.json();
     }
 
@@ -383,7 +441,7 @@ export const approvePharmacy = createServerFn({ method: "POST" })
           body: JSON.stringify({ approved: data.approved }),
         },
       );
-      if (!res.ok) throw new Error((await res.text()).slice(0, 200));
+      await requireOk(res, "Failed to update pharmacy approval");
       return await res.json();
     }
 
@@ -441,10 +499,7 @@ export const searchPharmacies = createServerFn({ method: "POST" })
       }),
     });
 
-    if (!res.ok) {
-      const text = await res.text();
-      throw new Error(`Places API error ${res.status}: ${text.slice(0, 200)}`);
-    }
+    await requireOk(res, `Places API error ${res.status}`);
     const json = await res.json();
 
     const center = { lat: data.lat, lng: data.lng };
@@ -474,10 +529,7 @@ async function searchViaJavaBackend(data) {
     body: JSON.stringify(data),
   });
 
-  if (!res.ok) {
-    const text = await res.text();
-    throw new Error(`Dawaa API error ${res.status}: ${text.slice(0, 200)}`);
-  }
+  await requireOk(res, `Dawaa API error ${res.status}`);
 
   return await res.json();
 }

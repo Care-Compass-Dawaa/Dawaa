@@ -73,29 +73,50 @@ public class MedicineService {
   public List<Medicine> suggestActiveMedicinesByName(String name, int limit) {
     String normalizedName = normalizeRequired(name, "medicine name");
     int safeLimit = Math.min(Math.max(limit, 1), 100);
-    Map<String, Medicine> matchesById = new LinkedHashMap<>();
+    Map<String, Medicine> matchesByDisplayKey = new LinkedHashMap<>();
 
     List<Medicine> brandMatches =
         medicineRepository.searchByNormalizedBrandName(normalizedName, safeLimit);
     List<Medicine> genericMatches =
         medicineRepository.searchByNormalizedGenericName(normalizedName, safeLimit);
 
-    addActiveMatches(matchesById, brandMatches);
-    addActiveMatches(matchesById, genericMatches);
+    addActiveMatches(matchesByDisplayKey, brandMatches);
+    addActiveMatches(matchesByDisplayKey, genericMatches);
 
-    return new ArrayList<>(matchesById.values()).stream().limit(safeLimit).toList();
+    return new ArrayList<>(matchesByDisplayKey.values()).stream().limit(safeLimit).toList();
   }
 
-  private static void addActiveMatches(Map<String, Medicine> matchesById, List<Medicine> medicines) {
+  private static void addActiveMatches(
+      Map<String, Medicine> matchesByDisplayKey, List<Medicine> medicines) {
     for (Medicine medicine : medicines) {
       if (medicine.active()) {
-        matchesById.putIfAbsent(medicine.medicineId(), medicine);
+        matchesByDisplayKey.putIfAbsent(displayKey(medicine), medicine);
       }
     }
   }
 
+  private static String displayKey(Medicine medicine) {
+    return String.join(
+        "|",
+        normalizeOptional(medicine.brandName()),
+        normalizeOptional(medicine.genericName()),
+        normalizeOptional(medicine.strength()),
+        normalizeOptional(medicine.dosageForm()),
+        normalizeOptional(medicine.manufacturer()));
+  }
+
   private static String normalizeRequired(String value, String name) {
     requireText(value, name);
+    return Normalizer.normalize(value.trim().toLowerCase(Locale.ROOT), Normalizer.Form.NFKD)
+        .replaceAll("\\p{M}", "")
+        .replaceAll("[^\\p{L}\\p{N}]+", " ")
+        .trim();
+  }
+
+  private static String normalizeOptional(String value) {
+    if (value == null || value.isBlank()) {
+      return "";
+    }
     return Normalizer.normalize(value.trim().toLowerCase(Locale.ROOT), Normalizer.Form.NFKD)
         .replaceAll("\\p{M}", "")
         .replaceAll("[^\\p{L}\\p{N}]+", " ")
