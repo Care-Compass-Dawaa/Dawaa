@@ -4,6 +4,7 @@ import {
   ArrowLeft,
   ChevronDown,
   ChevronRight,
+  Clock,
   Eye,
   EyeOff,
   List as ListIcon,
@@ -11,9 +12,12 @@ import {
   MapPin,
   MapPinCheck,
   Navigation,
+  Pencil,
   Phone,
   Pill,
+  Plus,
   Search,
+  Trash2,
 } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import {
@@ -32,6 +36,7 @@ import {
   registerPharmacy,
   getMyPharmacy,
   updateMyPharmacy,
+  updateMyPharmacySchedule,
   getRouteDirections,
   searchPharmacies,
 } from "@/lib/pharmacies.functions";
@@ -326,11 +331,16 @@ function PharmacySetup({ user, onComplete }) {
           <div className="h-10 w-10 rounded-xl bg-primary/10 text-primary grid place-items-center text-xl">
             🏥
           </div>
-          <div>
+          <div className="flex min-w-0 items-start gap-6">
+            <span className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-primary/10 text-primary">
+              <Mail className="h-7 w-7" aria-hidden="true" />
+            </span>
+            <div className="min-w-0">
             <h2 className="text-lg font-semibold">Register your pharmacy</h2>
             <p className="text-xs text-muted-foreground">
               This lets patients find your pharmacy when searching for medication.
             </p>
+            </div>
           </div>
         </div>
 
@@ -492,6 +502,180 @@ function PharmacySetup({ user, onComplete }) {
 }
 
 // ─── Pharmacist Dashboard ──────────────────────────────────────────────────────
+const WEEK_DAYS = [
+  ["MONDAY", "Mon"],
+  ["TUESDAY", "Tue"],
+  ["WEDNESDAY", "Wed"],
+  ["THURSDAY", "Thu"],
+  ["FRIDAY", "Fri"],
+  ["SATURDAY", "Sat"],
+  ["SUNDAY", "Sun"],
+];
+
+function emptyWeeklyHours() {
+  return Object.fromEntries(WEEK_DAYS.map(([day]) => [day, []]));
+}
+
+function normalizeScheduleForm(hours) {
+  const weeklyHours = emptyWeeklyHours();
+  const incoming = hours?.weeklyHours ?? {};
+  for (const [day] of WEEK_DAYS) {
+    weeklyHours[day] = Array.isArray(incoming[day])
+      ? incoming[day].map((interval) => ({
+          open: interval.open || "08:00",
+          close: interval.close || "22:00",
+        }))
+      : [];
+  }
+
+  return {
+    timezone: hours?.timezone || "Asia/Beirut",
+    hoursMode: hours?.hoursMode || "unknown",
+    weeklyHours,
+  };
+}
+
+function pharmacyOpenLabel(pharmacy) {
+  const status = pharmacy?.openStatus ?? pharmacy?.open?.openStatus;
+  const openNow = pharmacy?.openNow ?? pharmacy?.open?.openNow;
+  if (openNow === true || status === "open") return "Open now";
+  if (openNow === false || status === "closed") return "Closed";
+  return "Hours unknown";
+}
+
+function pharmacyOpenBadgeClass(pharmacy) {
+  const status = pharmacy?.openStatus ?? pharmacy?.open?.openStatus;
+  const openNow = pharmacy?.openNow ?? pharmacy?.open?.openNow;
+  if (openNow === true || status === "open") return "bg-green-100 text-green-700";
+  if (openNow === false || status === "closed") return "bg-red-50 text-red-600";
+  return "bg-muted text-muted-foreground";
+}
+
+function formatTodayIntervals(pharmacy) {
+  const intervals = pharmacy?.open?.todayIntervals ?? [];
+  if (!Array.isArray(intervals) || intervals.length === 0) return "";
+  return intervals.map((interval) => `${interval.open}-${interval.close}`).join(", ");
+}
+
+function PharmacyScheduleEditor({ form, saving, onChange, onSave }) {
+  function setField(key, value) {
+    onChange((current) => ({ ...current, [key]: value }));
+  }
+
+  function setInterval(day, index, key, value) {
+    onChange((current) => {
+      const intervals = [...(current.weeklyHours[day] ?? [])];
+      intervals[index] = { ...intervals[index], [key]: value };
+      return {
+        ...current,
+        weeklyHours: { ...current.weeklyHours, [day]: intervals },
+      };
+    });
+  }
+
+  function addInterval(day) {
+    onChange((current) => ({
+      ...current,
+      weeklyHours: {
+        ...current.weeklyHours,
+        [day]: [...(current.weeklyHours[day] ?? []), { open: "08:00", close: "22:00" }],
+      },
+    }));
+  }
+
+  function removeInterval(day, index) {
+    onChange((current) => ({
+      ...current,
+      weeklyHours: {
+        ...current.weeklyHours,
+        [day]: (current.weeklyHours[day] ?? []).filter((_, i) => i !== index),
+      },
+    }));
+  }
+
+  return (
+    <form onSubmit={onSave} className="mt-4 grid gap-4 border-t pt-4">
+      <div className="grid gap-3 sm:grid-cols-[1fr_auto]">
+        <select
+          value={form.hoursMode}
+          onChange={(e) => setField("hoursMode", e.target.value)}
+          className="h-10 rounded-xl border bg-background px-3 text-sm outline-none focus:ring-2 focus:ring-ring"
+        >
+          <option value="unknown">Hours unknown</option>
+          <option value="regular">Regular weekly hours</option>
+          <option value="twentyFourHours">Open 24 hours</option>
+        </select>
+        <input
+          value={form.timezone}
+          onChange={(e) => setField("timezone", e.target.value)}
+          className="h-10 rounded-xl border bg-background px-3 text-sm outline-none focus:ring-2 focus:ring-ring"
+        />
+      </div>
+
+      {form.hoursMode === "regular" && (
+        <div className="grid gap-3">
+          {WEEK_DAYS.map(([day, label]) => (
+            <div key={day} className="grid gap-2 rounded-xl border bg-muted/30 p-3">
+              <div className="flex items-center justify-between gap-3">
+                <span className="text-sm font-medium">{label}</span>
+                <button
+                  type="button"
+                  onClick={() => addInterval(day)}
+                  disabled={(form.weeklyHours[day] ?? []).length >= 4}
+                  className="inline-flex h-8 items-center justify-center gap-1.5 rounded-lg border bg-background px-2.5 text-xs font-medium transition hover:bg-accent disabled:opacity-50"
+                >
+                  <Plus className="h-3.5 w-3.5" aria-hidden="true" />
+                  Add interval
+                </button>
+              </div>
+              {(form.weeklyHours[day] ?? []).length === 0 ? (
+                <p className="text-xs text-muted-foreground">Closed</p>
+              ) : (
+                <div className="grid gap-2">
+                  {form.weeklyHours[day].map((interval, index) => (
+                    <div key={`${day}-${index}`} className="grid grid-cols-[1fr_1fr_auto] gap-2">
+                      <input
+                        type="time"
+                        value={interval.open}
+                        onChange={(e) => setInterval(day, index, "open", e.target.value)}
+                        className="h-9 rounded-lg border bg-background px-2 text-sm outline-none focus:ring-2 focus:ring-ring"
+                      />
+                      <input
+                        type="time"
+                        value={interval.close}
+                        onChange={(e) => setInterval(day, index, "close", e.target.value)}
+                        className="h-9 rounded-lg border bg-background px-2 text-sm outline-none focus:ring-2 focus:ring-ring"
+                      />
+                      <button
+                        type="button"
+                        onClick={() => removeInterval(day, index)}
+                        className="grid h-9 w-9 place-items-center rounded-lg border bg-background text-muted-foreground transition hover:bg-accent hover:text-red-600"
+                        aria-label={`Remove ${label} interval`}
+                      >
+                        <Trash2 className="h-4 w-4" aria-hidden="true" />
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      )}
+
+      <div className="flex justify-end">
+        <button
+          type="submit"
+          disabled={saving}
+          className="h-10 rounded-xl bg-primary px-4 text-sm font-medium text-primary-foreground transition hover:opacity-95 disabled:opacity-50"
+        >
+          {saving ? "Saving..." : "Save schedule"}
+        </button>
+      </div>
+    </form>
+  );
+}
+
 function PharmacistDashboard({ user }) {
   const [pharmacy, setPharmacy] = useState(null);
   const [checkingPharmacy, setCheckingPharmacy] = useState(true);
@@ -510,17 +694,21 @@ function PharmacistDashboard({ user }) {
   const [medicineSearchStatus, setMedicineSearchStatus] = useState("idle");
   const [saving, setSaving] = useState(false);
   const [editingPharmacy, setEditingPharmacy] = useState(false);
+  const [editingSchedule, setEditingSchedule] = useState(false);
   const [pharmacySaving, setPharmacySaving] = useState(false);
+  const [scheduleSaving, setScheduleSaving] = useState(false);
   const [pharmacyForm, setPharmacyForm] = useState({
     email: "",
     phone: "",
     latitude: "",
     longitude: "",
   });
+  const [scheduleForm, setScheduleForm] = useState(() => normalizeScheduleForm());
   const [pharmacyLocationStatus, setPharmacyLocationStatus] = useState("idle");
 
   const getMyPharmacyFn = useServerFn(getMyPharmacy);
   const updateMyPharmacyFn = useServerFn(updateMyPharmacy);
+  const updateMyPharmacyScheduleFn = useServerFn(updateMyPharmacySchedule);
   const getInventoryFn = useServerFn(getInventory);
   const upsertFn = useServerFn(upsertInventoryItem);
   const deleteFn = useServerFn(deleteInventoryItem);
@@ -547,6 +735,7 @@ function PharmacistDashboard({ user }) {
       latitude: String(pharmacy.latitude ?? pharmacy.location?.lat ?? ""),
       longitude: String(pharmacy.longitude ?? pharmacy.location?.lng ?? ""),
     });
+    setScheduleForm(normalizeScheduleForm(pharmacy.hours));
   }, [pharmacy]);
 
   useEffect(() => {
@@ -670,6 +859,28 @@ function PharmacistDashboard({ user }) {
     }
   }
 
+  async function handleUpdateSchedule(e) {
+    e.preventDefault();
+    setScheduleSaving(true);
+    setError(null);
+    try {
+      const result = await updateMyPharmacyScheduleFn({
+        data: {
+          requesterUserId,
+          timezone: scheduleForm.timezone,
+          hoursMode: scheduleForm.hoursMode,
+          weeklyHours: scheduleForm.weeklyHours,
+        },
+      });
+      setPharmacy(result.pharmacy);
+      setEditingSchedule(false);
+    } catch (err) {
+      setError(err?.message ?? "Failed to update pharmacy schedule");
+    } finally {
+      setScheduleSaving(false);
+    }
+  }
+
   function usePharmacyCurrentLocation() {
     if (!navigator.geolocation) {
       setError("Location is not available in this browser.");
@@ -758,41 +969,49 @@ function PharmacistDashboard({ user }) {
 
   // Has pharmacy — show inventory dashboard
   return (
-    <div className="max-w-3xl mx-auto">
+    <div className="mx-auto max-w-6xl px-2">
       {/* Pharmacy profile card */}
-      <div className="bg-card rounded-2xl border shadow-soft p-4 mb-6 flex items-start justify-between gap-4">
-        <div className="flex items-center gap-3">
-          <div className="h-10 w-10 rounded-xl bg-primary/10 text-primary grid place-items-center text-xl shrink-0">
+      <div className="flex items-start justify-between gap-4 py-7">
+        <div className="flex min-w-0 items-start gap-6">
+          <div className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-primary/10 text-primary">
             🏥
           </div>
-          <div>
-            <div className="font-semibold">{pharmacy.name}</div>
-            <div className="text-xs text-muted-foreground">
+          <div className="min-w-0">
+            <div className="flex flex-wrap items-center gap-3">
+              <span className="truncate text-2xl font-bold">{pharmacy.name}</span>
+              <span
+                className={`rounded-full px-3 py-1 text-sm font-medium ${pharmacy.approved ? "bg-green-100 text-green-700" : "bg-yellow-100 text-yellow-700"}`}
+              >
+                {pharmacy.approved ? "Approved" : "Pending approval"}
+              </span>
+            </div>
+            <div className="mt-2 text-sm text-muted-foreground">
               {pharmacy.area} · {pharmacy.address} · {pharmacy.phone}
             </div>
           </div>
         </div>
-        <span
-          className={`text-xs px-2 py-1 rounded-full font-medium shrink-0 ${pharmacy.approved ? "bg-green-100 text-green-700" : "bg-yellow-100 text-yellow-700"}`}
-        >
-          {pharmacy.approved ? "Approved" : "Pending approval"}
-        </span>
       </div>
 
-      <div className="bg-card rounded-2xl border shadow-soft p-4 mb-6">
-        <div className="flex items-center justify-between gap-3">
-          <div>
-            <h2 className="text-sm font-semibold">Pharmacy details</h2>
-            <p className="mt-1 text-xs text-muted-foreground">
+      <div className="mb-0 border-t py-7">
+        <div className="flex items-center justify-between gap-4">
+          <div className="flex min-w-0 items-start gap-6">
+            <span className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-primary/10 text-primary">
+              <Mail className="h-7 w-7" aria-hidden="true" />
+            </span>
+            <div className="min-w-0">
+            <h2 className="text-lg font-semibold">Pharmacy details</h2>
+            <p className="mt-2 text-sm text-muted-foreground">
               {pharmacy.email || "No email"} · {pharmacy.latitude ?? pharmacy.location?.lat},{" "}
               {pharmacy.longitude ?? pharmacy.location?.lng}
             </p>
-          </div>
+              </div>
+            </div>
           <button
             type="button"
             onClick={() => setEditingPharmacy((value) => !value)}
-            className="h-9 shrink-0 rounded-xl border px-3 text-sm font-medium transition hover:bg-accent"
+            className="inline-flex h-10 shrink-0 items-center justify-center gap-3 text-sm font-semibold text-primary transition hover:opacity-75"
           >
+            <Pencil className="h-5 w-5" aria-hidden="true" />
             {editingPharmacy ? "Close" : "Edit"}
           </button>
         </div>
@@ -863,16 +1082,57 @@ function PharmacistDashboard({ user }) {
         )}
       </div>
 
-      <h2 className="text-xl font-semibold mb-2">Pharmacy Inventory</h2>
-      <p className="text-sm text-muted-foreground mb-6">
-        Manage the medicines available at your pharmacy. Patients rely on this information to find
-        their medication.
-      </p>
+      <div className="mb-10 border-t py-7">
+        <div className="flex items-center justify-between gap-4">
+          <div className="flex min-w-0 items-start gap-6">
+            <span className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-primary/10 text-primary">
+              <Clock className="h-7 w-7" aria-hidden="true" />
+            </span>
+            <div className="min-w-0">
+            <div className="flex flex-wrap items-center gap-2">
+              <h2 className="text-lg font-semibold">Opening hours</h2>
+              <span
+                className={`rounded-full px-3 py-1 text-sm font-medium ${pharmacyOpenBadgeClass(pharmacy)}`}
+              >
+                {pharmacyOpenLabel(pharmacy)}
+              </span>
+            </div>
+            <p className="mt-2 text-sm text-muted-foreground">
+              {pharmacy.hours?.hoursMode === "twentyFourHours"
+                ? "Open 24 hours"
+                : formatTodayIntervals(pharmacy) || "No hours available for today"}
+            </p>
+            </div>
+          </div>
+          <button
+            type="button"
+            onClick={() => setEditingSchedule((value) => !value)}
+            className="inline-flex h-10 shrink-0 items-center justify-center gap-3 text-sm font-semibold text-primary transition hover:opacity-75"
+          >
+            <Pencil className="h-5 w-5" aria-hidden="true" />
+            {editingSchedule ? "Close" : "Edit"}
+          </button>
+        </div>
 
-      <div className="bg-card rounded-2xl border shadow-soft p-5 mb-6">
-        <h3 className="font-medium mb-3">{form.editId ? "Edit medicine" : "Add medicine"}</h3>
-        <form onSubmit={handleSave} className="flex flex-col sm:flex-row gap-3">
+        {editingSchedule && (
+          <PharmacyScheduleEditor
+            form={scheduleForm}
+            saving={scheduleSaving}
+            onChange={setScheduleForm}
+            onSave={handleUpdateSchedule}
+          />
+        )}
+      </div>
+
+      <h2 className="mb-8 text-3xl font-bold">Pharmacy Inventory</h2>
+
+      <div className="mb-10">
+        <h3 className="mb-5 text-xl font-semibold">
+          {form.editId ? "Edit medicine" : "Add medicine"}
+        </h3>
+        <form onSubmit={handleSave} className="grid max-w-4xl gap-5 sm:grid-cols-[minmax(0,1fr)_120px_auto_auto]">
           <div className="relative flex-1">
+            <Search className="pointer-events-none absolute left-5 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" />
             <input
               required
               value={form.medicineName}
@@ -880,7 +1140,7 @@ function PharmacistDashboard({ user }) {
                 setForm((f) => ({ ...f, medicineId: "", medicineName: e.target.value }))
               }
               placeholder="Search medicine catalog"
-              className="h-11 w-full rounded-xl border bg-background px-4 outline-none focus:ring-2 focus:ring-ring text-sm"
+              className="h-14 w-full rounded-xl border bg-background pl-14 pr-4 text-base outline-none focus:ring-2 focus:ring-ring"
             />
             {form.medicineId && (
               <p className="mt-1 text-xs text-green-700">Catalog medicine selected</p>
@@ -919,13 +1179,13 @@ function PharmacistDashboard({ user }) {
               }));
             }}
             placeholder="Qty"
-            className="w-24 h-11 rounded-xl border bg-background px-4 outline-none focus:ring-2 focus:ring-ring text-sm"
+            className="h-14 rounded-xl border bg-background px-4 text-base outline-none focus:ring-2 focus:ring-ring"
           />
           <span
-            className={`inline-flex h-11 items-center rounded-xl px-3 text-sm font-medium ${
+            className={`inline-flex h-14 items-center justify-center rounded-xl px-5 text-base font-semibold ${
               Math.max(0, Number(form.quantity) || 0) > 0
                 ? "bg-green-100 text-green-700"
-                : "bg-muted text-muted-foreground"
+                : "bg-primary/10 text-muted-foreground"
             }`}
           >
             {Math.max(0, Number(form.quantity) || 0) > 0 ? "In stock" : "Out of stock"}
@@ -933,7 +1193,7 @@ function PharmacistDashboard({ user }) {
           <button
             type="submit"
             disabled={saving}
-            className="h-11 rounded-xl px-5 bg-primary text-primary-foreground font-medium disabled:opacity-50 hover:opacity-95 transition text-sm"
+            className="h-14 rounded-xl bg-primary px-8 text-base font-semibold text-primary-foreground transition hover:opacity-95 disabled:opacity-50"
           >
             {saving ? "Saving…" : form.editId ? "Update" : "Add"}
           </button>
@@ -949,7 +1209,7 @@ function PharmacistDashboard({ user }) {
                   editId: null,
                 })
               }
-              className="h-11 rounded-xl px-4 border text-sm hover:bg-accent transition"
+              className="h-14 rounded-xl border px-4 text-sm transition hover:bg-accent sm:col-start-4"
             >
               Cancel
             </button>
@@ -959,17 +1219,17 @@ function PharmacistDashboard({ user }) {
 
       {error && <p className="text-sm text-red-500 mb-4">{error}</p>}
 
-      <div className="bg-card rounded-2xl border shadow-soft overflow-hidden">
-        <div className="px-5 py-3 border-b">
-          <span className="font-medium">Current inventory</span>
+      <div>
+        <div className="mb-8">
+          <span className="text-xl font-semibold">Current inventory</span>
           {loading && <span className="text-xs text-muted-foreground">Loading…</span>}
-          <div className="relative mt-3">
-            <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+          <div className="relative mt-6">
+            <Search className="pointer-events-none absolute left-5 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" />
             <input
               value={inventoryQuery}
               onChange={(e) => setInventoryQuery(e.target.value)}
               placeholder="Search current inventory"
-              className="h-10 w-full rounded-xl border bg-background pl-9 pr-3 text-sm outline-none focus:ring-2 focus:ring-ring"
+              className="h-14 w-full rounded-xl border bg-background pl-14 pr-4 text-base outline-none focus:ring-2 focus:ring-ring"
             />
           </div>
         </div>
@@ -984,31 +1244,33 @@ function PharmacistDashboard({ user }) {
         ) : (
           <ul className="divide-y">
             {filteredInventory.map((item) => (
-              <li key={item.id} className="px-5 py-3 flex items-center gap-3">
+              <li key={item.id} className="flex items-center gap-6 px-2 py-5">
                 {(() => {
                   const itemInStock = Math.max(0, Number(item.quantity) || 0) > 0;
                   return (
                     <>
-                <div className="flex-1 min-w-0">
-                  <div className="font-medium truncate">{item.medicineName}</div>
-                  <div className="text-xs text-muted-foreground">
+                <div className="min-w-0 flex-1">
+                  <div className="truncate text-xl font-bold">{item.medicineName}</div>
+                  <div className="mt-1 text-sm text-muted-foreground">
                     Qty: {item.quantity} · Updated: {new Date(item.updatedAt).toLocaleDateString()}
                   </div>
                 </div>
                 <span
-                  className={`text-xs px-2 py-1 rounded-full font-medium ${itemInStock ? "bg-green-100 text-green-700" : "bg-muted text-muted-foreground"}`}
+                  className={`rounded-full px-3 py-1 text-sm font-medium ${itemInStock ? "bg-green-100 text-green-700" : "bg-muted text-muted-foreground"}`}
                 >
                   {itemInStock ? "In stock" : "Out of stock"}
                 </span>
                 <button
+                  type="button"
                   onClick={() => startEdit(item)}
-                  className="text-xs text-primary hover:underline"
+                  className="text-sm font-medium text-primary hover:underline"
                 >
                   Edit
                 </button>
                 <button
+                  type="button"
                   onClick={() => handleDelete(item.id)}
-                  className="text-xs text-red-500 hover:underline"
+                  className="text-sm font-medium text-red-500 hover:underline"
                 >
                   Remove
                 </button>
@@ -1471,6 +1733,9 @@ function PharmacyListItem({ pharmacy, rank, active, onClick }) {
           </span>
         </span>
         <span className="mt-1.5 flex flex-wrap items-center gap-2">
+          <span className={`rounded-full px-2 py-0.5 text-[11px] font-medium ${pharmacyOpenBadgeClass(pharmacy)}`}>
+            {pharmacyOpenLabel(pharmacy)}
+          </span>
           {hasQty ? (
             <span className="rounded-full bg-green-100 px-2 py-0.5 text-[11px] font-medium text-green-700">
               {pharmacy.availableQuantity} available
@@ -1681,6 +1946,15 @@ function PharmacyDetailPage({ pharmacy, medicine, userLocation }) {
             label="District"
             value={pharmacy.district || pharmacy.area || "Not provided"}
           />
+          <DetailRow
+            icon={Clock}
+            label="Hours"
+            value={
+              pharmacy.hours?.hoursMode === "twentyFourHours"
+                ? "Open 24 hours"
+                : `${pharmacyOpenLabel(pharmacy)}${formatTodayIntervals(pharmacy) ? `: ${formatTodayIntervals(pharmacy)}` : ""}`
+            }
+          />
         </dl>
 
         <div className="flex flex-wrap gap-3">
@@ -1871,6 +2145,8 @@ function SearchResults({
   userLocation,
   onUseLocation,
   locationStatus,
+  openNowOnly,
+  onOpenNowOnlyChange,
   onBack,
 }) {
   const [viewMode, setViewMode] = useState("map"); // "list" | "map"
@@ -1934,23 +2210,34 @@ function SearchResults({
             </p>
           </div>
 
-          <div className="inline-flex rounded-xl border bg-muted p-1">
-            <button
-              type="button"
-              onClick={() => setViewMode("list")}
-              className={segmentClass(viewMode === "list")}
-            >
-              <ListIcon className="h-3.5 w-3.5" aria-hidden="true" />
-              List view
-            </button>
-            <button
-              type="button"
-              onClick={() => setViewMode("map")}
-              className={segmentClass(viewMode === "map")}
-            >
-              <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
-              Map view
-            </button>
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <div className="inline-flex rounded-xl border bg-muted p-1">
+              <button
+                type="button"
+                onClick={() => setViewMode("list")}
+                className={segmentClass(viewMode === "list")}
+              >
+                <ListIcon className="h-3.5 w-3.5" aria-hidden="true" />
+                List view
+              </button>
+              <button
+                type="button"
+                onClick={() => setViewMode("map")}
+                className={segmentClass(viewMode === "map")}
+              >
+                <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
+                Map view
+              </button>
+            </div>
+            <label className="inline-flex h-10 items-center gap-2 rounded-xl border bg-card px-3 text-sm font-medium">
+              <input
+                type="checkbox"
+                checked={openNowOnly}
+                onChange={(e) => onOpenNowOnlyChange(e.target.checked)}
+                className="h-4 w-4 accent-primary"
+              />
+              Open now only
+            </label>
           </div>
 
           {!userLocation && (
@@ -2074,6 +2361,7 @@ function PatientSearch({ view, onViewChange }) {
   const [nearbyPharmacies, setNearbyPharmacies] = useState([]);
   const [nearbyStatus, setNearbyStatus] = useState("idle");
   const [nearbyMessage, setNearbyMessage] = useState("");
+  const [openNowOnly, setOpenNowOnly] = useState(false);
   const [status, setStatus] = useState("idle");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
@@ -2222,7 +2510,7 @@ function PatientSearch({ view, onViewChange }) {
       setAvailabilityStatus(availableItems.length > 0 ? "success" : "empty");
 
       if (userLocation) {
-        await loadNearbyPharmacies(userLocation, foundMedicine.medicineId);
+        await loadNearbyPharmacies(userLocation, foundMedicine.medicineId, openNowOnly);
       }
     } catch (error) {
       setAvailabilityStatus("error");
@@ -2261,7 +2549,7 @@ function PatientSearch({ view, onViewChange }) {
         setLocationMessage("Location ready.");
 
         if (status === "success") {
-          await loadNearbyPharmacies(nextLocation, medicine?.medicineId);
+          await loadNearbyPharmacies(nextLocation, medicine?.medicineId, openNowOnly);
         }
       },
       (error) => {
@@ -2272,14 +2560,25 @@ function PatientSearch({ view, onViewChange }) {
     );
   }
 
-  async function loadNearbyPharmacies(location, medicineId = medicine?.medicineId) {
+  async function loadNearbyPharmacies(
+    location,
+    medicineId = medicine?.medicineId,
+    nextOpenNowOnly = openNowOnly,
+  ) {
     setNearbyStatus("loading");
     setNearbyMessage("");
     setNearbyPharmacies([]);
 
     try {
       const result = await searchPharmaciesFn({
-        data: { lat: location.lat, lng: location.lng, radius: 50000, limit: 10, medicineId },
+        data: {
+          lat: location.lat,
+          lng: location.lng,
+          radius: 50000,
+          limit: 10,
+          medicineId,
+          openNowOnly: nextOpenNowOnly,
+        },
       });
       const pharmacies = Array.isArray(result.pharmacies) ? result.pharmacies : [];
       setNearbyPharmacies(pharmacies);
@@ -2294,6 +2593,13 @@ function PatientSearch({ view, onViewChange }) {
     setNearbyPharmacies([]);
     setNearbyStatus("idle");
     setNearbyMessage("");
+  }
+
+  function updateOpenNowOnly(value) {
+    setOpenNowOnly(value);
+    if (userLocation && status === "success") {
+      loadNearbyPharmacies(userLocation, medicine?.medicineId, value);
+    }
   }
 
   function handleBack() {
@@ -2350,6 +2656,8 @@ function PatientSearch({ view, onViewChange }) {
         userLocation={userLocation}
         onUseLocation={requestLocation}
         locationStatus={locationStatus}
+        openNowOnly={openNowOnly}
+        onOpenNowOnlyChange={updateOpenNowOnly}
         onBack={handleBack}
       />
     );

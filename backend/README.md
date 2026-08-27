@@ -24,6 +24,7 @@ POST /inventory
 DELETE /inventory/{medicineId}
 POST /pharmacies
 GET  /pharmacies/mine
+POST /pharmacies/mine/schedule
 GET  /pharmacies/{id}
 GET  /admin/pharmacies
 GET  /admin/pharmacies/{id}
@@ -39,12 +40,35 @@ Expected `/pharmacies/search` request body:
   "lat": 33.8938,
   "lng": 35.5018,
   "radius": 5000,
-  "limit": 10
+  "limit": 10,
+  "openNowOnly": false
 }
 ```
 
 Pharmacy search reads from the `DawaaPharmacies` DynamoDB table and ranks results by
-straight-line distance.
+straight-line distance. When `openNowOnly` is true, closed pharmacies and pharmacies with
+unknown hours are excluded before the remaining results are ranked by distance.
+
+Expected `/pharmacies/mine/schedule` request body:
+
+```json
+{
+  "timezone": "Asia/Beirut",
+  "hoursMode": "regular",
+  "weeklyHours": {
+    "MONDAY": [
+      { "open": "08:00", "close": "13:00" },
+      { "open": "16:00", "close": "22:00" }
+    ],
+    "TUESDAY": [
+      { "open": "08:00", "close": "22:00" }
+    ]
+  }
+}
+```
+
+Use `"hoursMode": "twentyFourHours"` for pharmacies that are always open, or
+`"hoursMode": "unknown"` when a pharmacist has not supplied a schedule.
 
 After deploying this backend, set the frontend server environment variable:
 

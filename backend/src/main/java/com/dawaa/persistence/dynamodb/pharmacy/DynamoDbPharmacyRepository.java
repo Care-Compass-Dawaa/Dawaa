@@ -1,7 +1,11 @@
 package com.dawaa.persistence.dynamodb.pharmacy;
 
 import com.dawaa.domain.pharmacy.Pharmacy;
+import com.dawaa.domain.pharmacy.HoursMode;
+import com.dawaa.domain.pharmacy.OpeningInterval;
+import com.dawaa.domain.pharmacy.PharmacyHours;
 import com.dawaa.domain.pharmacy.PharmacyRepository;
+import java.time.DayOfWeek;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -158,6 +162,7 @@ public class DynamoDbPharmacyRepository implements PharmacyRepository {
     item.put("longitude", AttributeValue.fromN(Double.toString(pharmacy.longitude())));
     item.put("approved", AttributeValue.fromBool(pharmacy.approved()));
     item.put("active", AttributeValue.fromBool(pharmacy.active()));
+    putHours(item, pharmacy.hours());
     putString(item, "createdAt", pharmacy.createdAt());
     putString(item, "updatedAt", pharmacy.updatedAt());
     if (!pharmacy.approved()) {
@@ -183,8 +188,84 @@ public class DynamoDbPharmacyRepository implements PharmacyRepository {
         doubleValue(item, "longitude"),
         booleanValue(item, "approved", true),
         booleanValue(item, "active", true),
+        hoursValue(item),
         stringValue(item, "createdAt"),
         stringValue(item, "updatedAt"));
+  }
+
+  private static void putHours(Map<String, AttributeValue> item, PharmacyHours hours) {
+    PharmacyHours safeHours = hours == null ? PharmacyHours.unknown() : hours;
+    putString(item, "timezone", safeHours.timezone());
+    item.put("hoursMode", AttributeValue.fromS(safeHours.hoursMode().apiValue()));
+    item.put("weeklyHours", AttributeValue.fromM(toWeeklyHoursItem(safeHours.weeklyHours())));
+  }
+
+  private static Map<String, AttributeValue> toWeeklyHoursItem(
+      Map<DayOfWeek, List<OpeningInterval>> weeklyHours) {
+    if (weeklyHours == null || weeklyHours.isEmpty()) {
+      return Map.of();
+    }
+
+    Map<String, AttributeValue> value = new HashMap<>();
+    weeklyHours.forEach(
+        (day, intervals) -> {
+          if (day == null || intervals == null) {
+            return;
+          }
+          List<AttributeValue> intervalItems =
+              intervals.stream()
+                  .filter(Objects::nonNull)
+                  .map(
+                      interval ->
+                          AttributeValue.fromM(
+                              Map.of(
+                                  "open", AttributeValue.fromS(interval.open()),
+                                  "close", AttributeValue.fromS(interval.close()))))
+                  .toList();
+          value.put(day.name(), AttributeValue.fromL(intervalItems));
+        });
+    return value;
+  }
+
+  private static PharmacyHours hoursValue(Map<String, AttributeValue> item) {
+    String timezone = stringValue(item, "timezone");
+    if (timezone.isBlank()) {
+      timezone = PharmacyHours.DEFAULT_TIMEZONE;
+    }
+
+    HoursMode hoursMode = HoursMode.fromValue(stringValue(item, "hoursMode"));
+    return new PharmacyHours(timezone, hoursMode, weeklyHoursValue(item.get("weeklyHours")));
+  }
+
+  private static Map<DayOfWeek, List<OpeningInterval>> weeklyHoursValue(AttributeValue value) {
+    if (value == null || value.m() == null || value.m().isEmpty()) {
+      return Map.of();
+    }
+
+    Map<DayOfWeek, List<OpeningInterval>> weeklyHours = new HashMap<>();
+    value.m()
+        .forEach(
+            (dayName, intervalsValue) -> {
+              try {
+                DayOfWeek day = DayOfWeek.valueOf(dayName);
+                weeklyHours.put(day, intervalsValue(intervalsValue));
+              } catch (IllegalArgumentException ignored) {
+                // Ignore unknown day keys from hand-edited DynamoDB rows.
+              }
+            });
+    return weeklyHours;
+  }
+
+  private static List<OpeningInterval> intervalsValue(AttributeValue value) {
+    if (value == null || value.l() == null || value.l().isEmpty()) {
+      return List.of();
+    }
+
+    return value.l().stream()
+        .map(AttributeValue::m)
+        .filter(map -> map != null && !map.isEmpty())
+        .map(map -> new OpeningInterval(stringValue(map, "open"), stringValue(map, "close")))
+        .toList();
   }
 
   private static void putString(

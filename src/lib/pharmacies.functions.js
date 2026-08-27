@@ -35,6 +35,62 @@ function normalizeLebanesePhone(phone) {
   return `+961${digits}`;
 }
 
+function unknownHours() {
+  return { timezone: "Asia/Beirut", hoursMode: "unknown", weeklyHours: {} };
+}
+
+function normalizeHours(input = {}) {
+  const hoursMode = ["unknown", "regular", "twentyFourHours"].includes(input.hoursMode)
+    ? input.hoursMode
+    : "unknown";
+  const timezone = input.timezone?.trim() || "Asia/Beirut";
+  const weeklyHours = input.weeklyHours && typeof input.weeklyHours === "object" ? input.weeklyHours : {};
+
+  return {
+    timezone,
+    hoursMode,
+    weeklyHours: hoursMode === "regular" ? weeklyHours : {},
+  };
+}
+
+function localOpenStatus(pharmacy) {
+  const hours = pharmacy?.hours ?? unknownHours();
+  if (hours.hoursMode === "twentyFourHours") {
+    return {
+      openNow: true,
+      openStatus: "open",
+      open: { openNow: true, openStatus: "open", todayIntervals: [{ open: "00:00", close: "23:59" }] },
+    };
+  }
+  if (hours.hoursMode !== "regular") {
+    return {
+      openNow: null,
+      openStatus: "unknown",
+      open: { openNow: null, openStatus: "unknown", todayIntervals: [] },
+    };
+  }
+
+  const dayName = new Intl.DateTimeFormat("en-US", {
+    weekday: "long",
+    timeZone: hours.timezone || "Asia/Beirut",
+  })
+    .format(new Date())
+    .toUpperCase();
+  const time = new Intl.DateTimeFormat("en-GB", {
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+    timeZone: hours.timezone || "Asia/Beirut",
+  }).format(new Date());
+  const intervals = Array.isArray(hours.weeklyHours?.[dayName]) ? hours.weeklyHours[dayName] : [];
+  const openNow = intervals.some((interval) => time >= interval.open && time < interval.close);
+  return {
+    openNow,
+    openStatus: openNow ? "open" : "closed",
+    open: { openNow, openStatus: openNow ? "open" : "closed", todayIntervals: intervals },
+  };
+}
+
 // ─── Haversine distance ────────────────────────────────────────────────────────
 async function apiErrorMessage(res, fallback = "Request failed") {
   const text = await res.text();
@@ -340,10 +396,50 @@ export const registerPharmacy = createServerFn({ method: "POST" })
       latitude: data.latitude,
       longitude: data.longitude,
       approved: false,
+      hours: unknownHours(),
+      openNow: null,
+      openStatus: "unknown",
       createdAt: new Date().toISOString(),
     };
     pharmaciesStore.set(pharmacy.id, pharmacy);
     return { pharmacy };
+  });
+
+export const updateMyPharmacySchedule = createServerFn({ method: "POST" })
+  .validator((input) => {
+    if (!input?.requesterUserId) throw new Error("requesterUserId is required");
+    return {
+      requesterUserId: input.requesterUserId,
+      ...normalizeHours(input),
+    };
+  })
+  .handler(async ({ data }) => {
+    if (DAWAA_API_BASE_URL) {
+      const res = await fetch(`${DAWAA_API_BASE_URL.replace(/\/$/, "")}/pharmacies/mine/schedule`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", [REQUESTER_HEADER]: data.requesterUserId },
+        body: JSON.stringify({
+          timezone: data.timezone,
+          hoursMode: data.hoursMode,
+          weeklyHours: data.weeklyHours,
+        }),
+      });
+      await requireOk(res, "Failed to update pharmacy schedule");
+      return await res.json();
+    }
+
+    const pharmacy = [...pharmaciesStore.values()].find((p) => p.ownerUserId === data.requesterUserId);
+    if (!pharmacy) throw new Error("pharmacy not found.");
+    const hours = normalizeHours(data);
+    const open = localOpenStatus({ ...pharmacy, hours });
+    const updated = {
+      ...pharmacy,
+      hours,
+      ...open,
+      updatedAt: new Date().toISOString(),
+    };
+    pharmaciesStore.set(pharmacy.id, updated);
+    return { pharmacy: updated };
   });
 
 export const getMyPharmacy = createServerFn({ method: "POST" })
@@ -361,6 +457,9 @@ export const getMyPharmacy = createServerFn({ method: "POST" })
     }
 
     const pharmacy = [...pharmaciesStore.values()].find((p) => p.ownerUserId === data.requesterUserId) ?? null;
+    if (pharmacy) {
+      return { pharmacy: { ...pharmacy, ...localOpenStatus(pharmacy) } };
+    }
     return { pharmacy };
   });
 
@@ -509,7 +608,7 @@ export const getAllPharmacies = createServerFn({ method: "POST" })
       return await res.json();
     }
 
-    return { pharmacies: [...pharmaciesStore.values()] };
+    return { pharmacies: [...pharmaciesStore.values()].map((pharmacy) => ({ ...pharmacy, ...localOpenStatus(pharmacy) })) };
   });
 
 export const approvePharmacy = createServerFn({ method: "POST" })
@@ -556,6 +655,8 @@ export const searchPharmacies = createServerFn({ method: "POST" })
       keyword: input.keyword?.trim() || "",
       location: input.location?.trim() || "",
       medicineId: input.medicineId?.trim() || "",
+      openNowOnly: input.openNowOnly === true,
+      limit: Math.min(Math.max(input.limit ?? 10, 1), 50),
     };
   })
   .handler(async ({ data }) => {
@@ -580,7 +681,7 @@ export const searchPharmacies = createServerFn({ method: "POST" })
       },
       body: JSON.stringify({
         includedTypes: ["pharmacy"],
-        maxResultCount: 20,
+        maxResultCount: Math.min(data.limit, 20),
         locationRestriction: {
           circle: {
             center: { latitude: data.lat, longitude: data.lng },
@@ -597,6 +698,7 @@ export const searchPharmacies = createServerFn({ method: "POST" })
     const center = { lat: data.lat, lng: data.lng };
     const pharmacies = (json.places ?? []).map((p) => {
       const loc = { lat: p.location.latitude, lng: p.location.longitude };
+      const openNow = p.currentOpeningHours?.openNow;
       return {
         id: p.id,
         name: p.displayName?.text ?? "Pharmacy",
@@ -604,12 +706,13 @@ export const searchPharmacies = createServerFn({ method: "POST" })
         location: loc,
         rating: p.rating,
         userRatingCount: p.userRatingCount,
-        openNow: p.currentOpeningHours?.openNow,
+        openNow,
+        openStatus: openNow === true ? "open" : openNow === false ? "closed" : "unknown",
         phone: p.nationalPhoneNumber,
         websiteUri: p.websiteUri,
         distanceMeters: Math.round(haversine(center, loc)),
       };
-    });
+    }).filter((pharmacy) => !data.openNowOnly || pharmacy.openNow === true);
 
     return { pharmacies };
   });
