@@ -2,8 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import {
   ArrowLeft,
-  ChevronDown,
   ChevronRight,
+  CircleUserRound,
   Eye,
   EyeOff,
   List as ListIcon,
@@ -1448,6 +1448,7 @@ function LegendDot({ color, label, outline = false }) {
 // ─── Pharmacy list row ──────────────────────────────────────────────────────────
 function PharmacyListItem({ pharmacy, rank, active, onClick }) {
   const hasQty = pharmacy.hasAvailabilityData && Number.isFinite(pharmacy.availableQuantity);
+  const isLowQuantity = hasQty && Number(pharmacy.availableQuantity) <= 2;
 
   return (
     <button
@@ -1473,7 +1474,7 @@ function PharmacyListItem({ pharmacy, rank, active, onClick }) {
         <span className="mt-1.5 flex flex-wrap items-center gap-2">
           {hasQty ? (
             <span className="rounded-full bg-green-100 px-2 py-0.5 text-[11px] font-medium text-green-700">
-              {pharmacy.availableQuantity} available
+              {isLowQuantity ? "Low quantity" : "In stock"}
             </span>
           ) : (
             <span className="rounded-full bg-muted px-2 py-0.5 text-[11px] font-medium text-muted-foreground">
@@ -1511,6 +1512,7 @@ function PharmacyDetailPage({ pharmacy, medicine, userLocation }) {
   const getRouteDirectionsFn = useServerFn(getRouteDirections);
   const loc = pharmacyLatLng(pharmacy);
   const hasQty = pharmacy.hasAvailabilityData && Number.isFinite(pharmacy.availableQuantity);
+  const isLowQuantity = hasQty && Number(pharmacy.availableQuantity) <= 2;
   const [navigating, setNavigating] = useState(false);
   const [liveLocation, setLiveLocation] = useState(userLocation);
   const [route, setRoute] = useState(null);
@@ -1633,12 +1635,12 @@ function PharmacyDetailPage({ pharmacy, medicine, userLocation }) {
               <div
                 className={`text-sm font-semibold ${hasQty ? "text-green-700" : "text-muted-foreground"}`}
               >
-                {hasQty ? `${pharmacy.availableQuantity} in stock` : "Not confirmed"}
+                {hasQty ? (isLowQuantity ? "Low quantity" : "In stock") : "Not confirmed"}
               </div>
             </div>
             {hasQty ? (
               <span className="shrink-0 rounded-full bg-green-100 px-2.5 py-1 text-xs font-medium text-green-700">
-                In stock
+                {isLowQuantity ? "Low quantity" : "In stock"}
               </span>
             ) : (
               <span className="shrink-0 rounded-full bg-muted px-2.5 py-1 text-xs font-medium text-muted-foreground">
@@ -1844,9 +1846,6 @@ function SearchHero({
             : locationStatus === "success"
               ? "Location enabled"
               : "Use my location"}
-          {locationStatus === "success" && (
-            <ChevronDown className="h-3.5 w-3.5 opacity-70" aria-hidden="true" />
-          )}
         </button>
         <p className="mt-2 text-xs text-muted-foreground">
           {locationStatus === "success"
@@ -2372,12 +2371,19 @@ function PatientSearch({ view, onViewChange }) {
 }
 
 // ─── Header / navigation ────────────────────────────────────────────────────────
-function NavLink({ label, active, onClick }) {
+function NavLink({ label, active, disabled = false, onClick }) {
   return (
     <button
       type="button"
       onClick={onClick}
-      className={`relative pb-1 text-sm font-medium transition ${active ? "text-primary" : "text-foreground/70 hover:text-foreground"}`}
+      disabled={disabled}
+      className={`relative pb-1 text-sm font-medium transition ${
+        disabled
+          ? "cursor-not-allowed text-muted-foreground/45"
+          : active
+            ? "text-primary"
+            : "text-foreground/70 hover:text-foreground"
+      }`}
     >
       {label}
       {active && <span className="absolute -bottom-px left-0 right-0 h-0.5 rounded-full bg-primary" />}
@@ -2402,6 +2408,7 @@ function Header({ user, onSignIn, onSignOut, onOpenAccount, tabs, activeTab, onT
               key={t.id}
               label={t.label}
               active={activeTab === t.id}
+              disabled={t.disabled}
               onClick={() => onTabChange(t.id)}
             />
           ))}
@@ -2420,7 +2427,7 @@ function Header({ user, onSignIn, onSignOut, onOpenAccount, tabs, activeTab, onT
                   <span className="rounded bg-muted px-1.5 py-0.5 text-xs capitalize">
                     {user.role}
                   </span>
-                  <ChevronDown className="h-3.5 w-3.5" aria-hidden="true" />
+                  <CircleUserRound className="h-4 w-4" aria-hidden="true" />
                 </button>
               </div>
               <button
@@ -2448,7 +2455,14 @@ function Header({ user, onSignIn, onSignOut, onOpenAccount, tabs, activeTab, onT
             <button
               key={t.id}
               onClick={() => onTabChange(t.id)}
-              className={`shrink-0 rounded-lg px-3.5 py-1.5 text-sm font-medium transition ${activeTab === t.id ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:bg-accent"}`}
+              disabled={t.disabled}
+              className={`shrink-0 rounded-lg px-3.5 py-1.5 text-sm font-medium transition ${
+                t.disabled
+                  ? "cursor-not-allowed text-muted-foreground/45"
+                  : activeTab === t.id
+                    ? "bg-primary text-primary-foreground"
+                    : "text-muted-foreground hover:bg-accent"
+              }`}
             >
               {t.label}
             </button>
@@ -2495,16 +2509,15 @@ function Home() {
   }, [user]);
 
   const tabs = [
-    { id: "search", label: searchView === "results" ? "Find Medicine" : "Home", roles: ["*"] },
+    { id: "search", label: "Medicine Search", roles: ["*"] },
     { id: "dashboard", label: "My Inventory", roles: ["pharmacist"] },
     { id: "admin", label: "Admin Panel", roles: ["admin"] },
   ].filter((t) => t.roles.includes("*") || (user && t.roles.includes(user.role)));
 
-  // We show two entries for the patient-facing tab ("Home" and "Find Medicine") so both
-  // states of the search flow are directly reachable from the nav bar.
+  // Search Results stays visible but unavailable until a medicine search has been run.
   const navTabs = [
-    { id: "home", label: "Home" },
-    { id: "find", label: "Find Medicine" },
+    { id: "home", label: "Medicine Search" },
+    { id: "find", label: "Search Results", disabled: searchView !== "results" },
     ...tabs.filter((t) => t.id !== "search"),
   ];
 
@@ -2515,6 +2528,7 @@ function Home() {
       return;
     }
     if (id === "find") {
+      if (searchView !== "results") return;
       setActiveTab("search");
       return;
     }
@@ -2600,11 +2614,13 @@ function Home() {
       {showAccount && user && (
         <div
           className="fixed inset-0 z-[2000] flex items-center justify-center bg-black/40 p-4"
-          onClick={() => setShowAccount(false)}
+          onMouseDown={(e) => {
+            if (e.target === e.currentTarget) setShowAccount(false);
+          }}
         >
           <div
             className="w-full max-w-sm rounded-2xl border bg-card p-4 shadow-soft"
-            onClick={(e) => e.stopPropagation()}
+            onMouseDown={(e) => e.stopPropagation()}
           >
             <div className="border-b pb-3">
               <div className="truncate text-sm font-semibold">{user.name}</div>
@@ -2703,11 +2719,13 @@ function Home() {
       {showDeactivateConfirm && (
         <div
           className="fixed inset-0 z-[2000] flex items-center justify-center bg-black/40 p-4"
-          onClick={() => setShowDeactivateConfirm(false)}
+          onMouseDown={(e) => {
+            if (e.target === e.currentTarget) setShowDeactivateConfirm(false);
+          }}
         >
           <div
             className="w-full max-w-md rounded-2xl border bg-card p-6 shadow-soft"
-            onClick={(e) => e.stopPropagation()}
+            onMouseDown={(e) => e.stopPropagation()}
           >
             <h2 className="text-lg font-semibold">Deactivate account</h2>
             <p className="mt-2 text-sm text-muted-foreground">
