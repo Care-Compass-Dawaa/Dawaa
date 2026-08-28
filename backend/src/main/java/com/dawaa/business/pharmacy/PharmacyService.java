@@ -1,14 +1,24 @@
 package com.dawaa.business.pharmacy;
 
+import com.dawaa.domain.pharmacy.HoursMode;
 import com.dawaa.domain.pharmacy.NearbyPharmacy;
+import com.dawaa.domain.pharmacy.OpeningInterval;
 import com.dawaa.domain.pharmacy.Pharmacy;
+import com.dawaa.domain.pharmacy.PharmacyHours;
+import com.dawaa.domain.pharmacy.PharmacyOpenStatus;
 import com.dawaa.domain.pharmacy.PharmacyRepository;
 import com.dawaa.domain.user.User;
 import com.dawaa.domain.user.UserRole;
 
+import java.time.DateTimeException;
+import java.time.DayOfWeek;
 import java.time.Instant;
+import java.time.LocalTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Objects;
 import java.util.Optional;
@@ -18,6 +28,7 @@ import java.util.regex.Pattern;
 
 public class PharmacyService {
   private static final double EARTH_RADIUS_METERS = 6_371_000;
+  private static final int MAX_INTERVALS_PER_DAY = 4;
   private static final Pattern EMAIL_PATTERN =
       Pattern.compile("^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$");
 
@@ -98,6 +109,7 @@ public class PharmacyService {
             pharmacy.longitude(),
             false,
             true,
+            PharmacyHours.unknown(),
             textPresent(pharmacy.createdAt()) ? pharmacy.createdAt() : now,
             now));
   }
@@ -163,6 +175,43 @@ public class PharmacyService {
             longitude,
             existing.approved(),
             existing.active(),
+            existing.hours(),
+            existing.createdAt(),
+            Instant.now().toString()));
+  }
+
+  public Pharmacy updateMyPharmacySchedule(User requester, PharmacyHours hours) {
+    if (requester == null) {
+      throw new IllegalArgumentException("Requester is required");
+    }
+    if (requester.role() != UserRole.PHARMACIST) {
+      throw new SecurityException("Only pharmacists can update a pharmacy schedule");
+    }
+    if (!requester.active()) {
+      throw new SecurityException("Requester account is inactive");
+    }
+
+    Pharmacy existing =
+        pharmacyRepository
+            .findByOwnerUserId(requester.userId())
+            .orElseThrow(() -> new NoSuchElementException("pharmacy not found."));
+    PharmacyHours normalizedHours = validateHours(hours);
+
+    return pharmacyRepository.update(
+        new Pharmacy(
+            existing.pharmacyId(),
+            existing.ownerUserId(),
+            existing.name(),
+            existing.address(),
+            existing.area(),
+            existing.district(),
+            existing.phone(),
+            existing.email(),
+            existing.latitude(),
+            existing.longitude(),
+            existing.approved(),
+            existing.active(),
+            normalizedHours,
             existing.createdAt(),
             Instant.now().toString()));
   }
@@ -190,11 +239,21 @@ public class PharmacyService {
 
   public List<NearbyPharmacy> findNearbyPharmacies(
       double latitude, double longitude, int radiusMeters, int limit) {
-    return findNearbyPharmacies(latitude, longitude, radiusMeters, limit, null);
+    return findNearbyPharmacies(latitude, longitude, radiusMeters, limit, null, false);
   }
 
   public List<NearbyPharmacy> findNearbyPharmacies(
       double latitude, double longitude, int radiusMeters, int limit, Set<String> pharmacyIds) {
+    return findNearbyPharmacies(latitude, longitude, radiusMeters, limit, pharmacyIds, false);
+  }
+
+  public List<NearbyPharmacy> findNearbyPharmacies(
+      double latitude,
+      double longitude,
+      int radiusMeters,
+      int limit,
+      Set<String> pharmacyIds,
+      boolean openNowOnly) {
     int normalizedRadius = Math.min(Math.max(radiusMeters, 500), 50_000);
     int normalizedLimit = Math.min(Math.max(limit, 1), 50);
 
@@ -202,6 +261,7 @@ public class PharmacyService {
         .filter(PharmacyService::isSearchable)
         .filter(PharmacyService::hasCoordinates)
         .filter(pharmacy -> pharmacyIds == null || pharmacyIds.contains(pharmacy.pharmacyId()))
+        .filter(pharmacy -> !openNowOnly || Boolean.TRUE.equals(openStatus(pharmacy).openNow()))
         .map(
             pharmacy ->
                 new NearbyPharmacy(
@@ -220,6 +280,37 @@ public class PharmacyService {
 
   private static boolean isSearchable(Pharmacy pharmacy) {
     return pharmacy != null && pharmacy.active() && pharmacy.approved();
+  }
+
+  public PharmacyOpenStatus openStatus(Pharmacy pharmacy) {
+    return openStatus(pharmacy == null ? null : pharmacy.hours(), Instant.now());
+  }
+
+  public PharmacyOpenStatus openStatus(PharmacyHours hours, Instant instant) {
+    PharmacyHours safeHours = hours == null ? PharmacyHours.unknown() : hours;
+    if (safeHours.hoursMode() == HoursMode.TWENTY_FOUR_HOURS) {
+      return new PharmacyOpenStatus(
+          "open", true, List.of(new OpeningInterval("00:00", "23:59")));
+    }
+    if (safeHours.hoursMode() != HoursMode.REGULAR) {
+      return new PharmacyOpenStatus("unknown", null, List.of());
+    }
+
+    ZoneId zone = zoneId(safeHours.timezone());
+    ZonedDateTime now = instant.atZone(zone);
+    List<OpeningInterval> todayIntervals =
+        safeHours.weeklyHours() == null
+            ? List.of()
+            : safeHours.weeklyHours().getOrDefault(now.getDayOfWeek(), List.of());
+    LocalTime currentTime = now.toLocalTime();
+    boolean open =
+        todayIntervals.stream()
+            .anyMatch(
+                interval ->
+                    !currentTime.isBefore(parseTime(interval.open()))
+                        && currentTime.isBefore(parseTime(interval.close())));
+
+    return new PharmacyOpenStatus(open ? "open" : "closed", open, todayIntervals);
   }
 
   private Pharmacy findExistingById(String pharmacyId) {
@@ -273,5 +364,80 @@ public class PharmacyService {
       throw new IllegalArgumentException("email must be valid");
     }
     return normalized;
+  }
+
+  private static PharmacyHours validateHours(PharmacyHours hours) {
+    if (hours == null || hours.hoursMode() == null || hours.hoursMode() == HoursMode.UNKNOWN) {
+      return PharmacyHours.unknown();
+    }
+
+    String timezone = normalizeTimezone(hours.timezone());
+    if (hours.hoursMode() == HoursMode.TWENTY_FOUR_HOURS) {
+      return new PharmacyHours(timezone, HoursMode.TWENTY_FOUR_HOURS, Map.of());
+    }
+
+    if (hours.hoursMode() != HoursMode.REGULAR) {
+      throw new IllegalArgumentException("hoursMode is invalid");
+    }
+
+    Map<DayOfWeek, List<OpeningInterval>> weeklyHours =
+        hours.weeklyHours() == null ? Map.of() : hours.weeklyHours();
+    weeklyHours.forEach(PharmacyService::validateDailyIntervals);
+    return new PharmacyHours(timezone, HoursMode.REGULAR, weeklyHours);
+  }
+
+  private static void validateDailyIntervals(DayOfWeek day, List<OpeningInterval> intervals) {
+    if (day == null) {
+      throw new IllegalArgumentException("weeklyHours contains an invalid day");
+    }
+    if (intervals == null) {
+      return;
+    }
+    if (intervals.size() > MAX_INTERVALS_PER_DAY) {
+      throw new IllegalArgumentException("weeklyHours can contain up to 4 intervals per day");
+    }
+
+    List<OpeningInterval> sorted =
+        intervals.stream()
+            .filter(Objects::nonNull)
+            .sorted(Comparator.comparing(interval -> parseTime(interval.open())))
+            .toList();
+    LocalTime previousClose = null;
+    for (OpeningInterval interval : sorted) {
+      LocalTime open = parseTime(interval.open());
+      LocalTime close = parseTime(interval.close());
+      if (!open.isBefore(close)) {
+        throw new IllegalArgumentException("opening interval close time must be after open time");
+      }
+      if (previousClose != null && open.isBefore(previousClose)) {
+        throw new IllegalArgumentException("opening intervals cannot overlap");
+      }
+      previousClose = close;
+    }
+  }
+
+  private static String normalizeTimezone(String timezone) {
+    String normalized = textPresent(timezone) ? timezone.trim() : PharmacyHours.DEFAULT_TIMEZONE;
+    zoneId(normalized);
+    return normalized;
+  }
+
+  private static ZoneId zoneId(String timezone) {
+    try {
+      return ZoneId.of(textPresent(timezone) ? timezone.trim() : PharmacyHours.DEFAULT_TIMEZONE);
+    } catch (DateTimeException error) {
+      throw new IllegalArgumentException("timezone is invalid");
+    }
+  }
+
+  private static LocalTime parseTime(String value) {
+    if (!textPresent(value) || !value.matches("^\\d{2}:\\d{2}$")) {
+      throw new IllegalArgumentException("opening interval times must use HH:mm");
+    }
+    try {
+      return LocalTime.parse(value);
+    } catch (DateTimeException error) {
+      throw new IllegalArgumentException("opening interval times must be valid HH:mm values");
+    }
   }
 }

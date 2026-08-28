@@ -9,8 +9,12 @@ import com.dawaa.business.inventory.InventoryAvailabilityService;
 import com.dawaa.business.user.UserService;
 import com.dawaa.common.BaseHandler;
 import com.dawaa.domain.inventory.InventoryAvailability;
+import com.dawaa.domain.pharmacy.HoursMode;
 import com.dawaa.domain.pharmacy.NearbyPharmacy;
+import com.dawaa.domain.pharmacy.OpeningInterval;
 import com.dawaa.domain.pharmacy.Pharmacy;
+import com.dawaa.domain.pharmacy.PharmacyHours;
+import com.dawaa.domain.pharmacy.PharmacyOpenStatus;
 import com.dawaa.domain.user.User;
 import com.dawaa.persistence.dynamodb.inventory.DynamoDbInventoryAvailabilityRepository;
 import com.dawaa.persistence.dynamodb.pharmacy.DynamoDbPharmacyRepository;
@@ -24,9 +28,11 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
+import java.time.DayOfWeek;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
 import java.util.NoSuchElementException;
@@ -91,6 +97,10 @@ public class PharmacyHandler extends BaseHandler
         return getMyPharmacy(request);
       }
 
+      if ("POST".equalsIgnoreCase(method) && path.equals("/pharmacies/mine/schedule")) {
+        return updateMyPharmacySchedule(request, parseBody(request.getBody()));
+      }
+
       if ("POST".equalsIgnoreCase(method) && path.equals("/pharmacies/mine/update")) {
         return updateMyPharmacy(request, parseBody(request.getBody()));
       }
@@ -151,11 +161,22 @@ public class PharmacyHandler extends BaseHandler
             body.path("longitude").asDouble(0),
             false,
             true,
+            PharmacyHours.unknown(),
             "",
             "");
 
     ObjectNode wrapper = MAPPER.createObjectNode();
     wrapper.set("pharmacy", toPharmacyNode(pharmacyService.registerPharmacy(requester, pharmacy)));
+    return ok(wrapper);
+  }
+
+  private APIGatewayProxyResponseEvent updateMyPharmacySchedule(
+      APIGatewayProxyRequestEvent request, JsonNode body) {
+    ObjectNode wrapper = MAPPER.createObjectNode();
+    wrapper.set(
+        "pharmacy",
+        toPharmacyNode(
+            pharmacyService.updateMyPharmacySchedule(requester(request), toPharmacyHours(body))));
     return ok(wrapper);
   }
 
@@ -222,7 +243,9 @@ public class PharmacyHandler extends BaseHandler
     double lng = requiredDouble(queryParam(request, "lng"), "lng");
     int radius = optionalInt(queryParam(request, "radius"), 5_000);
     int limit = optionalInt(queryParam(request, "limit"), 10);
-    return nearbyResponse(pharmacyService.findNearbyPharmacies(lat, lng, radius, limit));
+    boolean openNowOnly = optionalBoolean(queryParam(request, "openNowOnly"), false);
+    return nearbyResponse(
+        pharmacyService.findNearbyPharmacies(lat, lng, radius, limit, null, openNowOnly));
   }
 
   private APIGatewayProxyResponseEvent nearbyFromBody(JsonNode body) {
@@ -232,11 +255,12 @@ public class PharmacyHandler extends BaseHandler
 
     int radius = body.path("radius").asInt(5_000);
     int limit = body.path("limit").asInt(10);
+    boolean openNowOnly = body.path("openNowOnly").asBoolean(false);
     String medicineId = body.path("medicineId").asText("");
     if (medicineId == null || medicineId.isBlank()) {
       return nearbyResponse(
           pharmacyService.findNearbyPharmacies(
-              body.path("lat").asDouble(), body.path("lng").asDouble(), radius, limit));
+              body.path("lat").asDouble(), body.path("lng").asDouble(), radius, limit, null, openNowOnly));
     }
 
     List<InventoryAvailability> availability =
@@ -254,7 +278,8 @@ public class PharmacyHandler extends BaseHandler
     double lat = body.path("lat").asDouble();
     double lng = body.path("lng").asDouble();
     List<NearbyPharmacy> nearbyPharmacies =
-        pharmacyService.findNearbyPharmacies(lat, lng, radius, limit, stockedPharmacyIds);
+        pharmacyService.findNearbyPharmacies(
+            lat, lng, radius, limit, stockedPharmacyIds, openNowOnly);
 
     return nearbyResponse(
         rankByRouteIfConfigured(lat, lng, nearbyPharmacies),
@@ -375,6 +400,7 @@ public class PharmacyHandler extends BaseHandler
                       pharmacy.longitude(),
                       pharmacy.approved(),
                       pharmacy.active(),
+                      pharmacy.hours(),
                       pharmacy.createdAt(),
                       pharmacy.updatedAt()),
                   Math.round(distance.isNumber() ? distance.asDouble() : original.distanceMeters())));
@@ -406,6 +432,15 @@ public class PharmacyHandler extends BaseHandler
     node.putObject("location").put("lat", pharmacy.latitude()).put("lng", pharmacy.longitude());
     node.put("latitude", pharmacy.latitude());
     node.put("longitude", pharmacy.longitude());
+    PharmacyOpenStatus openStatus = pharmacyService.openStatus(pharmacy);
+    if (openStatus.openNow() == null) {
+      node.putNull("openNow");
+    } else {
+      node.put("openNow", openStatus.openNow());
+    }
+    node.put("openStatus", openStatus.openStatus());
+    node.set("hours", toHoursNode(pharmacy.hours()));
+    node.set("open", toOpenStatusNode(openStatus));
     return node;
   }
 
@@ -425,8 +460,97 @@ public class PharmacyHandler extends BaseHandler
     node.put("longitude", pharmacy.longitude());
     node.put("approved", pharmacy.approved());
     node.put("active", pharmacy.active());
+    PharmacyOpenStatus openStatus = pharmacyService.openStatus(pharmacy);
+    if (openStatus.openNow() == null) {
+      node.putNull("openNow");
+    } else {
+      node.put("openNow", openStatus.openNow());
+    }
+    node.put("openStatus", openStatus.openStatus());
+    node.set("hours", toHoursNode(pharmacy.hours()));
+    node.set("open", toOpenStatusNode(openStatus));
     node.put("createdAt", pharmacy.createdAt());
     node.put("updatedAt", pharmacy.updatedAt());
+    return node;
+  }
+
+  private PharmacyHours toPharmacyHours(JsonNode body) {
+    HoursMode hoursMode = HoursMode.fromValue(body.path("hoursMode").asText("unknown"));
+    String timezone = body.path("timezone").asText(PharmacyHours.DEFAULT_TIMEZONE);
+    Map<DayOfWeek, List<OpeningInterval>> weeklyHours = new EnumMap<>(DayOfWeek.class);
+    JsonNode weeklyHoursNode = body.path("weeklyHours");
+
+    if (weeklyHoursNode.isObject()) {
+      weeklyHoursNode
+          .fields()
+          .forEachRemaining(
+              entry -> {
+                DayOfWeek day = parseDay(entry.getKey());
+                List<OpeningInterval> intervals = new ArrayList<>();
+                if (entry.getValue().isArray()) {
+                  entry
+                      .getValue()
+                      .forEach(
+                          interval ->
+                              intervals.add(
+                                  new OpeningInterval(
+                                      interval.path("open").asText(""),
+                                      interval.path("close").asText(""))));
+                }
+                weeklyHours.put(day, intervals);
+              });
+    }
+
+    return new PharmacyHours(timezone, hoursMode, weeklyHours);
+  }
+
+  private DayOfWeek parseDay(String value) {
+    try {
+      return DayOfWeek.valueOf(value == null ? "" : value.trim().toUpperCase());
+    } catch (IllegalArgumentException error) {
+      throw new IllegalArgumentException("weeklyHours contains an invalid day");
+    }
+  }
+
+  private ObjectNode toHoursNode(PharmacyHours hours) {
+    PharmacyHours safeHours = hours == null ? PharmacyHours.unknown() : hours;
+    ObjectNode node = MAPPER.createObjectNode();
+    node.put("timezone", safeHours.timezone());
+    node.put("hoursMode", safeHours.hoursMode().apiValue());
+    ObjectNode weeklyHours = node.putObject("weeklyHours");
+
+    if (safeHours.weeklyHours() != null) {
+      safeHours
+          .weeklyHours()
+          .forEach(
+              (day, intervals) -> {
+                ArrayNode dayIntervals = weeklyHours.putArray(day.name());
+                if (intervals != null) {
+                  intervals.forEach(interval -> dayIntervals.add(toIntervalNode(interval)));
+                }
+              });
+    }
+
+    return node;
+  }
+
+  private ObjectNode toOpenStatusNode(PharmacyOpenStatus status) {
+    ObjectNode node = MAPPER.createObjectNode();
+    node.put("openStatus", status.openStatus());
+    if (status.openNow() == null) {
+      node.putNull("openNow");
+    } else {
+      node.put("openNow", status.openNow());
+    }
+    ArrayNode todayIntervals = node.putArray("todayIntervals");
+    status.todayIntervals().forEach(interval -> todayIntervals.add(toIntervalNode(interval)));
+    return node;
+  }
+
+  private ObjectNode toIntervalNode(OpeningInterval interval) {
+    ObjectNode node = MAPPER.createObjectNode();
+    node.put("open", interval.open());
+    node.put("close", interval.close());
     return node;
   }
 
@@ -484,5 +608,12 @@ public class PharmacyHandler extends BaseHandler
       return defaultValue;
     }
     return Integer.parseInt(value);
+  }
+
+  private boolean optionalBoolean(String value, boolean defaultValue) {
+    if (value == null || value.isBlank()) {
+      return defaultValue;
+    }
+    return Boolean.parseBoolean(value);
   }
 }

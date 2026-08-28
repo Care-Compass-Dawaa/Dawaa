@@ -329,6 +329,11 @@ Resources:
           Properties:
             Path: /pharmacies/mine
             Method: get
+        UpdateMyPharmacySchedule:
+          Type: Api
+          Properties:
+            Path: /pharmacies/mine/schedule
+            Method: post
         UpdateMyPharmacy:
           Type: Api
           Properties:

@@ -13,5 +13,6 @@ public record Pharmacy(
     double longitude,
     boolean approved,
     boolean active,
+    PharmacyHours hours,
     String createdAt,
     String updatedAt) {}
