@@ -12,10 +12,16 @@ param(
 $ErrorActionPreference = "Stop"
 
 $normalizedEmail = $Email.Trim().ToLowerInvariant()
-$salt = "dawaa_salt_2024"
-$bytes = [System.Text.Encoding]::UTF8.GetBytes($Password + $salt)
-$hashBytes = [System.Security.Cryptography.SHA256]::Create().ComputeHash($bytes)
-$passwordHash = -join ($hashBytes | ForEach-Object { $_.ToString("x2") })
+$backendDir = Resolve-Path (Join-Path $PSScriptRoot "..")
+$jarPath = Join-Path $backendDir "target\pharmacy-search-1.0.0.jar"
+if (!(Test-Path $jarPath)) {
+  throw "Backend jar not found. Run 'mvn -q -DskipTests package' from the backend folder first."
+}
+
+$passwordHash = java -cp $jarPath com.dawaa.tools.BcryptPasswordTool $Password
+if ($LASTEXITCODE -ne 0 -or [string]::IsNullOrWhiteSpace($passwordHash)) {
+  throw "Could not generate bcrypt password hash."
+}
 $now = [DateTimeOffset]::UtcNow.ToString("o")
 
 $existing = aws dynamodb query `

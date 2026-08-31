@@ -6,7 +6,6 @@ import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent;
 import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyResponseEvent;
 import com.dawaa.business.user.UserService;
 import com.dawaa.common.BaseHandler;
-import com.dawaa.common.PasswordHasher;
 import com.dawaa.domain.user.User;
 import com.dawaa.persistence.dynamodb.user.DynamoDBUserRepository;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -83,7 +82,7 @@ public class UserHandler extends BaseHandler
 
     User updatedUser =
         userService.updateUser(
-            requester, require(body, "name"), require(body, "email"), optionalPasswordHash(body));
+            requester, require(body, "name"), require(body, "email"), optionalPassword(body));
 
     ObjectNode wrapper = MAPPER.createObjectNode();
     wrapper.set("user", toUserNode(updatedUser));
@@ -110,7 +109,7 @@ public class UserHandler extends BaseHandler
         .orElse("");
   }
 
-  private String optionalPasswordHash(JsonNode body) {
+  private String optionalPassword(JsonNode body) {
     String password = body.path("password").asText("");
     if (password == null || password.isBlank()) {
       return "";
@@ -118,7 +117,7 @@ public class UserHandler extends BaseHandler
     if (password.length() < 8) {
       throw new IllegalArgumentException("Password must be at least 8 characters");
     }
-    return PasswordHasher.hash(password);
+    return password;
   }
 
   private ObjectNode toUserNode(User user) {

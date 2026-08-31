@@ -96,6 +96,8 @@ Public signup intentionally allows only patients and pharmacists. To use the adm
 create one admin row manually with:
 
 ```powershell
+cd backend
+mvn -q -DskipTests package
 .\scripts\create-admin.ps1 -Email admin@dawaa.com -Password "choose-a-demo-password"
 ```
 
@@ -117,7 +119,7 @@ The script writes a user with:
 userId, email, name, role=admin, passwordHash, active=true, createdAt, updatedAt
 ```
 
-The password hash matches the temporary `AuthHandler` login format.
+The password hash is generated with bcrypt, matching `UserService` login.
 
 ## Inventory Shape
 

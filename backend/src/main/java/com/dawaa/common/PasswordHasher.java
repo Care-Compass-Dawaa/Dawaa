@@ -13,7 +13,9 @@ public final class PasswordHasher {
   public static String hash(String password) {
     try {
       MessageDigest digest = MessageDigest.getInstance("SHA-256");
-      byte[] bytes = digest.digest(((password == null ? "" : password) + SALT).getBytes(StandardCharsets.UTF_8));
+      byte[] bytes =
+          digest.digest(
+              ((password == null ? "" : password) + SALT).getBytes(StandardCharsets.UTF_8));
       return HexFormat.of().formatHex(bytes);
     } catch (NoSuchAlgorithmException error) {
       throw new IllegalStateException("SHA-256 not available", error);

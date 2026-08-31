@@ -6,7 +6,6 @@ import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent;
 import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyResponseEvent;
 import com.dawaa.business.user.UserService;
 import com.dawaa.common.BaseHandler;
-import com.dawaa.common.PasswordHasher;
 import com.dawaa.domain.user.User;
 import com.dawaa.domain.user.UserRole;
 import com.dawaa.persistence.dynamodb.user.DynamoDBUserRepository;
@@ -68,7 +67,7 @@ public class AuthHandler extends BaseHandler
 
     User created =
         userService.registerUser(
-            new User("", email, name, role, hash(password), true, "", ""));
+            new User("", email, name, role, password, true, "", ""));
 
     return ok(userWrapper(created));
   }
@@ -76,7 +75,7 @@ public class AuthHandler extends BaseHandler
   private APIGatewayProxyResponseEvent login(JsonNode body) {
     String email = require(body, "email").toLowerCase();
     String password = require(body, "password");
-    return ok(userWrapper(userService.loginUser(email, hash(password))));
+    return ok(userWrapper(userService.loginUser(email, password)));
   }
 
   private UserRole publicSignupRole(String rawRole) {
@@ -109,7 +108,4 @@ public class AuthHandler extends BaseHandler
     return node;
   }
 
-  private String hash(String password) {
-    return PasswordHasher.hash(password);
-  }
 }

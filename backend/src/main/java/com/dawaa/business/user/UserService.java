@@ -1,5 +1,6 @@
 package com.dawaa.business.user;
 
+import com.dawaa.common.PasswordHasher;
 import com.dawaa.domain.user.*;
 import java.time.Instant;
 import java.util.List;
@@ -8,10 +9,16 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.UUID;
 import java.util.regex.Pattern;
+import org.mindrot.jbcrypt.BCrypt;
 
 public class UserService {
     private static final Pattern EMAIL_PATTERN =
         Pattern.compile("^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$");
+    private enum PasswordMatch {
+        CURRENT_BCRYPT,
+        LEGACY_REHASH_NEEDED,
+        NO_MATCH
+    }
 
     private final UserRepository userRepository;
 
@@ -43,16 +50,18 @@ public class UserService {
         }
         if( isEmpty(user.email())||
             isEmpty(user.name())||
-            isEmpty(user.passwordHash()))
+            isEmpty(user.passwordHash())) // passwordHash carries the plain password before persistence
             {
                 throw new IllegalArgumentException("email, name, and password are required");
             }
+        requirePasswordLength(user.passwordHash());
 
         String normalizedEmail = normalizeEmailRequired(user.email());
         Optional<User> existingUser = userRepository.findByEmail(normalizedEmail);
         if (existingUser.isPresent()) { //returns true if user already exists
             throw new IllegalArgumentException("An account with this email already exists");
         }
+        String hashedPassword = hashPassword(user.passwordHash());
 
         String now = Instant.now().toString();
         String userId = !isEmpty(user.userId())? user.userId().trim()
@@ -65,7 +74,7 @@ public class UserService {
             normalizedEmail,
             user.name().trim(),
             role,
-            user.passwordHash(),
+            hashedPassword,//this will be stored in user.passwordHash
             true,
             !isEmpty(user.createdAt()) ? user.createdAt().trim() : now,
             !isEmpty(user.updatedAt()) ? user.updatedAt().trim() : now
@@ -75,8 +84,8 @@ public class UserService {
         //save user if no account with this email exists
     }
 
-    public User loginUser(String email, String passwordHash) {
-        if (isEmpty(email) || isEmpty(passwordHash)) {
+    public User loginUser(String email, String plainPassword) {
+        if (isEmpty(email) || isEmpty(plainPassword)) {
             throw new IllegalArgumentException("email and password are required");
         }
 
@@ -84,11 +93,25 @@ public class UserService {
             userRepository.findByEmail(normalizeEmailRequired(email))
                 .orElseThrow(() -> new SecurityException("Invalid email or password"));
 
-        if (!user.passwordHash().equals(passwordHash)) {
+        PasswordMatch passwordMatch = matchPassword(plainPassword, user.passwordHash());
+        if (passwordMatch == PasswordMatch.NO_MATCH) {
             throw new SecurityException("Invalid email or password");
         }
         if (!user.active()) {
             throw new SecurityException("Account is inactive");
+        }
+        if (passwordMatch == PasswordMatch.LEGACY_REHASH_NEEDED) {
+            user =
+                userRepository.update(
+                    new User(
+                        user.userId(),
+                        user.email(),
+                        user.name(),
+                        user.role(),
+                        hashPassword(plainPassword),
+                        user.active(),
+                        user.createdAt(),
+                        user.updatedAt()));
         }
 
         return user;
@@ -137,7 +160,7 @@ public class UserService {
         return updateUser(requester, name, email, "");
     }
 
-    public User updateUser(User requester, String name, String email, String passwordHash){
+    public User updateUser(User requester, String name, String email, String plainPassword){
         if (requester==null){
             throw new IllegalArgumentException("Requester is required");
         }
@@ -152,6 +175,9 @@ public class UserService {
         if (isEmpty(email)){
             throw new IllegalArgumentException("email is required");
         }
+        if (!isEmpty(plainPassword)) {
+            requirePasswordLength(plainPassword);
+        }
 
         String normalizedEmail = normalizeEmailRequired(email);
         Optional<User> existingUser = userRepository.findByEmail(normalizedEmail);
@@ -164,7 +190,7 @@ public class UserService {
             normalizedEmail,
             name.trim(),
             requester.role(),
-            isEmpty(passwordHash) ? requester.passwordHash() : passwordHash,
+            isEmpty(plainPassword) ? requester.passwordHash() : hashPassword(plainPassword),
             requester.active(),
             requester.createdAt(),
             Instant.now().toString());
@@ -221,6 +247,55 @@ public class UserService {
             throw new IllegalArgumentException("email must be valid");
         }
         return normalizedEmail;
+    }
+
+    private static void requirePasswordLength(String password) {
+        if (password == null || password.length() < 8) {
+            throw new IllegalArgumentException("Password must be at least 8 characters");
+        }
+    }
+
+    private static String hashPassword(String plainPassword) {
+        return BCrypt.hashpw(plainPassword, BCrypt.gensalt(10));
+    }
+
+    private static PasswordMatch matchPassword(String plainPassword, String storedPasswordHash) {
+        if (isEmpty(storedPasswordHash)) {
+            return PasswordMatch.NO_MATCH;
+        }
+
+        if (isBcryptHash(storedPasswordHash)) {
+            if (safeBcryptCheck(plainPassword, storedPasswordHash)) {
+                return PasswordMatch.CURRENT_BCRYPT;
+            }
+            if (safeBcryptCheck(PasswordHasher.hash(plainPassword), storedPasswordHash)) {
+                return PasswordMatch.LEGACY_REHASH_NEEDED;
+            }
+            return PasswordMatch.NO_MATCH;
+        }
+
+        String legacyHash = PasswordHasher.hash(plainPassword);
+        if (storedPasswordHash.equalsIgnoreCase(legacyHash)) {
+            return PasswordMatch.LEGACY_REHASH_NEEDED;
+        }
+        return PasswordMatch.NO_MATCH;
+    }
+
+    private static boolean isBcryptHash(String storedPasswordHash) {
+        return storedPasswordHash.startsWith("$2a$")
+            || storedPasswordHash.startsWith("$2b$")
+            || storedPasswordHash.startsWith("$2y$");
+    }
+
+    private static boolean safeBcryptCheck(String plainPassword, String storedPasswordHash) {
+        if (isEmpty(storedPasswordHash)) {
+            return false;
+        }
+        try {
+            return BCrypt.checkpw(plainPassword, storedPasswordHash);
+        } catch (IllegalArgumentException error) {
+            return false;
+        }
     }
 
 }
