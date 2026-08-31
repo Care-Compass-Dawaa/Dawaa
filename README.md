@@ -2,6 +2,68 @@
 
 Dawaa is a medicine-finder prototype for Lebanon. The project currently includes a React patient search interface, pharmacist inventory and pharmacy-management screens, an admin approval interface, and a Java 21 AWS Lambda-compatible backend.
 
+## Submission Links
+
+- GitHub repository: https://github.com/Care-Compass-Dawaa/Dawaa.git
+- Deployed backend API: https://ozgyyjnp1b.execute-api.eu-north-1.amazonaws.com/Prod
+
+The deployed backend stores required server-side API keys securely in AWS. Real API keys are not included in this repository or in the final report.
+
+## Quick Start for Reviewers
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Care-Compass-Dawaa/Dawaa.git
+cd Dawaa
+```
+
+Install frontend dependencies:
+
+```bash
+npm install
+```
+
+Create a local environment file:
+
+```bash
+cp .env.example .env.local
+```
+
+Set the deployed backend URL in `.env.local`:
+
+```env
+VITE_DAWAA_API_BASE_URL="https://ozgyyjnp1b.execute-api.eu-north-1.amazonaws.com/Prod"
+DAWAA_API_BASE_URL="https://ozgyyjnp1b.execute-api.eu-north-1.amazonaws.com/Prod"
+LOVABLE_API_KEY=""
+GOOGLE_MAPS_API_KEY=""
+OPENROUTESERVICE_API_KEY=""
+OPENROUTESERVICE_PROFILE="driving-car"
+```
+
+Run the frontend:
+
+```bash
+npm run dev
+```
+
+The app will print a local URL, usually `http://localhost:5173`.
+
+Build the frontend:
+
+```bash
+npm run build
+```
+
+Build the Java backend:
+
+```bash
+cd backend
+mvn clean package
+```
+
+Optional AWS deployment uses `sam build` and `sam deploy`, but reviewers do not need to deploy the backend to test the submitted frontend against the provided deployed API URL.
+
 ## Project Structure
 
 ```text
@@ -136,10 +198,15 @@ When it is not configured:
 Environment variables:
 
 ```env
+VITE_DAWAA_API_BASE_URL=""
 DAWAA_API_BASE_URL=""
 LOVABLE_API_KEY=""
 GOOGLE_MAPS_API_KEY=""
+OPENROUTESERVICE_API_KEY=""
+OPENROUTESERVICE_PROFILE="driving-car"
 ```
+
+For reviewer testing, set `VITE_DAWAA_API_BASE_URL` and `DAWAA_API_BASE_URL` to the deployed backend API listed in the Submission Links section. Leave API key values empty unless running external integrations locally with your own keys.
 
 ## Run the Frontend
 
