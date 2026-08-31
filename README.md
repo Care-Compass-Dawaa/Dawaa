@@ -1,32 +1,22 @@
 # Care Compass / Dawaa
 
-Dawaa is a medicine-finder prototype for Lebanon. The project currently includes a React patient search interface, pharmacist inventory and pharmacy-management screens, an admin approval interface, and a Java 21 AWS Lambda-compatible backend.
+Dawaa is a medication availability prototype for Lebanon. The application helps patients and caregivers search for a medicine, view nearby approved pharmacies that report availability, and open route guidance to a selected pharmacy. It also includes pharmacist-facing inventory and pharmacy management screens, admin approval tools, and a Java 21 AWS Lambda-compatible backend.
 
 ## Submission Links
 
 - GitHub repository: https://github.com/Care-Compass-Dawaa/Dawaa.git
 - Deployed backend API: https://ozgyyjnp1b.execute-api.eu-north-1.amazonaws.com/Prod
 
-The deployed backend stores required server-side API keys securely in AWS. Real API keys are not included in this repository or in the final report.
+The deployed backend stores required server-side API keys securely in AWS. Private API keys, AWS credentials, and routing provider keys are not included in this repository or in the final report.
 
-## Quick Start for Reviewers
+## Reviewer Quick Start
 
-Clone the repository:
+Reviewers who only need to run the frontend demo do not need AWS credentials, DynamoDB access, SAM, or private API keys.
 
 ```bash
 git clone https://github.com/Care-Compass-Dawaa/Dawaa.git
 cd Dawaa
-```
-
-Install frontend dependencies:
-
-```bash
 npm install
-```
-
-Create a local environment file:
-
-```bash
 cp .env.example .env.local
 ```
 
@@ -35,34 +25,48 @@ Set the deployed backend URL in `.env.local`:
 ```env
 VITE_DAWAA_API_BASE_URL="https://ozgyyjnp1b.execute-api.eu-north-1.amazonaws.com/Prod"
 DAWAA_API_BASE_URL="https://ozgyyjnp1b.execute-api.eu-north-1.amazonaws.com/Prod"
-LOVABLE_API_KEY=""
-GOOGLE_MAPS_API_KEY=""
-OPENROUTESERVICE_API_KEY=""
-OPENROUTESERVICE_PROFILE="driving-car"
 ```
 
-Run the frontend:
+On Windows PowerShell, use this instead of `cp` if needed:
+
+```powershell
+Copy-Item .env.example .env.local
+```
+
+Then run the frontend:
 
 ```bash
 npm run dev
 ```
 
-The app will print a local URL, usually `http://localhost:5173`.
+The app will print a local Vite URL, usually:
 
-Build the frontend:
+```text
+http://localhost:5173
+```
+
+## Frontend Commands
 
 ```bash
+npm install
+npm run dev
 npm run build
 ```
 
-Build the Java backend:
+The frontend is built with React, TanStack Start, Vite, and Tailwind CSS. The build output includes Cloudflare-compatible output under `.output/`.
+
+## Backend Developer Setup
+
+Backend deployment or infrastructure changes require Java 21, Maven, AWS CLI, AWS SAM CLI, and valid AWS credentials. These are not required for ordinary reviewer/demo usage.
 
 ```bash
 cd backend
 mvn clean package
+sam build
+sam deploy --config-file samconfig.toml
 ```
 
-Optional AWS deployment uses `sam build` and `sam deploy`, but reviewers do not need to deploy the backend to test the submitted frontend against the provided deployed API URL.
+The backend is deployed through AWS API Gateway and Java Lambda functions. DynamoDB table names, OpenRouteService configuration, and other backend-only settings are handled through the AWS SAM template and Lambda environment variables.
 
 ## Project Structure
 
@@ -75,10 +79,10 @@ Dawaa/
 |   |   `-- README.md                         <- Route conventions
 |   |
 |   |-- lib/
-|   |   |-- pharmacies.functions.js           <- Server functions and backend/fallback adapters
+|   |   |-- pharmacies.functions.js           <- Frontend server functions and AWS API adapters
 |   |   |-- error-capture.js                  <- Error capture helper
 |   |   |-- error-page.js                     <- Error page renderer
-|   |   `-- lovable-error-reporting.js        <- Lovable error reporting helper
+|   |   `-- lovable-error-reporting.js        <- Error reporting helper
 |   |
 |   |-- router.jsx                            <- TanStack Router setup
 |   |-- routeTree.gen.ts                      <- Generated route tree
@@ -88,137 +92,126 @@ Dawaa/
 |
 |-- backend/
 |   |-- src/main/java/com/dawaa/
-|   |   |-- auth/AuthHandler.java             <- Registration and login
-|   |   |-- common/BaseHandler.java           <- Shared JSON, error, and CORS responses
-|   |   |-- api/inventory/                    <- Inventory availability API
-|   |   |-- business/inventory/               <- Inventory availability service
-|   |   |-- domain/inventory/                 <- Inventory domain model and repository contract
-|   |   |-- persistence/dynamodb/inventory/   <- DynamoDB inventory availability repository
-|   |   |-- pharmacies/PharmacyHandler.java   <- Pharmacy registration and approval
-|   |   `-- pharmacies/SearchPharmaciesHandler.java
-|   |                                           <- Nearby pharmacy search through Google Places
+|   |   |-- api/                              <- AWS Lambda HTTP handlers
+|   |   |-- business/                         <- Service layer and application rules
+|   |   |-- domain/                           <- Domain records and repository contracts
+|   |   |-- persistence/                      <- DynamoDB and OpenRouteService integrations
+|   |   `-- common/                           <- Shared handler utilities
 |   |
 |   |-- pom.xml                               <- Java 21 Maven configuration
-|   |-- template.yaml                         <- AWS SAM, Lambda, API Gateway, and DynamoDB resources
+|   |-- template.yaml                         <- AWS SAM resources, routes, env vars, and permissions
+|   |-- samconfig.toml                        <- SAM deployment configuration
 |   `-- README.md                             <- Backend setup and endpoint notes
 |
-|-- public/favicon.ico                        <- Static site icon
-|-- .env.example                              <- Example environment variables
+|-- .env.example                              <- Example non-secret environment variables
 |-- package.json                              <- Frontend dependencies and scripts
 |-- package-lock.json                         <- npm dependency lockfile
-|-- bun.lock                                  <- Bun dependency lockfile
-|-- bunfig.toml                               <- Bun configuration
-|-- components.json                           <- UI component configuration
-|-- eslint.config.js                          <- ESLint configuration
-|-- tsconfig.json                             <- Path alias and tooling configuration
-|-- tsr.config.json                           <- TanStack Router generation configuration
 |-- vite.config.js                            <- Vite/TanStack Start configuration
-|-- .prettierrc                               <- Prettier configuration
-|-- .prettierignore                           <- Prettier ignore rules
-`-- .gitignore                                <- Git ignore rules
+`-- README.md                                <- Project setup and feature notes
 ```
 
-## What Is Currently Implemented
+## Backend Architecture
 
-### Patient search
+The backend uses a layered structure:
 
-- Search for a medication name.
-- Receive medication-name suggestions from the RxNorm API.
-- Use browser geolocation when permission is available.
-- Search within a radius of 1, 2, 5, 10, or 20 km.
-- Retrieve nearby pharmacies from Google Places.
-- Display pharmacy name, address, distance, rating, opening status, and phone number when available.
-- Filter the results to pharmacies that are currently open.
+- `api`: Lambda handlers that receive API Gateway requests, parse inputs, call services, and return HTTP responses.
+- `business`: service classes that apply validation, role checks, account state checks, pharmacy approval rules, inventory rules, and routing workflows.
+- `domain`: core records/enums and repository interfaces for users, pharmacies, medicines, inventory, and routes.
+- `persistence`: DynamoDB repositories and OpenRouteService client code. This layer handles table keys, indexes, item mapping, and external routing calls.
+- `template.yaml`: infrastructure configuration for Lambda functions, API Gateway routes, DynamoDB permissions, and environment variables.
 
-The current interface displays pharmacy results as a list. It does not display an interactive map yet.
+## Implemented Features
+
+### Patient Search
+
+- Search medicines by brand or generic name.
+- Use browser location permission when available.
+- Search approved pharmacies carrying a selected medicine.
+- Display pharmacy name, address, area, distance, opening status, and phone number when available.
+- Open a map view and route guidance to a selected pharmacy.
+- Avoid exposing exact stock quantities to patients; low stock is shown as a general availability warning.
 
 ### Accounts
 
 - Register as a patient or pharmacist.
-- Log in using email and password.
-- Store the logged-in user in browser `localStorage` for the current frontend session.
+- Log in with email and password.
+- Store only the returned user profile in browser storage, not the password hash.
+- Edit personal name/email/password.
+- Deactivate non-admin accounts.
+- Store new and updated passwords using bcrypt hashing.
 
-### Pharmacist features
+### Pharmacist Features
 
-- Register one pharmacy profile.
-- View whether the pharmacy is pending or approved.
-- Add, update, list, and delete inventory items.
-- Store medicine name, quantity, and in-stock status.
+- Register one pharmacy profile for the MVP.
+- View pharmacy approval status.
+- Edit pharmacy contact information, coordinates, and schedule.
+- Add, update, search, and delete inventory items.
+- Prevent duplicate medicine entries in the same pharmacy inventory.
 
-### Admin features
+### Admin Features
 
+- View users.
+- Activate or deactivate non-admin users.
 - View pharmacies.
 - Approve or revoke pharmacy registrations.
-- View registered users.
+- Admin accounts are created manually and are not available through public signup.
 
-## Java Backend
+### Routing
 
-The AWS SAM template defines Java 21 Lambda handlers that use these existing DynamoDB tables:
+- Route directions are handled through backend endpoints backed by OpenRouteService.
+- The routing API key is stored server-side in AWS Lambda configuration and is not exposed to frontend users.
 
-- `DawaaUsers`
-- `DawaaInventory`
-- `DawaaPharmacies`
-- `DawaaMedicines`
+## Java Backend Routes
 
-Implemented API routes:
+The AWS SAM template defines Java 21 Lambda handlers for routes including:
 
 ```text
 POST   /auth/register
 POST   /auth/login
-GET    /medicines/search?name={brandName}
-GET    /inventory/availability?medicineId={medicineId}
-POST   /pharmacies
-GET    /pharmacies/mine?pharmacistId={id}
-POST   /pharmacies/search
+GET    /users/me
+POST   /users/me/update
+DELETE /users/me
 GET    /admin/users
+GET    /admin/users/{id}
+GET    /admin/users/by-email
+DELETE /admin/users/{id}
+POST   /admin/users/{id}/activate
+GET    /medicines/search
+GET    /medicines/suggestions
+GET    /inventory/availability
+GET    /inventory/{requesterUserId}
+POST   /inventory
+DELETE /inventory/{medicineId}
+POST   /pharmacies
+GET    /pharmacies/mine
+POST   /pharmacies/mine/update
+POST   /pharmacies/mine/schedule
+GET    /pharmacies/{id}
 GET    /admin/pharmacies
+GET    /admin/pharmacies/{id}
 POST   /admin/pharmacies/{id}/approve
+GET    /pharmacies/nearby
+POST   /pharmacies/search
+POST   /routes/directions
 ```
 
-## Current Limitations
+## Environment Variables
 
-- The medication keyword is sent to the pharmacy-search backend but is not currently used to filter Google Places results.
-- Patient medicine search can show raw inventory availability, but it does not yet join those results to full registered pharmacy details.
-- The optional city/area text field is collected by the frontend but is not currently used by the search logic.
-- There is no Cognito, JWT, token, or real role-based authorization yet.
-- The Java login implementation returns user data but does not create a session or access token.
-- The frontend admin account is available only in the local in-memory fallback; the Java backend does not seed an admin account.
-- No automated backend or frontend tests are included.
-- The repository contains deployment configuration, but this alone does not confirm that the AWS resources are deployed.
-
-## Local and Backend Modes
-
-When `DAWAA_API_BASE_URL` is configured, the frontend sends account, pharmacy, inventory, admin, and search requests to the Java backend.
-
-When it is not configured:
-
-- Account, pharmacy, inventory, and admin data use temporary in-memory stores and are lost when the server restarts.
-- Pharmacy search uses the Lovable Google Maps connector and requires both `LOVABLE_API_KEY` and `GOOGLE_MAPS_API_KEY`.
-
-Environment variables:
+Frontend/reviewer `.env.local`:
 
 ```env
-VITE_DAWAA_API_BASE_URL=""
-DAWAA_API_BASE_URL=""
-LOVABLE_API_KEY=""
-GOOGLE_MAPS_API_KEY=""
-OPENROUTESERVICE_API_KEY=""
-OPENROUTESERVICE_PROFILE="driving-car"
+VITE_DAWAA_API_BASE_URL="https://ozgyyjnp1b.execute-api.eu-north-1.amazonaws.com/Prod"
+DAWAA_API_BASE_URL="https://ozgyyjnp1b.execute-api.eu-north-1.amazonaws.com/Prod"
 ```
 
-For reviewer testing, set `VITE_DAWAA_API_BASE_URL` and `DAWAA_API_BASE_URL` to the deployed backend API listed in the Submission Links section. Leave API key values empty unless running external integrations locally with your own keys.
+Backend-only environment variables are configured in AWS/SAM and should not be placed in public documentation:
 
-## Run the Frontend
-
-```bash
-npm install
-npm run dev
+```text
+OPENROUTESERVICE_API_KEY
+OPENROUTESERVICE_PROFILE
+USERS_TABLE
+PHARMACIES_TABLE
+MEDICINES_TABLE
+INVENTORY_TABLE
 ```
 
-## Build the Java Backend
-
-```bash
-cd backend
-mvn clean package
-sam build
-```
