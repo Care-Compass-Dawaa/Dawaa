@@ -31,6 +31,7 @@ GET  /admin/pharmacies/{id}
 POST /admin/pharmacies/{id}/approve
 GET  /pharmacies/nearby?lat={latitude}&lng={longitude}
 POST /pharmacies/search
+POST /routes/directions
 ```
 
 Expected `/pharmacies/search` request body:
@@ -45,9 +46,10 @@ Expected `/pharmacies/search` request body:
 }
 ```
 
-Pharmacy search reads from the `DawaaPharmacies` DynamoDB table and ranks results by
-straight-line distance. When `openNowOnly` is true, closed pharmacies and pharmacies with
-unknown hours are excluded before the remaining results are ranked by distance.
+Pharmacy search reads from the `DawaaPharmacies` DynamoDB table. When route configuration is
+available, the backend uses OpenRouteService for route-aware ranking; otherwise, it still returns
+distance-based results from the available pharmacy coordinates. When `openNowOnly` is true, closed
+pharmacies and pharmacies with unknown hours are excluded before results are ranked.
 
 Expected `/pharmacies/mine/schedule` request body:
 
@@ -70,13 +72,15 @@ Expected `/pharmacies/mine/schedule` request body:
 Use `"hoursMode": "twentyFourHours"` for pharmacies that are always open, or
 `"hoursMode": "unknown"` when a pharmacist has not supplied a schedule.
 
-After deploying this backend, set the frontend server environment variable:
+After deploying this backend, set the frontend environment variables:
 
 ```text
+VITE_DAWAA_API_BASE_URL=https://your-api-gateway-url
 DAWAA_API_BASE_URL=https://your-api-gateway-url
 ```
 
-Until `DAWAA_API_BASE_URL` is set, the existing local Lovable connector fallback still runs.
+Private backend API keys should remain in AWS Lambda environment variables and should not be
+placed in frontend `.env` files.
 
 ## MVP Requester Identity
 
@@ -153,4 +157,4 @@ current DynamoDB table.
 
 - Add AWS Cognito.
 - Replace localStorage trust with token-based auth.
-- Replace temporary password hashing with production password/auth handling.
+- Keep bcrypt for password storage until Cognito or another production auth provider replaces local password handling.
