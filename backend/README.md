@@ -149,12 +149,6 @@ The older inventory design that indexed directly by pharmacist/user id is not co
 current DynamoDB table.
 
 
-## Before Handover
-
-- Add role-based frontend landing tabs.
-- Add shared Settings tab for all roles.
-- Add basic frontend/backend tests.
-
 ## Later Security Pass
 
 - Add AWS Cognito.
